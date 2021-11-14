@@ -86,7 +86,64 @@
 
 
 	/*---------------------------------------------------- */
-	/* Owl Carousel Certificates
+	/* Owl Carousel Works
+	------------------------------------------------------ */ 
+	$("#owl-slider-work").owlCarousel({
+        navigation: false,
+        pagination: true,
+        itemsCustom : [
+	        [0, 1],
+	        [1500, 1],
+	        [1500, 1]
+	     ],
+        navigationText: false
+    });
+
+	/*---------------------------------------------------- */
+	/* Owl Carousel Works
+	------------------------------------------------------ */ 
+	$("#owl-slider-academy").owlCarousel({
+        navigation: false,
+        pagination: true,
+        itemsCustom : [
+	        [0, 1],
+	        [1500, 1],
+	        [1500, 1]
+	     ],
+        navigationText: false
+    });
+
+
+	/*---------------------------------------------------- */
+	/* Owl Carousel Degrees
+	------------------------------------------------------ */ 
+	$("#owl-slider-degree").owlCarousel({
+        navigation: false,
+        pagination: true,
+        itemsCustom : [
+	        [0, 1],
+	        [1500, 1],
+	        [1500, 1]
+	     ],
+        navigationText: false
+    });
+
+	/*---------------------------------------------------- */
+	/* Owl Carousel Extra
+	------------------------------------------------------ */ 
+	$("#owl-slider-extra").owlCarousel({
+        navigation: false,
+        pagination: true,
+        itemsCustom : [
+	        [0, 1],
+	        [1500, 1],
+	        [1500, 1]
+	     ],
+        navigationText: false
+    });
+
+	/*---------------------------------------------------- */
+	/* Owl Carousel Skills
 	------------------------------------------------------ */ 
 	$("#owl-slider-skills").owlCarousel({
         navigation: false,
