@@ -3,10 +3,10 @@
   "htmlLang": "en",
   "pdfTitle": "Franklin Ferreira — Staff Data Engineer — CV",
   "pdfSubject": "Curriculum vitae of Franklin Ferreira, Staff Data Engineer",
-  "pdfKeywords": "Staff Data Engineer, Data Architecture, Data Governance, Lakehouse, Databricks, Unity Catalog, dbt, Apache Airflow, AWS, SQL, Python, FinOps, Generative AI",
+  "pdfKeywords": "Staff Data Engineer, Data Architecture, Big Data, Data warehouse, Lakehouse, Data Governance, FinOps, Apache Spark, Databricks, dbt, Apache Airflow, Amazon Redshift, AWS, SQL, Python, Machine Learning, Generative AI",
   "name": "Franklin Ferreira",
   "headline": "Staff Data Engineer",
-  "tagline": "Data Architecture · Lakehouse · Governance · FinOps · Generative AI",
+  "tagline": "Data Architecture · Big Data · Governance · FinOps · ML & Generative AI",
   "location": "Brazil · Remote/Global",
   "contact": {
     "email": "franklinfs390@gmail.com",
@@ -29,19 +29,19 @@
     "path": "Career path",
     "courses": "Selected courses"
   },
-  "summary": "Staff Data Engineer and data architect. I design the architecture of a Databricks platform used by thousands of people, from lakehouse and governance to cost: more than 50% lower platform cost and ~3x fewer incidents. Still hands-on, with a technical team of 15+ people across Brazil and Romania, and comfortable across classic machine learning and generative AI.",
+  "summary": "Staff Data Engineer and data architect. I design the data architecture a whole company runs on, from warehouse to lakehouse, from batch to streaming, from classic machine learning to generative AI: more than 50% lower platform cost and ~3x fewer incidents. Still hands-on, with a technical team of 15+ people across Brazil and Romania.",
   "competencies": [
     {
-      "label": "Platform & lakehouse",
-      "items": "Databricks, Unity Catalog, lakehouse, Delta Lake, Apache Spark, Databricks Workflows, data lake, data warehouse, dimensional modeling, data modeling"
+      "label": "Architecture & platforms",
+      "items": "Data architecture, dimensional modeling, data modeling, data warehouse, data lake, lakehouse, Databricks, Delta Lake, Apache Spark, Databricks Workflows, Amazon Redshift, streaming"
     },
     {
       "label": "Engineering",
-      "items": "Python, PySpark, SQL, dbt, Apache Airflow, data pipelines, AWS, Terraform, Docker, Kubernetes, Amazon Redshift, GitHub Actions, CI/CD"
+      "items": "Python, PySpark, SQL, dbt, Apache Airflow, data pipelines, AWS, Terraform, Docker, Kubernetes, GitHub Actions, CI/CD"
     },
     {
       "label": "Governance & reliability",
-      "items": "Data governance, data quality, LGPD, observability, FinOps"
+      "items": "Data governance, data catalogs (Unity Catalog, AWS Glue Data Catalog, Hive Metastore), data quality, LGPD, observability, FinOps"
     },
     {
       "label": "Data apps & AI",
@@ -235,7 +235,7 @@
     },
     {
       "value": "~50",
-      "label": "sources unified in Databricks"
+      "label": "sources unified in one platform"
     },
     {
       "value": "10+",

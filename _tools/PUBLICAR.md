@@ -1,6 +1,6 @@
 # Roteiro para publicar o portfólio
 
-Nada foi commitado nem publicado. Esta é a ordem que eu seguiria, com o que cada passo prova e o que fica por sua conta. Os passos marcados **(você)** exigem a sua conta, o seu navegador ou a sua decisão.
+Nada foi publicado no site (a `master` continua como estava). **Já existe um commit na branch** `feat/staff-bilingual-refresh` (`ad1668b`, "Add new version.", autor franklin390, 15/10/2026 00:43) e ele já foi enviado ao GitHub (`origin/feat/staff-bilingual-refresh`); não foi feito por mim. Depois dele, 37 arquivos mudaram só na pasta de trabalho: o trabalho de design das Fases 0 a 4 e a correção de privacidade abaixo. Esta é a ordem que eu seguiria, com o que cada passo prova e o que fica por sua conta. Os passos marcados **(você)** exigem a sua conta, o seu navegador ou a sua decisão.
 
 ## 0. Antes de commitar: o que vai para o repositório público
 
@@ -20,7 +20,7 @@ O repositório é público, então tudo o que for commitado fica visível, inclu
 
 Você está na branch `feat/staff-bilingual-refresh`. O GitHub Pages publica o que estiver na branch configurada (em geral `master`).
 
-1. Commitar na branch (eu faço quando você pedir). Sugestão: dois commits, um com a limpeza (arquivos antigos removidos: `less/`, `scss/`, `images/z/`, FontAwesome 4) e outro com o conteúdo novo.
+1. Commitar o que mudou depois do `ad1668b` (eu faço quando você pedir). Sugestão: dois commits, um com a limpeza (arquivos antigos removidos: `less/`, `scss/`, `images/z/`, FontAwesome 4) e outro com o conteúdo novo.
 2. Abrir um pull request para `master` e olhar o diff antes de mesclar.
 3. Mesclar. O GitHub Pages leva alguns minutos para atualizar.
 
@@ -65,3 +65,13 @@ O passo a passo completo está em `_tools/gtm/LEIA-ME.md`. Resumo da ordem:
 - Uma terceira decisão no formato de card de decisão (Unity Catalog por domínio ou CI/CD com trunk-based), se você quiser.
 - Recomendações públicas do LinkedIn, artigos e um repositório de referência (fase 3 do `PLANO-MELHORIAS.md`).
 - Confirmar o link do Let's Code: hoje aponta para https://ada.tech porque o endereço antigo não resolve mais.
+
+## Aviso de privacidade sobre o commit já enviado (2026-10-15)
+
+O commit `ad1668b`, que já está no GitHub, traz em `_tools/facts/facts.json` e `_tools/facts/analytics.json` o sobrenome do nome legal escrito como regra de bloqueio. A regra foi movida para a lista privada `_tools/fixtures/private-forbidden.json` (fora do git), e os dois arquivos já estão limpos na pasta de trabalho. Quem vê o repositório continua podendo ver o sobrenome **no histórico** desse commit. Opções, todas suas:
+
+1. Deixar como está: o nome completo já aparece em certificados em PDF que estão na `master` (decisão D15 do plano), então o ganho de esconder só este trecho é pequeno.
+2. Reescrever só esse commit (amend ou squash dos commits da branch) e atualizar a branch com `git push --force-with-lease`. Isso é destrutivo na branch remota e só faço se você pedir.
+3. Reescrever todo o histórico (inclui o telefone e a data de nascimento das versões antigas na `master`): `git filter-repo`, e depois push forçado. Vale fazer **antes** de divulgar o link.
+
+A lista privada não está no repositório: faça uma cópia de `_tools/fixtures/` (e do PDF do LinkedIn que está nela) em algum lugar seguro.

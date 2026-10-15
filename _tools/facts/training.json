@@ -6,10 +6,9 @@
       "titleLiteral": "Data Analyst Certified Professional (DACP)",
       "issuer": "Data Science Academy",
       "issued": "2023-01",
-      "validUntil": "2025-01",
       "href": "pdf/dsa/29_certificado_DACP.pdf",
       "verifiedBy": "PDF viewed: granted 07/01/2023, valid until 07/01/2025",
-      "icon": "fa-award"
+      "icon": "icon-badge"
     },
     {
       "id": "fada",
@@ -18,7 +17,7 @@
       "completed": "2023-01",
       "href": "pdf/dsa/28_certificado_FADA.pdf",
       "verifiedBy": "PDF viewed: completed 01/01/2023, 224h",
-      "icon": "fa-graduation-cap"
+      "icon": "icon-education"
     },
     {
       "id": "fad",
@@ -27,7 +26,7 @@
       "completed": "2022-12",
       "href": "pdf/dsa/25_certificado_FAD.pdf",
       "verifiedBy": "PDF viewed: completed 25/12/2022, 224h",
-      "icon": "fa-graduation-cap"
+      "icon": "icon-education"
     },
     {
       "id": "astro-dag",
@@ -37,7 +36,7 @@
       "href": "https://www.credly.com/badges/53ff420f-0790-420f-9e3e-3e0071287892/linked_in_profile",
       "external": true,
       "verifiedBy": "Legacy site link (Credly); link status checked by G6",
-      "icon": "fa-rocket"
+      "icon": "icon-paper-plane"
     },
     {
       "id": "astro-fund",
@@ -47,17 +46,16 @@
       "href": "https://www.credly.com/badges/936c78c9-4f87-430c-97da-a7964c130876/linked_in_profile",
       "external": true,
       "verifiedBy": "Legacy site link (Credly); link status checked by G6",
-      "icon": "fa-rocket"
+      "icon": "icon-paper-plane"
     },
     {
       "id": "dscp",
       "titleLiteral": "Data Scientist Certified Professional (DSCP)",
       "issuer": "Data Science Academy",
       "issued": "2022-04",
-      "validUntil": "2024-04",
       "href": "pdf/dsa/20_certificado_dscp.pdf",
       "verifiedBy": "PDF viewed: granted 02/04/2022, valid until 02/04/2024",
-      "icon": "fa-award"
+      "icon": "icon-badge"
     },
     {
       "id": "fcd",
@@ -66,7 +64,7 @@
       "completed": "2021-10",
       "href": "pdf/dsa/12_Certificado_FCD.pdf",
       "verifiedBy": "PDF viewed: completed 12/10/2021, 432h (LinkedIn also ends Oct 2021)",
-      "icon": "fa-graduation-cap"
+      "icon": "icon-education"
     },
     {
       "id": "faim",
@@ -75,7 +73,7 @@
       "completed": "2020-06",
       "href": "pdf/dsa/10_Certificado_FAIM.pdf",
       "verifiedBy": "PDF viewed: completed 13/06/2020, 228h (LinkedIn 'Aug 2018 - Jun 2019' contradicts the certificate; certificate wins)",
-      "icon": "fa-graduation-cap"
+      "icon": "icon-education"
     }
   ],
   "courses": [

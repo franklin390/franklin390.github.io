@@ -25,6 +25,7 @@ Requisitos já presentes nesta máquina: Node 24, Python 3 com `pypdf` e `PyMuPD
 | Mudar o CV | `_cv/en.json`, `_cv/pt.json` e `_cv/es.json` | `npm run build:cv` (feche o PDF no leitor antes: o Windows trava o arquivo aberto) |
 | Mudar um fato (cargo, data, métrica) | primeiro o PDF do LinkedIn → `_tools/facts/facts.json` (inclui os padrões `en`/`pt`/`es` de cada fato) | `npm run verify` |
 | Acrescentar ou mudar um card de "Selected work" | dados em `_tools/facts/cases.json` (um card de decisão usa `blocks` e `wide: true`, como o "Por que Databricks"), textos em `js/i18n/*.js` (`case.<key>.*`), e, se o fato veio de você e não do LinkedIn, um claim `source: "owner"` em `facts/facts.json` | `npm run build:site` e `npm run verify` (o G4 conta os cards: hoje 10) |
+| Mudar o CSS sem mudar o visual (variáveis, limpeza) | `css/staff.css` e `css/main.css`: as cores da marca vivem só em `:root` (variáveis `--brand*` e `--gray-*`) | `node pixel-snap.mjs antes`, mude, `node pixel-snap.mjs depois`, e `node pixel-snap.mjs --diff antes depois 3` (compara cada seção em 3 larguras e 3 idiomas, pixel a pixel; o 3 tolera o ruído de 1 nível de cor do gradiente do fundo) |
 | Acrescentar uma tecnologia ou palavra-chave | só depois de confirmada: `_tools/facts/keywords.json` (`provenance.userConfirmed` e `keywords`) | `npm run verify` |
 | Medir mais uma coisa no site | `_tools/facts/analytics.json` (o plano) + `js/analytics.js` | `node build-gtm.mjs` (regera o contêiner e o guia) e `npm run verify` |
 | Adicionar um idioma | `LANGS` em `verify/lib/common.mjs`, `js/i18n/<l>.js`, `_cv/<l>.json`, formas no `glossary.json`/`facts.json`/`keywords.json`/`voice.json`, dicionário do cspell | `npm run verify` e `node verify/selftest.mjs` |
@@ -36,7 +37,7 @@ Requisitos já presentes nesta máquina: Node 24, Python 3 com `pypdf` e `PyMuPD
 ## Verificação
 
 ```bash
-npm run verify        # todos os gates (G0–G15), ~11 min, gera out/report.md
+npm run verify        # todos os gates (G0–G17), ~15 min, gera out/report.md
 npm run verify:fast   # sem navegador, ~30 s
 npm run verify:links  # só links externos (precisa de internet "normal")
 node verify/selftest.mjs   # injeta defeitos de propósito e exige que os gates falhem
@@ -53,6 +54,8 @@ node verify/selftest.mjs   # injeta defeitos de propósito e exige que os gates 
 | G6 | Links externos respondem; PDFs válidos |
 | G7 | CV: A4, ≤2 páginas, fontes embutidas, texto extraível **na ordem certa do documento inteiro** (a ordem do fluxo de texto é a que um ATS lê), ordem cronológica de tudo (cargos, formação, certificações), trajetória derivada da experiência, links, metadados, paridade EN/PT/ES |
 | G8 | Acessibilidade (axe-core, WCAG 2.2 AA) e SEO: um único `<h1>` (o nome) e as seções em `<h2>`, título/descrição no tamanho certo, nenhuma imagem acima de 250 KB, primeira carga no celular dentro de 1400 KB |
+| G17 | Pronto para o GitHub Pages: cada arquivo que as páginas, os estilos e o sitemap pedem existe com a mesma caixa (maiúsculas e minúsculas) do nome real, nada do que o site usa está em pasta `_` ou `.` (o Jekyll não publica), tudo está no git (ou entraria num `git add -A`), não há `.nojekyll`, markdown nem front matter publicados, e tamanhos dentro dos limites. `node unused-files.mjs` lista os arquivos que ninguém usa mais |
+| G16 | Design: orçamento de altura por largura e idioma, piso de tamanho de texto (nada abaixo de 11 px; texto corrido de cards, datas e legendas com piso próprio), no máximo 20% do texto abaixo de 14 px no celular, controles principais com 44 px (24 px para todos, com exceção documentada para links dentro de listas), anel de foco visível em cada parada do Tab e contraste de 4,5:1 (3:1 para texto grande) medido sobre fundo sólido. Os orçamentos só descem: veja `PLANO-DESIGN.md` |
 | G15 | Performance: nenhum script no `<head>`, sem `@import`, fontes woff2 reduzidas e em dia, GTM só depois do carregamento, preloader com rede de segurança de 4 s, fundo decorativo só quando a seção chega perto, carrosséis sem texto cortado (medidos de novo depois das fontes) e orçamentos de bytes e tempo num celular com 4G lento (`perf.mjs`) |
 | G14 | Páginas estáticas `/pt/` e `/es/`: arquivos idênticos ao que o gerador produz, cada página com canonical próprio, hreflang completo, og, JSON-LD e um `<h1>`; URLs relativas reescritas; com JavaScript desligado o texto já é o do idioma (igual ao que o motor escreve); no navegador, sem erro/404, mesma altura da versão `?lang=`, links e PDFs funcionam, o endereço manda no idioma, a troca no lugar continua funcionando; `sitemap.xml` e `robots.txt` |
 | G9 | Ortografia EN, PT-BR e ES (com "canários" para provar que o corretor enxerga erros) |

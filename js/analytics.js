@@ -12,7 +12,7 @@
 	var SECTIONS = ['intro', 'about', 'impact', 'resume', 'portfolio', 'cta', 'services', 'contact', 'footer'];
 	var LANGS = { en: 1, pt: 1, es: 1 };
 	var STAT = { '#role-fb-staff': 'team', '#case-finops': 'cost', '#case-migration': 'sources', '#case-unity': 'domains', '#case-cicd': 'incidents', '#case-clicksign': 'pipelines' };
-	var OWL = { 'owl-slider-work': 'experience', 'owl-slider-academy': 'education', 'owl-slider-cert': 'certifications', 'owl-slider-extra': 'talks', 'owl-slider': 'services', 'owl-slider-port': 'projects' };
+	var OWL = { 'owl-slider-work': 'experience', 'owl-slider-cert': 'certifications', 'owl-slider-extra': 'talks', 'owl-slider': 'services', 'owl-slider-port': 'projects' };
 	var LIMIT = { skill_hover: 15, case_view: 12, carousel_navigate: 40, js_error: 3, section_view: 12, scroll_depth: 4, nav_click: 40 };
 	var ACTIVE_MS = 20000; // a visitor counts as "reading" for 20 s after the last scroll / move / key / touch
 
@@ -95,6 +95,7 @@
 		if ((el = t.closest('.case-filter'))) { track('case_filter', { item: el.getAttribute('data-filter') }); return; }
 		if ((el = t.closest('.item-wrap a'))) { track('project_open', { item: (el.getAttribute('href') || '').replace('#', '') }); return; }
 		if ((el = t.closest('.train-details summary, .early-projects summary'))) { track('training_toggle', { item: el.parentNode.classList.contains('early-projects') ? 'early_projects' : 'courses', state: el.parentNode.open ? 'close' : 'open' }); return; }
+		if ((el = t.closest('[data-fold-toggle]'))) { track('content_toggle', { item: el.getAttribute('data-fold-item'), state: el.getAttribute('aria-expanded') === 'true' ? 'close' : 'open' }); return; }
 		if (t.closest('#go-top')) { track('back_to_top', {}); return; }
 		if ((el = t.closest('a.brand, #main-nav-wrap a'))) {
 			var brand = el.classList.contains('brand'), toggle = d.querySelector('.menu-toggle');

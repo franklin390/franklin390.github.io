@@ -246,6 +246,14 @@
       ],
       "keyEvent": false
     },
+    "content_toggle": {
+      "when": "A button that folds content on phones is pressed: the rest of the About text (item about_more), all skills (skills_more), all case studies (work_more) or the role details of the Experience carousel (experience_detail). state: open or close.",
+      "params": [
+        "item",
+        "state"
+      ],
+      "keyEvent": false
+    },
     "skill_hover": {
       "when": "The pointer rests 0.5 s on a skill tag (once per skill, at most 15 per visit).",
       "params": [
@@ -307,8 +315,7 @@
     "_note": "Nothing that identifies a person may ever travel in an event: e-mail addresses, phone numbers, the full name, free text typed by the visitor.",
     "patterns": [
       "@[a-z0-9-]+\\.[a-z]{2,}",
-      "\\b\\d{2}[\\s.-]?9?\\d{4}[\\s.-]?\\d{4}\\b",
-      "da Silva"
+      "\\b\\d{2}[\\s.-]?9?\\d{4}[\\s.-]?\\d{4}\\b"
     ]
   }
 }

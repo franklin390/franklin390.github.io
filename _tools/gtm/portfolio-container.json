@@ -465,7 +465,7 @@
               {
                 "type": "TEMPLATE",
                 "key": "arg1",
-                "value": "^(site_context|language_toggle|cv_download|contact_click|outbound_click|certificate_open|nav_click|menu_toggle|impact_stat_click|case_filter|case_view|project_open|carousel_navigate|training_toggle|skill_hover|section_view|section_dwell|scroll_depth|engagement_summary|back_to_top|page_print|js_error)$"
+                "value": "^(site_context|language_toggle|cv_download|contact_click|outbound_click|certificate_open|nav_click|menu_toggle|impact_stat_click|case_filter|case_view|project_open|carousel_navigate|training_toggle|content_toggle|skill_hover|section_view|section_dwell|scroll_depth|engagement_summary|back_to_top|page_print|js_error)$"
               }
             ]
           }

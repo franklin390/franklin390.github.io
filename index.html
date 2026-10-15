@@ -53,7 +53,7 @@
 	</script>
 
 	<title data-i18n="meta.title">Franklin Ferreira — Staff Data Engineer</title>
-	<meta name="description" content="Staff Data Engineer designing the data architecture of a Databricks platform: lakehouse, dbt, Airflow, FinOps and generative AI. Brazil · Remote/Global." data-i18n-attr="content:meta.description">
+	<meta name="description" content="Staff Data Engineer and data architect: from warehouses to lakehouses, batch and streaming, governance, FinOps, ML and generative AI. Brazil · Remote/Global." data-i18n-attr="content:meta.description">
 	<meta name="author" content="Franklin Ferreira">
 	<meta name="robots" content="index, follow, max-image-preview:large">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,12 +69,12 @@
 	<meta property="og:site_name" content="Franklin Ferreira">
 	<meta property="og:url" content="https://franklin390.github.io/">
 	<meta property="og:title" content="Franklin Ferreira — Staff Data Engineer" data-i18n-attr="content:meta.title">
-	<meta property="og:description" content="Staff Data Engineer designing the data architecture of a Databricks platform: lakehouse, dbt, Airflow, FinOps and generative AI. Brazil · Remote/Global." data-i18n-attr="content:meta.description">
+	<meta property="og:description" content="Staff Data Engineer and data architect: from warehouses to lakehouses, batch and streaming, governance, FinOps, ML and generative AI. Brazil · Remote/Global." data-i18n-attr="content:meta.description">
 	<meta property="og:locale" content="en_US" data-i18n-attr="content:meta.locale">
 	<meta property="og:image" content="https://franklin390.github.io/images/og-card.png">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Franklin Ferreira — Staff Data Engineer" data-i18n-attr="content:meta.title">
-	<meta name="twitter:description" content="Staff Data Engineer designing the data architecture of a Databricks platform: lakehouse, dbt, Airflow, FinOps and generative AI. Brazil · Remote/Global." data-i18n-attr="content:meta.description">
+	<meta name="twitter:description" content="Staff Data Engineer and data architect: from warehouses to lakehouses, batch and streaming, governance, FinOps, ML and generative AI. Brazil · Remote/Global." data-i18n-attr="content:meta.description">
 	<meta name="twitter:image" content="https://franklin390.github.io/images/og-card.png">
 
 	<script type="application/ld+json">
@@ -93,7 +93,7 @@
 		],
 		"sameAs": ["https://www.linkedin.com/in/franklinfs390/", "https://github.com/franklin390"],
 		"knowsLanguage": ["pt", "en", "es"],
-		"knowsAbout": ["Data architecture", "Data governance", "Data modeling", "Dimensional modeling", "Lakehouse", "Data lake", "Databricks", "Unity Catalog", "Delta Lake", "Apache Spark", "Terraform", "dbt", "Apache Airflow", "SQL", "Python", "AWS", "Amazon Redshift", "FinOps", "Data quality", "Observability", "CI/CD", "Generative AI", "Machine learning", "Technical leadership"],
+		"knowsAbout": ["Data architecture", "Big Data", "Data warehouse", "Data lakes", "Lakehouse", "Data governance", "Data modeling", "Dimensional modeling", "Streaming", "FinOps", "Machine learning", "Generative AI", "Data lake", "Databricks", "Unity Catalog", "Data catalog", "AWS Glue Data Catalog", "Hive Metastore", "Delta Lake", "Apache Spark", "Terraform", "dbt", "Apache Airflow", "SQL", "Python", "AWS", "Amazon Redshift", "Data quality", "Observability", "CI/CD", "Technical leadership"],
 		"address": { "@type": "PostalAddress", "addressCountry": "BR" }
 	}
 	</script>
@@ -101,7 +101,7 @@
 	<link rel="icon" type="image/png" href="favicon.png">
 
 	<!-- The hero picture is the biggest thing on the first screen: start its download before the stylesheets are read (measured: LCP 2.1 s -> 1.4 s on Slow 4G; preloading the fonts too only slowed the first paint) -->
-	<link rel="preload" href="images/intro-bg.webp" as="image" type="image/webp" fetchpriority="high">
+	<link rel="preload" href="images/intro-bg.svg" as="image" type="image/svg+xml" fetchpriority="high">
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="css/base.css">
@@ -176,24 +176,30 @@
 
 					<p class="intro-position">
 						<span translate="no">Staff Data Engineer</span>
-						<span data-i18n="hero.role2">Data Architecture &amp; Governance</span>
-						<span data-i18n="hero.role3">Generative AI</span>
+						<span data-i18n="hero.role2">Data Architecture &amp; Big Data</span>
+						<span data-i18n="hero.role3">Governance, FinOps &amp; AI</span>
 					</p>
 
-					<p class="intro-tagline" data-i18n="hero.tagline">I design the architecture of the Databricks platform a whole company runs on, from lakehouse to governance and cost.</p>
+					<p class="intro-tagline" data-i18n="hero.tagline">From warehouse to lakehouse, from classic ML to generative AI: I design the data architecture a whole company runs on.</p>
 
 					<a class="button stroke smoothscroll" href="#about" data-i18n="hero.btn.about">About me</a>
-					<a class="button stroke" href="pdf/cv/Franklin_Ferreira_Staff_Data_Engineer_CV_EN.pdf" data-href-en="pdf/cv/Franklin_Ferreira_Staff_Data_Engineer_CV_EN.pdf" data-href-pt="pdf/cv/Franklin_Ferreira_Staff_Data_Engineer_CV_PT.pdf" data-href-es="pdf/cv/Franklin_Ferreira_Staff_Data_Engineer_CV_ES.pdf" data-i18n="hero.btn.cv">Download CV</a>
+					<a class="button stroke hero-cta" href="pdf/cv/Franklin_Ferreira_Staff_Data_Engineer_CV_EN.pdf" data-href-en="pdf/cv/Franklin_Ferreira_Staff_Data_Engineer_CV_EN.pdf" data-href-pt="pdf/cv/Franklin_Ferreira_Staff_Data_Engineer_CV_PT.pdf" data-href-es="pdf/cv/Franklin_Ferreira_Staff_Data_Engineer_CV_ES.pdf" data-i18n="hero.btn.cv">Download CV</a>
+
+					<ul class="intro-proof">
+						<li><span class="intro-proof-num" translate="no">&gt;50%</span><span class="intro-proof-cap" data-i18n="case.metric.cost">lower data platform cost</span></li>
+						<li><span class="intro-proof-num" translate="no">~50</span><span class="intro-proof-cap" data-i18n="case.metric.sources">sources unified in one platform</span></li>
+						<li><span class="intro-proof-num" translate="no">15+</span><span class="intro-proof-cap" data-i18n="hero.proof.team">people on the team I lead</span></li>
+					</ul> <!-- /intro-proof -->
+
+				<ul class="intro-social">
+					<li><a href="mailto:franklinfs390@gmail.com" aria-label="Send an email to Franklin Ferreira" data-i18n-attr="aria-label:social.email"><i class="fas fa-envelope" aria-hidden="true"></i></a></li>
+					<li><a href="https://github.com/franklin390" rel="noopener" aria-label="Franklin Ferreira on GitHub" data-i18n-attr="aria-label:social.github"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/franklinfs390/" rel="noopener" aria-label="Franklin Ferreira on LinkedIn" data-i18n-attr="aria-label:social.linkedin"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+				</ul> <!-- /intro-social -->
 
 				</div>
 			</div>
 		</div> <!-- /intro-content -->
-
-		<ul class="intro-social">
-			<li><a href="mailto:franklinfs390@gmail.com" aria-label="Send an email to Franklin Ferreira" data-i18n-attr="aria-label:social.email"><i class="fas fa-envelope" aria-hidden="true"></i></a></li>
-			<li><a href="https://github.com/franklin390" rel="noopener" aria-label="Franklin Ferreira on GitHub" data-i18n-attr="aria-label:social.github"><i class="fab fa-github" aria-hidden="true"></i></a></li>
-			<li><a href="https://www.linkedin.com/in/franklinfs390/" rel="noopener" aria-label="Franklin Ferreira on LinkedIn" data-i18n-attr="aria-label:social.linkedin"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
-		</ul> <!-- /intro-social -->
 
 	</section> <!-- /intro -->
 
@@ -212,11 +218,14 @@
 
 					<img src="images/profile-pic.jpg" alt="Portrait of Franklin Ferreira" data-i18n-attr="alt:about.photo.alt" width="90" height="90">
 
-					<p class="lead" data-i18n="about.p1">In practice, I'm an architect. Before anyone writes a line of code, I think through and decide how the data should be structured. Today I technically lead a team of 15+ people (data engineers, analysts and data scientists) spread across Brazil and Romania.</p>
+					<p class="lead" data-i18n="about.p1">In practice, I'm an architect. Before anyone writes a line of code, I think through and decide how the data should be structured, in a warehouse or a lakehouse, in batch or in streaming. Today I technically lead a team of 15+ people (data engineers, analysts and data scientists) spread across Brazil and Romania.</p>
 					<p class="lead" data-i18n="about.p2">I joined Flutter Brazil to build the foundation. I created the dimensional model and the data lake from scratch, with Python, dbt and a lot of SQL. Then I led the migration of the whole data infrastructure to Databricks: around 50 sources, from Google Analytics 4 to internal systems and third-party tools, with pipelines going from hours to minutes.</p>
+					<div class="fold-mobile is-folded" id="about-more">
 					<p class="lead" data-i18n="about.p3">As Tech Lead the job got wider. I defined the architectures and ways of working for almost the whole data team, restructured Unity Catalog by domain and led the FinOps work that cut platform cost by more than 50%. As Staff, that scope keeps growing.</p>
 					<p class="lead" data-i18n="about.p4">I come from the more classic side of machine learning, since college. I once did backpropagation by hand, on paper, before any framework did it for me. I followed the shift to generative AI closely from the moment it appeared, and today I move between both worlds comfortably. I helped build the company's LTV and payback models, and I use generative AI to speed up the day-to-day tools we build.</p>
-					<p class="lead" data-i18n="about.p5">Before Flutter Brazil, I was a Data Architect at Clicksign. I built the data structure from scratch there and helped the group grow from 4 to about 20 people. I also spent a few years as a professor of Big Data and Data Engineering, with hundreds of students. Maybe that's why I like explaining things in a way that makes sense to people who don't live in SQL all day.</p>
+					<p class="lead" data-i18n="about.p5">Before Flutter Brazil, I was a Data Architect at Clicksign. I built the data structure from scratch there, on Redshift, dbt and Airflow, and helped the group grow from 4 to about 20 people. I also spent a few years as a professor of Big Data and Data Engineering, with hundreds of students. Maybe that's why I like explaining things in a way that makes sense to people who don't live in SQL all day.</p>
+					</div>
+					<p class="more-wrap"><button type="button" class="more-toggle" data-fold-toggle="about-more" data-fold-item="about_more" aria-expanded="false" aria-controls="about-more"><span class="when-closed" data-i18n="more.read">Read more</span><span class="when-open" data-i18n="more.less">Read less</span></button></p>
 
 				</div>
 
@@ -237,7 +246,7 @@
 					</li>
 					<li>
 						<strong data-i18n="about.info.focus">Focus</strong>
-						<span data-i18n="about.info.focus.value">Data architecture, lakehouse, governance, FinOps and generative AI</span>
+						<span data-i18n="about.info.focus.value">Data architecture, Big Data platforms, governance, FinOps, ML and generative AI</span>
 					</li>
 					<li>
 						<strong data-i18n="about.info.team">Team</strong>
@@ -263,37 +272,39 @@
 				<h3 data-i18n="about.skills.title">Skills &amp; technologies</h3>
 				<p data-i18n="about.skills.intro">The tools and practices I work with, grouped by what they are for.</p>
 
-				<div class="skill-groups">
+				<div class="skill-groups is-folded" id="skills-more">
 					<div class="skill-group">
-						<h4 data-i18n="skills.platform">Platform &amp; lakehouse</h4>
-						<ul class="tags">
-							<li class="tag-key" translate="no">Databricks</li>
-							<li class="tag-key" translate="no">Unity Catalog</li>
-							<li translate="no">Lakehouse</li>
-							<li translate="no">Data lake</li>
-							<li translate="no">Delta Lake</li>
-							<li translate="no">Apache Spark</li>
-							<li translate="no">Databricks Workflows</li>
-							<li translate="no">Streaming</li>
-						</ul>
-					</div>
-					<div class="skill-group">
-						<h4 data-i18n="skills.modeling">Modeling &amp; transformation</h4>
+						<h4 data-i18n="skills.modeling">Architecture &amp; modeling</h4>
 						<ul class="tags">
 							<li data-i18n="tag.dimensional">Dimensional modeling</li>
 							<li data-i18n="tag.datamodeling">Data modeling</li>
 							<li translate="no">Data warehouse</li>
-							<li class="tag-key" translate="no">dbt</li>
+							<li translate="no">Data lake</li>
+							<li translate="no">Lakehouse</li>
 						</ul>
 					</div>
 					<div class="skill-group">
-						<h4 data-i18n="skills.orchestration">Orchestration &amp; cloud</h4>
+						<h4 data-i18n="skills.platform">Platforms &amp; processing</h4>
 						<ul class="tags">
-							<li class="tag-key" translate="no">Apache Airflow</li>
-							<li translate="no">AWS</li>
+							<li translate="no">Databricks</li>
+							<li translate="no">Unity Catalog</li>
+							<li translate="no">AWS Glue Data Catalog</li>
+							<li translate="no">Hive Metastore</li>
+							<li translate="no">Delta Lake</li>
+							<li translate="no">Apache Spark</li>
+							<li translate="no">Databricks Workflows</li>
 							<li translate="no">Amazon Redshift</li>
+							<li translate="no">Streaming</li>
+						</ul>
+					</div>
+					<div class="skill-group">
+						<h4 data-i18n="skills.orchestration">Transformation, orchestration &amp; cloud</h4>
+						<ul class="tags">
+							<li translate="no">dbt</li>
+							<li translate="no">Apache Airflow</li>
 							<li data-i18n="tag.pipelines">Data pipelines</li>
 							<li translate="no">REST APIs</li>
+							<li translate="no">AWS</li>
 							<li translate="no">Terraform</li>
 							<li translate="no">Docker</li>
 							<li translate="no">Kubernetes</li>
@@ -302,8 +313,8 @@
 					<div class="skill-group">
 						<h4 data-i18n="skills.languages">Languages</h4>
 						<ul class="tags">
-							<li class="tag-key" translate="no">Python</li>
-							<li class="tag-key" translate="no">SQL</li>
+							<li translate="no">Python</li>
+							<li translate="no">SQL</li>
 							<li translate="no">PySpark</li>
 						</ul>
 					</div>
@@ -319,7 +330,7 @@
 					<div class="skill-group">
 						<h4 data-i18n="skills.practices">Practices</h4>
 						<ul class="tags">
-							<li class="tag-key" translate="no">FinOps</li>
+							<li translate="no">FinOps</li>
 							<li data-i18n="tag.quality">Data quality</li>
 							<li data-i18n="tag.governance">Data governance</li>
 							<li data-i18n="tag.cicd">CI/CD with trunk-based development</li>
@@ -349,6 +360,7 @@
 						</ul>
 					</div>
 				</div> <!-- /skill-groups -->
+				<p class="more-wrap"><button type="button" class="more-toggle" data-fold-toggle="skills-more" data-fold-item="skills_more" aria-expanded="false" aria-controls="skills-more"><span class="when-closed" data-i18n="skills.more">Show all skills</span><span class="when-open" data-i18n="skills.less">Show fewer skills</span></button></p>
 
 			</div> <!-- \col-six tab-full -->
 
@@ -403,7 +415,7 @@
 						<a class="stat-link" href="#case-migration">
 							<div class="icon-part"><i class="icon-layers" aria-hidden="true"></i></div>
 							<h3 class="stat-count" data-count="50" data-prefix="~">~50</h3>
-							<p class="h05 stat-title" data-i18n="impact.sources">Sources brought together in Databricks, with pipelines going from hours to minutes</p>
+							<p class="h05 stat-title" data-i18n="impact.sources">Sources brought together in a single platform, with pipelines going from hours to minutes</p>
 							<span class="stat-cta"><span data-i18n="impact.cta.case">See the case study</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
 						</a>
 					</div>
@@ -471,7 +483,7 @@
 						<a class="glance-link" href="#role-fb-staff">
 							<span class="glance-dates" data-date="2026-07" data-date-end="present">Jul 2026 – Present</span>
 							<span class="glance-role"><span class="glance-title" translate="no">Staff Data Engineer</span> <span class="glance-org" translate="no">Flutter Brazil</span></span>
-							<span class="glance-result" data-i18n="glance.fb.staff">Architecture and technical direction of the Databricks platform, with a team of 15+ people.</span>
+							<span class="glance-result" data-i18n="glance.fb.staff">Architecture and technical direction of the company's data platform, with a team of 15+ people.</span>
 							<i class="fa-solid fa-arrow-right glance-arrow" aria-hidden="true"></i>
 						</a>
 					</li>
@@ -527,6 +539,10 @@
 			</div> <!-- /glance-wrap -->
 
 			<div class="col-twelve">
+				<p class="more-wrap"><button type="button" class="more-toggle" data-fold-toggle="exp-detail" data-fold-item="experience_detail" aria-expanded="false" aria-controls="exp-detail"><span class="when-closed" data-i18n="exp.more">Show role details</span><span class="when-open" data-i18n="exp.less">Hide role details</span></button></p>
+			</div>
+
+			<div class="col-twelve fold-mobile is-folded" id="exp-detail">
 				<div class="timeline-wrap">
 
 					<div id="owl-slider-work" class="owl-carousel certificate-list">
@@ -699,47 +715,20 @@
 			</div>
 
 			<div class="col-twelve">
-				<div class="timeline-wrap">
-					<div id="owl-slider-academy" class="owl-carousel certificate-list">
-
-					<div class="timeline-block" id="edu-xp">
-						<div class="timeline-ico"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
-						<div class="timeline-header">
-							<h3 translate="no">XP Educação</h3>
-							<p data-date="2022-07" data-date-end="2023-07">Jul 2022 – Jul 2023</p>
-						</div>
-						<div class="timeline-content">
-							<h4 data-i18n="edu.xp.degree">MBA in Data Engineering</h4>
-						</div>
-					</div>
-
-					<div class="timeline-block" id="edu-pucrs">
-						<div class="timeline-ico"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
-						<div class="timeline-header">
-							<h3 translate="no">PUCRS</h3>
-							<p data-date="2021-06" data-date-end="2022-07">Jun 2021 – Jul 2022</p>
-						</div>
-						<div class="timeline-content">
-							<h4 data-i18n="edu.pucrs.degree">Postgraduate specialization (Lato Sensu) in Data Science and Artificial Intelligence</h4>
-							<p class="meta-line" translate="no">Pontifícia Universidade Católica do Rio Grande do Sul</p>
-						</div>
-					</div>
-
-					<div class="timeline-block" id="edu-uezo">
-						<div class="timeline-ico"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
-						<div class="timeline-header">
-							<h3 translate="no">UEZO</h3>
-							<p data-date="2015" data-date-end="2019">2015 – 2019</p>
-						</div>
-						<div class="timeline-content">
-							<h4 data-i18n="edu.uezo.degree">Bachelor's degree in Computer Science</h4>
-							<p class="meta-line" translate="no">Universidade Estadual da Zona Oeste do Rio de Janeiro</p>
-						</div>
-					</div>
-
-				</div> <!-- \owl-slider-academy -->
-
-				</div> <!-- /timeline-wrap -->
+				<ol class="edu-list">
+					<li id="edu-xp">
+						<span class="edu-dates" data-date="2022-07" data-date-end="2023-07">Jul 2022 – Jul 2023</span>
+						<span class="edu-main"><strong data-i18n="edu.xp.degree">MBA in Data Engineering</strong><span class="edu-school" translate="no">XP Educação</span></span>
+					</li>
+					<li id="edu-pucrs">
+						<span class="edu-dates" data-date="2021-06" data-date-end="2022-07">Jun 2021 – Jul 2022</span>
+						<span class="edu-main"><strong data-i18n="edu.pucrs.degree">Postgraduate specialization (Lato Sensu) in Data Science and Artificial Intelligence</strong><span class="edu-school" translate="no">PUCRS · Pontifícia Universidade Católica do Rio Grande do Sul</span></span>
+					</li>
+					<li id="edu-uezo">
+						<span class="edu-dates" data-date="2015" data-date-end="2019">2015 – 2019</span>
+						<span class="edu-main"><strong data-i18n="edu.uezo.degree">Bachelor's degree in Computer Science</strong><span class="edu-school" translate="no">UEZO · Universidade Estadual da Zona Oeste do Rio de Janeiro</span></span>
+					</li>
+				</ol>
 			</div>
 
 		</div> <!-- /resume-timeline -->
@@ -759,49 +748,49 @@
 				<div id="owl-slider-cert" class="owl-carousel cert-carousel">
 <!--@region:train-featured-->
 					<article class="cert-card" id="cert-dacp">
-						<div class="cert-top"><span class="cert-ico"><i class="fa-solid fa-award" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Data Science Academy</p></div>
+						<div class="cert-top"><span class="cert-ico"><i class="icon-badge" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Data Science Academy</p></div>
 						<h4 translate="no">Data Analyst Certified Professional (DACP)</h4>
-						<p class="cert-date"><span data-i18n="train.issued">Issued</span> <span data-date="2023-01">Jan 2023</span> <span translate="no">·</span> <span data-i18n="train.validuntil">valid until</span> <span data-date="2025-01">Jan 2025</span></p>
+						<p class="cert-date"><span data-i18n="train.issued">Issued</span> <span data-date="2023-01">Jan 2023</span></p>
 						<p class="cert-link"><a href="pdf/dsa/29_certificado_DACP.pdf" data-i18n="train.view">View certificate</a></p>
 					</article>
 					<article class="cert-card" id="cert-fada">
-						<div class="cert-top"><span class="cert-ico"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Data Science Academy</p></div>
+						<div class="cert-top"><span class="cert-ico"><i class="icon-education" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Data Science Academy</p></div>
 						<h4 data-i18n="train.fada">Data Analyst Training</h4>
 						<p class="cert-date"><span data-i18n="train.completed">Completed</span> <span data-date="2023-01">Jan 2023</span></p>
 						<p class="cert-link"><a href="pdf/dsa/28_certificado_FADA.pdf" data-i18n="train.view">View certificate</a></p>
 					</article>
 					<article class="cert-card" id="cert-fad">
-						<div class="cert-top"><span class="cert-ico"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Data Science Academy</p></div>
+						<div class="cert-top"><span class="cert-ico"><i class="icon-education" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Data Science Academy</p></div>
 						<h4 data-i18n="train.fad">Data Architect Training</h4>
 						<p class="cert-date"><span data-i18n="train.completed">Completed</span> <span data-date="2022-12">Dec 2022</span></p>
 						<p class="cert-link"><a href="pdf/dsa/25_certificado_FAD.pdf" data-i18n="train.view">View certificate</a></p>
 					</article>
 					<article class="cert-card" id="cert-astro-dag">
-						<div class="cert-top"><span class="cert-ico"><i class="fa-solid fa-rocket" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Astronomer</p></div>
+						<div class="cert-top"><span class="cert-ico"><i class="icon-paper-plane" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Astronomer</p></div>
 						<h4 data-i18n="train.astro.dag">Astronomer Certification: DAG Authoring for Apache Airflow</h4>
 						<p class="cert-date"><span data-i18n="train.issued">Issued</span> <span data-date="2022-12">Dec 2022</span></p>
 						<p class="cert-link"><a href="https://www.credly.com/badges/53ff420f-0790-420f-9e3e-3e0071287892/linked_in_profile" rel="noopener" data-i18n="train.verify">Verify on Credly</a></p>
 					</article>
 					<article class="cert-card" id="cert-astro-fund">
-						<div class="cert-top"><span class="cert-ico"><i class="fa-solid fa-rocket" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Astronomer</p></div>
+						<div class="cert-top"><span class="cert-ico"><i class="icon-paper-plane" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Astronomer</p></div>
 						<h4 data-i18n="train.astro.fund">Astronomer Certification: Apache Airflow Fundamentals</h4>
 						<p class="cert-date"><span data-i18n="train.issued">Issued</span> <span data-date="2022-11">Nov 2022</span></p>
 						<p class="cert-link"><a href="https://www.credly.com/badges/936c78c9-4f87-430c-97da-a7964c130876/linked_in_profile" rel="noopener" data-i18n="train.verify">Verify on Credly</a></p>
 					</article>
 					<article class="cert-card" id="cert-dscp">
-						<div class="cert-top"><span class="cert-ico"><i class="fa-solid fa-award" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Data Science Academy</p></div>
+						<div class="cert-top"><span class="cert-ico"><i class="icon-badge" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Data Science Academy</p></div>
 						<h4 translate="no">Data Scientist Certified Professional (DSCP)</h4>
-						<p class="cert-date"><span data-i18n="train.issued">Issued</span> <span data-date="2022-04">Apr 2022</span> <span translate="no">·</span> <span data-i18n="train.validuntil">valid until</span> <span data-date="2024-04">Apr 2024</span></p>
+						<p class="cert-date"><span data-i18n="train.issued">Issued</span> <span data-date="2022-04">Apr 2022</span></p>
 						<p class="cert-link"><a href="pdf/dsa/20_certificado_dscp.pdf" data-i18n="train.view">View certificate</a></p>
 					</article>
 					<article class="cert-card" id="cert-fcd">
-						<div class="cert-top"><span class="cert-ico"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Data Science Academy</p></div>
+						<div class="cert-top"><span class="cert-ico"><i class="icon-education" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Data Science Academy</p></div>
 						<h4 data-i18n="train.fcd">Data Scientist Training</h4>
 						<p class="cert-date"><span data-i18n="train.completed">Completed</span> <span data-date="2021-10">Oct 2021</span></p>
 						<p class="cert-link"><a href="pdf/dsa/12_Certificado_FCD.pdf" data-i18n="train.view">View certificate</a></p>
 					</article>
 					<article class="cert-card" id="cert-faim">
-						<div class="cert-top"><span class="cert-ico"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Data Science Academy</p></div>
+						<div class="cert-top"><span class="cert-ico"><i class="icon-education" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Data Science Academy</p></div>
 						<h4 data-i18n="train.faim">Market Intelligence Analyst Training</h4>
 						<p class="cert-date"><span data-i18n="train.completed">Completed</span> <span data-date="2020-06">Jun 2020</span></p>
 						<p class="cert-link"><a href="pdf/dsa/10_Certificado_FAIM.pdf" data-i18n="train.view">View certificate</a></p>
@@ -938,20 +927,20 @@
 				</div>
 				<p id="case-status" class="sr-only" role="status" aria-live="polite"></p>
 
-				<div class="case-grid">
+				<div class="case-grid is-folded" id="work-more">
 <!--@region:cases-->
 					<article class="case-card" id="case-migration" data-cat="platform" data-num="01">
-						<div class="case-head"><span class="case-ico"><i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i></span></div>
+						<div class="case-head"><span class="case-ico"><i class="icon-cloud" aria-hidden="true"></i></span></div>
 						<p class="case-meta" translate="no">Flutter Brazil · Data Engineer</p>
 						<h3 data-i18n="case.migration.title">Databricks migration and lakehouse foundation</h3>
-						<div class="case-metric"><span class="case-metric-num" translate="no">~50</span><span class="case-metric-cap" data-i18n="case.metric.sources">sources unified in Databricks</span></div>
+						<div class="case-metric"><span class="case-metric-num" translate="no">~50</span><span class="case-metric-cap" data-i18n="case.metric.sources">sources unified in one platform</span></div>
 						<p class="case-block"><span class="case-label" data-i18n="case.label.context">Starting point</span><span data-i18n="case.migration.context">~50 sources, from Google Analytics 4 to internal systems and third-party tools, on a platform of tens of TB. Thousands of tables and thousands of jobs a day.</span></p>
 						<p class="case-block"><span class="case-label" data-i18n="case.label.what">What I did</span><span data-i18n="case.migration.what">Moved the whole data infrastructure to Databricks and built the company's dimensional model and data lake from scratch, with Python, dbt and a lot of SQL.</span></p>
 						<p class="case-block case-result"><span class="case-label" data-i18n="case.label.result">What changed</span><span data-i18n="case.migration.result">Pipelines went from hours to minutes, and the dimensional model and data lake are still what every area works with today.</span></p>
 						<ul class="case-stack" translate="no"><li>Databricks</li><li>dbt</li><li>Python</li><li>SQL</li><li>Google Analytics 4</li></ul>
 					</article>
 					<article class="case-card" id="case-finops" data-cat="reliability" data-num="02">
-						<div class="case-head"><span class="case-ico"><i class="fa-solid fa-coins" aria-hidden="true"></i></span></div>
+						<div class="case-head"><span class="case-ico"><i class="icon-dollar" aria-hidden="true"></i></span></div>
 						<p class="case-meta" translate="no">Flutter Brazil · Tech Lead</p>
 						<h3 data-i18n="case.finops.title">FinOps and cost forecasting</h3>
 						<div class="case-metric"><span class="case-metric-num" translate="no">&gt;50%</span><span class="case-metric-cap" data-i18n="case.metric.cost">lower data platform cost</span></div>
@@ -960,34 +949,8 @@
 						<p class="case-block case-result"><span class="case-label" data-i18n="case.label.result">What changed</span><span data-i18n="case.finops.result">More than 50% off the data platform's cost.</span></p>
 						<ul class="case-stack" translate="no"><li>Databricks</li><li>FinOps</li></ul>
 					</article>
-					<article class="case-card" id="case-unity" data-cat="governance" data-num="03">
-						<div class="case-head"><span class="case-ico"><i class="fa-solid fa-sitemap" aria-hidden="true"></i></span></div>
-						<p class="case-meta" translate="no">Flutter Brazil · Tech Lead</p>
-						<h3 data-i18n="case.unity.title">Unity Catalog by domain</h3>
-						<div class="case-metric"><span class="case-metric-num" translate="no">10+</span><span class="case-metric-cap" data-i18n="case.metric.domains">Unity Catalog domains</span></div>
-						<p class="case-block"><span class="case-label" data-i18n="case.label.what">What I did</span><span data-i18n="case.unity.what">Restructured Unity Catalog by domain and looked after data modeling and quality, so provisioning stays reliable and secure.</span></p>
-						<p class="case-block case-result"><span class="case-label" data-i18n="case.label.result">What changed</span><span data-i18n="case.unity.result">10+ domains, with architectures and ways of working defined for almost the whole data team.</span></p>
-						<ul class="case-stack" translate="no"><li>Databricks</li><li>Unity Catalog</li><li>dbt</li></ul>
-					</article>
-					<article class="case-card" id="case-obs" data-cat="reliability" data-num="04">
-						<div class="case-head"><span class="case-ico"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i></span></div>
-						<p class="case-meta" translate="no">Flutter Brazil · Tech Lead</p>
-						<h3 data-i18n="case.obs.title">Observability and near-real-time metrics</h3>
-						<p class="case-block"><span class="case-label" data-i18n="case.label.what">What I did</span><span data-i18n="case.obs.what">Built apps for platform observability and for business metrics monitoring, all near-real-time, along with decision-support dashboards.</span></p>
-						<p class="case-block case-result"><span class="case-label" data-i18n="case.label.result">What changed</span><span data-i18n="case.obs.result">Instant visibility into issues, with a latency of a few minutes.</span></p>
-						<ul class="case-stack" translate="no"><li>Streamlit</li><li>Metabase</li></ul>
-					</article>
-					<article class="case-card" id="case-cicd" data-cat="reliability" data-num="05">
-						<div class="case-head"><span class="case-ico"><i class="fa-solid fa-code-branch" aria-hidden="true"></i></span></div>
-						<p class="case-meta" translate="no">Flutter Brazil · Tech Lead</p>
-						<h3 data-i18n="case.cicd.title">CI/CD with trunk-based development</h3>
-						<div class="case-metric"><span class="case-metric-num" translate="no">~3x</span><span class="case-metric-cap" data-i18n="case.metric.incidents">fewer incidents and less rework</span></div>
-						<p class="case-block"><span class="case-label" data-i18n="case.label.what">What I did</span><span data-i18n="case.cicd.what">Rolled out CI/CD with trunk-based development and helped steer how the company's analytical modeling evolves with dbt.</span></p>
-						<p class="case-block case-result"><span class="case-label" data-i18n="case.label.result">What changed</span><span data-i18n="case.cicd.result">Incidents and rework dropped by ~3x.</span></p>
-						<ul class="case-stack" translate="no"><li>dbt</li><li>CI/CD</li><li>trunk-based development</li></ul>
-					</article>
-					<article class="case-card" id="case-clicksign" data-cat="platform" data-num="06">
-						<div class="case-head"><span class="case-ico"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></span></div>
+					<article class="case-card" id="case-clicksign" data-cat="platform" data-num="03">
+						<div class="case-head"><span class="case-ico"><i class="icon-network" aria-hidden="true"></i></span></div>
 						<p class="case-meta" translate="no">Clicksign · Data Architect</p>
 						<h3 data-i18n="case.ck.title">A data infrastructure from scratch at Clicksign</h3>
 						<div class="case-metric"><span class="case-metric-num" translate="no">100+</span><span class="case-metric-cap" data-i18n="case.metric.pipelines">Airflow pipelines</span></div>
@@ -995,8 +958,34 @@
 						<p class="case-block case-result"><span class="case-label" data-i18n="case.label.result">What changed</span><span data-i18n="case.ck.result">Quality control, governance, easier modeling, observability and simpler orchestration.</span></p>
 						<ul class="case-stack" translate="no"><li>Apache Airflow</li><li>dbt</li><li>Amazon Redshift</li><li>dimensional modeling</li></ul>
 					</article>
+					<article class="case-card" id="case-unity" data-cat="governance" data-num="04">
+						<div class="case-head"><span class="case-ico"><i class="icon-grid" aria-hidden="true"></i></span></div>
+						<p class="case-meta" translate="no">Flutter Brazil · Tech Lead</p>
+						<h3 data-i18n="case.unity.title">Unity Catalog by domain</h3>
+						<div class="case-metric"><span class="case-metric-num" translate="no">10+</span><span class="case-metric-cap" data-i18n="case.metric.domains">Unity Catalog domains</span></div>
+						<p class="case-block"><span class="case-label" data-i18n="case.label.what">What I did</span><span data-i18n="case.unity.what">Restructured Unity Catalog by domain and looked after data modeling and quality, so provisioning stays reliable and secure.</span></p>
+						<p class="case-block case-result"><span class="case-label" data-i18n="case.label.result">What changed</span><span data-i18n="case.unity.result">10+ domains, with architectures and ways of working defined for almost the whole data team.</span></p>
+						<ul class="case-stack" translate="no"><li>Databricks</li><li>Unity Catalog</li><li>dbt</li></ul>
+					</article>
+					<article class="case-card" id="case-obs" data-cat="reliability" data-num="05">
+						<div class="case-head"><span class="case-ico"><i class="icon-speed-o-meter" aria-hidden="true"></i></span></div>
+						<p class="case-meta" translate="no">Flutter Brazil · Tech Lead</p>
+						<h3 data-i18n="case.obs.title">Observability and near-real-time metrics</h3>
+						<p class="case-block"><span class="case-label" data-i18n="case.label.what">What I did</span><span data-i18n="case.obs.what">Built apps for platform observability and for business metrics monitoring, all near-real-time, along with decision-support dashboards.</span></p>
+						<p class="case-block case-result"><span class="case-label" data-i18n="case.label.result">What changed</span><span data-i18n="case.obs.result">Instant visibility into issues, with a latency of a few minutes.</span></p>
+						<ul class="case-stack" translate="no"><li>Streamlit</li><li>Metabase</li></ul>
+					</article>
+					<article class="case-card" id="case-cicd" data-cat="reliability" data-num="06">
+						<div class="case-head"><span class="case-ico"><i class="icon-share" aria-hidden="true"></i></span></div>
+						<p class="case-meta" translate="no">Flutter Brazil · Tech Lead</p>
+						<h3 data-i18n="case.cicd.title">CI/CD with trunk-based development</h3>
+						<div class="case-metric"><span class="case-metric-num" translate="no">~3x</span><span class="case-metric-cap" data-i18n="case.metric.incidents">fewer incidents and less rework</span></div>
+						<p class="case-block"><span class="case-label" data-i18n="case.label.what">What I did</span><span data-i18n="case.cicd.what">Rolled out CI/CD with trunk-based development and helped steer how the company's analytical modeling evolves with dbt.</span></p>
+						<p class="case-block case-result"><span class="case-label" data-i18n="case.label.result">What changed</span><span data-i18n="case.cicd.result">Incidents and rework dropped by ~3x.</span></p>
+						<ul class="case-stack" translate="no"><li>dbt</li><li>CI/CD</li><li>trunk-based development</li></ul>
+					</article>
 					<article class="case-card" id="case-protection" data-cat="governance" data-num="07">
-						<div class="case-head"><span class="case-ico"><i class="fa-solid fa-shield-alt" aria-hidden="true"></i></span></div>
+						<div class="case-head"><span class="case-ico"><i class="icon-shield" aria-hidden="true"></i></span></div>
 						<p class="case-meta" translate="no">Clicksign · Data Architect</p>
 						<h3 data-i18n="case.prot.title">Data protection and partner APIs</h3>
 						<div class="case-metric"><span class="case-metric-num" translate="no">10+</span><span class="case-metric-cap" data-i18n="case.metric.apis">APIs for partners and third parties</span></div>
@@ -1004,7 +993,7 @@
 						<ul class="case-stack" translate="no"><li>LGPD</li><li>GDPR</li><li>APIs</li><li>data governance</li></ul>
 					</article>
 					<article class="case-card" id="case-ltv" data-cat="analytics" data-num="08">
-						<div class="case-head"><span class="case-ico"><i class="fa-solid fa-chart-pie" aria-hidden="true"></i></span></div>
+						<div class="case-head"><span class="case-ico"><i class="icon-pie-chart" aria-hidden="true"></i></span></div>
 						<p class="case-meta" translate="no">Flutter Brazil · Tech Lead</p>
 						<h3 data-i18n="case.ltv.title">LTV and payback models</h3>
 						<p class="case-block"><span class="case-label" data-i18n="case.label.context">Starting point</span><span data-i18n="case.ltv.context">Questions the models answer: acquisition spend, return per customer and payback time, the most valuable segments, and whether campaigns and promotions paid off.</span></p>
@@ -1013,7 +1002,7 @@
 						<ul class="case-stack" translate="no"><li>dbt</li><li>SQL</li><li>Machine learning</li></ul>
 					</article>
 					<article class="case-card" id="case-genai" data-cat="analytics" data-num="09">
-						<div class="case-head"><span class="case-ico"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></span></div>
+						<div class="case-head"><span class="case-ico"><i class="icon-wand" aria-hidden="true"></i></span></div>
 						<p class="case-meta" translate="no">Flutter Brazil</p>
 						<h3 data-i18n="case.genai.title">Generative AI for day-to-day tools</h3>
 						<p class="case-block"><span class="case-label" data-i18n="case.label.where">Where I use it</span><span data-i18n="case.genai.context">Code in SQL, dbt and Python, documentation and data quality tests, natural-language assistants and queries, and data analysis.</span></p>
@@ -1021,8 +1010,9 @@
 						<p class="case-block case-result"><span class="case-label" data-i18n="case.label.result">What changed</span><span data-i18n="case.genai.result">Prototypes arrive faster, the team spends less time on repetitive work and more people build tools.</span></p>
 						<ul class="case-stack" translate="no"><li>Cursor</li><li>OpenAI</li><li>Anthropic</li><li>DeepSeek</li><li>GLM</li><li>Lovable</li><li>Streamlit</li><li>Metabase</li></ul>
 					</article>
+					<div class="case-group"><p class="case-group-label" data-i18n="case.group.label">Decisions and trade-offs</p><p class="case-group-text" data-i18n="case.group.text">The reasoning behind three platform decisions: what weighed, the trade-offs I managed and what I would change.</p></div>
 					<article class="case-card case-wide" id="case-why-databricks" data-cat="platform" data-num="10">
-						<div class="case-head"><span class="case-ico"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></span></div>
+						<div class="case-head"><span class="case-ico"><i class="icon-scales" aria-hidden="true"></i></span></div>
 						<p class="case-meta" translate="no">Flutter Brazil</p>
 						<h3 data-i18n="case.why.title">Why Databricks, and what I would change</h3>
 						<div class="case-cols">
@@ -1034,7 +1024,7 @@
 						<ul class="case-stack" translate="no"><li>Databricks</li><li>Unity Catalog</li><li>FinOps</li></ul>
 					</article>
 					<article class="case-card case-wide" id="case-finops-decision" data-cat="reliability" data-num="11">
-						<div class="case-head"><span class="case-ico"><i class="fa-solid fa-sliders" aria-hidden="true"></i></span></div>
+						<div class="case-head"><span class="case-ico"><i class="icon-sliders" aria-hidden="true"></i></span></div>
 						<p class="case-meta" translate="no">Flutter Brazil · Tech Lead</p>
 						<h3 data-i18n="case.finopsdec.title">FinOps: priorities and trade-offs</h3>
 						<div class="case-cols">
@@ -1046,7 +1036,7 @@
 						<ul class="case-stack" translate="no"><li>Databricks</li><li>FinOps</li></ul>
 					</article>
 					<article class="case-card case-wide" id="case-uc-decision" data-cat="governance" data-num="12">
-						<div class="case-head"><span class="case-ico"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></span></div>
+						<div class="case-head"><span class="case-ico"><i class="icon-layers" aria-hidden="true"></i></span></div>
 						<p class="case-meta" translate="no">Flutter Brazil · Tech Lead</p>
 						<h3 data-i18n="case.ucdec.title">Unity Catalog by domain: reasons and trade-offs</h3>
 						<div class="case-cols">
@@ -1059,6 +1049,7 @@
 					</article>
 					<!--@end:cases-->
 				</div> <!-- /case-grid -->
+				<p class="more-wrap"><button type="button" class="more-toggle" data-fold-toggle="work-more" data-fold-item="work_more" aria-expanded="false" aria-controls="work-more"><span class="when-closed" data-i18n="work.more">Show all 12 case studies</span><span class="when-open" data-i18n="work.less">Show fewer case studies</span></button></p>
 
 			</div>
 		</div>
@@ -1507,15 +1498,15 @@
 					<span class="icon"><i class="icon-cube" aria-hidden="true"></i></span>
 					<div class="service-content">
 						<h3 data-i18n="service.arch.title">Data architecture &amp; modeling</h3>
-						<p class="desc" data-i18n="service.arch.desc">Working out how the data should be structured before any code exists: dimensional models, data lakes and lakehouse foundations.</p>
+						<p class="desc" data-i18n="service.arch.desc">Working out how the data should be structured before any code exists: dimensional models, warehouses, data lakes and lakehouse foundations.</p>
 					</div>
 				</div>
 
 				<div class="service">
 					<span class="icon"><i class="icon-cloud" aria-hidden="true"></i></span>
 					<div class="service-content">
-						<h3 data-i18n="service.migration.title">Platform migration &amp; lakehouse</h3>
-						<p class="desc" data-i18n="service.migration.desc">Bringing many sources into a single Databricks platform. For me that was ~50 of them, and pipelines that went from hours to minutes.</p>
+						<h3 data-i18n="service.migration.title">Data platforms: design &amp; migration</h3>
+						<p class="desc" data-i18n="service.migration.desc">Designing data platforms and bringing many sources into one: warehouses with dbt and Airflow, lakehouses, and a ~50-source migration that took pipelines from hours to minutes.</p>
 					</div>
 				</div>
 
@@ -1531,7 +1522,7 @@
 					<span class="icon"><i class="icon-padlock" aria-hidden="true"></i></span>
 					<div class="service-content">
 						<h3 data-i18n="service.gov.title">Governance, quality &amp; LGPD</h3>
-						<p class="desc" data-i18n="service.gov.desc">Unity Catalog organized by domain, data quality, and data protection processes that follow LGPD and GDPR.</p>
+						<p class="desc" data-i18n="service.gov.desc">Governance and data catalogs (AWS Glue Data Catalog, Unity Catalog, Hive Metastore and open-source catalogs), data quality, and data protection processes that follow LGPD and GDPR.</p>
 					</div>
 				</div>
 
@@ -1547,7 +1538,7 @@
 					<span class="icon"><i class="icon-settings" aria-hidden="true"></i></span>
 					<div class="service-content">
 						<h3 data-i18n="service.eng.title">Engineering practices</h3>
-						<p class="desc" data-i18n="service.eng.desc">CI/CD with trunk-based development, analytical modeling with dbt, and provisioning that stays reliable and secure.</p>
+						<p class="desc" data-i18n="service.eng.desc">Pipelines and orchestration with Airflow and dbt, CI/CD with trunk-based development, and provisioning that stays reliable and secure.</p>
 					</div>
 				</div>
 
@@ -1599,7 +1590,7 @@
 					</article>
 					<article class="contact-path">
 						<h3 data-i18n="contact.project.title">Projects</h3>
-						<p data-i18n="contact.project.desc">Architecture reviews, Databricks migrations, FinOps, data governance or any other data challenge.</p>
+						<p data-i18n="contact.project.desc">Architecture reviews, platform migrations, FinOps, data governance or any other data challenge.</p>
 						<a class="button button-contact" href="mailto:franklinfs390@gmail.com?subject=Project" data-href-en="mailto:franklinfs390@gmail.com?subject=Project" data-href-pt="mailto:franklinfs390@gmail.com?subject=Projeto" data-href-es="mailto:franklinfs390@gmail.com?subject=Proyecto" data-contact="projects" data-i18n="contact.project.btn">Talk about a project</a>
 					</article>
 				</div>

@@ -9,6 +9,7 @@
     "sync:check": "node gen-regions.mjs --check && node sync-html.mjs --check",
     "build:cv": "node build-cv.mjs",
     "measure:design": "node design-baseline.mjs",
+    "snap:pixels": "node pixel-snap.mjs",
     "build:fa": "node build-fa-subset.mjs",
     "build:pages": "node build-lang-pages.mjs",
     "build:fonts": "node build-fonts.mjs",

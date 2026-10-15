@@ -59,13 +59,20 @@ export async function run(ctx) {
 
   // ---------------------------------------------------------------- dynamic
   {
+    // the decorative backgrounds of the hero and of "Where I can help" are ONE small SVG (the old photos weighed 33 KB and 196 KB)
+    const svg = path.join(ROOT, 'images/intro-bg.svg');
+    const size = fs.existsSync(svg) ? fs.statSync(svg).size : -1;
+    const css = read('css/main.css');
+    const uses = (css.match(/url\(\.\.\/images\/intro-bg\.svg\)/g) || []).length;
+    const photos = ['images/bg.jpg', 'images/intro-bg.webp', 'images/intro-bg.jpg'].filter((f) => fs.existsSync(path.join(ROOT, f)));
+    g.check(size > 0 && size <= 12 * 1024 && uses === 2 && photos.length === 0 && !/bg\.jpg|intro-bg\.(webp|jpg)/.test(css), `the hero and "Where I can help" share one SVG background of ${(size / 1024).toFixed(1)} KB (budget 12 KB); no photo background is left`, JSON.stringify({ size, uses, photos }));
     const s = await env.open('en', { width: 390 });
-    const before = s.logs.requests.filter((u) => /images\/bg\.jpg/.test(u)).length;
+    const first = s.logs.requests.filter((u) => /intro-bg\.svg/.test(u)).length;
     await s.page.evaluate(() => document.querySelector('#services').scrollIntoView());
-    await s.page.waitForTimeout(1200);
-    const after = await s.page.evaluate(() => ({ bg: getComputedStyle(document.querySelector('#services')).backgroundImage, ready: document.querySelector('#services').classList.contains('bg-ready') }));
-    const got = s.logs.requests.filter((u) => /images\/bg\.jpg/.test(u)).length;
-    g.check(before === 0 && got >= 1 && /bg\.jpg/.test(after.bg) && after.ready, 'the decorative picture of "Where I can help" is not part of the first load and arrives when the section comes near (196 KB saved on the way in)', JSON.stringify({ before, got, after }));
+    await s.page.waitForTimeout(800);
+    const total = s.logs.requests.filter((u) => /intro-bg\.svg/.test(u)).length;
+    const bgs = await s.page.evaluate(() => ['#intro', '#services'].map((q) => getComputedStyle(document.querySelector(q)).backgroundImage));
+    g.check(first === 1 && total === 1 && bgs.every((b) => /intro-bg\.svg/.test(b)), 'the SVG is fetched once with the first screen and reused by "Where I can help" (cached)', JSON.stringify({ first, total, bgs }));
     await s.close();
   }
   {
@@ -114,7 +121,7 @@ export async function run(ctx) {
     // a download that never finishes (here: the hero picture, held for 12 s) must not keep the cover over the page
     const context = await env.browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
     await context.route(/googletagmanager|google-analytics/, (r) => r.abort());
-    await context.route(/intro-bg\.webp/, async (route) => { await new Promise((r) => setTimeout(r, 12000)); try { await route.continue(); } catch (e) { /* context closed */ } });
+    await context.route(/intro-bg\.svg/, async (route) => { await new Promise((r) => setTimeout(r, 12000)); try { await route.continue(); } catch (e) { /* context closed */ } });
     const page = await context.newPage();
     const t0 = Date.now();
     page.goto(`${env.base}/?lang=en`, { waitUntil: 'commit' }).catch(() => {});

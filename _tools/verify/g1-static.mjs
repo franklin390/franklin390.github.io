@@ -63,7 +63,7 @@ export async function run() {
 
   // CSS url() / @import references
   const cssMissing = [];
-  for (const css of ['base.css', 'main.css', 'vendor.css', 'fonts.css', 'staff.css', 'micons/micons.css', 'font-awesome-6/css/all.css', 'font-awesome-6/css/subset.css']) {
+  for (const css of ['base.css', 'main.css', 'vendor.css', 'fonts.css', 'staff.css', 'micons/micons.css', 'font-awesome-6/css/subset.css']) {
     const file = path.join(ROOT, 'css', css);
     if (!fs.existsSync(file)) { cssMissing.push(`css/${css} (file)`); continue; }
     const txt = fs.readFileSync(file, 'utf8');

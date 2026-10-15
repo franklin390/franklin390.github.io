@@ -96,5 +96,16 @@ export async function run() {
   const knows = ld.flatMap((o) => o.knowsAbout || []);
   const offLd = knows.filter((k) => !known(k) && !(k.split(/[\s/&,-]+/).filter((w) => w.length > 3).every((w) => known(w))));
   g.check(ld.length > 0 && offLd.length === 0, `JSON-LD knowsAbout (${knows.length} topics) is backed by the export`, offLd.join(', '));
+
+  // ---- 5) POSITIONING: the headline names no single vendor. Databricks is PROOF (cases, impact, experience, skills), never the identity;
+  //         the owner asked for a profile that reads as range: warehouses and lakehouses, batch and streaming, ML to generative AI.
+  const HEADLINE_SITE = ['hero.tagline', 'hero.role2', 'hero.role3', 'meta.description', 'about.info.focus.value'];
+  const headline = [...site.filter((u) => HEADLINE_SITE.includes(u.key)), ...cv.filter((u) => /^(summary|tagline)$/.test(u.key))];
+  const vendorHits = headline.filter((u) => /databricks/i.test(u.text)).map((u) => `${u.lang} ${u.key}`);
+  g.check(headline.length >= 5 * 3 && vendorHits.length === 0, `the headline copy (hero, description, focus line, CV tagline and summary: ${headline.length} texts) does not name Databricks: it is proof, kept in cases, impact, experience and skills`, vendorHits.join(', '));
+  const tag = Object.fromEntries(LANGS.map((l) => [l, (site.find((u) => u.lang === l && u.key === 'hero.tagline') || {}).text || '']));
+  const range = { en: [/warehouse/i, /lakehouse/i, /machine learning|\bML\b/i, /generative AI/i], pt: [/warehouse/i, /lakehouse/i, /\bML\b|machine learning/i, /IA generativa/i], es: [/warehouse/i, /lakehouse/i, /\bML\b|machine learning/i, /IA generativa/i] };
+  const thin = LANGS.filter((l) => !range[l].every((re) => re.test(tag[l])));
+  g.check(thin.length === 0, 'the tagline shows range in every language: warehouse and lakehouse, classic ML and generative AI', thin.map((l) => `${l}: ${tag[l]}`).join('\n'));
   return g;
 }

@@ -302,8 +302,9 @@
       "OpenAI",
       "Anthropic",
       "DeepSeek",
-      "GLM"
-    ],
+      "GLM",
+      "AWS Glue Data Catalog",
+      "Hive Metastore"],
     "_ownerConfirmedNote": "Not in the LinkedIn export: confirmed by the owner on 2026-10-14 as tools used in production on the data platform (see claim stack-confirmed). G3 allows these as skill tags; G0 does not look for them in the PDF."
   },
   "claims": [
@@ -1009,6 +1010,30 @@
       ]
     },
     {
+      "id": "catalogs-confirmed",
+      "source": "owner",
+      "confirmedOn": "2026-10-15",
+      "note": "Confirmed by the owner in chat (not in the LinkedIn export, where Glue and Hive appear only as course content): he worked with the AWS Glue Data Catalog at Flutter Brazil (no role stated), with Hive Metastore, and with open-source data catalogs. For the open-source ones he picked the group 'DataHub, OpenMetadata or Amundsen' without naming one: say 'open-source catalogs' and NEVER name any of the three (forbidden pattern). He also said 'other solutions' without naming them: do not invent any. Where he used Hive Metastore and the open-source catalogs was not stated: do not tie them to an employer or a role.",
+      "en": [
+        "AWS Glue Data Catalog",
+        "Hive Metastore",
+        "open-source catalogs"
+      ],
+      "pt": [
+        "AWS Glue Data Catalog",
+        "Hive Metastore",
+        "catálogos open source"
+      ],
+      "es": [
+        "AWS Glue Data Catalog",
+        "Hive Metastore",
+        "catálogos open source"
+      ],
+      "where": [
+        "site"
+      ]
+    },
+    {
       "id": "gdpr-alignment",
       "source": "owner",
       "confirmedOn": "2026-10-14",
@@ -1096,11 +1121,6 @@
         "why": "date of birth must not be public (user decision)"
       },
       {
-        "re": "da Silva",
-        "scope": "all",
-        "why": "full legal name must not be public (user decision)"
-      },
-      {
         "re": "S[ãa]o Paulo",
         "scope": "all",
         "why": "no city; location is 'Brazil · Remote/Global' (user decision)"
@@ -1164,6 +1184,11 @@
         "re": "\\bSOC\\s?2\\b|\\bISO\\s?/?\\s?(?:IEC\\s?)?27001\\b|\\bGDPR[\\s-]+(?:compliant|certified|certificad[oa])",
         "scope": "all",
         "why": "the owner confirmed only that the data protection processes follow GDPR (besides LGPD): no SOC 2, no ISO 27001, and no 'GDPR compliant/certified' (that would be a certification claim)"
+      },
+      {
+        "re": "\\b(?:DataHub|OpenMetadata|Amundsen)\\b",
+        "scope": "all",
+        "why": "the owner confirmed open-source data catalogs as a group without naming one: write 'open-source catalogs', never a product name"
       }
     ]
   }

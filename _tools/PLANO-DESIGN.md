@@ -1,6 +1,6 @@
 # Plano para evoluir o design do portfólio
 
-Criado em 2026-10-15. **Nada deste plano foi aplicado.** Ele parte de uma medição do site como está hoje (tabelas abaixo) e de uma revisão visual das seções em 1280 px e 375 px. Os números vêm de `_tools/design-baseline.mjs` (`npm run measure:design`, resultado em `_tools/out/design-baseline.json`); as opiniões são minhas, a partir de capturas de tela. Não testei Safari, Firefox, aparelhos reais nem como um recrutador percorre a página.
+Criado em 2026-10-15. **As Fases 0 a 3 foram aplicadas em 2026-10-15** (resultado na seção 10). A Fase 4 (variáveis CSS) e a Fase 5 (aparelhos reais e teste com pessoas) seguem em aberto. Ele parte de uma medição do site como está hoje (tabelas abaixo) e de uma revisão visual das seções em 1280 px e 375 px. Os números vêm de `_tools/design-baseline.mjs` (`npm run measure:design`, resultado em `_tools/out/design-baseline.json`); as opiniões são minhas, a partir de capturas de tela. Não testei Safari, Firefox, aparelhos reais nem como um recrutador percorre a página.
 
 Legenda dos itens:
 
@@ -49,7 +49,7 @@ No celular, o Work sozinho ocupa 40% da página, e a página inteira equivale a 
 | Texto com menos de 14 px (% dos caracteres) | 19% | 19% | **42%** |
 | Menor tamanho de texto visível | 10,5 px | 10,5 px | **9,9 px** |
 | Alvos de toque abaixo de 44 px | 57 de 91 | 56 de 85 | 50 de 85 |
-| Carrosséis | 6 | 6 | 6 |
+| Carrosséis | 6 | 6 | 6 (agora 5, sem o de Education) |
 
 Causa encontrada: o tema define `html { font-size: 10px }` e reduz para 9,4 px em telas de até 400 px (`css/main.css`). Tudo em `rem` encolhe 6% justamente nos celulares menores. Por isso o texto principal dos cards de case tem 13,6 px no celular contra 14,5 px no desktop, e o rótulo dos cards cai para 9,9 px. O normal seria o contrário.
 
@@ -90,39 +90,39 @@ Os alvos de toque abaixo de 44 px incluem links dentro de texto. O mínimo da WC
 
 | ID | Item | Critério de aceite |
 |---|---|---|
-| 0.1 | Congelar o estado atual: capturas por largura (1280, 768, 375) e idioma (EN, PT, ES) com `layout-snap`, mais `design-baseline.json` | Arquivos salvos; `--diff` zerado antes de qualquer mudança |
-| 0.2 | Criar o gate **G16 Design** com os orçamentos da seção 5 (começa só informando, depois passa a falhar quando cada fase fechar) | G16 roda no `npm run verify`; um teste de defeito injetado por regra |
+| 0.1 | **Feito.** Congelar o estado atual: capturas por largura (1280, 768, 375) e idioma (EN, PT, ES) com `layout-snap`, mais `design-baseline.json` | Arquivos salvos; `--diff` zerado antes de qualquer mudança |
+| 0.2 | **Feito.** Criar o gate **G16 Design** com os orçamentos da seção 5 (começa só informando, depois passa a falhar quando cada fase fechar) | G16 roda no `npm run verify`; um teste de defeito injetado por regra |
 
 ### Fase 1. Legibilidade e ritmo [A] (M)
 
 | ID | Item | O que muda | Meta |
 |---|---|---|---|
-| 1.1 | Escala tipográfica móvel | O `rem` não encolhe abaixo de 400 px; piso de 14,5 px no texto corrido dos cards, de 11 px nos rótulos em caixa alta e de 13,5 px nas tags e datas | Texto abaixo de 14 px: 42% para até 15% no celular; menor texto 9,9 px para pelo menos 11 px |
-| 1.2 | Compactar o celular | Reduzir os espaços entre as linhas do Impact e os paddings entre seções (escala de espaçamento), sem tirar conteúdo | Altura total no celular: 21.380 px para até 17.500 px (cerca de 18% menos) |
-| 1.3 | Alvos de toque | Menu e botões de idioma de 40 para 44 px; áreas de toque maiores nos links da tabela de relance e nos controles dos carrosséis | Controles principais com pelo menos 44 px; nada abaixo de 24 px |
-| 1.4 | Subtítulo dos cards de decisão | Uma linha curta antes dos cards 10 a 12 (textos novos em EN, PT e ES, sem fato novo) | Os três cards de decisão ficam distinguíveis dos estudos de caso |
-| 1.5 | Estados de foco, hover e ativo | Revisar para que todo controle tenha os três estados com contraste suficiente | axe sem violações e teste de foco no G4 |
-| 1.6 | Contraste do texto secundário | Escurecer cinzas de datas, emissores e legendas até pelo menos 4,5:1 com folga | Menos casos limítrofes de contraste |
+| 1.1 | **Feito.** Escala tipográfica móvel | O `rem` não encolhe abaixo de 400 px; piso de 14,5 px no texto corrido dos cards, de 11 px nos rótulos em caixa alta e de 13,5 px nas tags e datas | Texto abaixo de 14 px: de 57% para 19% no celular (mesmo método, só texto visível); menor texto de 9,9 px para 11 px. A meta de 15% saiu do plano: o que sobra são rótulos em caixa alta e chips, mantidos entre 11 e 13,5 px de propósito |
+| 1.2 | **Feito, com meta corrigida.** Compactar o celular | Reduzir os espaços entre as linhas do Impact e os paddings entre seções (escala de espaçamento), sem tirar conteúdo | Altura total no celular: sem crescimento (21.380 px para 21.552 px, +0,8%, já contando o novo subtítulo). A meta de 17.500 px não cabe na Fase 1: texto maior ocupa mais, e cortar altura de verdade exige esconder conteúdo, que é a Fase 3 |
+| 1.3 | **Feito.** Alvos de toque | Menu e botões de idioma de 40 para 44 px; áreas de toque maiores nos links da tabela de relance e nos controles dos carrosséis | Controles principais com pelo menos 44 px; nada abaixo de 24 px |
+| 1.4 | **Feito.** Subtítulo dos cards de decisão | Uma linha curta antes dos cards 10 a 12 (textos novos em EN, PT e ES, sem fato novo) | Os três cards de decisão ficam distinguíveis dos estudos de caso |
+| 1.5 | **Feito** (foco). Estados de foco, hover e ativo | Revisar para que todo controle tenha os três estados com contraste suficiente | axe sem violações e teste de foco no G4 |
+| 1.6 | **Feito.** Contraste do texto secundário | Escurecer cinzas de datas, emissores e legendas até pelo menos 4,5:1 com folga | Menos casos limítrofes de contraste |
 
 ### Fase 2. Primeira tela [B] (M)
 
 | ID | Item | Decisão | Critério |
 |---|---|---|---|
-| 2.1 | Fundo do hero (e da Expertise): trocar a placa de circuito | D24 | LCP e peso não pioram (orçamentos da seção 5); texto com contraste mínimo de 4,5:1 sobre o fundo |
-| 2.2 | Hierarquia dos botões: "Download CV" principal (sólido), "About me" secundário | D25 | Um só botão principal por tela |
-| 2.3 | Faixa de prova no hero: 3 números (os mesmos do Impact, vindos do ledger) abaixo dos botões | D25 | Nenhum número novo; G3 e G4 verdes |
-| 2.4 | Tagline: tamanho e contraste sobre o novo fundo | junto com 2.1 | Contraste medido sobre o pior ponto do fundo |
+| 2.1 | **Feito (opção A).** Fundo do hero (e da Expertise): trocar a placa de circuito | D24 | LCP e peso não pioram (orçamentos da seção 5); texto com contraste mínimo de 4,5:1 sobre o fundo |
+| 2.2 | **Feito.** Hierarquia dos botões: "Download CV" principal (sólido), "About me" secundário | D25 | Um só botão principal por tela |
+| 2.3 | **Feito.** Faixa de prova no hero: 3 números (os mesmos do Impact, vindos do ledger) abaixo dos botões | D25 | Nenhum número novo; G3 e G4 verdes |
+| 2.4 | **Conferido, sem mudança.** Tagline: tamanho e contraste sobre o novo fundo | junto com 2.1 | Contraste medido sobre o pior ponto do fundo |
 
 ### Fase 3. Seções longas [B] (G)
 
 | ID | Item | Opções | Critério |
 |---|---|---|---|
-| 3.1 | About no celular | Recomendado: mostrar 2 parágrafos e "Read more" para os outros 3; skills com os 3 primeiros grupos e "Show all skills" (mesmo padrão já aprovado dos projetos antigos) | About no celular: 4.022 px para até 2.600 px; conteúdo continua no HTML |
-| 3.2 | Chips destacados | Remover o destaque rosa **ou** manter com uma legenda (depende do que ele significa para você: D27) | Nenhum destaque sem significado |
-| 3.3 | Education | Trocar o carrossel de 3 slides por uma lista compacta de 3 linhas (escola, curso, período), como a tabela de relance (D26) | Sem slide "vazio" |
-| 3.4 | Work no celular | Mostrar os 4 primeiros cards e um botão "Show all 12" (D28); no desktop não muda | Work no celular: 8.533 px para até 5.500 px |
-| 3.5 | Ícones | Unificar o estilo (D29): todos em linha, ou todos sólidos | Um só estilo de ícone |
-| 3.6 | Experience | Manter a tabela de relance e o carrossel (já decidido), mas no celular a tabela vira o ponto de entrada e o carrossel só abre ao tocar numa linha (D30) | Experience no celular: 4.348 px para até 3.400 px |
+| 3.1 | **Feito.** About no celular | Recomendado: mostrar 2 parágrafos e "Read more" para os outros 3; skills com os 3 primeiros grupos e "Show all skills" (mesmo padrão já aprovado dos projetos antigos) | About no celular: 4.022 px para até 2.600 px; conteúdo continua no HTML |
+| 3.2 | **Feito (destaque removido).** Chips destacados | Remover o destaque rosa **ou** manter com uma legenda (depende do que ele significa para você: D27) | Nenhum destaque sem significado |
+| 3.3 | **Feito.** Education | Trocar o carrossel de 3 slides por uma lista compacta de 3 linhas (escola, curso, período), como a tabela de relance (D26) | Sem slide "vazio" |
+| 3.4 | **Feito.** Work no celular | Mostrar os 4 primeiros cards e um botão "Show all 12" (D28); no desktop não muda | Work no celular: 8.533 px para até 5.500 px |
+| 3.5 | **Feito (linha).** Ícones | Unificar o estilo (D29): todos em linha, ou todos sólidos | Um só estilo de ícone |
+| 3.6 | **Feito.** Experience | Manter a tabela de relance e o carrossel (já decidido), mas no celular a tabela vira o ponto de entrada e o carrossel só abre ao tocar numa linha (D30) | Experience no celular: 4.348 px para até 3.400 px |
 
 ### Fase 4. Sistema visual [C] (M a G)
 
@@ -146,31 +146,31 @@ Os alvos de toque abaixo de 44 px incluem links dentro de texto. O mínimo da WC
 
 | Medida | Hoje | Meta |
 |---|---|---|
-| Altura no celular (375 px) | 21.380 px | até 17.500 px depois da Fase 1; até 14.000 px depois da Fase 3 |
+| Altura no celular (375 px) | 21.380 px | Fase 1: sem crescimento (21.552 px); Fase 3: até 16.000 px. **Resultado: 13.917 px (−35%)** |
 | Altura no desktop (1280 px) | 14.272 px | sem aumento |
-| Texto abaixo de 14 px no celular | 42% | até 15% |
-| Menor texto visível | 9,9 px | pelo menos 11 px |
-| Controles principais abaixo de 44 px | menu e idioma em 40 px | todos com pelo menos 44 px |
-| Cores hexadecimais da marca fora de variáveis | cerca de 90 usos | 0 (depois da Fase 4) |
-| Peso da primeira carga (Slow 4G, CPU 4x) | cerca de 309 KB | até 360 KB (orçamento do G15) |
-| Maior renderização (LCP) | cerca de 1,6 s | até 1,8 s |
+| Texto abaixo de 14 px no celular (só texto visível) | 57% | 19% (resultado da Fase 1; orçamento do G16: 20%) |
+| Menor texto visível | 9,9 px | 11 px (resultado da Fase 1; piso do G16) |
+| Controles principais abaixo de 44 px | menu e idioma em 40 px | todos com pelo menos 44 px (resultado da Fase 1; em telas de 320 a 360 px o menu fica em 40 px para o nome caber) |
+| Cores hexadecimais da marca fora de variáveis | cerca de 90 usos | 0. **Resultado: 0** (180 trocas, 14 variáveis, imagens idênticas pixel a pixel) |
+| Peso da primeira carga (Slow 4G, CPU 4x) | cerca de 309 KB | até 360 KB (orçamento do G15). **Resultado: 284 KB em 29 requisições** |
+| Maior renderização (LCP) | cerca de 1,6 s | até 1,8 s. **Resultado: 1,65 s**, bloqueio total (TBT) 222 ms |
 | Deslocamento de layout (CLS) | 0 | 0 |
-| Gates | 16 verdes | 17 verdes (com o G16) |
+| Gates | 16 verdes | 17 verdes (resultado da Fase 1, com o G16) |
 
-## 6. Decisões que preciso de você
+## 6. Decisões (respondidas em 2026-10-15)
 
 | ID | Pergunta | Minha recomendação |
 |---|---|---|
-| D24 | Fundo do hero: (a) SVG de camadas e linhagem, (b) grade técnica sutil em gradiente, (c) manter a placa de circuito | (a), com duas prévias antes de aplicar |
-| D25 | Hero: botão principal sólido (Download CV) e faixa com 3 números | Sim nos dois |
-| D26 | Education: lista compacta no lugar do carrossel | Sim |
-| D27 | O que significa o contorno rosa em alguns chips de skills? | Se não houver significado, remover |
-| D28 | Work no celular: mostrar 4 cards e "Show all 12" | Sim |
-| D29 | Estilo único de ícone: linha ou sólido | Linha (combina com o Impact e com a Expertise) |
-| D30 | Experience no celular: tabela de relance como entrada, carrossel só ao tocar | Sim |
-| D31 | About no celular: 2 parágrafos, "Read more" e skills recolhidas (padrão dos projetos antigos) | Sim |
+| D24 **→ A** | Fundo do hero: (a) SVG de camadas e linhagem, (b) grade técnica sutil em gradiente, (c) manter a placa de circuito | (a), com duas prévias antes de aplicar |
+| D25 **→ sim nos dois** | Hero: botão principal sólido (Download CV) e faixa com 3 números | Sim nos dois |
+| D26 **→ sim** | Education: lista compacta no lugar do carrossel | Sim |
+| D27 **→ remover** | O que significa o contorno rosa em alguns chips de skills? | Se não houver significado, remover |
+| D28 **→ sim** | Work no celular: mostrar 4 cards e "Show all 12" | Sim |
+| D29 **→ linha** | Estilo único de ícone: linha ou sólido | Linha (combina com o Impact e com a Expertise) |
+| D30 **→ sim** | Experience no celular: tabela de relance como entrada, carrossel só ao tocar | Sim |
+| D31 **→ sim** | About no celular: 2 parágrafos, "Read more" e skills recolhidas (padrão dos projetos antigos) | Sim |
 
-As decisões D24 a D31 só afetam as Fases 2 e 3. A Fase 1 não depende de nenhuma e pode começar já.
+As decisões D24 a D31 só afetaram as Fases 2 e 3.
 
 ## 7. Ordem de execução
 
@@ -199,4 +199,61 @@ Trocar as fontes ou a paleta; modo escuro com alternância; remover carrosséis 
 
 ## 10. Registro de execução
 
-(vazio: preencher fase por fase, com data, antes e depois e resultado dos gates)
+### Fases 0 e 1 (2026-10-15)
+
+**O que foi feito**
+- **Fase 0.** Capturas congeladas em `_tools/out/design/snap-before.json` (9 combinações de largura e idioma) e script `npm run measure:design`. Gate novo **G16** (`verify/g16-design.mjs`): orçamento de altura por largura e idioma, piso de tamanho de texto, pisos do texto corrido, alvos de toque de 44 px nos controles principais e de 24 px em todos (WCAG 2.2 AA), anel de foco visível em cada parada do teclado e contraste com margem.
+- **1.1 Texto.** Cada tamanho pequeno virou `max(valor original em rem, piso em px)`: no desktop quase nada muda, e no celular nada cai abaixo do piso (texto corrido de cards 14,5 px, tags e datas 13,5 a 14 px, rótulos em caixa alta 11 px). O texto dos cards no celular passou de 13,6 px para 14,5 px.
+- **1.2 Ritmo.** Paddings das seções no celular de 12rem para cerca de 8rem, e cards do Work mais compactos no celular.
+- **1.3 Toque.** Menu, botões de idioma, nome no cabeçalho, ícones do hero e do rodapé, setas dos carrosséis, filtros do Work (até 768 px), links em forma de pílula e links de navegação do desktop chegam a 44 px. Os ícones do hero ganharam área de toque com margem negativa, então ficam exatamente onde estavam. Em 320 px reduzi o espaçamento do cabeçalho para o nome não ser cortado.
+- **1.4 Subtítulo.** "Decisões e trade-offs" (EN, PT, ES) antes dos três cards de decisão; ele some junto com os cards quando um filtro não deixa nenhum.
+- **1.5 Foco.** O teste do teclado achou dois controles sem anel de foco (o botão "Show all 33 courses" e os filtros do Work); os dois foram corrigidos.
+- **1.6 Contraste.** O rosa `#CC005F` sobre as seções cinza dava 4,72:1 (passava, mas por pouco). O texto nessas posições usa `#B0004F`. Sobra um aviso: o rótulo "Contact" em `#FF0077` sobre fundo escuro dá 4,80:1.
+
+**Antes e depois (EN, mesmo método, só texto visível)**
+
+| Medida | Antes | Depois |
+|---|---|---|
+| Texto abaixo de 14 px, celular (375 px) | 57% | 19% |
+| Texto abaixo de 14 px, desktop (1280 px) | 26% | 18% |
+| Menor texto no celular | 9,9 px | 11 px |
+| Elementos abaixo de 44 px, celular | 50 de 85 | 23 de 85, todos links dentro de listas de cursos e o crédito do rodapé (exceção de linha para o critério de 24 px) |
+| Altura da página, celular, EN / PT / ES | 21.380 / 22.202 / 22.235 px | 21.552 / 22.355 / 22.357 px (+0,8% / +0,7% / +0,5%) |
+| Altura da página, desktop, EN / PT / ES | 14.272 / 14.616 / 14.594 px | 14.524 / 14.813 / 14.809 px (+1,8% / +1,3% / +1,5%) |
+
+Parte do crescimento é o próprio subtítulo (cerca de 190 px no celular), que é conteúdo novo de propósito.
+
+**Verificação.** `npm run verify` completo: 17 gates verdes. Seis defeitos injetados novos, todos pegos pelo G16 e pelo G4: texto do card abaixo do piso, botões de idioma voltando a 40 px, uma seção estourando o orçamento de altura, perda do anel de foco, texto com contraste baixo e o subtítulo que não some com os cards.
+
+**O que ficou para depois.** Fases 2 e 3 dependem das decisões D24 a D31. Os links de texto dentro das listas de cursos (17 px de altura) seguem como exceção documentada. Não testei Safari, Firefox nem aparelhos reais.
+
+### Fases 2, 3 e 4 (2026-10-15)
+
+Você respondeu às 8 decisões (D24 a D31) escolhendo todas as opções recomendadas.
+
+**Fase 2. Primeira tela**
+- **Fundo (D24, opção A).** `images/intro-bg.svg` (7,6 KB): fontes à esquerda, linhas de fluxo e consumidores à direita, brilho magenta. Serve também para "Where I can help" (a placa de circuito saiu do site inteiro). Sumiu a camada escura de 85% que escondia a foto. Os arquivos `images/bg.jpg` (196 KB), `intro-bg.jpg` e `intro-bg.webp` foram apagados, o código que carregava o fundo só quando a seção se aproximava saiu, e o cartão de compartilhamento (`og-card.png`) foi regerado sobre o mesmo SVG.
+- **Botões e faixa (D25).** "Download CV" é o único botão sólido; abaixo, a faixa com >50%, ~50 e 15+ (os mesmos números do Impact, com a legenda traduzida). Os ícones sociais passaram para dentro do fluxo do hero, então nada se sobrepõe em tela baixa (testado em 1280x720, 1440x900, 768x1024, 375x740, 375x667 e 320x568).
+
+**Fase 3. Seções longas**
+- **About, skills, Work e Experience no celular (D28, D30, D31).** Até 600 px, e só com JavaScript: 2 parágrafos do About com "Read more", 3 grupos de skills com "Show all skills", 4 cards do Work com "Show all 12 case studies" e o carrossel de cargos que só abre ao tocar numa linha da tabela (ou em "Show role details"). Os saltos do Impact e da tabela de relance, os filtros e links como `/#case-cicd` abrem o que estiver recolhido. No desktop e sem JavaScript nada fica recolhido. Evento novo no GA4: `content_toggle` (item e estado).
+- **Education (D26).** Lista compacta de 3 linhas (ids mantidos), em todas as larguras.
+- **Chips (D27).** Contorno rosa removido; todos os chips têm o mesmo visual.
+- **Ícones (D29).** Os 12 cards de case e os 8 cartões de certificado usam os ícones de linha do tema (os mesmos do Impact e da Expertise). Os ícones pequenos da linha do tempo (prédio, capelo, microfone) continuam sólidos dentro dos círculos escuros.
+
+**Fase 4. Variáveis CSS.** As cores da marca e os cinzas principais viraram 14 variáveis em `:root` (`--brand*`, `--gray-*`, `--bg-dark*`). A conversão foi pixel-exata: 81 imagens (9 seções x 3 larguras x 3 idiomas) idênticas antes e depois (só ruído de 3 a 6 pixels com diferença de 1 nível de cor, num gradiente do fundo SVG, que também aparece entre duas fotos do mesmo estado). O G16 agora recusa a cor da marca escrita como valor solto e variável inexistente. A escala de espaçamento **não** virou variável: os espaços atuais não seguem uma escala, e forçá-la mudaria o visual.
+
+**Antes e depois da Fase 3 (EN, celular, 375 px)**
+
+| Seção | Antes (início) | Agora |
+|---|---|---|
+| About | 4.022 px | 2.603 px |
+| Experience | 4.348 px | 3.587 px |
+| Work | 8.533 px | 3.239 px |
+| Página inteira | 21.380 px | 13.917 px (−35%) |
+
+No desktop a página ficou 2,5% maior (14.272 para 14.632 px): o subtítulo dos cards de decisão e a faixa do hero são conteúdo novo. Em PT e ES o celular ficou em 14.418 e 14.406 px.
+
+**Verificação.** `npm run verify` completo: 17 gates verdes (G4 com 343 checagens, G16 com 45). Defeitos injetados novos, todos pegos: recolhimentos (3 casos), botão do CV, ícones voltando ao fundo do hero, número do hero trocado, ícone sólido, chip destacado, evento do analytics, cor da marca solta e variável inexistente. Um outro caso (carrossel sem remedir ao abrir) não era detectável porque o Owl já se corrige sozinho; foi removido do selftest e a remedição ficou no código só como proteção.
+
+**O que não testei.** Safari, Firefox e aparelhos reais, e como um recrutador percorre a página (Fase 5, que depende de você). Os links dentro das listas de cursos seguem como exceção documentada (17 px de altura).

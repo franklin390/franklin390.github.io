@@ -59,27 +59,9 @@
 		'<i class="fa-solid fa-chevron-right" aria-hidden="true"></i><span class="sr-only" data-i18n="carousel.next"></span>'
 	];
 
-	/*---------------------------------------------------- */
-	/* Decorative background of "Where I can help": fetched when the section gets close
-	   (it weighs 196 KB and sits far below the first screen)
-	------------------------------------------------------ */
-	(function () {
-		var section = document.getElementById('services');
-		if (!section) { return; }
-		function showBackground() { section.classList.add('bg-ready'); }
-		if ('IntersectionObserver' in window) {
-			var io = new IntersectionObserver(function (entries) {
-				if (entries[0].isIntersecting) { showBackground(); io.disconnect(); }
-			}, { rootMargin: '900px 0px' });
-			io.observe(section);
-		} else {
-			showBackground();
-		}
-	})();
-
 
 	/* Owl Carousels: experience, education, talks (one slide per item), certifications and services */
-	$("#owl-slider-work, #owl-slider-academy, #owl-slider-extra").owlCarousel({
+	$("#owl-slider-work, #owl-slider-extra").owlCarousel({
 		autoHeight: true,
 		navigation: true,
 		navigationText: ARROWS,
@@ -181,6 +163,7 @@
 
 	function applyCaseFilter(filter) {
 		caseFilter = filter;
+		setFold("work-more", false); // choosing a theme (or "All") on a phone shows every card
 		// keep the filter bar where it is on screen: hiding cards shrinks the page and browsers would otherwise jump
 		var filtersEl = $('.case-filters')[0];
 		var topBefore = filtersEl ? filtersEl.getBoundingClientRect().top : 0;
@@ -192,6 +175,10 @@
 				void this.offsetWidth; // restart the CSS animation
 				this.classList.add('is-entering');
 			}
+		});
+		// the lead-in before the decision cards goes away together with them
+		$('.case-group').each(function () {
+			$(this).toggleClass('is-filtered-out', $(this).nextAll('.case-wide').not('.is-filtered-out').length === 0);
 		});
 		$caseFilters.each(function () {
 			$(this).attr('aria-pressed', $(this).attr('data-filter') === filter ? 'true' : 'false');
@@ -371,6 +358,45 @@
 	/*---------------------------------------------------- */
 	/* Impact stats and the career-at-a-glance rows: a click takes you to the case (or role) that backs them up
 	------------------------------------------------------ */
+	/*---------------------------------------------------- */
+	/* Content that folds on phones (<= 600px; only with JavaScript: html.js). The CSS hides what is marked .is-folded;
+	   a button, a filter or a jump link brings it back. The carousels are measured again, because they were hidden (width 0).
+	------------------------------------------------------ */
+	function setFold(id, folded) {
+		var $box = $('#' + id);
+		if (!$box.length) { return false; }
+		var changed = $box.hasClass('is-folded') !== folded;
+		$box.toggleClass('is-folded', folded);
+		$('[data-fold-toggle="' + id + '"]').attr('aria-expanded', folded ? 'false' : 'true');
+		if (changed) {
+			$box.find('.owl-carousel').addBack('.owl-carousel').each(function () {
+				var owl = $(this).data('owlCarousel');
+				if (owl && typeof owl.reload === 'function') { owl.reload(); }
+			});
+			if (window.Waypoint) { window.Waypoint.refreshAll(); }
+		}
+		return changed;
+	}
+	function unfoldFor($el) {
+		var changed = false, $box = $el.closest('.is-folded');
+		while ($box.length) {
+			changed = setFold($box.attr('id'), false) || changed;
+			$box = $el.closest('.is-folded');
+		}
+		return changed;
+	}
+	$('[data-fold-toggle]').on('click', function () {
+		var id = $(this).attr('data-fold-toggle');
+		setFold(id, !$('#' + id).hasClass('is-folded'));
+	});
+	// a link such as /#case-cicd must land on a card that is visible
+	if (location.hash.length > 1) {
+		try {
+			var $landing = $(decodeURIComponent(location.hash));
+			if ($landing.length && unfoldFor($landing)) { setTimeout(function () { $landing[0].scrollIntoView(); }, 60); }
+		} catch (err) { /* not a valid selector */ }
+	}
+
 	function spotlight($el) {
 		$el.removeClass('is-spotlight');
 		void $el[0].offsetWidth; // restart the CSS animation
@@ -385,6 +411,7 @@
 
 		if (!$t.length) { return; }
 		e.preventDefault();
+		unfoldFor($t);
 
 		// the target must be visible: bring back cards hidden by a filter, and open the right slide of a carousel
 		if ($t.hasClass('is-filtered-out')) { /* stat-reset-filter */ applyCaseFilter('all'); }

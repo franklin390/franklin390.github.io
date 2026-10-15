@@ -890,7 +890,17 @@
       "bigquery",
       "google cloud",
       "gdpr",
-      "lineage"
+      "lineage",
+      "warehouse",
+      "warehouses",
+      "aws glue",
+      "glue data catalog",
+      "hive",
+      "hive metastore",
+      "metastore",
+      "catalogs",
+      "data catalog",
+      "data catalogs"
     ]
   }
 }

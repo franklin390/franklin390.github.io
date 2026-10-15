@@ -5,7 +5,7 @@
       "id": "migration",
       "key": "migration",
       "cat": "platform",
-      "icon": "fa-cloud-arrow-up",
+      "icon": "icon-cloud",
       "meta": "Flutter Brazil · Data Engineer",
       "metric": {
         "num": "~50",
@@ -25,7 +25,7 @@
       "id": "finops",
       "key": "finops",
       "cat": "reliability",
-      "icon": "fa-coins",
+      "icon": "icon-dollar",
       "meta": "Flutter Brazil · Tech Lead",
       "metric": {
         "num": ">50%",
@@ -39,10 +39,29 @@
       ]
     },
     {
+      "id": "clicksign",
+      "key": "ck",
+      "cat": "platform",
+      "icon": "icon-network",
+      "meta": "Clicksign · Data Architect",
+      "metric": {
+        "num": "100+",
+        "cap": "case.metric.pipelines"
+      },
+      "context": false,
+      "result": true,
+      "stack": [
+        "Apache Airflow",
+        "dbt",
+        "Amazon Redshift",
+        "dimensional modeling"
+      ]
+    },
+    {
       "id": "unity",
       "key": "unity",
       "cat": "governance",
-      "icon": "fa-sitemap",
+      "icon": "icon-grid",
       "meta": "Flutter Brazil · Tech Lead",
       "metric": {
         "num": "10+",
@@ -60,7 +79,7 @@
       "id": "obs",
       "key": "obs",
       "cat": "reliability",
-      "icon": "fa-gauge-high",
+      "icon": "icon-speed-o-meter",
       "meta": "Flutter Brazil · Tech Lead",
       "metric": null,
       "context": false,
@@ -74,7 +93,7 @@
       "id": "cicd",
       "key": "cicd",
       "cat": "reliability",
-      "icon": "fa-code-branch",
+      "icon": "icon-share",
       "meta": "Flutter Brazil · Tech Lead",
       "metric": {
         "num": "~3x",
@@ -89,29 +108,10 @@
       ]
     },
     {
-      "id": "clicksign",
-      "key": "ck",
-      "cat": "platform",
-      "icon": "fa-diagram-project",
-      "meta": "Clicksign · Data Architect",
-      "metric": {
-        "num": "100+",
-        "cap": "case.metric.pipelines"
-      },
-      "context": false,
-      "result": true,
-      "stack": [
-        "Apache Airflow",
-        "dbt",
-        "Amazon Redshift",
-        "dimensional modeling"
-      ]
-    },
-    {
       "id": "protection",
       "key": "prot",
       "cat": "governance",
-      "icon": "fa-shield-alt",
+      "icon": "icon-shield",
       "meta": "Clicksign · Data Architect",
       "metric": {
         "num": "10+",
@@ -130,7 +130,7 @@
       "id": "ltv",
       "key": "ltv",
       "cat": "analytics",
-      "icon": "fa-chart-pie",
+      "icon": "icon-pie-chart",
       "meta": "Flutter Brazil · Tech Lead",
       "metric": null,
       "context": true,
@@ -145,7 +145,7 @@
       "id": "genai",
       "key": "genai",
       "cat": "analytics",
-      "icon": "fa-wand-magic-sparkles",
+      "icon": "icon-wand",
       "meta": "Flutter Brazil",
       "metric": null,
       "context": true,
@@ -165,8 +165,9 @@
     {
       "id": "why-databricks",
       "key": "why",
+      "lead": true,
       "cat": "platform",
-      "icon": "fa-scale-balanced",
+      "icon": "icon-scales",
       "wide": true,
       "meta": "Flutter Brazil",
       "metric": null,
@@ -186,7 +187,7 @@
       "id": "finops-decision",
       "key": "finopsdec",
       "cat": "reliability",
-      "icon": "fa-sliders",
+      "icon": "icon-sliders",
       "wide": true,
       "meta": "Flutter Brazil · Tech Lead",
       "metric": null,
@@ -205,7 +206,7 @@
       "id": "uc-decision",
       "key": "ucdec",
       "cat": "governance",
-      "icon": "fa-layer-group",
+      "icon": "icon-layers",
       "wide": true,
       "meta": "Flutter Brazil · Tech Lead",
       "metric": null,

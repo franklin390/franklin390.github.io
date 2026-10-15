@@ -138,13 +138,13 @@ export async function run(ctx) {
     await s.close();
   }
 
-  // 2d) skill tags: hover interaction on hover-capable devices (lift + tint, key tags fill pink), and no motion with prefers-reduced-motion
+  // 2d) skill tags: hover interaction on hover-capable devices (lift + tint), and no motion with prefers-reduced-motion
   for (const rm of ['no-preference', 'reduce']) {
     const s = await env.open('en', { width: 1280, reducedMotion: rm });
     const p = s.page;
     const look = (sel) => p.evaluate((q) => { const c = getComputedStyle(document.querySelector(q)); return { t: c.transform, bg: c.backgroundImage + ' | ' + c.backgroundColor, color: c.color, bc: c.borderTopColor, sh: c.boxShadow }; }, sel);
     const res = {};
-    for (const [name, sel] of [['regular', '.tags li:not(.tag-key)'], ['key', '.tags li.tag-key']]) {
+    for (const [name, sel] of [['regular', '.tags li']]) {
       await p.locator(sel).first().scrollIntoViewIfNeeded();
       await p.mouse.move(2, 400);
       await p.waitForTimeout(450);
@@ -157,14 +157,12 @@ export async function run(ctx) {
       const after = await look(sel);
       res[name] = { before, during, after };
     }
-    const R = res.regular, K = res.key;
+    const R = res.regular;
     const lifted = (x) => x.during.t !== 'none';
     g.check(R.during.bc !== R.before.bc && R.during.sh !== 'none' && R.before.sh === 'none' && R.during.color !== R.before.color && (rm === 'reduce' ? !lifted(R) : lifted(R)),
       `[${rm}] skill tags: a regular tag lights up on hover (pink border/text, tint, shadow${rm === 'reduce' ? ', no motion' : ', lifts'})`, JSON.stringify(R.during));
-    g.check(K.during.color === 'rgb(255, 255, 255)' && /gradient/.test(K.during.bg) && K.during.sh !== 'none' && (rm === 'reduce' ? !lifted(K) : lifted(K)),
-      `[${rm}] skill tags: a key tag (pink outline) fills with the pink gradient and white text on hover`, JSON.stringify(K.during));
-    g.check(R.after.bc === R.before.bc && R.after.t === R.before.t && R.after.sh === R.before.sh && K.after.color === K.before.color && K.after.bg === K.before.bg,
-      `[${rm}] skill tags: everything returns to the resting look when the pointer leaves`, JSON.stringify({ R: R.after, K: K.after }));
+    g.check(R.after.bc === R.before.bc && R.after.t === R.before.t && R.after.sh === R.before.sh,
+      `[${rm}] skill tags: everything returns to the resting look when the pointer leaves`, JSON.stringify({ R: R.after }));
     await s.close();
   }
 
@@ -439,7 +437,7 @@ export async function run(ctx) {
       g.check(epa.itemW > 150, `[EN] opening the early projects makes main.js measure their carousel right away (slide ${epa.itemW}px; Owl's own 0.5 s watcher is off in this check)`, JSON.stringify(epa));
     }
     // every carousel: initialised with the expected slides, pagination moves it
-    const CAROUSELS = [['#owl-slider-work', 7], ['#owl-slider-academy', 3], ['#owl-slider-cert', 8], ['#owl-slider-extra', 3], ['#owl-slider', 8], ['#owl-slider-port', 13]];
+    const CAROUSELS = [['#owl-slider-work', 7], ['#owl-slider-cert', 8], ['#owl-slider-extra', 3], ['#owl-slider', 8], ['#owl-slider-port', 13]];
     for (const [sel, n] of CAROUSELS) {
       const info = await p.evaluate((q) => { const o = window.jQuery(q).data('owlCarousel'); return o ? { items: o.itemsAmount, pages: window.jQuery(q).find('.owl-page').length } : null; }, sel);
       g.check(info && info.items === n && info.pages >= 1, `[${L}] carousel ${sel} initialised with ${n} slides (${info ? info.pages : 0} pages)`, JSON.stringify(info));
@@ -531,10 +529,11 @@ export async function run(ctx) {
       await p.evaluate(() => document.querySelector('.case-filters').scrollIntoView({ block: 'center' }));
       await p.click(`.case-filter[data-filter="${f}"]`);
       await p.waitForTimeout(150);
-      const st = await p.evaluate(() => ({ vis: [...document.querySelectorAll('.case-card')].filter((c) => getComputedStyle(c).display !== 'none').length, pressed: [...document.querySelectorAll('.case-filter')].filter((b) => b.getAttribute('aria-pressed') === 'true').map((b) => b.dataset.filter), status: document.getElementById('case-status').textContent }));
+      const st = await p.evaluate(() => ({ vis: [...document.querySelectorAll('.case-card')].filter((c) => getComputedStyle(c).display !== 'none').length, pressed: [...document.querySelectorAll('.case-filter')].filter((b) => b.getAttribute('aria-pressed') === 'true').map((b) => b.dataset.filter), status: document.getElementById('case-status').textContent, lead: (() => { const e = document.querySelector('.case-group'); return !!e && getComputedStyle(e).display !== 'none'; })() }));
       const wantStatus = dict[lang]['work.filter.showing'].replace('{n}', n).replace('{total}', 12);
       seen.push(f + ':' + st.vis);
-      if (st.vis !== n || st.pressed.join() !== f || st.status !== wantStatus) { ok = false; seen.push(JSON.stringify(st)); }
+      // the lead-in before the decision cards shows only while at least one of them is visible (platform, reliability and governance each have one; analytics has none)
+      if (st.vis !== n || st.pressed.join() !== f || st.status !== wantStatus || st.lead !== (f !== 'analytics')) { ok = false; seen.push(JSON.stringify(st)); }
     }
     g.check(ok, `[${L}] filters show the right cards, set aria-pressed and announce the count (${seen.join(' ')})`, seen.join(' '));
     // the filter bar must not jump after filtering (page shrinks)
@@ -632,5 +631,101 @@ export async function run(ctx) {
     g.check(o.sw <= o.vw && o.offenders.length === 0, `[${lang.toUpperCase()} ${w}px] no horizontal overflow`, `scrollWidth ${o.sw} vs ${o.vw}; ${o.offenders.join('; ')}`);
     await s.close();
   }
+  // 11) phone layout: the folds (About, skills, Work, Experience), their buttons, jump links and deep links; nothing is hidden without JavaScript or on a wide screen
+  const FOLDS = ['about-more', 'skills-more', 'work-more', 'exp-detail'];
+  const foldState = (p) => p.evaluate((ids) => {
+    const vis = (el) => !!el && getComputedStyle(el).display !== 'none' && el.getBoundingClientRect().height > 0;
+    const btn = (id) => document.querySelector(`[data-fold-toggle="${id}"]`);
+    return {
+      about: [...document.querySelectorAll('.intro-info p.lead')].filter(vis).length,
+      skills: [...document.querySelectorAll('.skill-group')].filter(vis).length,
+      cards: [...document.querySelectorAll('.case-card')].filter(vis).length,
+      lead: vis(document.querySelector('.case-group')),
+      exp: vis(document.querySelector('#owl-slider-work')),
+      btns: ids.map((i) => vis(btn(i)) + ':' + btn(i).getAttribute('aria-expanded')).join(' '),
+      label: ids.map((i) => btn(i).innerText.trim()),
+    };
+  }, FOLDS);
+  for (const lang of LANGS) {
+    const L = lang.toUpperCase();
+    const s = await env.open(lang, { width: 375 });
+    const p = s.page;
+    const a = await foldState(p);
+    g.check(a.about === 2 && a.skills === 3 && a.cards === 4 && !a.lead && !a.exp && a.btns === 'true:false true:false true:false true:false', `[${L} 375px] on a phone the page starts folded: 2 About paragraphs, 3 skill groups, 4 case cards, no role carousel, four collapsed buttons`, JSON.stringify(a));
+    const press = async (id) => { await p.locator(`[data-fold-toggle="${id}"]`).click(); await p.waitForTimeout(350); };
+    for (const id of FOLDS) await press(id);
+    const b = await foldState(p);
+    g.check(b.about === 5 && b.skills === 8 && b.cards === 12 && b.lead && b.exp && b.btns === 'true:true true:true true:true true:true' && b.label.every((x, i) => x !== a.label[i]), `[${L} 375px] the four buttons open everything, flip aria-expanded and change their label`, JSON.stringify(b));
+    const carousel = await p.evaluate(() => { const o = window.jQuery('#owl-slider-work').data('owlCarousel'); const r = document.querySelector('#owl-slider-work').getBoundingClientRect(); return { w: Math.round(r.width), h: Math.round(r.height), cur: o.currentItem }; });
+    g.check(carousel.w > 300 && carousel.h > 300 && carousel.cur === 0, `[${L} 375px] the role carousel is full width and on the first role when it opens`, JSON.stringify(carousel));
+    for (const id of FOLDS) await press(id);
+    const c = await foldState(p);
+    g.check(c.about === 2 && c.skills === 3 && c.cards === 4 && !c.exp && c.btns === 'true:false true:false true:false true:false', `[${L} 375px] a second press folds each block again`, JSON.stringify(c));
+    await s.close();
+  }
+  {
+    // jump links and deep links land on something visible
+    const s = await env.open('en', { width: 375 });
+    const p = s.page;
+    await p.locator('#impact .stat-link[href="#case-cicd"]').evaluate((el) => el.click()); // card 5 is folded away on a phone
+    await p.waitForTimeout(1500);
+    const v1 = await p.evaluate(() => { const c = document.querySelector('#case-cicd'); const r = c.getBoundingClientRect(); return { shown: getComputedStyle(c).display !== 'none' && r.height > 0, inView: r.top < innerHeight && r.bottom > 0 }; });
+    g.check(v1.shown && v1.inView, '[EN 375px] an Impact number that points to a folded case card unfolds the grid and shows that card', JSON.stringify(v1));
+    await p.locator('.glance-link[href="#role-ck-arch"]').evaluate((el) => el.click()); // the role carousel is folded away on a phone
+    await p.waitForTimeout(1800);
+    const v2 = await p.evaluate(() => { const o = window.jQuery('#owl-slider-work').data('owlCarousel'); const r = document.querySelector('#owl-slider-work').getBoundingClientRect(); return { slide: o.currentItem, h: Math.round(r.height), btn: document.querySelector('[data-fold-toggle="exp-detail"]').getAttribute('aria-expanded') }; });
+    g.check(v2.slide === 4 && v2.h > 300 && v2.btn === 'true', '[EN 375px] a row of the career table opens the role carousel on that role (Data Architect)', JSON.stringify(v2));
+    await s.close();
+    const f = await env.open('en', { width: 375 });
+    await f.page.locator('.case-filter[data-filter="governance"]').click();
+    await f.page.waitForTimeout(400);
+    const v3 = await foldState(f.page);
+    g.check(v3.cards === 3 && v3.btns.split(' ')[2] === 'true:true', '[EN 375px] choosing a theme in Work shows every card of that theme (3 governance cards) and opens the grid', JSON.stringify(v3));
+    await f.close();
+    const d = await env.open('en', { width: 375, hash: '#case-cicd', wait: true });
+    await d.page.waitForTimeout(800);
+    const v4 = await d.page.evaluate(() => { const c = document.querySelector('#case-cicd'); const r = c.getBoundingClientRect(); return { shown: getComputedStyle(c).display !== 'none' && r.height > 0, top: Math.round(r.top) }; });
+    g.check(v4.shown, '[EN 375px] a link that points straight at a folded card (/#case-cicd) opens it', JSON.stringify(v4));
+    await d.close();
+  }
+  {
+    // wide screens and no-JavaScript visitors never see a fold or a button
+    const w = await env.open('en', { width: 1280 });
+    const wide = await foldState(w.page);
+    g.check(wide.about === 5 && wide.skills === 8 && wide.cards === 12 && wide.lead && wide.exp && wide.btns === 'false:false false:false false:false false:false', '[EN 1280px] on a wide screen everything is shown and the four buttons are hidden', JSON.stringify(wide));
+    await w.close();
+    const context = await env.browser.newContext({ javaScriptEnabled: false, viewport: { width: 375, height: 800 } });
+    const page = await context.newPage();
+    await page.goto(env.base + '/', { waitUntil: 'load' });
+    const nojs = await foldState(page);
+    g.check(nojs.about === 5 && nojs.skills === 8 && nojs.cards === 12 && nojs.lead && nojs.btns === 'false:false false:false false:false false:false', '[EN 375px] without JavaScript a phone shows everything and no fold button', JSON.stringify(nojs));
+    await context.close();
+  }
+
+  // 12) hero: one main button, the three proof numbers, the icons in the flow, and nothing overlapping on any screen height
+  for (const [width, height] of [[1280, 720], [1440, 900], [768, 1024], [375, 740], [375, 667], [320, 568]]) {
+    const s = await env.open('en', { width, height });
+    const h = await s.page.evaluate(() => {
+      const r = (q) => document.querySelector(q).getBoundingClientRect();
+      const hd = r('.site-header'), eb = r('#intro .eyebrow'), about = r('#intro a.smoothscroll'), cv = r('#intro .hero-cta'), proof = r('.intro-proof'), soc = r('.intro-social'), hero = r('#intro');
+      const cs = (q) => getComputedStyle(document.querySelector(q));
+      return {
+        clearOfHeader: eb.top >= hd.bottom + 8, order: about.bottom <= proof.top && cv.bottom <= proof.top && proof.bottom <= soc.top + 1, insideHero: soc.bottom <= hero.bottom + 1,
+        cv: cs('#intro .hero-cta').backgroundColor, ghost: cs('#intro a.smoothscroll').backgroundColor, hscroll: document.documentElement.scrollWidth > document.documentElement.clientWidth + 1,
+      };
+    });
+    g.check(h.clearOfHeader && h.order && h.insideHero && !h.hscroll, `[EN ${width}x${height}] hero: the text starts below the bar, buttons, proof strip and icons stack without overlapping, and the icons stay inside the hero`, JSON.stringify(h));
+    if (width === 1280) g.check(h.cv === 'rgb(204, 0, 95)' && h.ghost === 'rgba(0, 0, 0, 0)', '[EN] hero: "Download CV" is the one solid button and "About me" stays outlined', JSON.stringify({ cv: h.cv, ghost: h.ghost }));
+    await s.close();
+  }
+  for (const lang of LANGS) {
+    const s = await env.open(lang, { width: 1280 });
+    const nums = await s.page.evaluate(() => [...document.querySelectorAll('.intro-proof li')].map((li) => [li.querySelector('.intro-proof-num').textContent.trim(), li.querySelector('.intro-proof-cap').textContent.trim()]));
+    const want = [['>50%', dict[lang]['case.metric.cost']], ['~50', dict[lang]['case.metric.sources']], ['15+', dict[lang]['hero.proof.team']]];
+    const impact = await s.page.evaluate(() => ['#impact .stat-count'].flatMap((q) => [...document.querySelectorAll(q)].map((e) => e.textContent.trim())));
+    g.check(JSON.stringify(nums) === JSON.stringify(want) && want.every(([n]) => impact.includes(n)), `[${lang.toUpperCase()} 1280px] hero proof strip: the same three numbers as the Impact section (>50%, ~50, 15+), each with its translated caption`, JSON.stringify({ nums, impact }));
+    await s.close();
+  }
+
   return g;
 }

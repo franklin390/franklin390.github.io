@@ -239,7 +239,6 @@
   8805
  ],
  "iconCodepoints": [
-  58058,
   61523,
   61524,
   61537,
@@ -250,26 +249,12 @@
   61635,
   61655,
   61664,
-  61672,
-  61678,
   61703,
-  61734,
   61744,
   61747,
-  61749,
-  61853,
   61869,
-  61918,
-  61952,
-  62030,
   62158,
-  62445,
-  62748,
-  62750,
-  62786,
-  62809,
-  62973,
-  63013
+  62748
  ],
  "jobs": [
   {
@@ -325,29 +310,29 @@
    "src": "css/font-awesome-6/webfonts/fa-solid-900.ttf",
    "srcSha": "fbf75c61de6b",
    "out": "css/font-awesome-6/webfonts/fa-solid-subset.woff2",
-   "count": 31,
-   "cpsSha": "e80b40460ea5"
+   "count": 16,
+   "cpsSha": "d4720ef1f45d"
   },
   {
    "src": "css/font-awesome-6/webfonts/fa-regular-400.ttf",
    "srcSha": "ff4801207410",
    "out": "css/font-awesome-6/webfonts/fa-regular-subset.woff2",
-   "count": 31,
-   "cpsSha": "e80b40460ea5"
+   "count": 16,
+   "cpsSha": "d4720ef1f45d"
   },
   {
    "src": "css/font-awesome-6/webfonts/fa-brands-400.ttf",
    "srcSha": "b952565a96d6",
    "out": "css/font-awesome-6/webfonts/fa-brands-subset.woff2",
-   "count": 31,
-   "cpsSha": "e80b40460ea5"
+   "count": 16,
+   "cpsSha": "d4720ef1f45d"
   },
   {
    "src": "css/micons/fonts/icomoon.ttf",
    "srcSha": "299ed66c2649",
    "out": "css/micons/fonts/icomoon-subset.woff2",
-   "count": 12,
-   "cpsSha": "6ac81da34c60"
+   "count": 20,
+   "cpsSha": "c71bf313e926"
   }
  ]
 }

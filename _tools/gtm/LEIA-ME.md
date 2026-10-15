@@ -22,6 +22,7 @@ O site empurra eventos para o `dataLayer` do contêiner **GTM-PNSXVNR** (arquivo
 | `project_open` | A project of the earlier-projects carousel is opened. | `item` |
 | `carousel_navigate` | A carousel moves to another slide. | `item`, `slide` |
 | `training_toggle` | The full list of courses (item courses) or the early machine learning projects (item early_projects) is opened or closed. | `item`, `state` |
+| `content_toggle` | A button that folds content on phones is pressed: the rest of the About text (item about_more), all skills (skills_more), all case studies (work_more) or the role details of the Experience carousel (experience_detail). state: open or close. | `item`, `state` |
 | `skill_hover` | The pointer rests 0.5 s on a skill tag (once per skill, at most 15 per visit). | `item` |
 | `section_view` | A section is under the middle of the screen for 2 active seconds (once per section). | `item` |
 | `section_dwell` | The tab is hidden or closed: one event per section with 3+ active seconds. | `item`, `seconds` |
@@ -41,7 +42,7 @@ Quem envia o sinal **Global Privacy Control** ou **Do Not Track** não gera nenh
 4. Se o contêiner **já tinha** uma tag "Google tag" / GA4 com o mesmo ID, apague a **GA4 - Google tag** importada (para não contar a visita duas vezes). Mantenha a **GA4 - Event - portfolio**.
 5. **Visualizar** (Tag Assistant), navegue pelo site e confira os eventos. Depois **Enviar → Publicar**.
 
-O contêiner importado tem 1 tag Google, 1 tag de evento GA4 (que repassa todos os eventos acima), 2 acionadores (evento personalizado e inicialização, os dois só no seu domínio) e 25 variáveis, mais a variável embutida **Page Hostname**. Se o GTM recusar o arquivo, crie à mão: um acionador "Evento personalizado" com regex `^(site_context|language_toggle|cv_download|contact_click|outbound_click|certificate_open|nav_click|menu_toggle|impact_stat_click|case_filter|case_view|project_open|carousel_navigate|training_toggle|skill_hover|section_view|section_dwell|scroll_depth|engagement_summary|back_to_top|page_print|js_error)$`, uma tag "Evento do Google Analytics: GA4" com nome de evento `{{Event}}` e, nos parâmetros, cada nome abaixo apontando para uma variável de camada de dados de mesmo nome.
+O contêiner importado tem 1 tag Google, 1 tag de evento GA4 (que repassa todos os eventos acima), 2 acionadores (evento personalizado e inicialização, os dois só no seu domínio) e 25 variáveis, mais a variável embutida **Page Hostname**. Se o GTM recusar o arquivo, crie à mão: um acionador "Evento personalizado" com regex `^(site_context|language_toggle|cv_download|contact_click|outbound_click|certificate_open|nav_click|menu_toggle|impact_stat_click|case_filter|case_view|project_open|carousel_navigate|training_toggle|content_toggle|skill_hover|section_view|section_dwell|scroll_depth|engagement_summary|back_to_top|page_print|js_error)$`, uma tag "Evento do Google Analytics: GA4" com nome de evento `{{Event}}` e, nos parâmetros, cada nome abaixo apontando para uma variável de camada de dados de mesmo nome.
 
 ## Cópias do site em outros domínios (dados que não são seus)
 

@@ -19,16 +19,14 @@ const title = (it) => (it.titleLiteral
   : `<h4 data-i18n="${it.titleKey}"></h4>`);
 
 const featured = T.featured.map((it) => {
-  const dateLine = it.validUntil
-    ? `<span data-i18n="train.issued"></span> <span data-date="${it.issued}"></span> <span translate="no">·</span> <span data-i18n="train.validuntil"></span> <span data-date="${it.validUntil}"></span>`
-    : it.completed
-      ? `<span data-i18n="train.completed"></span> <span data-date="${it.completed}"></span>`
-      : `<span data-i18n="train.issued"></span> <span data-date="${it.issued}"></span>`;
+  const dateLine = it.completed
+    ? `<span data-i18n="train.completed"></span> <span data-date="${it.completed}"></span>`
+    : `<span data-i18n="train.issued"></span> <span data-date="${it.issued}"></span>`;
   const link = it.external
     ? `<a href="${it.href}" rel="noopener" data-i18n="train.verify"></a>`
     : `<a href="${it.href}" data-i18n="train.view"></a>`;
   return `\t\t\t\t\t<article class="cert-card" id="cert-${it.id}">
-\t\t\t\t\t\t<div class="cert-top"><span class="cert-ico"><i class="fa-solid ${it.icon}" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">${it.issuer}</p></div>
+\t\t\t\t\t\t<div class="cert-top"><span class="cert-ico"><i class="${it.icon}" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">${it.issuer}</p></div>
 \t\t\t\t\t\t${title(it)}
 \t\t\t\t\t\t<p class="cert-date">${dateLine}</p>
 \t\t\t\t\t\t<p class="cert-link">${link}</p>
@@ -73,8 +71,9 @@ const CASES = readJson(path.join(TOOLS, 'facts/cases.json')).cases;
 const cases = CASES.map((c, i) => {
   const block = (labelKey, textKey, cls = '') => `\t\t\t\t\t\t<p class="case-block${cls}"><span class="case-label" data-i18n="${labelKey}"></span><span data-i18n="${textKey}"></span></p>`;
   const lines = [
+    ...(c.lead ? [`\t\t\t\t\t<div class="case-group"><p class="case-group-label" data-i18n="case.group.label"></p><p class="case-group-text" data-i18n="case.group.text"></p></div>`] : []),
     `\t\t\t\t\t<article class="case-card${c.wide ? ' case-wide' : ''}" id="case-${c.id}" data-cat="${c.cat}" data-num="${String(i + 1).padStart(2, '0')}">`,
-    `\t\t\t\t\t\t<div class="case-head"><span class="case-ico"><i class="fa-solid ${c.icon}" aria-hidden="true"></i></span></div>`,
+    `\t\t\t\t\t\t<div class="case-head"><span class="case-ico"><i class="${c.icon}" aria-hidden="true"></i></span></div>`,
     `\t\t\t\t\t\t<p class="case-meta" translate="no">${c.meta}</p>`,
     `\t\t\t\t\t\t<h3 data-i18n="case.${c.key}.title"></h3>`,
   ];

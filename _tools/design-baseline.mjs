@@ -11,6 +11,8 @@ const result = {};
 for (const w of [1280, 768, 375]) {
   const ctx = await browser.newContext({ viewport: { width: w, height: w < 600 ? 800 : 900 }, reducedMotion: 'reduce' });
   await ctx.route(/googletagmanager|google-analytics/, (r) => r.abort());
+  // STRIP_P1=1 measures the site without the phase 1 block of css/staff.css (section 17): the 'before' under the same method
+  if (process.env.STRIP_P1) await ctx.route('**/css/staff.css', async (route) => { const resp = await route.fetch(); const body = (await resp.text()).split('/* 17. design pass')[0]; await route.fulfill({ response: resp, body }); });
   const page = await ctx.newPage();
   await page.goto(`http://127.0.0.1:${server.port}/?lang=en`, { waitUntil: 'load' });
   await page.waitForFunction(() => getComputedStyle(document.querySelector('#preloader')).display === 'none', null, { timeout: 15000 });
@@ -34,7 +36,7 @@ for (const w of [1280, 768, 375]) {
       const cs = getComputedStyle(el);
       if (cs.display === 'none' || cs.visibility === 'hidden') continue;
       const r = el.getBoundingClientRect(); if (r.width === 0 || r.height === 0) continue;
-      if (el.closest('script,style,noscript,#preloader,.sr-only')) continue;
+      if (el.closest('script,style,noscript,#preloader,.sr-only,.owl-item:not(.active)')) continue;
       const px = Math.round(parseFloat(cs.fontSize) * 10) / 10;
       out.sizes[px] = (out.sizes[px] || 0) + t.length; // weight by characters
       if (px < 14) {
@@ -42,7 +44,7 @@ for (const w of [1280, 768, 375]) {
         seen.set(key, (seen.get(key) || 0) + t.length);
       }
     }
-    out.small = Object.fromEntries([...seen.entries()].sort((a, b) => b[1] - a[1]).slice(0, 14));
+    out.small = Object.fromEntries([...seen.entries()].sort((a, b) => b[1] - a[1]).slice(0, 40));
     // tap targets (visible links/buttons)
     for (const el of document.querySelectorAll('a[href], button, [role="button"], summary')) {
       const r = el.getBoundingClientRect(); const cs = getComputedStyle(el);

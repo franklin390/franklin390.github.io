@@ -141,6 +141,9 @@ export async function run(ctx) {
     await fire(p, '#resume a[href*="credly.com"]');
     await fire(p, '.popup-modal a[href*="github.io"]');
     await fire(p, '#owl-slider-cert a[href$=".pdf"]');
+    // the four fold buttons of the phone layout (hidden on a wide screen, but they exist and work)
+    await p.evaluate(() => document.querySelectorAll('[data-fold-toggle]').forEach((b) => b.click()));
+    await p.waitForTimeout(300);
     // navigation, impact, filters, training list
     await p.locator('#main-nav-wrap a[href="#about"]').click();
     await p.waitForTimeout(900);
@@ -165,7 +168,7 @@ export async function run(ctx) {
     await p.locator('.popup-modal-dismiss').first().click({ force: true }).catch(() => {});
     await p.waitForTimeout(500);
     await p.evaluate(() => document.querySelector('#about .skill-groups').scrollIntoView({ block: 'center' }));
-    await p.locator('#about .tags li').first().hover();
+    await p.locator('#about .tags li', { hasText: 'Databricks' }).first().hover();
     await p.waitForTimeout(800);
     // the language switch: pointer, then keyboard
     await p.locator('.lang-btn[data-lang="pt"]').click();
@@ -187,6 +190,10 @@ export async function run(ctx) {
     await p.evaluate(() => { Object.defineProperty(document, 'visibilityState', { configurable: true, get: () => 'hidden' }); document.dispatchEvent(new Event('visibilitychange')); });
     await p.waitForTimeout(200);
     await p.evaluate(() => { delete document.visibilityState; });
+    // a translated skill must still be reported with its English name (the page is in Spanish by now); done after the dwell flush so it does not add time to that measurement
+    await p.evaluate(() => document.querySelector('#about .skill-groups').scrollIntoView({ block: 'center' }));
+    await p.locator('#about .tags li[data-i18n="tag.dimensional"]').first().hover();
+    await p.waitForTimeout(800);
     // the rest: back to top, print, a script error
     await p.evaluate(() => window.scrollTo(0, 800));
     await p.waitForTimeout(500);
@@ -216,10 +223,14 @@ export async function run(ctx) {
     ok(find('case_filter', (e) => e.item === 'governance'), 'case_filter: chosen theme');
     ok(find('training_toggle', (e) => e.state === 'open' && e.item === 'courses'), 'training_toggle: course list opened (item courses)');
     ok(find('training_toggle', (e) => e.state === 'open' && e.item === 'early_projects'), 'training_toggle: early projects opened (item early_projects)');
+    for (const [btn, item] of [['about-more', 'about_more'], ['skills-more', 'skills_more'], ['work-more', 'work_more'], ['exp-detail', 'experience_detail']]) {
+      ok(find('content_toggle', (e) => e.item === item && e.state === 'open'), `content_toggle: ${item} opened from its button`);
+    }
     ok(find('nav_click', (e) => e.via === 'glance' && e.item === 'role-ck-arch'), 'nav_click: a career-at-a-glance row reports via glance and the role id');
     ok(find('carousel_navigate', (e) => e.item === 'experience' && e.slide === 'role-fb-techlead'), 'carousel_navigate: experience carousel reports the role that was shown', JSON.stringify(find('carousel_navigate')));
     ok(find('project_open', (e) => /^modal-\d+$/.test(e.item)), 'project_open: project id');
-    ok(find('skill_hover', (e) => e.item === 'Databricks'), 'skill_hover: skill the pointer rested on (English name in every language)');
+    ok(find('skill_hover', (e) => e.item === 'Databricks'), 'skill_hover: skill the pointer rested on');
+    ok(find('skill_hover', (e) => e.item === 'Dimensional modeling'), 'skill_hover: a translated skill reports its English name (checked with the page in Spanish)');
     const toggles = ev.filter((e) => e.event === 'language_toggle');
     ok(toggles.length === 2 && toggles[0].from_language === 'en' && toggles[0].to_language === 'pt' && toggles[0].method === 'pointer' && toggles[1].from_language === 'pt' && toggles[1].to_language === 'es' && toggles[1].method === 'keyboard', 'language_toggle: from, to, and whether it was pointer or keyboard', JSON.stringify(toggles));
     ok(find('nav_click', (e) => e.item === 'contact' && e.site_language === 'es'), 'events sent after a language switch carry the new language');
@@ -315,6 +326,7 @@ export async function run(ctx) {
     await once('impact number click that moves the experience carousel by itself', () => page.locator('#impact .stat-link[href="#role-fb-staff"]').evaluate((el) => el.click()), ['impact_stat_click'], 3200);
     await once('case filter click', () => page.locator('.case-filter[data-filter="governance"]').click(), ['case_filter']);
     await once('course list toggle', () => page.locator('.train-details summary').first().evaluate((el) => el.click()), ['training_toggle']);
+    await once('read-more button (the other text of About)', () => page.locator('[data-fold-toggle="about-more"]').evaluate((el) => el.click()), ['content_toggle']);
     await once('early projects button (it also measures their carousel)', () => page.locator('.early-projects summary').first().evaluate((el) => el.click()), ['training_toggle'], 1500);
     await once('career-at-a-glance row (it also moves the experience carousel by itself)', () => page.locator('.glance-link[href="#role-ck-arch"]').evaluate((el) => el.click()), ['nav_click'], 3000);
     await once('carousel move', () => page.evaluate(() => window.jQuery('#owl-slider-work').data('owlCarousel').next()), ['carousel_navigate'], 1500);
@@ -376,7 +388,8 @@ export async function run(ctx) {
   // ---------------------------------------------------------------- hygiene of everything that was sent
   {
     const problems = [];
-    const patterns = cat.forbiddenInValues.patterns.map((r) => new RegExp(r, 'i'));
+    const privateRe = fs.existsSync(path.join(TOOLS, 'fixtures/private-forbidden.json')) ? JSON.parse(fs.readFileSync(path.join(TOOLS, 'fixtures/private-forbidden.json'), 'utf8')).patterns.map((p) => p.re) : []; // exact private values live outside the repository
+    const patterns = [...cat.forbiddenInValues.patterns, ...privateRe].map((r) => new RegExp(r, 'i'));
     for (const e of all) {
       const def = cat.events[e.event];
       if (!def) { problems.push(`unknown event "${e.event}"`); continue; }
