@@ -1,0 +1,36 @@
+{
+  "name": "portfolio-tools",
+  "private": true,
+  "type": "module",
+  "description": "Build + verification tooling for franklin390.github.io. Not published: underscore-prefixed folders are ignored by GitHub Pages (Jekyll).",
+  "scripts": {
+    "serve": "node serve.mjs 4173",
+    "sync": "node gen-regions.mjs && node sync-html.mjs",
+    "sync:check": "node gen-regions.mjs --check && node sync-html.mjs --check",
+    "build:cv": "node build-cv.mjs",
+    "measure:design": "node design-baseline.mjs",
+    "build:fa": "node build-fa-subset.mjs",
+    "build:pages": "node build-lang-pages.mjs",
+    "build:fonts": "node build-fonts.mjs",
+    "build:site": "npm run sync && npm run build:fa && npm run build:fonts && npm run build:pages",
+    "perf": "node perf.mjs",
+    "build:og": "node build-og.mjs",
+    "verify": "node verify/run-all.mjs",
+    "verify:links": "node verify/run-all.mjs G6",
+    "verify:fast": "node verify/run-all.mjs G0 G1 G2 G3 G7 G9 G10",
+    "screenshots": "node verify/shots.mjs 1280,375 en,pt",
+    "build:gtm": "node build-gtm.mjs",
+    "check:gtm-live": "node live-gtm-check.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.1",
+    "@cspell/dict-es-es": "^3.0.9",
+    "@cspell/dict-pt-br": "^2.4.4",
+    "@playwright/test": "^1.49.1",
+    "cspell": "^8.17.1",
+    "html-validate": "^8.29.0",
+    "pixelmatch": "^6.0.0",
+    "pngjs": "^7.0.0",
+    "subset-font": "^2.9.0"
+  }
+}

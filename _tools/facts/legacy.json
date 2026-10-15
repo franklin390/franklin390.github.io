@@ -1,0 +1,774 @@
+{
+  "_source": "git 166ee54:index.html",
+  "sections": {
+    "owl-slider-work": [
+      {
+        "title": "Professor Docente",
+        "dateText": "Junho, 2022 - Atual",
+        "start": "2022-06",
+        "end": "present",
+        "linkLabel": "Let's Code",
+        "href": "https://www.letscode.com.br",
+        "desc": "Atuo como professor em disciplinas relacionadas a Big Data. Dentre os temas lecionados, destacam-se: Engenharia, ciência e arquitetura de dados; modelagem de banco de dados, data warehouses, data lakes e lake houses; lógica de programação, técnicas de programação e arquitetura de software; e desenvolvimento em cloud."
+      },
+      {
+        "title": "Data Group Lead",
+        "dateText": "Outubro, 2021 - Atual",
+        "start": "2021-10",
+        "end": "present",
+        "linkLabel": "Clicksign",
+        "href": "https://www.clicksign.com/",
+        "desc": "Lidero os times de engenharia de dados, arquitetura de dados e data quality assurance para fornecer dados úteis na geração de valor para a empresa."
+      },
+      {
+        "title": "Data Architect",
+        "dateText": "Junho, 2021 - Atual",
+        "start": "2021-06",
+        "end": "present",
+        "linkLabel": "Clicksign",
+        "href": "https://www.clicksign.com/",
+        "desc": "Atuo orquestrando a concepção de diferentes estratégias para extrair, transformar, armazenar e gerar valor para a empresa por meio de dados. Também arquiteto atividades que envolvam a proteção de dados sensíveis e a sustentação do fornecimento de dados."
+      },
+      {
+        "title": "Data Scientist (Python Developer)",
+        "dateText": "Outubro, 2020 - Atual",
+        "start": "2020-10",
+        "end": "present",
+        "linkLabel": "Clicksign",
+        "href": "https://www.clicksign.com/",
+        "desc": "Faço parte do time de Business Intelligence da Clicksign buscando, através de automações e integrações, transformar pilhas de dados em informações relevantes para gerar novos conhecimento e insights. Além das análises e modelagens preditivas, desenvolvo scripts e projetos de integração entre bases de dados, APIs e Webservices REST construídos com o auxílio de ferramentas como Python, PostgreSQL, Apache Airflow, etc."
+      }
+    ],
+    "owl-slider-cert": [
+      {
+        "title": "Análise de Dados com Microsoft Power BI e Clínica de BI",
+        "dateText": "Janeiro, 2023",
+        "start": "2023-01",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/27_analise_de_dados_com_power_bi.pdf",
+        "desc": "O Microsoft Power BI vem crescendo de forma incrível no mercado e por isto, busquei estudar formas de criar análises de dados completas utilizando exclusivamente essa ferramenta. Além disso, executei a modelagem e análise de dados extraídos de Data Warehouses e Data Lakes a partir da aplicação."
+      },
+      {
+        "title": "Engenheiro de Dados Cloud",
+        "dateText": "Janeiro, 2023",
+        "start": "2023-01",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/others/10_xpe_engenheiro_de_dados_cloud.pdf",
+        "desc": "Dominei os fundamentos da arquitetura de dados e soluções em nuvem. Entendi como funciona o processamento de fluxos contínuos de dados, entrega de dados em solução de armazenamento (Data Lake, Data Warehouse, DBs modernos) e o processamento de dados massivos. Além disto, estudei os serviços mais utilizados nos principais players do mercado em cloud, como AWS, GCP e Azure."
+      },
+      {
+        "title": "Análise de Dados com Linguagem Python",
+        "dateText": "Dezembro, 2022",
+        "start": "2022-12",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/26_analise_de_dados_com_linguagem_python.pdf",
+        "desc": "Desenvolvi habilidades em análise de dados, como: tratamento de valores ausentes, limpeza e processamento de dados, geração de análises estatísticas descritivas, aplicação de binarização e encoding de variáveis categóricas e engenharia de atributos."
+      },
+      {
+        "title": "Design e Automação de Pipelines de Dados",
+        "dateText": "Dezembro, 2022",
+        "start": "2022-12",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/24_design_e_automacao_de_pipelines.pdf",
+        "desc": "Aprimorei o conhecimento necessário para o design e automação de pipelines de dados de forma eficiente com diferentes cenários e diferentes ferramentas. Trabalhei a automação de pipelines de dados com Dremio, AirFlow, Apache Kafka, Apache Beam, Snowflake, Stitch, Keboola e Dataedo."
+      },
+      {
+        "title": "Arquitetura e Integração de Processos ETL e ELT",
+        "dateText": "Dezembro, 2022",
+        "start": "2022-12",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/23_arquitetura_e_integracao_processos_etl_elt.pdf",
+        "desc": "Desenvolvi arquiteturas e integrações de processos ETL e ELT usando Oracle Data Integrator, Pentaho, Apache NiFi, Apache Spark, AWS Glue, Amazon Athena e Azure Data Factory."
+      },
+      {
+        "title": "Modelagem de Bancos de Dados Relacionais, Não Relacionais e Data Stores",
+        "dateText": "Dezembro, 2022",
+        "start": "2022-12",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/22_modelagem_de_bds_data_stores.pdf",
+        "desc": "Aprendi por meio de diferentes cenários a como modelar os dados, escolhendo o tipo de armazenamento apropriado em cada situação. E com um detalhe: fazendo toda a configuração na prática. O trabalho do Arquiteto de Dados é cuidar dos dados. E para fazer este trabalho bem-feito precisei dominar as principais soluções de armazenamento de dados, como bancos de dados relacionais, bancos NoSQL, Data Lakes e Data Stores. Mas não é só isso. Estudei como alinhar esse conhecimento com Governança de Dados, Segurança e Integração, além de como saber trabalhar com Linguagem SQL."
+      },
+      {
+        "title": "LGPD, Governança de Dados e Gestão de Metadados",
+        "dateText": "Dezembro, 2022",
+        "start": "2022-12",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/21_lgpd_gov_de_dados_e_gest_metadados.pdf",
+        "desc": "Estudei um tema de extrema importância e ainda negligenciado: Governança de Dados. Aprendi a construir um Plano Corporativo de Governança de Dados e um Plano de Gestão de Metadados, tudo alinhado com a LGPD – Lei Geral de Proteção de Dados."
+      },
+      {
+        "title": "Engenharia de Dados",
+        "dateText": "Outubro, 2022",
+        "start": "2022-10",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/others/9_xpe_engenheiro_de_dados.pdf",
+        "desc": "Aprendi como desenvolver pipelines de big data automatizadas para coletar, preparar, armazenar e processar dados. Projetei arquiteturas escaláveis, on premises e em cloud."
+      },
+      {
+        "title": "Engenharia de Dados",
+        "dateText": "Julho, 2022",
+        "start": "2022-07",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/others/8_how_engenheiro_de_dados.pdf",
+        "desc": "Na era da informação, a engenharia de dados é uma das profissões que mais têm crescido. Essa área é fundamental para orientar organizações a tomar melhores decisões de negócios baseadas em dados e garantir informações precisas, consistentes e ágeis. Por isso, busquei me tornar um especialista na área criando soluções mais robustas e escaláveis de forma prática."
+      },
+      {
+        "title": "SQL para Data Science",
+        "dateText": "Março, 2022",
+        "start": "2022-03",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/18_sql_para_data_science.pdf",
+        "desc": "SQL (Structured Query Language) é uma linguagem projetada para gerenciar dados em bancos de dados relacionais. A linguagem é o método mais comum de acessar dados em bancos de dados e uma das habilidades mais requisitadas em análise de dados. Através de labs, exercícios, estudos de caso e projetos, desenvolvi habilidades que aplico diariamente no meu dia a dia de trabalho."
+      },
+      {
+        "title": "Design e Administração de Cloud Computing AWS",
+        "dateText": "Fevereiro, 2022",
+        "start": "2022-02",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/19_design_e_admin_cloud_computing_aws.pdf",
+        "desc": "Aprendi a trabalhar com a AWS (Amazon Web Service) de forma profissional, compreendi como funciona Cloud Computing e como utilizar recursos computacionais em nuvem, reduzindo custo e aumentando a eficiência para implementar diferentes tipos de soluções."
+      },
+      {
+        "title": "Mineração de Dados com SPSS",
+        "dateText": "Janeiro, 2022",
+        "start": "2022-01",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/17_mineracao_de_dados_com_spss.pdf",
+        "desc": "Aprendi a trabalhar com mineração de Dados utilizando o clássico pacote estatístico SPSS."
+      },
+      {
+        "title": "Visualização de Dados e Design de Dashboards",
+        "dateText": "Outubro, 2021",
+        "start": "2021-10",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/16_Visualizacao_de_dados_e_design_de_Dashboards.pdf",
+        "desc": "Conhecimento de negócio é uma das habilidades principais do Cientista de Dados. E neste curso aprendi a aplicar técnicas analíticas em áreas de negócio como Marketing, Finanças e RH, coletando dados, definindo métricas, criando modelos e extraindo insights que gerem valor para as empresas e suportem as tomadas de decisões."
+      },
+      {
+        "title": "Business Analytics",
+        "dateText": "Setembro, 2021",
+        "start": "2021-09",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/15_Business_Analytics.pdf",
+        "desc": "Conhecimento de negócio é uma das habilidades principais do Cientista de Dados. E neste curso aprendi a aplicar técnicas analíticas em áreas de negócio como Marketing, Finanças e RH, coletando dados, definindo métricas, criando modelos e extraindo insights que gerem valor para as empresas e suportem as tomadas de decisões."
+      },
+      {
+        "title": "Machine Learning",
+        "dateText": "Agosto, 2021",
+        "start": "2021-08",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/14_Machine_Learning.pdf",
+        "desc": "Neste curso aprendi os conceitos de machine learning em detalhes. Estudei os principais algoritmos de machine learning e aprendi como implementá-los usando R e Python. Estudei: Regressão, Classificação, Decision Trees, Random Forest, Naive Bayes, Nearest Neighbours (KNN), K-Means, etc."
+      },
+      {
+        "title": "Engenharia de Dados com Hadoop e Spark",
+        "dateText": "Dezembro, 2020",
+        "start": "2020-12",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/13_Engenharia_de_Dados_com_Hadoop_e_Spark.pdf",
+        "desc": "Este é um curso de engenharia de dados. Armazenar big data é um desafio, dadas as suas características: dados gerados em alta velocidade, alto volume e grande variedade. Neste curso aprendi a criar um cluster Hadoop, como configurar um cluster Hadoop, como aplicar técnicas de mapeamento/redução nos dados. Criei um data hub com Hadoop e HBase, e apliquei ETL para carregar dados no Hadoop. Extraí dados usando R, Python e Pig, apliquei algoritmos de Machine Learning no Hadoop e configurei o Hadoop e Spark para criar uma poderosa solução de big data."
+      },
+      {
+        "title": "Big Data Real-Time Analytics com Python e Spark",
+        "dateText": "Julho, 2020",
+        "start": "2020-07",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/11_Big_data_real_time_analytics_python_spark.pdf",
+        "desc": "Utilizei a linguagem Python para coletar, organizar e analisar dados, além de implementar os principais algoritmos de Machine Learning. Também aprendi a trabalhar com o framework Spark para armazenar Big Data e realizar análise de dados em tempo real."
+      },
+      {
+        "title": "Análise Econométrica em R",
+        "dateText": "Junho, 2020",
+        "start": "2020-06",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/9_Analise_Econometrica_em_R.pdf",
+        "desc": "Aprendi a usar a linguagem de programação R aplicada a problemas econômicos. Estudei como ferramentas estatísticas podem nos ajudar a entender variáveis econômicas utilizando os principais pacotes da linguagem R para análises econométricas além de compreender as melhores formas de apresentar os resultados para suportar decisões de negócio."
+      },
+      {
+        "title": "Análise Estatística e Modelagem Preditiva de Séries Temporais Em Python",
+        "dateText": "Junho, 2020",
+        "start": "2020-06",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/8_Analise_Estatistica_ST_Python.pdf",
+        "desc": "Séries temporais são um tema negligenciado por grande parte dos profissionais no mercado e é por isso que busquei aprender a realizar o pré-processamento, a modelagem, a análise estatística e a previsão de séries temporais em Python usando modelos AR, MA, ARMA, ARIMA, SARIMA e Prophet, com visualização e avaliação das previsões dos modelos."
+      },
+      {
+        "title": "Análise Estatística de Dados e Machine Learning em R",
+        "dateText": "Maio, 2020",
+        "start": "2020-05",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/7_Analise_Estatistica _de_Dados_MA_R.pdf",
+        "desc": "Conhecer os conceitos estátisticos é fundamental no processo de análise de dados. Por isso, busquei me aperfeiçoar nas técnicas de visualização de dados, associação e correlação de variáveis, probabilidade, variáveis aleatórias e distribuições de probabilidade, inferência estatística, design de experimentos e análise de variância (ANOVA), testes de hipótese e machine Learning utilizando a linguagem de programação R."
+      },
+      {
+        "title": "Big data analytics com R e Microsoft Azure machine learning",
+        "dateText": "Fevereiro, 2020",
+        "start": "2020-02",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/6_Big_Data_R_Azure_ML.pdf",
+        "desc": "Dominar a análise de Big Data é algo que demanda muito estudo, por isso mergulhei neste universo e busquei aprender as principais técnicas para analisar e extrair conhecimento e valor dos dados aplicando diversas técnicas estátisticas e construindo vários modelos de machine learning. Nesta jornada pratiquei o que aprendi com duas das maiores ferramentas usadas por um Data Scientist: a linguagem R e o e Azure Machine Learning."
+      },
+      {
+        "title": "Python - Fundamentos para análise de dados",
+        "dateText": "Janeiro, 2020",
+        "start": "2020-01",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/5_Python.pdf",
+        "desc": "Quanto maior for o número de ferramentas que dominarmos, maior será nossa capacidade de resolver diferentes tipos de problemas, não é mesmo? Então porque não aprender a trabalhar com Data Science com uma das maiores e mais poderosas linguagem de programação no mundo hoje. Bom, foi o que eu resolvi fazer."
+      },
+      {
+        "title": "R - Fundamentos para análise de Dados",
+        "dateText": "Dezembro, 2019",
+        "start": "2019-12",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/4_R_Fundamentos.pdf",
+        "desc": "Não existe um número suficiente de profissionais qualificados em Big Data Analytics no mercado Brasileiro e internacional. Por isso busquei aprender os principais conceitos em análise de dados através de uma das mais poderosas ferramentas analíticas disponíveis atualmente."
+      },
+      {
+        "title": "Fundamentos do sistema operacional Linux",
+        "dateText": "Outubro, 2019",
+        "start": "2019-10",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/3_Linux.pdf",
+        "desc": "O Linux é um dos S.O.s mais usados no mundo e quando o assunto é Data Science e I.A, conhecer suas características pode nos ajudar a gerar soluções mais eficientes. Sabendo disso, busquei entender os pilares que sustentam esta tecnologia."
+      },
+      {
+        "title": "Mercado Financeiro e de Capitais",
+        "dateText": "Setembro, 2019",
+        "start": "2019-09",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/2_ Merc_Fin_Cap.pdf",
+        "desc": "Neste ponto aprendi sobre o funcionamento do Sistema Financeiro. Obtive conhecimento das leis que regem as funções dos principais players do mercado para em seguida exercitar a análise de custos abordando as principais fontes de financiamento disponíveis. Estudei quais técnicas podem ser usadas para se avaliar o desempenho de um investimento e administrar o seu risco e compreendi o funcionamento da Bolsa de Valores e às técnicas de análise de ações."
+      },
+      {
+        "title": "Introdução à Economia",
+        "dateText": "Julho, 2019",
+        "start": "2019-07",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/1_Intro_Economia.pdf",
+        "desc": "Bom, após definir o rumo da minha vida profissional, era hora de buscar por conhecimento especializado que me habilitasse a utilizar a Inteligência Artificial na produção de soluções eficientes para diferentes problemas de negócio. Com isso em mente, comecei uma formação de analista de inteligência de mercado entendendo os fundamentos da Economia."
+      },
+      {
+        "title": "Reconhecimento facial com Python e OpenCV",
+        "dateText": "Outubro, 2018",
+        "start": "2018-10",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/others/7_Reconhecimento_Facial_Python_OpenCV.pdf",
+        "desc": "Refinei os conceitos que até então havia obtido dentro da Visual Computing."
+      },
+      {
+        "title": "Reconhecimento de faces e de objetos com Python e Dlib",
+        "dateText": "Outubro, 2018",
+        "start": "2018-10",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/others/6_Reconhecimento_de_Objetos_Python_Dlib.pdf",
+        "desc": "Bom, a curiosidade me fez elevar o nível dos estudos e insatisfeito em só conseguir detectar faces, passei a buscar maneiras de classificar cada uma delas. Nesta procura, aprendi a manusear a bliblioteca Dlib e todos os excelentes algoritmos que possui para as tarefas de Visual Computing."
+      },
+      {
+        "title": "Detectando faces com Python e OpenCV",
+        "dateText": "Outubro, 2018",
+        "start": "2018-10",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/others/5_Detecção_de_Faces_OpenCV.pdf",
+        "desc": "Por perceber a proeminência da Inteligência artificial na vida do ser humano, iniciei minha jornada neste universo buscando criar programas dotados da capacidade de detectar faces humanas com o apoio da linguagem Python e da tão conhecida biblioteca OpenCV."
+      },
+      {
+        "title": "Desenvolvedor Web",
+        "dateText": "Janeiro, 2018",
+        "start": "2018-01",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/others/4_Desenvolvedor_Web.pdf",
+        "desc": "Não basta ser eficiente, é preciso parecer eficiente. E é por isso que me aprofundei mais nos conceitos que norteiam todo o processo de design de páginas Web atrativas e inovadoras utilizando HTML 5, CSS 3 e Javascrit."
+      },
+      {
+        "title": "Integrando E-commerce PHP 7 com PagSeguro",
+        "dateText": "Janeiro, 2018",
+        "start": "2018-01",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/others/3_PagSeguro.pdf",
+        "desc": "Integrei ferramentas específicas a um projeto completo de E-commerce objetivando entender as técnicas mais eficientes para a construção e upgrade de projetos de grande escala."
+      },
+      {
+        "title": "Dominando banco de dados com MySQL",
+        "dateText": "Janeiro, 2018",
+        "start": "2018-01",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/others/2_MySQL.pdf",
+        "desc": "Explorei os princípios que fundamentam o mundo dos Banco de dados relacionais aplicando-os na prática com o famoso MySQL."
+      },
+      {
+        "title": "PHP 7",
+        "dateText": "Janeiro, 2018",
+        "start": "2018-01",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/others/1_PHP_7.pdf",
+        "desc": "Ampliei meus conhecimentos sobre progamação Web utilizando as tecnologias mais populares do mercado: PHP 7, CSS 3, HTML 5, Javascrit e o banco de dados MySQL. Como resultado prático, desenvolvi um projeto de E-commerce completo."
+      }
+    ],
+    "owl-slider-academy": [
+      {
+        "title": "Engenharia de Dados",
+        "dateText": "Junho, 2022",
+        "start": "2022-06",
+        "end": null,
+        "linkLabel": "Pós-Graduação",
+        "href": null,
+        "desc": "Ter a capacidade de criar e gerenciar infraestruturas de dados se tornou uma necessidade latente no mercado. Por isso, busquei aprender a projetar e implementar soluções e plataformas de Big Data, seja para uso analítico ou operacional. Estudei como obter e tratar dados e armazenar dados de forma eficiente para aumentar o diferencial competitivo das organizações."
+      },
+      {
+        "title": "Ciência de Dados e Inteligência Artificial",
+        "dateText": "Junho, 2021 - Julho, 2022",
+        "start": "2021-06",
+        "end": "2022-07",
+        "linkLabel": "Pós-Graduação",
+        "href": null,
+        "desc": "Estamos na era do Big Data, onde a informação é um dos ativos mais valiosos e sua importância só tende a aumentar. Neste curso, aprendi a como desvendar dados, antecipar o futuro, desenvolver novas tecnologias de maneira ética e responsável, em conexão com as principais tendências do mundo. Adquiri habilidades para exercer múltiplas atividades, atuando como cientista de dados, engenheiro ou arquiteto de dados, engenheiro de IA e Machine Learning, analista de inteligência de mercado, dentre outros."
+      },
+      {
+        "title": "Ciência da Computação",
+        "dateText": "Agosto, 2015 - Julho, 2019",
+        "start": "2015-08",
+        "end": "2019-07",
+        "linkLabel": "Bacharelado",
+        "href": null,
+        "desc": "Alcancei após árduos 3,5 anos o grau de bacharel em Ciência da computação pela Universidade Estadual da Zona Oeste do Rio de Janeiro (UEZO)."
+      }
+    ],
+    "owl-slider-degree": [
+      {
+        "title": "Data Analyst Certified Professional",
+        "dateText": "Janeiro, 2023 - Janeiro, 2025",
+        "start": "2023-01",
+        "end": "2025-01",
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/29_certificado_DACP.pdf",
+        "desc": "Alcancei a certificação de especialista em análise de dados pela Data Science Academy."
+      },
+      {
+        "title": "Formação Analista de Dados",
+        "dateText": "Janeiro, 2023",
+        "start": "2023-01",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/28_certificado_FADA.pdf",
+        "desc": "O Analista de Dados serve como guardião dos dados de uma organização para que as partes interessadas possam entender os dados e usá-los para tomar decisões estratégicas de negócios. É uma função técnica, mas que requer uma visão de negócio para ajudar os tomadores de decisão a compreenderem os resultados das análises. Nesta formação, adquiri habilidades avançadas em SQL, Python, Data Lakes, Data Stores, Data Warehouses e Power BI."
+      },
+      {
+        "title": "Formação Arquiteto de Dados",
+        "dateText": "Dezembro, 2022",
+        "start": "2022-12",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/25_certificado_FAD.pdf",
+        "desc": "Os Arquitetos de Dados são profissionais encarregados de definir políticas, procedimentos, modelos e tecnologias que serão usados para coletar, organizar, armazenar e recuperar informações para a organização. Nesta formação, desenvolvi as habilidades de design, arquitetura e modelagem de pipelines e soluções de dados."
+      },
+      {
+        "title": "Astronomer Certification DAG Authoring for Apache Airflow",
+        "dateText": "Dezembro, 2022",
+        "start": "2022-12",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "https://www.credly.com/badges/53ff420f-0790-420f-9e3e-3e0071287892/linked_in_profile",
+        "desc": "Adquiri as habilidades necessárias para criar DAGs confiáveis ​​e poderosas de forma eficaz seguindo as melhores práticas no Apache Airflow. Isso inclui escolher os operadores certos de acordo com as necessidades, definir os valores do argumento da tarefa com sabedoria, saber qual recurso usar e suas limitações e tomar decisões corretas no design das DAGs."
+      },
+      {
+        "title": "Astronomer Certification for Apache Airflow Fundamentals",
+        "dateText": "Novembro, 2022",
+        "start": "2022-11",
+        "end": null,
+        "linkLabel": "Certificado",
+        "href": "https://www.credly.com/badges/936c78c9-4f87-430c-97da-a7964c130876/linked_in_profile",
+        "desc": "Adquiri habilidades fundamentais necessárias para criar, gerenciar e monitorar DAGs com eficiência no Apache Airflow. Isso inclui escolher o executor certo com base nas necessidades atuais, saber em quais casos de uso o Airflow é adequado ou não, monitorar tarefas, entender como as tarefas são agendadas e ser capaz de criar DAGs básicas, mas bem projetadas."
+      },
+      {
+        "title": "Data Scientist Certified Professional",
+        "dateText": "Abril, 2022 - Abril, 2024",
+        "start": "2022-04",
+        "end": "2024-04",
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/20_certificado_dscp.pdf",
+        "desc": "Alcancei a certificação de especialista em ciência de dados pela Data Science Academy."
+      },
+      {
+        "title": "Cientista de Dados",
+        "dateText": "Junho, 2020 - Outubro, 2021",
+        "start": "2020-06",
+        "end": "2021-10",
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/12_Certificado_FCD.pdf",
+        "desc": "Aprendi a atuar como um “Mago de Dados”, podendo adquirir massas de dados de diversas fontes e então limpar, tratar, organizar e prepará-los; para em seguida, aplicar habilidades matemáticas, estatísticas e machine learning para descobrir insights ocultos de negócios e gerar inteligência."
+      },
+      {
+        "title": "Analista de Inteligência de Mercado",
+        "dateText": "Junho, 2019 - Junho, 2020",
+        "start": "2019-06",
+        "end": "2020-06",
+        "linkLabel": "Certificado",
+        "href": "pdf/dsa/10_Certificado_FAIM.pdf",
+        "desc": "Essa formação me preparou para atuar com análise de dados econômicos e assim ajudar a empresa ou cliente a obter vantagem competitiva e tomar decisões mais informadas. Foi uma excelente oportunidade de aprender sobre os fundamentos da análise econômica, tema de grande relevância para empresas públicas e privadas e para aqueles que pensam em empreender em Ciência de Dados."
+      }
+    ],
+    "owl-slider-extra": [
+      {
+        "title": "Palestra: Airflow - Quem disse que não se pode fazer processamento de dados nele?",
+        "dateText": "Dezembro, 2021",
+        "start": "2021-12",
+        "end": null,
+        "linkLabel": "TDC",
+        "href": "https://thedevconf.com/",
+        "desc": "O Airflow é uma plataforma para criar, agendar e monitorar fluxos de trabalho de maneira programática. Mas, questionei se seria possível usá-lo para processar dados. Haveriam vantagens nisso? Quais os benefícios de usá-lo em uma empresa? Seria possível aprender como criar pipelines consistentes e simples para tratar baixos volumes de dados? Quais arquiteturas de pipelines poderíamos construir no Airflow?"
+      },
+      {
+        "title": "Data Science Academy",
+        "dateText": "Janeiro, 2021",
+        "start": "2021-01",
+        "end": null,
+        "linkLabel": "Podcast",
+        "href": "https://www.youtube.com/watch?v=KEap4SCQf-8",
+        "desc": "Neste episódio do Podcast DSA, expliquei um pouco da minha trajetória profissional, meu mindset, minhas alegrias e frustrações. Além disso, contei como foi conquistar meu primeiro emprego como Cientista de Dados e as tarefas do dia a dia."
+      },
+      {
+        "title": "Iniciação Tecnológica",
+        "dateText": "Agosto, 2018 - Agosto, 2020",
+        "start": "2018-08",
+        "end": "2020-08",
+        "linkLabel": "Bolsa",
+        "href": null,
+        "desc": "Busquei entender e refinar técnicas de reconhecimento e detecção de objetos como linhas, faces humanas e células. Também foi desenvolvido, como uma ramificação destes estudos, uma análise de otimização de detecção de bordas em células, para facilitar o processo de construção de modelos 3D nas áreas biológicas, farmacológicas e médicas."
+      }
+    ],
+    "projects": [
+      {
+        "modal": "13",
+        "title": "National Institute of Diabetes and Digestive and Kidney Diseases",
+        "desc": "Neste projeto, iremos utilizar a linguagem Python, para prever com base em medidas de diagnóstico, se um paciente tem diabetes.",
+        "category": "Big Data Analytics & Machine Learning",
+        "href": "https://franklin390.github.io/Project_06_National_Institute_of_Diabetes_and_Digestive_and_Kidney_Diseases/"
+      },
+      {
+        "modal": "12",
+        "title": "Customer Churn in Telecom Operators",
+        "desc": "Neste projeto, iremos utilizar a linguagem Python, para criar um modelo de aprendizagem de máquina que possa prever se um cliente pode ou não cancelar seu plano, e qual a probabilidade disso ocorrer.",
+        "category": "Big Data Analytics & Machine Learning",
+        "href": "https://franklin390.github.io/Project_05_Customer_Churn_in_Telecom_Operators/"
+      },
+      {
+        "modal": "11",
+        "title": "Santander Customer Satisfaction",
+        "desc": "Neste projeto, vamos utilizar a linguagem Python, para criar um modelo de aprendizagem de máquina que possa prever se um cliente está ou não satisfeito com sua experiência bancária.",
+        "category": "Big Data Analytics & Machine Learning",
+        "href": "https://franklin390.github.io/Project_04_Santander_Customer_Satisfaction/"
+      },
+      {
+        "modal": "10",
+        "title": "Netflix Investor: Quarterly Earnings",
+        "desc": "Neste projeto, vamos utilizar a linguagem R para preparar um resumo estatístico dos dados da empresa Netflix, demonstrando sua saúde financeira e outras informações relevantes, que poderão ajudar potenciais investidores a decidir sobre investir ou não na companhia.",
+        "category": "Big Data Analytics & Forecasting",
+        "href": "https://franklin390.github.io/Project_03_Netflix_Investor_Quarterly_Earnings/"
+      },
+      {
+        "modal": "09",
+        "title": "Warm Up: Predict Blood Donations",
+        "desc": "Neste projeto de aprendizado de máquina, estamos interessados ​​em utilizar a linguagem R para prever se um doador de sangue doará dentro de uma determinada janela de tempo. O objetivo é prever os valores da última coluna (Made Donation in March 2007), para deterimnar se ele / ela doou sangue em março de 2007.",
+        "category": "Big Data Analytics & Machine Learning",
+        "href": "https://franklin390.github.io/Challenge_Project_03_Warm_Up_Predict_Blood_Donations/"
+      },
+      {
+        "modal": "08",
+        "title": "TalkingData AdTracking Fraud Detection Challenge",
+        "desc": "Neste projeto, construímos um modelo de aprendizado de máquina para determinar se um clique em um anúncio online é fraudulento ou não.",
+        "category": "Big Data Analytics & Machine Learning",
+        "href": "https://franklin390.github.io/Project_01_Talking_Data_AdTracking_Fraud_Detection_Challenge/"
+      },
+      {
+        "modal": "07",
+        "title": "Grupo Bimbo Inventory Demand",
+        "desc": "Neste projeto de aprendizado de máquina, vamos desenvolver um modelo para prever com precisão a demanda de estoque com base nos dados históricos de vendas. Isso fará com que os consumidores dos mais de 100 produtos de panificação não fiquem olhando para as prateleiras vazias, além de reduzir o valor gasto com reembolsos para os proprietários de lojas com produtos excedentes impróprios para venda.",
+        "category": "Big Data Analytics & Machine Learning",
+        "href": "https://franklin390.github.io/Project_02_Group_Bimbo_Inventory_Demand/"
+      },
+      {
+        "modal": "06",
+        "title": "Warm Up: Machine Learning with a Heart",
+        "desc": "As doenças cardíacas são a principal causa de morte no mundo. Para aprender a prevenir doenças cardíacas, precisamos primeiro aprender a detectá-las com segurança. Por isso, neste projeto vamos criar modelos preditivos para classificar se um paciente tem ou não alguma doença cardíaca.",
+        "category": "Big Data Analytics & Machine Learning",
+        "href": "https://franklin390.github.io/Challenge_Project_02_Warm_Up_Machine_Learning_with_a_Heart/"
+      },
+      {
+        "modal": "05",
+        "title": "Boston Houses",
+        "desc": "Neste projeto vamos criar modelos preditivos para prever os preços de casas em Boston.",
+        "category": "Big Data Analytics & Machine Learning",
+        "href": "https://franklin390.github.io/Challenge_Project_01_Boston_Houses/"
+      },
+      {
+        "modal": "04",
+        "title": "Big Data Analytics on Twitter - Part I",
+        "desc": "O objetivo desta análise é explorar diferentes técnicas e ferramentas para a captura, manipulação e transformação de dados proveninentes da rede social Twitter. A análise a ser feita buscará entender os sentimentos que cada Tweet transmite para permitir a extração de informação, conhecimento e sabedoria. Esta técnica visa auxilar os tomadores de decisão na análise dos sentimentos do seu público alvo em relação a um determinado tema. Como por exemplo, determinar se uma campanha de marketing apresenta uma aceitação positiva, negativa ou neutra.",
+        "category": "Big Data Analytics",
+        "href": "https://franklin390.github.io/Mini_Project_01_Sentiment_Analisys_I/"
+      },
+      {
+        "modal": "03",
+        "title": "Big Data Analytics on Twitter - Part II",
+        "desc": "O objetivo desta análise é explorar diferentes técnicas e ferramentas para a captura, manipulação e transformação de dados provenientes do Twitter. Buscaremos introduzir o processo de comparação dos sentimentos dos usuários desta rede social em relação a dois temas (duas palavras-chave). Esta técnica visa auxilar os tomadores de decisão na compreensão dos sentimentos do seu público alvo em relação a múltiplos temas. Como por exemplo, determinar se uma campanha de marketing apresentou uma aceitação mais positiva ou negativa do que outra.",
+        "category": "Big Data Analytics",
+        "href": "https://franklin390.github.io/Mini_Project_02_Sentiment_Analisys_II/"
+      },
+      {
+        "modal": "02",
+        "title": "Big Data Analytics on Twitter - Part III",
+        "desc": "O objetivo desta análise é explorar diferentes técnicas e ferramentas para a captura, manipulação e transformação de dados provenientes do Twitter. Buscaremos classificar os sentimentos que cada Tweet transmite e determinar sua polaridade. Esta técnica visa auxilar os tomadores de decisão na compreensão dos sentimentos do seu público alvo em relação a um determinado tema. Como por exemplo, determinar se uma campanha de marketing gerou surpresa, raiva, medo, nojo, alegria, etc.",
+        "category": "Big Data Analytics",
+        "href": "https://franklin390.github.io/Mini_Project_03_Sentiment_Analisys_III/"
+      },
+      {
+        "modal": "01",
+        "title": "Big Data Analytics on Twitter - Part IV",
+        "desc": "O objetivo desta análise é explorar diferentes técnicas e ferramentas para a captura, manipulação e transformação de dados provenientes do Twitter. Buscaremos avaliar a frequência com que uma determinada palavra-chave é usada em uma região geográfica. Esta técnica visa auxilar os tomadores de decisão na compreensão dos sentimentos do seu público alvo em relação a um determinado tema. Como por exemplo, determinar em quais cidades uma campanha de marketing foi mais comentada.",
+        "category": "Big Data Analytics",
+        "href": "https://franklin390.github.io/Mini_Project_04_Sentiment_Analisys_IV/"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "name": "Português",
+      "pct": 95,
+      "label": "Nativo"
+    },
+    {
+      "name": "Inglês",
+      "pct": 80,
+      "label": "Avançado"
+    },
+    {
+      "name": "Espanhol",
+      "pct": 70,
+      "label": "Bom"
+    },
+    {
+      "name": "Apache Airflow",
+      "pct": 95,
+      "label": "Avançado"
+    },
+    {
+      "name": "Metabase",
+      "pct": 95,
+      "label": "Avançado"
+    },
+    {
+      "name": "Streamlit",
+      "pct": 95,
+      "label": "Avançado"
+    },
+    {
+      "name": "AWS",
+      "pct": 90,
+      "label": "Muito bom"
+    },
+    {
+      "name": "NiFi",
+      "pct": 85,
+      "label": "Bom"
+    },
+    {
+      "name": "Linguagem R",
+      "pct": 95,
+      "label": "Avançado"
+    },
+    {
+      "name": "Python",
+      "pct": 95,
+      "label": "Avançado"
+    },
+    {
+      "name": "Apache Spark",
+      "pct": 90,
+      "label": "Muito bom"
+    },
+    {
+      "name": "Hadoop",
+      "pct": 90,
+      "label": "Muito bom"
+    },
+    {
+      "name": "Microsoft Power BI",
+      "pct": 85,
+      "label": "Bom"
+    },
+    {
+      "name": "SPSS",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "D3.js",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "Tableau",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "Qlik Sense",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "Java",
+      "pct": 75,
+      "label": "Intermediário"
+    },
+    {
+      "name": "Azure Machine Learning",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "Mlib",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "Caret",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "Scikit-learn",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "MongoDB",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "SQL",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "PL/SQL",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "C++",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "C",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "C#",
+      "pct": 75,
+      "label": "Intermediário"
+    },
+    {
+      "name": "ETL",
+      "pct": 95,
+      "label": "Avançado"
+    },
+    {
+      "name": "PHP",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "CSS",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "HTML5",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "JavaScript",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "Linux",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "Apache Spark R",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "Google Analytics",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "NoSQL",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "Hive",
+      "pct": 75,
+      "label": "Intermediário"
+    },
+    {
+      "name": "Shape-up",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "Docker",
+      "pct": 80,
+      "label": "Bom"
+    },
+    {
+      "name": "OKRs",
+      "pct": 80,
+      "label": "Bom"
+    }
+  ]
+}

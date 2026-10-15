@@ -35,9 +35,7 @@
  *
  * ------------------------------------------------------------------- 
  */
-@import url("fonts.css");
-@import url("font-awesome/css/font-awesome.min.css");
-@import url("micons/micons.css");
+/* fonts.css and micons/micons.css are linked from the page head (an @import here would make them load one step later) */
 
 
 /** 
@@ -136,6 +134,9 @@ h3, .h03 {
 h4, .h04 {
 	font-size: 1.7rem;
 	line-height: 1.765;
+}
+.h05 {
+	font-weight: 700; /* what the browser gives an <h5> by itself: labels made with .h05 on a <p> look the same */
 }
 h5, .h05 {
 	font-size: 1.4rem;
@@ -1033,14 +1034,15 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 	margin-bottom: 3.6rem;
 	position: relative;
 }
-.section-intro h1 {
+.section-intro h2 {
 	font-family: "poppins-semibold", serif;
+	letter-spacing: -.1rem;
 	font-size: 3.6rem;
 	color: #313131;
 	line-height: 1.25;
 	margin-bottom: 1.2rem;
 }
-.section-intro h5 {
+.section-intro h5, .section-intro .eyebrow {
 	color: #FF0077;
 	font-size: 1.6rem;
 	line-height: 1.875;
@@ -1057,21 +1059,22 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 	.section-intro {
 		max-width: 650px;
 	}
-	.section-intro h1 {
+	.section-intro h2 {
 		font-size: 3rem;
 	}
 }
 @media only screen and (max-width:600px) {
-	.section-intro h1 {
+	.section-intro h2 {
 		font-size: 2.6rem;
+		letter-spacing: -.07rem;
 	}
-	.section-intro h5 {
+	.section-intro h5, .section-intro .eyebrow {
 		font-size: 1.5rem;
 		letter-spacing: .3rem;
 	}
 }
 @media only screen and (max-width:400px) {
-	.section-intro h1 {
+	.section-intro h2 {
 		font-size: 2.4rem;
 	}
 }
@@ -1294,7 +1297,7 @@ header .logo a {
  * ------------------------------------------------------------------- 
  */
 #intro {
-	background: #151515 url(../images/intro-bg.jpg) no-repeat center bottom;
+	background: #151515 url(../images/intro-bg.webp) no-repeat center bottom;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
@@ -1336,7 +1339,7 @@ header .logo a {
 	margin-right: auto;
 	text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
-.intro-content h5 {
+.intro-content h5, .intro-content .eyebrow {
 	color: #cc005f;
 	font-family: "poppins-bold", sans-serif;
 	font-size: 2.3rem;
@@ -1445,7 +1448,7 @@ header .logo a {
 	.intro-content h1 {
 		font-size: 5.2rem;
 	}
-	.intro-content h5 {
+	.intro-content h5, .intro-content .eyebrow {
 		font-size: 1.8rem;
 	}
 	.intro-content .intro-position {
@@ -1466,7 +1469,7 @@ header .logo a {
 		font-size: 4.6rem;
 		margin-bottom: .6rem;
 	}
-	.intro-content h5 {
+	.intro-content h5, .intro-content .eyebrow {
 		font-size: 1.5rem;
 		margin-bottom: .3rem;
 		letter-spacing: .2rem;
@@ -2098,7 +2101,7 @@ header .logo a {
  * ------------------------------------------------------------------- 
  */
 #services {
-	background: #313131 url(../images/bg.jpg) no-repeat center;
+	background: #313131 no-repeat center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
@@ -2106,6 +2109,10 @@ header .logo a {
 	padding-bottom: 12rem;
 	color: white;
 	position: relative;
+}
+/* the picture is only decoration under a 90% dark layer: main.js adds .bg-ready when the section is near the screen, so it is not part of the first load */
+#services.bg-ready {
+	background-image: url(../images/bg.jpg);
 }
 #services .overlay {
 	position: absolute;
@@ -2121,10 +2128,10 @@ header .logo a {
 	margin-bottom: 1.8rem;
 }
 
-#services .section-intro h1 {
+#services .section-intro h2 {
 	color: white;
 }
-#services .section-intro h5 {
+#services .section-intro h5, #services .section-intro .eyebrow {
 	color: #FF0077;
 }
 #services .section-intro p {
@@ -2363,10 +2370,10 @@ header .logo a {
 	padding-top: 12rem;
 	padding-bottom: 7.2rem;
 }
-#contact .section-intro h1 {
+#contact .section-intro h2 {
 	color: white;
 }
-#contact .section-intro h5 {
+#contact .section-intro h5, #contact .section-intro .eyebrow {
 	color: #FF0077;
 }
 #contact .section-intro p {

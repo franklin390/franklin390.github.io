@@ -1,0 +1,140 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "import": [
+    "./node_modules/@cspell/dict-pt-br/cspell-ext.json",
+    "./node_modules/@cspell/dict-es-es/cspell-ext.json"
+  ],
+  "dictionaries": [
+    "en_us",
+    "softwareTerms",
+    "companies",
+    "html"
+  ],
+  "words": [
+    "Databricks",
+    "dbt",
+    "Lakehouse",
+    "lakehouses",
+    "lakehouse",
+    "Redshift",
+    "Airflow",
+    "Streamlit",
+    "Metabase",
+    "Lovable",
+    "FinOps",
+    "LGPD",
+    "LTV",
+    "Clicksign",
+    "Astronomer",
+    "Credly",
+    "PUCRS",
+    "UEZO",
+    "IGTI",
+    "Udemy",
+    "SPSS",
+    "OpenCV",
+    "Dlib",
+    "PagSeguro",
+    "MySQL",
+    "Hadoop",
+    "Kafka",
+    "NoSQL",
+    "TB",
+    "APIs",
+    "backpropagation",
+    "TDC",
+    "DAG",
+    "DACP",
+    "DSCP",
+    "FAIM",
+    "Educação",
+    "Pontifícia",
+    "Católica",
+    "Bimbo",
+    "TalkingData",
+    "AdTracking",
+    "Santander",
+    "MLlib",
+    "SparkR",
+    "PostgreSQL",
+    "REST",
+    "Pipelines",
+    "pipelines",
+    "Lato",
+    "Sensu",
+    "Zona",
+    "Oeste",
+    "Estadual",
+    "Romênia",
+    "GA4",
+    "Remoto",
+    "Ferreira",
+    "Bootcamp",
+    "bootcamp",
+    "bootcamps",
+    "LinkedIn",
+    "linkedin",
+    "monitoreo",
+    "clústeres",
+    "retrabajo",
+    "Rumania",
+    "tuit",
+    "tuits",
+    "dashboards",
+    "data",
+    "lake",
+    "warehouses",
+    "stores",
+    "jobs",
+    "trunk",
+    "based",
+    "observabilidad",
+    "Observabilidad",
+    "Contáctame",
+    "regulatorio",
+    "econométrico",
+    "reembolsos"
+  ],
+  "ignoreRegExpList": [
+    "/\\bhttps?:\\/\\/\\S+/g"
+  ],
+  "overrides": [
+    {
+      "filename": "**/pt.js",
+      "language": "pt-BR",
+      "dictionaries": [
+        "pt-br",
+        "softwareTerms",
+        "companies"
+      ]
+    },
+    {
+      "filename": "**/*.pt.json",
+      "language": "pt-BR",
+      "dictionaries": [
+        "pt-br",
+        "softwareTerms",
+        "companies"
+      ]
+    },
+    {
+      "filename": "**/es.js",
+      "language": "es",
+      "dictionaries": [
+        "es-es",
+        "softwareTerms",
+        "companies"
+      ]
+    },
+    {
+      "filename": "**/*.es.json",
+      "language": "es",
+      "dictionaries": [
+        "es-es",
+        "softwareTerms",
+        "companies"
+      ]
+    }
+  ]
+}

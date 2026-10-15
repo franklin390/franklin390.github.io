@@ -1,0 +1,314 @@
+{
+  "_readme": "Measurement plan: the single source of truth for what js/analytics.js pushes to window.dataLayer. Gate G13 drives a real browser and checks the dataLayer against this file (names, parameters, no personal data, every event actually fires). _tools/build-gtm.mjs generates the Google Tag Manager container and its README from it.",
+  "gtmContainer": "GTM-PNSXVNR",
+  "allowedHosts": ["franklin390.github.io"],
+  "allowedHostsNote": "Only these hostnames may report to analytics. The page snippet (index.html) and the GTM container (build-gtm.mjs) both read this list; a copy of the site on any other domain stays out of the data. Add a custom domain here, then run: node build-gtm.mjs G-6TKSCE8X4Q",
+  "constraints": {
+    "_note": "GA4 limits: event name <= 40 chars, parameter name <= 40, value <= 100, <= 25 parameters per event. Names are snake_case.",
+    "maxValueLength": 100,
+    "maxParamsPerEvent": 25
+  },
+  "commonParams": [
+    "site_language"
+  ],
+  "params": {
+    "site_language": {
+      "type": "string",
+      "dimension": true,
+      "about": "Language the page was showing when the event happened (en, pt, es). Added to every event."
+    },
+    "item": {
+      "type": "string",
+      "dimension": true,
+      "about": "What the event is about; the event name says what kind of thing it is (a section, a stat, a filter, a case card, a project, a carousel, a skill)."
+    },
+    "slide": {
+      "type": "string",
+      "dimension": true,
+      "about": "Slide shown by a carousel: the role id for the experience carousel, a number for the others."
+    },
+    "location": {
+      "type": "string",
+      "dimension": true,
+      "about": "Where on the page the clicked element lives: a section id, header or footer."
+    },
+    "method": {
+      "type": "string",
+      "dimension": true,
+      "about": "How: email (the icon at the top), email_hiring, email_projects (the two paths of the Contact section), linkedin, github (contact_click) or pointer, keyboard (language_toggle)."
+    },
+    "state": {
+      "type": "string",
+      "dimension": true,
+      "about": "open or close."
+    },
+    "link_type": {
+      "type": "string",
+      "dimension": true,
+      "about": "company, event, episode, project, certificate_verify or other."
+    },
+    "link_domain": {
+      "type": "string",
+      "dimension": false,
+      "about": "Host of the outbound link (never the full URL)."
+    },
+    "file_name": {
+      "type": "string",
+      "dimension": false,
+      "about": "PDF file name (CV or certificate)."
+    },
+    "cv_language": {
+      "type": "string",
+      "dimension": true,
+      "about": "Language of the CV file that was downloaded."
+    },
+    "from_language": {
+      "type": "string",
+      "dimension": true,
+      "about": "Language before a switch."
+    },
+    "to_language": {
+      "type": "string",
+      "dimension": true,
+      "about": "Language after a switch."
+    },
+    "language_source": {
+      "type": "string",
+      "dimension": true,
+      "about": "url (?lang=), saved (previous choice) or default."
+    },
+    "browser_language": {
+      "type": "string",
+      "dimension": true,
+      "about": "Primary language of the browser: en, pt, es or other. Compare with site_language to see who needs a translation."
+    },
+    "device_class": {
+      "type": "string",
+      "dimension": true,
+      "about": "mobile (<768px), tablet (<1180px) or desktop."
+    },
+    "reduced_motion": {
+      "type": "string",
+      "dimension": false,
+      "about": "yes/no: prefers-reduced-motion."
+    },
+    "seconds": {
+      "type": "number",
+      "metric": true,
+      "about": "Active seconds spent in a section (tab visible and the visitor active in the last 20 s)."
+    },
+    "percent": {
+      "type": "number",
+      "metric": true,
+      "about": "Scroll depth milestone: 25, 50, 75 or 100."
+    },
+    "total_seconds": {
+      "type": "number",
+      "metric": true,
+      "about": "Total active seconds in the page view."
+    },
+    "sections_seen": {
+      "type": "number",
+      "metric": true,
+      "about": "How many sections were read for 2+ seconds."
+    },
+    "max_scroll_percent": {
+      "type": "number",
+      "metric": true,
+      "about": "Deepest scroll position reached."
+    },
+    "message": {
+      "type": "string",
+      "dimension": false,
+      "about": "js_error: the error message (own scripts only, 100 chars)."
+    },
+    "file": {
+      "type": "string",
+      "dimension": false,
+      "about": "js_error: script file and line."
+    },
+    "via": {
+      "type": "string",
+      "dimension": true,
+      "about": "Where a navigation click came from: bar (desktop), dropdown (hamburger menu) brand (the logo) or glance (a row of the career-at-a-glance list)."
+    }
+  },
+  "events": {
+    "site_context": {
+      "when": "Once per page view, after the language is resolved.",
+      "params": [
+        "language_source",
+        "browser_language",
+        "device_class",
+        "reduced_motion"
+      ],
+      "keyEvent": false
+    },
+    "language_toggle": {
+      "when": "The visitor switches language with the EN | PT | ES buttons.",
+      "params": [
+        "from_language",
+        "to_language",
+        "method"
+      ],
+      "keyEvent": false
+    },
+    "cv_download": {
+      "when": "Click on a CV download button.",
+      "params": [
+        "file_name",
+        "cv_language",
+        "location"
+      ],
+      "keyEvent": true
+    },
+    "contact_click": {
+      "when": "Click on e-mail (the top icon, or the Hiring / Projects button of the Contact section), LinkedIn or GitHub.",
+      "params": [
+        "method",
+        "location"
+      ],
+      "keyEvent": true
+    },
+    "outbound_click": {
+      "when": "Click on a link that leaves the site (company, event, episode, project, Credly).",
+      "params": [
+        "link_type",
+        "link_domain",
+        "location"
+      ],
+      "keyEvent": false
+    },
+    "certificate_open": {
+      "when": "Click on a certificate PDF.",
+      "params": [
+        "file_name",
+        "location"
+      ],
+      "keyEvent": false
+    },
+    "nav_click": {
+      "when": "Click on the logo, a navigation link or a row of the career-at-a-glance list (via glance, item = the role id).",
+      "params": [
+        "item",
+        "via"
+      ],
+      "keyEvent": false
+    },
+    "menu_toggle": {
+      "when": "Open or close of the hamburger menu (small screens).",
+      "params": [
+        "state"
+      ],
+      "keyEvent": false
+    },
+    "impact_stat_click": {
+      "when": "Click on a number of the Impact section.",
+      "params": [
+        "item"
+      ],
+      "keyEvent": false
+    },
+    "case_filter": {
+      "when": "A theme filter of the case studies is chosen.",
+      "params": [
+        "item"
+      ],
+      "keyEvent": false
+    },
+    "case_view": {
+      "when": "A case card stays 2 s on screen (60% visible), once per card.",
+      "params": [
+        "item"
+      ],
+      "keyEvent": false
+    },
+    "project_open": {
+      "when": "A project of the earlier-projects carousel is opened.",
+      "params": [
+        "item"
+      ],
+      "keyEvent": false
+    },
+    "carousel_navigate": {
+      "when": "A carousel moves to another slide.",
+      "params": [
+        "item",
+        "slide"
+      ],
+      "keyEvent": false
+    },
+    "training_toggle": {
+      "when": "The full list of courses (item courses) or the early machine learning projects (item early_projects) is opened or closed.",
+      "params": [
+        "item",
+        "state"
+      ],
+      "keyEvent": false
+    },
+    "skill_hover": {
+      "when": "The pointer rests 0.5 s on a skill tag (once per skill, at most 15 per visit).",
+      "params": [
+        "item"
+      ],
+      "keyEvent": false
+    },
+    "section_view": {
+      "when": "A section is under the middle of the screen for 2 active seconds (once per section).",
+      "params": [
+        "item"
+      ],
+      "keyEvent": false
+    },
+    "section_dwell": {
+      "when": "The tab is hidden or closed: one event per section with 3+ active seconds.",
+      "params": [
+        "item",
+        "seconds"
+      ],
+      "keyEvent": false
+    },
+    "scroll_depth": {
+      "when": "25, 50, 75 and 100% of the page height reached.",
+      "params": [
+        "percent"
+      ],
+      "keyEvent": false
+    },
+    "engagement_summary": {
+      "when": "The tab is hidden or closed: totals for the visit so far.",
+      "params": [
+        "total_seconds",
+        "sections_seen",
+        "max_scroll_percent"
+      ],
+      "keyEvent": false
+    },
+    "back_to_top": {
+      "when": "Click on the back-to-top button.",
+      "params": [],
+      "keyEvent": false
+    },
+    "page_print": {
+      "when": "The page is printed.",
+      "params": [],
+      "keyEvent": false
+    },
+    "js_error": {
+      "when": "A script of this site throws (at most 3 per visit).",
+      "params": [
+        "message",
+        "file"
+      ],
+      "keyEvent": false
+    }
+  },
+  "forbiddenInValues": {
+    "_note": "Nothing that identifies a person may ever travel in an event: e-mail addresses, phone numbers, the full name, free text typed by the visitor.",
+    "patterns": [
+      "@[a-z0-9-]+\\.[a-z]{2,}",
+      "\\b\\d{2}[\\s.-]?9?\\d{4}[\\s.-]?\\d{4}\\b",
+      "da Silva"
+    ]
+  }
+}

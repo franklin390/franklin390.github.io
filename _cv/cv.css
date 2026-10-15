@@ -1,0 +1,91 @@
+/* CV print stylesheet — single column, real text, ATS-friendly. A4. */
+@font-face { font-family: "Poppins"; font-weight: 400; src: url("{{FONTS}}/poppins-regular-webfont.ttf"); }
+@font-face { font-family: "Poppins"; font-weight: 500; src: url("{{FONTS}}/poppins-medium-webfont.ttf"); }
+@font-face { font-family: "Poppins"; font-weight: 600; src: url("{{FONTS}}/poppins-semibold-webfont.ttf"); }
+@font-face { font-family: "Poppins"; font-weight: 700; src: url("{{FONTS}}/poppins-bold-webfont.ttf"); }
+
+@page { size: A4; margin: 12mm 14mm 11mm 14mm; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+	margin: 0;
+	font-family: "Poppins", Arial, sans-serif;
+	font-size: 9pt;
+	line-height: 1.35;
+	color: #1F1F1F;
+}
+a { color: inherit; text-decoration: none; }
+
+header.cv-head { border-bottom: 2.2pt solid #FF0077; padding-bottom: 3.2mm; margin-bottom: 3.6mm; }
+h1 { font-size: 21pt; line-height: 1.1; margin: 0 0 1mm; font-weight: 700; letter-spacing: .2pt; color: #111; }
+.headline-row { display: flex; justify-content: space-between; align-items: baseline; }
+.headline { font-size: 11.5pt; font-weight: 600; color: #CC005F; margin: 0; }
+.loc { font-size: 8.8pt; color: #333; }
+.tagline { font-size: 8.4pt; color: #444; margin: 0.6mm 0 2.2mm; }
+.contact { font-size: 8.3pt; color: #333; margin: 0; }
+.contact span + span::before { content: "  |  "; color: #999; white-space: pre; }
+
+section { margin: 0 0 2.5mm; }
+h2 {
+	display: flex; align-items: center; gap: 2.2mm;
+	font-size: 9.6pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1.1pt;
+	color: #111; border-bottom: .8pt solid #D8D8D8; padding-bottom: .9mm; margin: 0 0 1.8mm;
+	break-after: avoid;
+}
+h2::before { content: ""; flex: none; width: 3.4mm; height: 1.3mm; border-radius: 1mm; background: #FF0077; }
+p { margin: 0 0 1.4mm; }
+.summary { text-align: left; }
+
+.comp { margin: 0; padding: 0; list-style: none; }
+.comp li { margin: 0 0 .7mm; }
+.comp b { font-weight: 600; color: #111; }
+
+/* experience timeline: a hairline rail (border) with a dot per employer (filled) and per role (hollow).
+   IMPORTANT: no position:relative/absolute on anything that contains text, or Chrome paints it after the rest of the page and the
+   PDF text order (what ATS parsers read) gets scrambled. Dots are in-flow pseudo-elements pulled left with negative margins. */
+.company { margin: 0 0 2.1mm 1.2mm; padding-left: 4mm; border-left: .8pt solid #E0E0E0; }
+.company-head { break-after: avoid; display: flex; justify-content: flex-start; align-items: baseline; margin: 0 0 .7mm; }
+.company-head::before { content: ""; flex: none; align-self: center; width: 2.4mm; height: 2.4mm; margin: 0 2mm 0 -5.2mm; border-radius: 50%; background: #CC005F; }
+.co-left { display: flex; align-items: baseline; gap: 2.4mm; }
+.company-name { font-size: 10pt; font-weight: 700; color: #111; }
+.co-note { font-size: 7.6pt; font-style: italic; color: #777; }
+.dates { margin-left: auto; font-size: 8.3pt; color: #444; white-space: nowrap; }
+/* a role may continue on the next page between two bullets, but its title, dates and intro always stay together */
+.role { margin: 0 0 1.5mm; }
+.intro { break-after: avoid; }
+ul.b li { break-inside: avoid; }
+.role-head { break-after: avoid; display: flex; justify-content: flex-start; align-items: baseline; margin: 0; }
+.role-head::before { content: ""; flex: none; align-self: center; width: 1.5mm; height: 1.5mm; margin: 0 2.4mm 0 -4.4mm; border-radius: 50%; background: #fff; border: .9pt solid #CC005F; }
+.role-title { font-weight: 600; color: #CC005F; font-size: 9.2pt; }
+.intro { font-style: italic; color: #3A3A3A; margin: .3mm 0 .7mm; }
+ul.b { list-style: none; margin: 0 0 .5mm 0; padding: 0; }
+/* bullet is in normal flow (inline-block, hanging via text-indent) so extraction order stays natural */
+ul.b li { margin: 0 0 .65mm; padding-left: 4.4mm; text-indent: -3.4mm; }
+ul.b li::before { content: "•"; display: inline-block; width: 3.4mm; text-indent: 0; }
+.tech { font-size: 8.2pt; color: #444; margin: .4mm 0 0; }
+.tech b { font-weight: 600; color: #222; }
+
+.edu, .cert, .talk { display: flex; justify-content: space-between; align-items: baseline; gap: 6mm; margin: 0 0 .9mm; }
+.edu .l, .cert .l, .talk .l { flex: 1; }
+.edu b, .cert b { font-weight: 600; color: #111; }
+.small { color: #444; }
+.cert-desc { margin: 0 0 1.5mm; color: #3A3A3A; font-size: 8.6pt; line-height: 1.38; }
+/* key numbers + career path (decorative rails use borders and pseudo-elements only, so text extraction stays natural) */
+.kpis { list-style: none; display: flex; margin: 2.4mm 0 0; padding: 2.2mm 0 0; border-top: .6pt solid #E2E2E2; }
+.kpis li { flex: 1; padding: 0 2.2mm; border-left: .6pt solid #E6E6E6; }
+.kpis li:first-child { padding-left: 0; border-left: 0; }
+.kpis .n { display: block; font-size: 14.5pt; font-weight: 700; line-height: 1.1; color: #CC005F; }
+.kpis .l { display: block; margin-top: .5mm; font-size: 7.2pt; line-height: 1.3; color: #444; }
+.path { list-style: none; display: flex; margin: 2mm 0 0; padding: 0; }
+.path li { flex: 1; padding: 0 2mm 0 0; border-top: 1pt solid #D5D5D5; }
+.path li::before { content: ""; display: block; width: 2.4mm; height: 2.4mm; margin: -1.45mm 0 .7mm 0; border-radius: 50%; background: #fff; border: 1pt solid #CC005F; }
+.path li.now { border-top-color: #CC005F; }
+.path li.now::before { background: #CC005F; }
+.path .p-date { display: block; font-size: 7.3pt; color: #666; }
+.path .p-title { display: block; font-size: 8pt; font-weight: 600; line-height: 1.25; color: #111; }
+.path .p-co { display: block; font-size: 7.3pt; color: #CC005F; }
+.courses { margin: 1.4mm 0 0; font-size: 8.4pt; line-height: 1.38; color: #3A3A3A; }
+.courses b { font-weight: 600; color: #111; }
+.lang-row { display: flex; flex-wrap: wrap; gap: 0 5mm; font-size: 8.6pt; }
+/* no separator glyph: when the row wraps (long PT levels) a leading "|" would dangle at the start of line 2 */
+.lang-row span b { font-weight: 600; }

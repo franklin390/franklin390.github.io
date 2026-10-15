@@ -1,0 +1,407 @@
+{
+  "_readme": "Language-neutral data behind the 'Certifications & training' section. Titles live in js/i18n/{en,pt}.js (train.* keys) unless titleLiteral is set (proper credential names, marked translate=no). Every item was verified against the certificate PDF (verifiedBy). Gate G10 checks index.html against this file and against legacy.json (nothing dropped).",
+  "featured": [
+    {
+      "id": "dacp",
+      "titleLiteral": "Data Analyst Certified Professional (DACP)",
+      "issuer": "Data Science Academy",
+      "issued": "2023-01",
+      "validUntil": "2025-01",
+      "href": "pdf/dsa/29_certificado_DACP.pdf",
+      "verifiedBy": "PDF viewed: granted 07/01/2023, valid until 07/01/2025",
+      "icon": "fa-award"
+    },
+    {
+      "id": "fada",
+      "titleKey": "train.fada",
+      "issuer": "Data Science Academy",
+      "completed": "2023-01",
+      "href": "pdf/dsa/28_certificado_FADA.pdf",
+      "verifiedBy": "PDF viewed: completed 01/01/2023, 224h",
+      "icon": "fa-graduation-cap"
+    },
+    {
+      "id": "fad",
+      "titleKey": "train.fad",
+      "issuer": "Data Science Academy",
+      "completed": "2022-12",
+      "href": "pdf/dsa/25_certificado_FAD.pdf",
+      "verifiedBy": "PDF viewed: completed 25/12/2022, 224h",
+      "icon": "fa-graduation-cap"
+    },
+    {
+      "id": "astro-dag",
+      "titleKey": "train.astro.dag",
+      "issuer": "Astronomer",
+      "issued": "2022-12",
+      "href": "https://www.credly.com/badges/53ff420f-0790-420f-9e3e-3e0071287892/linked_in_profile",
+      "external": true,
+      "verifiedBy": "Legacy site link (Credly); link status checked by G6",
+      "icon": "fa-rocket"
+    },
+    {
+      "id": "astro-fund",
+      "titleKey": "train.astro.fund",
+      "issuer": "Astronomer",
+      "issued": "2022-11",
+      "href": "https://www.credly.com/badges/936c78c9-4f87-430c-97da-a7964c130876/linked_in_profile",
+      "external": true,
+      "verifiedBy": "Legacy site link (Credly); link status checked by G6",
+      "icon": "fa-rocket"
+    },
+    {
+      "id": "dscp",
+      "titleLiteral": "Data Scientist Certified Professional (DSCP)",
+      "issuer": "Data Science Academy",
+      "issued": "2022-04",
+      "validUntil": "2024-04",
+      "href": "pdf/dsa/20_certificado_dscp.pdf",
+      "verifiedBy": "PDF viewed: granted 02/04/2022, valid until 02/04/2024",
+      "icon": "fa-award"
+    },
+    {
+      "id": "fcd",
+      "titleKey": "train.fcd",
+      "issuer": "Data Science Academy",
+      "completed": "2021-10",
+      "href": "pdf/dsa/12_Certificado_FCD.pdf",
+      "verifiedBy": "PDF viewed: completed 12/10/2021, 432h (LinkedIn also ends Oct 2021)",
+      "icon": "fa-graduation-cap"
+    },
+    {
+      "id": "faim",
+      "titleKey": "train.faim",
+      "issuer": "Data Science Academy",
+      "completed": "2020-06",
+      "href": "pdf/dsa/10_Certificado_FAIM.pdf",
+      "verifiedBy": "PDF viewed: completed 13/06/2020, 228h (LinkedIn 'Aug 2018 - Jun 2019' contradicts the certificate; certificate wins)",
+      "icon": "fa-graduation-cap"
+    }
+  ],
+  "courses": [
+    {
+      "id": "c01",
+      "date": "2023-01",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/27_analise_de_dados_com_power_bi.pdf",
+      "verifiedBy": "PDF text/ObjectId"
+    },
+    {
+      "id": "c02",
+      "date": "2023-01",
+      "issuer": "XP Educação",
+      "href": "pdf/others/10_xpe_engenheiro_de_dados_cloud.pdf",
+      "verifiedBy": "PDF viewed: 13/10/2022-26/12/2022, 148h, issued 26/01/2023"
+    },
+    {
+      "id": "c03",
+      "date": "2022-12",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/26_analise_de_dados_com_linguagem_python.pdf",
+      "verifiedBy": "PDF text/ObjectId"
+    },
+    {
+      "id": "c04",
+      "date": "2022-12",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/24_design_e_automacao_de_pipelines.pdf",
+      "verifiedBy": "PDF text/ObjectId"
+    },
+    {
+      "id": "c05",
+      "date": "2022-12",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/23_arquitetura_e_integracao_processos_etl_elt.pdf",
+      "verifiedBy": "PDF text/ObjectId"
+    },
+    {
+      "id": "c06",
+      "date": "2022-12",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/22_modelagem_de_bds_data_stores.pdf",
+      "verifiedBy": "PDF text/ObjectId"
+    },
+    {
+      "id": "c07",
+      "date": "2022-12",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/21_lgpd_gov_de_dados_e_gest_metadados.pdf",
+      "verifiedBy": "PDF text/ObjectId"
+    },
+    {
+      "id": "c08",
+      "date": "2022-10",
+      "issuer": "XP Educação",
+      "href": "pdf/others/9_xpe_engenheiro_de_dados.pdf",
+      "verifiedBy": "PDF viewed: 14/07/2022-27/09/2022, 148h, issued 20/10/2022"
+    },
+    {
+      "id": "c09",
+      "date": "2022-07",
+      "issuer": "HOW",
+      "href": "pdf/others/8_how_engenheiro_de_dados.pdf",
+      "verifiedBy": "PDF text: bootcamp May-Jul 2022, issued 12/07/2022"
+    },
+    {
+      "id": "c10",
+      "date": "2022-03",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/18_sql_para_data_science.pdf",
+      "verifiedBy": "PDF text: 12 Mar 2022"
+    },
+    {
+      "id": "c11",
+      "date": "2022-02",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/19_design_e_admin_cloud_computing_aws.pdf",
+      "verifiedBy": "PDF text: 20 Feb 2022"
+    },
+    {
+      "id": "c12",
+      "date": "2022-01",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/17_mineracao_de_dados_com_spss.pdf",
+      "verifiedBy": "PDF text: 25 Jan 2022"
+    },
+    {
+      "id": "c13",
+      "date": "2021-10",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/16_Visualizacao_de_dados_e_design_de_Dashboards.pdf",
+      "verifiedBy": "PDF text: 12 Oct 2021"
+    },
+    {
+      "id": "c14",
+      "date": "2021-09",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/15_Business_Analytics.pdf",
+      "verifiedBy": "PDF text: 7 Sep 2021"
+    },
+    {
+      "id": "c15",
+      "date": "2021-08",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/14_Machine_Learning.pdf",
+      "verifiedBy": "PDF text: 15 Aug 2021"
+    },
+    {
+      "id": "c16",
+      "date": "2020-12",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/13_Engenharia_de_Dados_com_Hadoop_e_Spark.pdf",
+      "verifiedBy": "PDF text: 28 Dec 2020"
+    },
+    {
+      "id": "c17",
+      "date": "2020-07",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/11_Big_data_real_time_analytics_python_spark.pdf",
+      "verifiedBy": "PDF text: 17 Jul 2020"
+    },
+    {
+      "id": "c18",
+      "date": "2020-06",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/9_Analise_Econometrica_em_R.pdf",
+      "verifiedBy": "PDF text: 13 Jun 2020"
+    },
+    {
+      "id": "c19",
+      "date": "2020-06",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/8_Analise_Estatistica_ST_Python.pdf",
+      "verifiedBy": "PDF text: 7 Jun 2020"
+    },
+    {
+      "id": "c20",
+      "date": "2020-05",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/7_Analise_Estatistica%20_de_Dados_MA_R.pdf",
+      "verifiedBy": "PDF text: 9 May 2020"
+    },
+    {
+      "id": "c21",
+      "date": "2020-02",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/6_Big_Data_R_Azure_ML.pdf",
+      "verifiedBy": "PDF text: 19 Feb 2020"
+    },
+    {
+      "id": "c22",
+      "date": "2020-01",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/5_Python.pdf",
+      "verifiedBy": "PDF text: 18 Jan 2020"
+    },
+    {
+      "id": "c23",
+      "date": "2019-12",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/4_R_Fundamentos.pdf",
+      "verifiedBy": "PDF text: 25 Dec 2019"
+    },
+    {
+      "id": "c24",
+      "date": "2019-10",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/3_Linux.pdf",
+      "verifiedBy": "PDF text: 30 Oct 2019"
+    },
+    {
+      "id": "c25",
+      "date": "2019-09",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/2_%20Merc_Fin_Cap.pdf",
+      "verifiedBy": "PDF text: 21 Sep 2019"
+    },
+    {
+      "id": "c26",
+      "date": "2019-07",
+      "issuer": "Data Science Academy",
+      "href": "pdf/dsa/1_Intro_Economia.pdf",
+      "verifiedBy": "PDF text: 24 Jul 2019"
+    },
+    {
+      "id": "c27",
+      "date": "2018-10",
+      "issuer": "Udemy",
+      "href": "pdf/others/7_Reconhecimento_Facial_Python_OpenCV.pdf",
+      "verifiedBy": "PDF viewed: 11 Oct 2018, 3.5h"
+    },
+    {
+      "id": "c28",
+      "date": "2018-10",
+      "issuer": "Udemy",
+      "href": "pdf/others/6_Reconhecimento_de_Objetos_Python_Dlib.pdf",
+      "verifiedBy": "PDF viewed: 11 Oct 2018, 7h"
+    },
+    {
+      "id": "c29",
+      "date": "2018-10",
+      "issuer": "Udemy",
+      "href": "pdf/others/5_Detec%C3%A7%C3%A3o_de_Faces_OpenCV.pdf",
+      "verifiedBy": "PDF viewed: 3 Oct 2018, 3h"
+    },
+    {
+      "id": "c30",
+      "date": "2018-01",
+      "issuer": "Udemy",
+      "href": "pdf/others/4_Desenvolvedor_Web.pdf",
+      "verifiedBy": "PDF viewed: 29 Jan 2018, 13.5h"
+    },
+    {
+      "id": "c31",
+      "date": "2018-01",
+      "issuer": "Udemy",
+      "href": "pdf/others/3_PagSeguro.pdf",
+      "verifiedBy": "PDF viewed: 12 Jan 2018, 6.5h"
+    },
+    {
+      "id": "c32",
+      "date": "2018-01",
+      "issuer": "Udemy",
+      "href": "pdf/others/2_MySQL.pdf",
+      "verifiedBy": "PDF viewed: 5 Jan 2018, 4.5h"
+    },
+    {
+      "id": "c33",
+      "date": "2018-01",
+      "issuer": "Udemy",
+      "href": "pdf/others/1_PHP_7.pdf",
+      "verifiedBy": "PDF viewed: 1 Jan 2018, 33h"
+    }
+  ],
+  "projects": [
+    {
+      "id": "p13",
+      "title": "National Institute of Diabetes and Digestive and Kidney Diseases",
+      "img": "diabetes",
+      "cat": "ml",
+      "href": "https://franklin390.github.io/Project_06_National_Institute_of_Diabetes_and_Digestive_and_Kidney_Diseases/"
+    },
+    {
+      "id": "p12",
+      "title": "Customer Churn in Telecom Operators",
+      "img": "churn",
+      "cat": "ml",
+      "href": "https://franklin390.github.io/Project_05_Customer_Churn_in_Telecom_Operators/"
+    },
+    {
+      "id": "p11",
+      "title": "Santander Customer Satisfaction",
+      "img": "santander",
+      "cat": "ml",
+      "href": "https://franklin390.github.io/Project_04_Santander_Customer_Satisfaction/"
+    },
+    {
+      "id": "p10",
+      "title": "Netflix Investor: Quarterly Earnings",
+      "img": "netflix",
+      "cat": "forecast",
+      "href": "https://franklin390.github.io/Project_03_Netflix_Investor_Quarterly_Earnings/"
+    },
+    {
+      "id": "p09",
+      "title": "Warm Up: Predict Blood Donations",
+      "img": "blood_donations",
+      "cat": "ml",
+      "href": "https://franklin390.github.io/Challenge_Project_03_Warm_Up_Predict_Blood_Donations/"
+    },
+    {
+      "id": "p08",
+      "title": "TalkingData AdTracking Fraud Detection Challenge",
+      "img": "talk",
+      "cat": "ml",
+      "href": "https://franklin390.github.io/Project_01_Talking_Data_AdTracking_Fraud_Detection_Challenge/"
+    },
+    {
+      "id": "p07",
+      "title": "Grupo Bimbo Inventory Demand",
+      "img": "bimbo",
+      "cat": "ml",
+      "href": "https://franklin390.github.io/Project_02_Group_Bimbo_Inventory_Demand/"
+    },
+    {
+      "id": "p06",
+      "title": "Warm Up: Machine Learning with a Heart",
+      "img": "heart",
+      "cat": "ml",
+      "href": "https://franklin390.github.io/Challenge_Project_02_Warm_Up_Machine_Learning_with_a_Heart/"
+    },
+    {
+      "id": "p05",
+      "title": "Boston Houses",
+      "img": "boston",
+      "cat": "ml",
+      "href": "https://franklin390.github.io/Challenge_Project_01_Boston_Houses/"
+    },
+    {
+      "id": "p04",
+      "title": "Big Data Analytics on Twitter - Part I",
+      "img": "twitter_1",
+      "cat": "bd",
+      "href": "https://franklin390.github.io/Mini_Project_01_Sentiment_Analisys_I/"
+    },
+    {
+      "id": "p03",
+      "title": "Big Data Analytics on Twitter - Part II",
+      "img": "twitter_2",
+      "cat": "bd",
+      "href": "https://franklin390.github.io/Mini_Project_02_Sentiment_Analisys_II/"
+    },
+    {
+      "id": "p02",
+      "title": "Big Data Analytics on Twitter - Part III",
+      "img": "twitter_3",
+      "cat": "bd",
+      "href": "https://franklin390.github.io/Mini_Project_03_Sentiment_Analisys_III/"
+    },
+    {
+      "id": "p01",
+      "title": "Big Data Analytics on Twitter - Part IV",
+      "img": "twitter_4",
+      "cat": "bd",
+      "href": "https://franklin390.github.io/Mini_Project_04_Sentiment_Analisys_IV/"
+    }
+  ]
+}

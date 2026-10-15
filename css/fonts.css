@@ -5,8 +5,10 @@
 ================================================================================ */
 @font-face {
     font-family: 'lora-bold';
+    font-display: swap;
     src: url('../fonts/lora/lora-bold-webfont.eot');
     src: url('../fonts/lora/lora-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/subset/lora-bold.woff2') format('woff2'),
          url('../fonts/lora/lora-bold-webfont.woff') format('woff'),
          url('../fonts/lora/lora-bold-webfont.ttf') format('truetype'),
          url('../fonts/lora/lora-bold-webfont.svg#lorabold') format('svg');
@@ -25,8 +27,10 @@
 }
 @font-face {
     font-family: 'lora-italic';
+    font-display: swap;
     src: url('../fonts/lora/lora-italic-webfont.eot');
     src: url('../fonts/lora/lora-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/subset/lora-italic.woff2') format('woff2'),
          url('../fonts/lora/lora-italic-webfont.woff') format('woff'),
          url('../fonts/lora/lora-italic-webfont.ttf') format('truetype'),
          url('../fonts/lora/lora-italic-webfont.svg#loraitalic') format('svg');
@@ -35,8 +39,10 @@
 }
 @font-face {
     font-family: 'lora-regular';
+    font-display: swap;
     src: url('../fonts/lora/lora-regular-webfont.eot');
     src: url('../fonts/lora/lora-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/subset/lora-regular.woff2') format('woff2'),
          url('../fonts/lora/lora-regular-webfont.woff') format('woff'),
          url('../fonts/lora/lora-regular-webfont.ttf') format('truetype'),
          url('../fonts/lora/lora-regular-webfont.svg#loraregular') format('svg');
@@ -50,8 +56,10 @@
 ================================================================================ */
 @font-face {
     font-family: 'poppins-bold';
+    font-display: swap;
     src: url('../fonts/poppins/poppins-bold-webfont.eot');
     src: url('../fonts/poppins/poppins-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/subset/poppins-bold.woff2') format('woff2'),
          url('../fonts/poppins/poppins-bold-webfont.woff2') format('woff2'),
          url('../fonts/poppins/poppins-bold-webfont.woff') format('woff'),
          url('../fonts/poppins/poppins-bold-webfont.ttf') format('truetype'),
@@ -72,8 +80,10 @@
 }
 @font-face {
     font-family: 'poppins-medium';
+    font-display: swap;
     src: url('../fonts/poppins/poppins-medium-webfont.eot');
     src: url('../fonts/poppins/poppins-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/subset/poppins-medium.woff2') format('woff2'),
          url('../fonts/poppins/poppins-medium-webfont.woff2') format('woff2'),
          url('../fonts/poppins/poppins-medium-webfont.woff') format('woff'),
          url('../fonts/poppins/poppins-medium-webfont.ttf') format('truetype'),
@@ -83,8 +93,10 @@
 }
 @font-face {
     font-family: 'poppins-regular';
+    font-display: swap;
     src: url('../fonts/poppins/poppins-regular-webfont.eot');
     src: url('../fonts/poppins/poppins-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/subset/poppins-regular.woff2') format('woff2'),
          url('../fonts/poppins/poppins-regular-webfont.woff2') format('woff2'),
          url('../fonts/poppins/poppins-regular-webfont.woff') format('woff'),
          url('../fonts/poppins/poppins-regular-webfont.ttf') format('truetype'),
@@ -94,8 +106,10 @@
 }
 @font-face {
     font-family: 'poppins-semibold';
+    font-display: swap;
     src: url('../fonts/poppins/poppins-semibold-webfont.eot');
     src: url('../fonts/poppins/poppins-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/subset/poppins-semibold.woff2') format('woff2'),
          url('../fonts/poppins/poppins-semibold-webfont.woff2') format('woff2'),
          url('../fonts/poppins/poppins-semibold-webfont.woff') format('woff'),
          url('../fonts/poppins/poppins-semibold-webfont.ttf') format('truetype'),
