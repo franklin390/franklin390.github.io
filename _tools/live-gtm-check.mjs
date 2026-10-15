@@ -80,9 +80,11 @@ let problems = 0;
 
 // ----- A. the real site
 // Expected number of GA4 hits per event for the actions above (2 section/logo clicks, 1 language switch, 1 impact click, 2 CV clicks).
-// page_view and file_download come from GA4 "enhanced measurement"; the others are this site's own events and only appear once the
-// portfolio container (with its event tag) is published.
-const EXPECTED = { page_view: 1, file_download: 2, site_context: 1, language_toggle: 1, nav_click: 2, impact_stat_click: 1, cv_download: 2 };
+// page_view comes from the Google tag; the others are this site's own events and only appear once the portfolio container
+// (with its event tag) is published. GA4 "enhanced measurement" must stay off for scrolls and file downloads: the site sends
+// its own scroll_depth and cv_download, so a hit for either of them below means every visit is counted twice.
+const EXPECTED = { page_view: 1, site_context: 1, language_toggle: 1, nav_click: 2, impact_stat_click: 1, cv_download: 2 };
+const ENHANCED_OFF = ['file_download', 'scroll'];
 const ZERO = ['contact_click', 'outbound_click', 'certificate_open', 'case_filter', 'project_open', 'carousel_navigate', 'menu_toggle', 'training_toggle', 'back_to_top', 'js_error'];
 const hits = A.hits;
 const tids = [...new Set(hits.map((h) => h.tid).filter(Boolean))];
@@ -102,7 +104,11 @@ for (const [en, want] of Object.entries(EXPECTED)) {
   console.log(`  ${en.padEnd(18)} ${String(n).padStart(2)} / ${want}   ${note}`);
 }
 for (const en of ZERO) if (total[en]) { problems++; console.log(`  ${en.padEnd(18)} ${String(total[en]).padStart(2)} / 0   UNEXPECTED (the script never did that action)`); }
-const other = Object.keys(total).filter((k) => !(k in EXPECTED) && !ZERO.includes(k));
+for (const en of ENHANCED_OFF) {
+  if (total[en]) { problems++; console.log(`  ${en.padEnd(18)} ${String(total[en]).padStart(2)} / 0   DUPLICATE: GA4 enhanced measurement is still on for this (Admin > Data streams > Enhanced measurement); the site already sends its own equivalent`); }
+  else console.log(`  ${en.padEnd(18)}  0 / 0   ok (enhanced measurement is off in GA4)`);
+}
+const other = Object.keys(total).filter((k) => !(k in EXPECTED) && !ZERO.includes(k) && !ENHANCED_OFF.includes(k));
 if (other.length) console.log('  other events (not checked): ' + other.map((k) => `${k} x${total[k]}`).join(', '));
 if (tids.length > 1) { problems++; console.log(`WARNING: hits went to ${tids.length} different GA4 properties: ${tids.join(', ')}`); }
 const views = hits.filter((h) => h.en === 'page_view');

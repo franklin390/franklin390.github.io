@@ -97,7 +97,7 @@ A visitor who sends **Global Privacy Control** or **Do Not Track** generates no 
 1. In GTM, open container **${cat.gtmContainer}** → **Admin → Import Container**.
 2. Choose \`gtm/portfolio-container.json\`, select a **new** workspace and the **Merge** option (rename conflicting items).
 3. Open the variable **Const - GA4 Measurement ID** and replace \`${PLACEHOLDER_ID}\` with the ID of your GA4 property (format \`G-...\`, found under *GA4 → Admin → Data streams*). The ID is public (it appears in the code of any site that uses it); it is not a secret.
-4. If the container **already had** a "Google tag" / GA4 tag with the same ID, delete the imported **GA4 - Google tag** (otherwise every visit is counted twice). Keep **GA4 - Event - portfolio**.
+4. If the container **already had** a "Google tag" / GA4 tag with the same ID, keep only one of them (otherwise every visit is counted twice). Keep the imported **GA4 - Google tag**, which only fires on your own domain (see "Copies of the site on other domains"), and delete the old one. Also keep **GA4 - Event - portfolio**.
 5. Use **Preview** (Tag Assistant), browse the site and check the events. Then **Submit → Publish**.
 
 The imported container has 1 Google tag, 1 GA4 event tag (which forwards all the events above), 2 triggers (custom event and initialization, both limited to your domain) and ${Object.keys(cat.params).length + 1} variables, plus the built-in variable **Page Hostname**. If GTM rejects the file, build it by hand: a "Custom Event" trigger with the regex \`^(${Object.keys(cat.events).join('|')})$\`, a "Google Analytics: GA4 Event" tag with event name \`{{Event}}\`, and, under parameters, each name from the table above pointing to a data layer variable with the same name.
