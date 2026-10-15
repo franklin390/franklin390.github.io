@@ -1,0 +1,258 @@
+{
+  "lang": "en",
+  "htmlLang": "en",
+  "pdfTitle": "Franklin Ferreira — Staff Data Engineer — CV",
+  "pdfSubject": "Curriculum vitae of Franklin Ferreira, Staff Data Engineer",
+  "pdfKeywords": "Staff Data Engineer, Data Architecture, Big Data, Data warehouse, Lakehouse, Data Governance, FinOps, Apache Spark, Databricks, dbt, Apache Airflow, Amazon Redshift, AWS, SQL, Python, Machine Learning, Generative AI",
+  "name": "Franklin Ferreira",
+  "headline": "Staff Data Engineer",
+  "tagline": "Data Architecture · Big Data · Governance · FinOps · ML & Generative AI",
+  "location": "Brazil · Remote/Global",
+  "contact": {
+    "email": "franklinfs390@gmail.com",
+    "linkedin": "linkedin.com/in/franklinfs390",
+    "linkedinUrl": "https://www.linkedin.com/in/franklinfs390/",
+    "github": "github.com/franklin390",
+    "githubUrl": "https://github.com/franklin390",
+    "portfolio": "franklin390.github.io",
+    "portfolioUrl": "https://franklin390.github.io/"
+  },
+  "labels": {
+    "summary": "Summary",
+    "competencies": "Core competencies",
+    "experience": "Experience",
+    "education": "Education",
+    "certifications": "Certifications",
+    "languages": "Languages",
+    "talks": "Talks & research",
+    "technologies": "Technologies:",
+    "path": "Career path",
+    "courses": "Selected courses"
+  },
+  "summary": "Staff Data Engineer and data architect. I design the data architecture a whole company runs on, from warehouse to lakehouse, from batch to streaming, from classic machine learning to generative AI: more than 50% lower platform cost and ~3x fewer incidents. Still hands-on, with a technical team of 15+ people across Brazil and Romania.",
+  "competencies": [
+    {
+      "label": "Architecture & platforms",
+      "items": "Data architecture, dimensional modeling, data modeling, data warehouse, data lake, lakehouse, Databricks, Delta Lake, Apache Spark, Databricks Workflows, Amazon Redshift, streaming"
+    },
+    {
+      "label": "Engineering",
+      "items": "Python, PySpark, SQL, dbt, Apache Airflow, data pipelines, AWS, Terraform, Docker, Kubernetes, GitHub Actions, CI/CD"
+    },
+    {
+      "label": "Governance & reliability",
+      "items": "Data governance, data catalogs (Unity Catalog, AWS Glue Data Catalog, Hive Metastore), data quality, LGPD, observability, FinOps"
+    },
+    {
+      "label": "Data apps & AI",
+      "items": "Streamlit, Metabase, Google Analytics 4, machine learning, generative AI (Lovable)"
+    },
+    {
+      "label": "Leadership",
+      "items": "Technical team leadership, architecture & ways of working, priority setting"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Flutter Brazil",
+      "start": "2024-08",
+      "end": "present",
+      "roles": [
+        {
+          "title": "Staff Data Engineer",
+          "start": "2026-07",
+          "end": "present",
+          "intro": "A Databricks data platform used by thousands of people across the whole company, with a team of 15+ people (engineering, analytics and data science) across Brazil and Romania.",
+          "bullets": [
+            "Set the architecture and ways of working for a team of 15+ people (10 as Tech Lead), with a wider scope across the whole platform.",
+            "Still hands-on in architecture, modeling and platform decisions. When the team needs it, I set priorities and unblock business decisions."
+          ],
+          "tech": "Databricks, Unity Catalog, Delta Lake, Apache Spark, dbt, SQL, Python, AWS, Terraform, GitHub Actions"
+        },
+        {
+          "title": "Data Engineer – Tech Lead",
+          "start": "2025-07",
+          "end": "2026-06",
+          "intro": "Led a team of 10 people (engineering, analytics and data science) on a Databricks platform of tens of TB.",
+          "bullets": [
+            "Cut the data platform's cost by more than 50% with a FinOps effort (clusters, jobs, storage, governance policies), including cost forecasting models. Annual spend: six figures (USD).",
+            "Reduced incidents and rework by ~3x by rolling out CI/CD with trunk-based development.",
+            "Delivered decision-support dashboards, platform-wide observability and near-real-time business metrics monitoring (latency of a few minutes), and restructured Unity Catalog by domain (10+).",
+            "Defined the architectures and ways of working for almost the whole data team. Helped create the company's LTV and payback models."
+          ],
+          "tech": "Databricks, Unity Catalog, Delta Lake, Apache Spark, dbt, SQL, Python, AWS, Terraform, Streamlit, Metabase"
+        },
+        {
+          "title": "Data Engineer",
+          "start": "2024-08",
+          "end": "2025-07",
+          "bullets": [
+            "Led the migration of the company's entire data infrastructure to Databricks: ~50 sources (Google Analytics 4, internal systems and third-party tools) in a single platform, with pipelines going from hours to minutes.",
+            "Built the company's dimensional model and data lake from scratch with Python, dbt and SQL. Every area still uses that architecture today. Also contributed to the regulatory process that allowed the company to operate legally in Brazil."
+          ],
+          "tech": "Python, dbt, SQL, Databricks, Google Analytics 4"
+        }
+      ]
+    },
+    {
+      "company": "Clicksign",
+      "start": "2020-10",
+      "end": "2024-08",
+      "roles": [
+        {
+          "title": "Data Team Lead",
+          "start": "2021-10",
+          "end": "2024-08",
+          "bullets": [
+            "One of the first engineers on Clicksign's data team. Grew the group from 4 to ~20 people across data engineering, data analysis and data quality assurance, and built the processes that sustained that growth.",
+            "Led the data engineering, data analysis and data quality assurance teams and was directly responsible for the reliability of the data used in company decisions."
+          ],
+          "tech": "Amazon Redshift, dbt, Apache Airflow, dimensional modeling"
+        },
+        {
+          "title": "Data Architect",
+          "start": "2021-06",
+          "end": "2024-08",
+          "bullets": [
+            "Architected practically every data structure the company had in that period, including 100+ Airflow pipelines (modeling and ingestion).",
+            "Led the implementation of dbt on Redshift, which brought quality control, governance, easier modeling, observability and simpler orchestration.",
+            "Built 10+ APIs for sending data to partners and third parties, and architected the data protection processes (in compliance with LGPD and aligned with GDPR) and the continuity of data delivery."
+          ],
+          "tech": "Apache Airflow, dbt, Amazon Redshift, dimensional modeling, data governance"
+        },
+        {
+          "title": "Data Scientist (Python Developer)",
+          "start": "2020-10",
+          "end": "2021-06",
+          "bullets": [
+            "Business Intelligence team: scripts and integrations between databases, APIs and REST web services with Python, PostgreSQL and Apache Airflow, plus predictive analyses and modeling."
+          ],
+          "tech": "Python, PostgreSQL, Apache Airflow, REST APIs, predictive modeling"
+        }
+      ]
+    },
+    {
+      "company": "Let's Code from Ada",
+      "start": "2022-06",
+      "end": "2024-07",
+      "roles": [
+        {
+          "title": "Adjunct Instructor",
+          "start": "2022-06",
+          "end": "2024-07",
+          "bullets": [
+            "Taught Big Data and Data Engineering courses to hundreds of students: database modeling, data warehouses, data lakes and lakehouses, software architecture and cloud development."
+          ]
+        }
+      ],
+      "concurrent": true,
+      "note": "alongside Clicksign"
+    }
+  ],
+  "education": [
+    {
+      "school": "XP Educação",
+      "degree": "MBA in Data Engineering",
+      "start": "2022-07",
+      "end": "2023-07"
+    },
+    {
+      "school": "PUCRS",
+      "degree": "Specialization (Lato Sensu) in Data Science and Artificial Intelligence",
+      "start": "2021-06",
+      "end": "2022-07"
+    },
+    {
+      "school": "UEZO",
+      "degree": "Bachelor's degree in Computer Science",
+      "start": "2015",
+      "end": "2019"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Data Analyst Training",
+      "issuer": "Data Science Academy",
+      "date": "2023-01",
+      "desc": "Advanced SQL, data analysis in Python and Power BI on data warehouses and data lakes."
+    },
+    {
+      "title": "Astronomer Certification: DAG Authoring for Apache Airflow",
+      "issuer": "Astronomer",
+      "date": "2022-12"
+    },
+    {
+      "title": "Data Architect Training",
+      "issuer": "Data Science Academy",
+      "date": "2022-12",
+      "desc": "Data governance and LGPD, relational, NoSQL and data store modeling, ETL/ELT pipeline architecture, and automation with Spark, Airflow, Kafka and AWS Glue."
+    },
+    {
+      "title": "Astronomer Certification: Apache Airflow Fundamentals",
+      "issuer": "Astronomer",
+      "date": "2022-11"
+    },
+    {
+      "title": "Data Scientist Training",
+      "issuer": "Data Science Academy",
+      "date": "2021-10",
+      "desc": "Applied machine learning with R, Python and Spark on the Hadoop ecosystem, with a focus on data visualization and storytelling."
+    }
+  ],
+  "talks": [
+    {
+      "title": "Talk at TDC: Airflow — who said you can't process data in it?",
+      "start": "2021-12"
+    },
+    {
+      "title": "Undergraduate research at UEZO: recognition and detection techniques; edge-detection optimization for cells",
+      "start": "2018-08",
+      "end": "2019-08"
+    }
+  ],
+  "languages": [
+    {
+      "name": "Portuguese",
+      "level": "Native or bilingual"
+    },
+    {
+      "name": "English",
+      "level": "Full professional"
+    },
+    {
+      "name": "Spanish",
+      "level": "Professional working"
+    }
+  ],
+  "highlights": [
+    {
+      "value": ">50%",
+      "label": "lower data platform cost"
+    },
+    {
+      "value": "~3x",
+      "label": "fewer incidents and less rework"
+    },
+    {
+      "value": "~50",
+      "label": "sources unified in one platform"
+    },
+    {
+      "value": "10+",
+      "label": "Unity Catalog domains"
+    },
+    {
+      "value": "100+",
+      "label": "Airflow pipelines at Clicksign"
+    },
+    {
+      "value": "15+",
+      "label": "people led"
+    }
+  ],
+  "courses": [
+    "AWS Cloud Computing Design and Administration",
+    "Data Pipeline Design and Automation",
+    "Data Engineering Bootcamp"
+  ]
+}

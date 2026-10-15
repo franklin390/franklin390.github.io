@@ -1,0 +1,10 @@
+{
+  "_readme": "The language versions of the site and their public addresses. build-lang-pages.mjs writes pt/index.html, es/index.html and sitemap.xml from this list and from index.html + the dictionaries; gate G14 checks them. English is the source page (index.html).",
+  "origin": "https://franklin390.github.io",
+  "xDefault": "/",
+  "pages": [
+    { "lang": "en", "hreflang": "en", "path": "/", "file": "index.html" },
+    { "lang": "pt", "hreflang": "pt-BR", "path": "/pt/", "file": "pt/index.html" },
+    { "lang": "es", "hreflang": "es", "path": "/es/", "file": "es/index.html" }
+  ]
+}

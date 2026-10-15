@@ -1,0 +1,1195 @@
+{
+  "_readme": "Independent ledger of facts. Typed from the LinkedIn export (fixtures/linkedin-profile.pdf), NOT generated from the site or the CV. Gate G0 proves every `evidence` string exists in that PDF. `source` is one of: linkedin | user-decision | derived. Site/CV (EN, PT, ES) are checked AGAINST this file (G3).",
+  "meta": {
+    "linkedinExport": "Profile (1).pdf",
+    "asOf": "2026-10",
+    "notes": [
+      "LinkedIn spells the university 'Universidade Estatual ... Oesto'; the correct name is 'Universidade Estadual da Zona Oeste (UEZO)'.",
+      "LinkedIn shows Tech Lead as 'Present' although Staff started 2026-07 (overlap). End date 2026-06 is DERIVED and pending user confirmation."
+    ]
+  },
+  "identity": {
+    "name": "Franklin Ferreira",
+    "title": "Staff Data Engineer",
+    "headlineEvidence": [
+      "Staff Data Engineer | Data Architecture | Data Governance | Data Modeling | Lakehouse | Databricks | dbt | SQL | Python | Airflow | AWS | Redshift | Data Quality | FinOps | Machine Learning | Generative AI"
+    ],
+    "email": "franklinfs390@gmail.com",
+    "emailEvidence": [
+      "franklinfs390@gmail.com"
+    ],
+    "linkedin": "https://www.linkedin.com/in/franklinfs390/",
+    "linkedinEvidence": [
+      "linkedin.com/in/franklinfs390"
+    ],
+    "github": "https://github.com/franklin390",
+    "portfolio": "https://franklin390.github.io/",
+    "location": {
+      "en": "Brazil · Remote/Global",
+      "pt": "Brasil · Remoto/Global",
+      "source": "user-decision",
+      "es": "Brasil · Remoto/Global"
+    }
+  },
+  "decisions": {
+    "defaultLang": "en",
+    "publicPii": {
+      "dateOfBirth": false,
+      "fullLegalName": false,
+      "phone": false,
+      "city": false
+    },
+    "source": "user-decision (2026-10-13)"
+  },
+  "companies": [
+    {
+      "id": "flutter",
+      "name": "Flutter Brazil",
+      "start": "2024-08",
+      "end": "present",
+      "evidence": [
+        "Flutter Brazil 2 years 3 months"
+      ]
+    },
+    {
+      "id": "clicksign",
+      "name": "Clicksign",
+      "start": "2020-10",
+      "end": "2024-08",
+      "evidence": [
+        "Clicksign 3 years 11 months"
+      ]
+    },
+    {
+      "id": "letscode",
+      "name": "Let's Code from Ada",
+      "start": "2022-06",
+      "end": "2024-07",
+      "evidence": [
+        "Let's Code from Ada Adjunct Instructor"
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "id": "fb-staff",
+      "company": "flutter",
+      "title": "Staff Data Engineer",
+      "start": "2026-07",
+      "end": "present",
+      "source": "linkedin",
+      "evidence": [
+        "Staff Data Engineer July 2026 - Present"
+      ]
+    },
+    {
+      "id": "fb-techlead",
+      "company": "flutter",
+      "title": "Data Engineer - Tech Lead",
+      "start": "2025-07",
+      "end": "2026-06",
+      "source": "linkedin",
+      "endSource": "owner",
+      "evidence": [
+        "Data Engineer - Tech Lead July 2025 - Present"
+      ],
+      "confirmedByOwner": "2026-10-14: the owner confirmed the Tech Lead role ended in Jun 2026 (LinkedIn still shows 'Present' because it overlaps the Staff role that began in Jul 2026)."
+    },
+    {
+      "id": "fb-de",
+      "company": "flutter",
+      "title": "Data Engineer",
+      "start": "2024-08",
+      "end": "2025-07",
+      "source": "linkedin",
+      "evidence": [
+        "Data Engineer August 2024 - July 2025"
+      ]
+    },
+    {
+      "id": "ck-lead",
+      "company": "clicksign",
+      "title": "Data Team Lead",
+      "start": "2021-10",
+      "end": "2024-08",
+      "source": "linkedin",
+      "evidence": [
+        "Data Team Lead",
+        "October 2021 - August 2024"
+      ]
+    },
+    {
+      "id": "ck-arch",
+      "company": "clicksign",
+      "title": "Data Architect",
+      "start": "2021-06",
+      "end": "2024-08",
+      "source": "linkedin",
+      "evidence": [
+        "Data Architect June 2021 - August 2024"
+      ]
+    },
+    {
+      "id": "ck-ds",
+      "company": "clicksign",
+      "title": "Data Scientist (Python Developer)",
+      "start": "2020-10",
+      "end": "2021-06",
+      "source": "linkedin",
+      "evidence": [
+        "Data Scientist (Python Developer) October 2020 - June 2021"
+      ]
+    },
+    {
+      "id": "lc-adj",
+      "company": "letscode",
+      "title": "Adjunct Instructor",
+      "start": "2022-06",
+      "end": "2024-07",
+      "source": "linkedin",
+      "evidence": [
+        "Adjunct Instructor June 2022 - July 2024"
+      ],
+      "titlePt": "Professor Docente",
+      "titleEs": "Profesor docente"
+    }
+  ],
+  "education": [
+    {
+      "id": "pucrs",
+      "school": "PUCRS",
+      "start": "2021-06",
+      "end": "2022-07",
+      "evidence": [
+        "PUCRS - Pontifícia Universidade Católica do Rio Grande do Sul",
+        "Ciência de Dados e Inteligência Artificial",
+        "June 2021 - July 2022"
+      ]
+    },
+    {
+      "id": "xp",
+      "school": "XP Educação",
+      "start": "2022-07",
+      "end": "2023-07",
+      "evidence": [
+        "XP Educação",
+        "MBA, Engenharia de Dados",
+        "July 2022 - July 2023"
+      ],
+      "confirmedByOwner": "2026-10-14: the owner confirmed it is an MBA (the LinkedIn export is the only source; the repo certificates are two 148h bootcamps). Keep the wording \"MBA in Data Engineering\"."
+    },
+    {
+      "id": "uezo",
+      "school": "UEZO",
+      "start": "2015",
+      "end": "2019",
+      "evidence": [
+        "Bacharelado em Ciência da Computação",
+        "2015 - 2019"
+      ]
+    }
+  ],
+  "research": [
+    {
+      "id": "uezo-research",
+      "org": "UEZO",
+      "title": "Undergraduate Research",
+      "start": "2018-08",
+      "end": "2019-08",
+      "evidence": [
+        "Undergraduate Research August 2018 - August 2019",
+        "edge-detection optimization analysis for cells"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "id": "pt",
+      "level": "Native or Bilingual",
+      "evidence": [
+        "Português (Native or Bilingual)"
+      ],
+      "levelPt": "Nativo ou bilíngue",
+      "levelEn": "Native or bilingual",
+      "name": {
+        "en": "Portuguese",
+        "pt": "Português",
+        "es": "Portugués"
+      },
+      "levelEs": "Nativo o bilingüe"
+    },
+    {
+      "id": "en",
+      "level": "Full Professional",
+      "evidence": [
+        "Inglês (Full Professional)"
+      ],
+      "levelPt": "Proficiência profissional plena",
+      "levelEn": "Full professional",
+      "name": {
+        "en": "English",
+        "pt": "Inglês",
+        "es": "Inglés"
+      },
+      "levelEs": "Competencia profesional completa"
+    },
+    {
+      "id": "es",
+      "level": "Professional Working",
+      "evidence": [
+        "Espanhol (Professional Working)"
+      ],
+      "levelPt": "Proficiência profissional de trabalho",
+      "levelEn": "Professional working",
+      "name": {
+        "en": "Spanish",
+        "pt": "Espanhol",
+        "es": "Español"
+      },
+      "levelEs": "Competencia profesional"
+    }
+  ],
+  "skillsCore": {
+    "_comment": "Closed vocabulary allowed in the headline/'core skills' areas of site and CV. Older tools (R, SPSS, Hive, Tableau...) may only appear in the training archive.",
+    "items": [
+      "Databricks",
+      "Unity Catalog",
+      "dbt",
+      "SQL",
+      "Python",
+      "AWS",
+      "Redshift",
+      "Airflow",
+      "Streamlit",
+      "Metabase",
+      "Google Analytics 4",
+      "Lovable",
+      "Lakehouse",
+      "Data Architecture",
+      "Data Governance",
+      "Data Modeling",
+      "Data Quality",
+      "FinOps",
+      "Machine Learning",
+      "Generative AI",
+      "CI/CD",
+      "trunk-based development",
+      "dimensional modeling",
+      "PostgreSQL",
+      "REST APIs",
+      "LGPD",
+      "observability",
+      "data lake",
+      "data warehouse",
+      "pipelines"
+    ],
+    "leadershipAllowed": [
+      "leadership",
+      "ways of working",
+      "priorit"
+    ],
+    "ownerConfirmed": [
+      "Delta Lake",
+      "Apache Spark",
+      "PySpark",
+      "Databricks Workflows",
+      "Streaming",
+      "Terraform",
+      "Docker",
+      "Kubernetes",
+      "GitHub Actions",
+      "Cursor",
+      "OpenAI",
+      "Anthropic",
+      "DeepSeek",
+      "GLM",
+      "AWS Glue Data Catalog",
+      "Hive Metastore"],
+    "_ownerConfirmedNote": "Not in the LinkedIn export: confirmed by the owner on 2026-10-14 as tools used in production on the data platform (see claim stack-confirmed). G3 allows these as skill tags; G0 does not look for them in the PDF."
+  },
+  "claims": [
+    {
+      "id": "team15",
+      "evidence": [
+        "team of 15+ people"
+      ],
+      "en": [
+        "15\\+"
+      ],
+      "pt": [
+        "15\\+"
+      ],
+      "where": [
+        "site",
+        "cv"
+      ],
+      "es": [
+        "15\\+"
+      ]
+    },
+    {
+      "id": "team10-prev",
+      "evidence": [
+        "led a team of 10 people"
+      ],
+      "en": [
+        "\\b10\\b"
+      ],
+      "pt": [
+        "\\b10\\b"
+      ],
+      "where": [
+        "site",
+        "cv"
+      ],
+      "es": [
+        "\\b10\\b"
+      ]
+    },
+    {
+      "id": "romania",
+      "evidence": [
+        "across Brazil and Romania"
+      ],
+      "en": [
+        "Romania"
+      ],
+      "pt": [
+        "Rom[êe]nia"
+      ],
+      "where": [
+        "site",
+        "cv"
+      ],
+      "es": [
+        "Rumania"
+      ]
+    },
+    {
+      "id": "cost50",
+      "evidence": [
+        "Cut the data platform's cost by more than 50% through a FinOps effort"
+      ],
+      "en": [
+        "50\\s?%",
+        "FinOps"
+      ],
+      "pt": [
+        "50\\s?%",
+        "FinOps"
+      ],
+      "where": [
+        "site",
+        "cv"
+      ],
+      "es": [
+        "50\\s?%",
+        "FinOps"
+      ]
+    },
+    {
+      "id": "incidents3x",
+      "evidence": [
+        "Reduced incidents and rework by ~3x by rolling out CI/CD with trunk-based"
+      ],
+      "en": [
+        "~\\s?3\\s?[x×]",
+        "CI/CD",
+        "trunk-based"
+      ],
+      "pt": [
+        "~\\s?3\\s?[x×]",
+        "CI/CD",
+        "trunk-based"
+      ],
+      "where": [
+        "site",
+        "cv"
+      ],
+      "es": [
+        "~\\s?3\\s?[x×]",
+        "CI/CD",
+        "trunk-based"
+      ]
+    },
+    {
+      "id": "observability",
+      "evidence": [
+        "platform-wide observability and near-real-time business metrics monitoring (latency of a few minutes)"
+      ],
+      "en": [
+        "observability",
+        "near-real-time"
+      ],
+      "pt": [
+        "observabilidade",
+        "quase em tempo real"
+      ],
+      "where": [
+        "site",
+        "cv"
+      ],
+      "es": [
+        "observabilidad",
+        "casi en tiempo real"
+      ]
+    },
+    {
+      "id": "uc10",
+      "evidence": [
+        "Restructured Unity Catalog by domain (10+)"
+      ],
+      "en": [
+        "Unity Catalog",
+        "10\\+"
+      ],
+      "pt": [
+        "Unity Catalog",
+        "10\\+"
+      ],
+      "where": [
+        "site",
+        "cv"
+      ],
+      "es": [
+        "Unity Catalog",
+        "10\\+"
+      ]
+    },
+    {
+      "id": "migration50",
+      "evidence": [
+        "Led the migration of the company's entire data infrastructure to Databricks, bringing together ~50 sources"
+      ],
+      "en": [
+        "~\\s?50",
+        "Databricks"
+      ],
+      "pt": [
+        "~\\s?50",
+        "Databricks"
+      ],
+      "where": [
+        "site",
+        "cv"
+      ],
+      "es": [
+        "~\\s?50",
+        "Databricks"
+      ]
+    },
+    {
+      "id": "hours-minutes",
+      "evidence": [
+        "taking pipelines from hours to minutes"
+      ],
+      "en": [
+        "hours to minutes"
+      ],
+      "pt": [
+        "horas (para|a|em) minutos"
+      ],
+      "where": [
+        "site",
+        "cv"
+      ],
+      "es": [
+        "horas (a|en|hasta) minutos"
+      ]
+    },
+    {
+      "id": "tensTB",
+      "evidence": [
+        "platform of tens of TB"
+      ],
+      "en": [
+        "tens of TB"
+      ],
+      "pt": [
+        "dezenas de TB"
+      ],
+      "where": [
+        "site"
+      ],
+      "es": [
+        "decenas de TB"
+      ]
+    },
+    {
+      "id": "dimmodel",
+      "evidence": [
+        "Built the company's dimensional model and data lake from scratch"
+      ],
+      "en": [
+        "dimensional model",
+        "data lake"
+      ],
+      "pt": [
+        "modelo dimensional",
+        "data lake"
+      ],
+      "where": [
+        "site",
+        "cv"
+      ],
+      "es": [
+        "modelo dimensional",
+        "data lake"
+      ]
+    },
+    {
+      "id": "finops-forecast",
+      "evidence": [
+        "including cost forecasting models to reduce spend in a predictable way"
+      ],
+      "en": [
+        "forecast"
+      ],
+      "pt": [
+        "previs[ãa]o|forecast"
+      ],
+      "where": [
+        "site"
+      ],
+      "es": [
+        "previsi[óo]n|forecast"
+      ]
+    },
+    {
+      "id": "ltv",
+      "evidence": [
+        "Helped create the company's LTV and payback models"
+      ],
+      "en": [
+        "LTV",
+        "payback"
+      ],
+      "pt": [
+        "LTV",
+        "payback"
+      ],
+      "where": [
+        "site",
+        "cv"
+      ],
+      "es": [
+        "LTV",
+        "payback"
+      ]
+    },
+    {
+      "id": "genai-tools",
+      "evidence": [
+        "prototypes in Lovable to dashboards in Streamlit and Metabase"
+      ],
+      "en": [
+        "Lovable",
+        "Streamlit",
+        "Metabase"
+      ],
+      "pt": [
+        "Lovable",
+        "Streamlit",
+        "Metabase"
+      ],
+      "where": [
+        "site"
+      ],
+      "es": [
+        "Lovable",
+        "Streamlit",
+        "Metabase"
+      ]
+    },
+    {
+      "id": "regulatory",
+      "evidence": [
+        "Also contributed to the regulatory process that allowed the company to operate legally in Brazil"
+      ],
+      "en": [
+        "operate legally"
+      ],
+      "pt": [
+        "operar legalmente"
+      ],
+      "where": [
+        "site"
+      ],
+      "es": [
+        "operar legalmente"
+      ]
+    },
+    {
+      "id": "ck-growth",
+      "evidence": [
+        "Grew the data group from 4 to ~20 people"
+      ],
+      "en": [
+        "4\\s?(→|to)\\s?~?\\s?20"
+      ],
+      "pt": [
+        "4\\s?(→|para|a)\\s?~?\\s?20"
+      ],
+      "where": [
+        "site",
+        "cv"
+      ],
+      "es": [
+        "4\\s?(→|a)\\s?~?\\s?20"
+      ]
+    },
+    {
+      "id": "ck-airflow100",
+      "evidence": [
+        "including 100+ Airflow pipelines (modeling and ingestion)"
+      ],
+      "en": [
+        "100\\+",
+        "Airflow"
+      ],
+      "pt": [
+        "100\\+",
+        "Airflow"
+      ],
+      "where": [
+        "site",
+        "cv"
+      ],
+      "es": [
+        "100\\+",
+        "Airflow"
+      ]
+    },
+    {
+      "id": "ck-dbt-redshift",
+      "evidence": [
+        "Led the implementation of dbt on Redshift"
+      ],
+      "en": [
+        "dbt",
+        "Redshift"
+      ],
+      "pt": [
+        "dbt",
+        "Redshift"
+      ],
+      "where": [
+        "site",
+        "cv"
+      ],
+      "es": [
+        "dbt",
+        "Redshift"
+      ]
+    },
+    {
+      "id": "ck-apis10",
+      "evidence": [
+        "Built 10+ APIs for sending data to partners and third parties"
+      ],
+      "en": [
+        "10\\+",
+        "API"
+      ],
+      "pt": [
+        "10\\+",
+        "API"
+      ],
+      "where": [
+        "site",
+        "cv"
+      ],
+      "es": [
+        "10\\+",
+        "API"
+      ]
+    },
+    {
+      "id": "ck-lgpd",
+      "evidence": [
+        "Architected the data protection processes (in compliance with LGPD)"
+      ],
+      "en": [
+        "LGPD"
+      ],
+      "pt": [
+        "LGPD"
+      ],
+      "where": [
+        "site",
+        "cv"
+      ],
+      "es": [
+        "LGPD"
+      ]
+    },
+    {
+      "id": "lc-hundreds",
+      "evidence": [
+        "Taught Big Data and Data Engineering courses to hundreds of students"
+      ],
+      "en": [
+        "hundreds"
+      ],
+      "pt": [
+        "centenas"
+      ],
+      "where": [
+        "site",
+        "cv"
+      ],
+      "es": [
+        "cientos"
+      ]
+    },
+    {
+      "id": "cost-six-figures",
+      "source": "owner",
+      "confirmedOn": "2026-10-14",
+      "note": "Confirmed by the owner in chat (not in the LinkedIn export): the data platform annual spend before the FinOps cut was in the six figures, in USD. A range only: never publish an exact value or a sharper range without asking.",
+      "en": [
+        "six figures"
+      ],
+      "pt": [
+        "seis dígitos"
+      ],
+      "es": [
+        "seis cifras"
+      ],
+      "where": [
+        "site",
+        "cv"
+      ]
+    },
+    {
+      "id": "scale-consumers",
+      "source": "owner",
+      "confirmedOn": "2026-10-14",
+      "note": "Confirmed by the owner in chat (not in the LinkedIn export): a range only (thousands). Never publish an exact number or a sharper range without asking. Subject: people who use the platform (active users): thousands.",
+      "en": [
+        "thousands of people"
+      ],
+      "pt": [
+        "milhares de pessoas"
+      ],
+      "es": [
+        "miles de personas"
+      ],
+      "where": [
+        "site",
+        "cv"
+      ]
+    },
+    {
+      "id": "scale-tables-jobs",
+      "source": "owner",
+      "confirmedOn": "2026-10-14",
+      "note": "Confirmed by the owner in chat (not in the LinkedIn export): a range only (thousands). Never publish an exact number or a sharper range without asking. Subject: tables or datasets on the platform: thousands; jobs or pipeline runs per day: thousands.",
+      "en": [
+        "thousands of tables",
+        "thousands of jobs"
+      ],
+      "pt": [
+        "milhares de tabelas",
+        "milhares de jobs"
+      ],
+      "es": [
+        "miles de tablas",
+        "miles de jobs"
+      ],
+      "where": [
+        "site"
+      ]
+    },
+    {
+      "id": "stack-confirmed",
+      "source": "owner",
+      "confirmedOn": "2026-10-14",
+      "note": "Confirmed by the owner in chat (not in the LinkedIn export): these tools run in production on the data platform: Spark/PySpark, Delta Lake, Databricks Workflows, streaming, Terraform, Docker/Kubernetes, GitHub Actions. Shown as technologies of the platform roles and as skills; do not attach them to a specific project or case without asking.",
+      "en": [
+        "Delta Lake",
+        "Terraform",
+        "GitHub Actions"
+      ],
+      "pt": [
+        "Delta Lake",
+        "Terraform",
+        "GitHub Actions"
+      ],
+      "es": [
+        "Delta Lake",
+        "Terraform",
+        "GitHub Actions"
+      ],
+      "where": [
+        "site",
+        "cv"
+      ]
+    },
+    {
+      "id": "ltv-details",
+      "source": "owner",
+      "confirmedOn": "2026-10-14",
+      "note": "Confirmed by the owner in chat (not in the LinkedIn export): the LTV and payback models were used to decide acquisition spend, estimate return and payback time, segment customers and evaluate campaigns; built in SQL/dbt with statistical and ML modeling, refreshed automatically by pipelines, shown in dashboards. His part: the input data and architecture, the pipelines and platform, and validating with data science and the business. Result: marketing got a numeric basis to decide where to invest. He did NOT say he led the team that built them or that he built the ML himself: do not claim it.",
+      "en": [
+        "SQL and dbt",
+        "validating"
+      ],
+      "pt": [
+        "SQL e dbt",
+        "valida"
+      ],
+      "es": [
+        "SQL y dbt",
+        "valida"
+      ],
+      "where": [
+        "site"
+      ]
+    },
+    {
+      "id": "genai-details",
+      "source": "owner",
+      "confirmedOn": "2026-10-14",
+      "note": "Confirmed by the owner in chat (not in the LinkedIn export): he uses generative AI in code (SQL, dbt, Python), documentation and data quality tests, natural-language assistants and queries, and data analysis (besides Lovable prototypes and Streamlit/Metabase dashboards); he introduced it to the team, set the usage guidelines and built AI solutions for the company. Tools he named: OpenAI, Anthropic, Cursor, DeepSeek, GLM (\"etc.\": the list is not exhaustive, name only these). Effects he chose: faster prototypes, less repetitive work, more people building tools. He did NOT give numbers, nor the content of the guidelines: do not invent either.",
+      "en": [
+        "Cursor",
+        "guidelines",
+        "natural-language"
+      ],
+      "pt": [
+        "Cursor",
+        "diretrizes",
+        "linguagem natural"
+      ],
+      "es": [
+        "Cursor",
+        "directrices",
+        "lenguaje natural"
+      ],
+      "where": [
+        "site"
+      ]
+    },
+    {
+      "id": "why-databricks-details",
+      "source": "owner",
+      "confirmedOn": "2026-10-14",
+      "note": "Confirmed by the owner in chat (not in the LinkedIn export), as selections from a list: what weighed in choosing Databricks (one platform for batch, ML and BI; governance with Unity Catalog; cost and performance; the team's skills); the alternatives considered (staying on Redshift and the native AWS stack, Snowflake, BigQuery / Google Cloud); the biggest risks and trade-offs of the ~50-source migration (migrating without stopping the business, data parity, cost during the transition); and what he would do differently (start FinOps earlier, define domains and owners earlier). Say 'considered', never that any alternative was tested, priced or ruled out for a stated reason. He did NOT say Databricks was cheaper or faster than the alternatives, gave no numbers, no dates and no names of who decided: do not invent any of these.",
+      "en": [
+        "batch processing, ML and BI",
+        "cost and performance",
+        "skills of the team",
+        "Redshift and the native AWS",
+        "Snowflake",
+        "BigQuery",
+        "without stopping the business",
+        "data parity",
+        "cost during the transition",
+        "Start FinOps earlier",
+        "domains and owners earlier"
+      ],
+      "pt": [
+        "processamento em lote, ML e BI",
+        "custo e desempenho",
+        "habilidades do time",
+        "Redshift e no que é nativo da AWS",
+        "Snowflake",
+        "BigQuery",
+        "sem parar o negócio",
+        "paridade dos dados",
+        "custo durante a transição",
+        "Começar o FinOps mais cedo",
+        "domínios e donos mais cedo"
+      ],
+      "es": [
+        "procesamiento por lotes, ML y BI",
+        "costo y rendimiento",
+        "habilidades del equipo",
+        "Redshift y en lo nativo de AWS",
+        "Snowflake",
+        "BigQuery",
+        "sin detener el negocio",
+        "paridad de los datos",
+        "costo durante la transición",
+        "Empezar el FinOps antes",
+        "dominios y dueños antes"
+      ],
+      "where": [
+        "site"
+      ]
+    },
+    {
+      "id": "finops-decision-details",
+      "source": "owner",
+      "confirmedOn": "2026-10-14",
+      "note": "Confirmed by the owner in chat (not in the LinkedIn export), as selections from a list: what he prioritized in the FinOps effort (visibility of spend, the biggest cost drivers, cluster sizing, job scheduling); the trade-offs he had to manage (cost against data freshness, cost against performance, autonomy against rules, engineering time against savings); what kept the savings predictable and in place (cost forecasting models, cost attributed by domain or owner, spend alerts and dashboards, policies and guardrails); and what he would do differently besides starting earlier (tag and attribute cost by domain and owner from day one, automatic spend alerts earlier, involve the domains earlier). 'Managed a trade-off' does not mean any pipeline got slower or staler: do not say so. He gave no numbers per lever and no names: do not invent any.",
+      "en": [
+        "Visibility of spend, the biggest cost drivers, cluster sizing, and job scheduling",
+        "cost against data freshness",
+        "cost against performance",
+        "autonomy against rules",
+        "engineering time against savings",
+        "Cost forecasting models, cost attributed by domain or owner",
+        "spend alerts and dashboards",
+        "policies and guardrails",
+        "Tag and attribute cost by domain and owner from day one",
+        "automatic spend alerts earlier",
+        "involve the domains earlier"
+      ],
+      "pt": [
+        "Visibilidade do gasto, os maiores geradores de custo, o dimensionamento dos clusters e o agendamento dos jobs",
+        "custo contra frescor dos dados",
+        "custo contra desempenho",
+        "autonomia contra regras",
+        "tempo de engenharia contra economia",
+        "Modelos de previsão de custo, custo atribuído por domínio ou dono",
+        "alertas e dashboards de gasto",
+        "políticas e guardrails",
+        "por domínio e dono desde o primeiro dia",
+        "alertas automáticos de gasto mais cedo",
+        "envolver os domínios mais cedo"
+      ],
+      "es": [
+        "Visibilidad del gasto, los mayores generadores de costo, el dimensionamiento de los clusters y la programación de los jobs",
+        "costo frente a frescura de los datos",
+        "costo frente a rendimiento",
+        "autonomía frente a reglas",
+        "tiempo de ingeniería frente a ahorro",
+        "Modelos de previsión de costo, costo atribuido por dominio o dueño",
+        "alertas y dashboards de gasto",
+        "políticas y guardrails",
+        "por dominio y dueño desde el primer día",
+        "alertas automáticas de gasto antes",
+        "involucrar antes a los dominios"
+      ],
+      "where": [
+        "site"
+      ]
+    },
+    {
+      "id": "uc-decision-details",
+      "source": "owner",
+      "confirmedOn": "2026-10-14",
+      "note": "Confirmed by the owner in chat (not in the LinkedIn export), as selections from a list: why Unity Catalog was split by domain (clear ownership by area, access and security by domain, cost attributed by domain, discovery and data quality); the trade-offs he managed (central control against team autonomy, how many domains, rework of tables and permissions, standards against flexibility); what worked in practice (domain owners and agreed standards, provisioning as code); and what he would do differently (automate provisioning and permissions earlier, lineage and documentation for the domains from the start). 'Provisioning as code' does not name a tool: do not say Terraform here. No numbers beyond the 10+ domains already in the ledger, no names: do not invent any.",
+      "en": [
+        "Clear ownership by area, access and security by domain, cost attributed by domain",
+        "discovery and data quality",
+        "Central control against team autonomy",
+        "how many domains",
+        "rework of tables and permissions",
+        "standards against flexibility",
+        "Domain owners and agreed standards, and provisioning as code",
+        "Automate provisioning and permissions earlier",
+        "lineage and documentation for the domains from the start"
+      ],
+      "pt": [
+        "Responsabilidade clara por área, acesso e segurança por domínio, custo atribuído por domínio",
+        "descoberta e qualidade de dados",
+        "Controle central contra autonomia",
+        "quantos domínios",
+        "retrabalho em tabelas e permissões",
+        "padrão contra flexibilidade",
+        "Donos por domínio e padrões combinados, e provisionamento como código",
+        "Automatizar o provisionamento e as permissões mais cedo",
+        "linhagem e documentação dos domínios desde o início"
+      ],
+      "es": [
+        "Responsabilidad clara por área, acceso y seguridad por dominio, costo atribuido por dominio",
+        "descubrimiento y calidad de datos",
+        "Control central frente a autonomía",
+        "cuántos dominios",
+        "retrabajo en tablas y permisos",
+        "estándar frente a flexibilidad",
+        "Dueños por dominio y estándares acordados, y aprovisionamiento como código",
+        "Automatizar antes el aprovisionamiento y los permisos",
+        "linaje y documentación de los dominios desde el inicio"
+      ],
+      "where": [
+        "site"
+      ]
+    },
+    {
+      "id": "catalogs-confirmed",
+      "source": "owner",
+      "confirmedOn": "2026-10-15",
+      "note": "Confirmed by the owner in chat (not in the LinkedIn export, where Glue and Hive appear only as course content): he worked with the AWS Glue Data Catalog at Flutter Brazil (no role stated), with Hive Metastore, and with open-source data catalogs. For the open-source ones he picked the group 'DataHub, OpenMetadata or Amundsen' without naming one: say 'open-source catalogs' and NEVER name any of the three (forbidden pattern). He also said 'other solutions' without naming them: do not invent any. Where he used Hive Metastore and the open-source catalogs was not stated: do not tie them to an employer or a role.",
+      "en": [
+        "AWS Glue Data Catalog",
+        "Hive Metastore",
+        "open-source catalogs"
+      ],
+      "pt": [
+        "AWS Glue Data Catalog",
+        "Hive Metastore",
+        "catálogos open source"
+      ],
+      "es": [
+        "AWS Glue Data Catalog",
+        "Hive Metastore",
+        "catálogos open source"
+      ],
+      "where": [
+        "site"
+      ]
+    },
+    {
+      "id": "gdpr-alignment",
+      "source": "owner",
+      "confirmedOn": "2026-10-14",
+      "note": "Confirmed by the owner in chat (not in the LinkedIn export): besides LGPD, the data protection processes he designed at Clicksign also follow GDPR. Say 'aligned with GDPR' (he said the processes follow it), never 'GDPR compliant/certified'. He did NOT confirm SOC 2, ISO 27001 or any audit or certification: those stay forbidden.",
+      "en": [
+        "aligned with GDPR"
+      ],
+      "pt": [
+        "alinhados ao GDPR"
+      ],
+      "es": [
+        "alineados con el GDPR"
+      ],
+      "where": [
+        "site",
+        "cv"
+      ]
+    }
+  ],
+  "metrics": {
+    "_comment": "Numbers allowed to appear with a unit/prefix (%, x, +, ~, >) anywhere on site/CV. Anything of that shape that is NOT here fails G3 (catches invented numbers).",
+    "allowed": [
+      {
+        "token": "15+",
+        "evidence": [
+          "team of 15+ people"
+        ]
+      },
+      {
+        "token": "10+",
+        "evidence": [
+          "Unity Catalog by domain (10+)",
+          "Built 10+ APIs"
+        ]
+      },
+      {
+        "token": ">50%",
+        "alt": [
+          "50%"
+        ],
+        "evidence": [
+          "more than 50%"
+        ]
+      },
+      {
+        "token": "~3x",
+        "alt": [
+          "~3×"
+        ],
+        "evidence": [
+          "~3x"
+        ]
+      },
+      {
+        "token": "~50",
+        "evidence": [
+          "~50 sources"
+        ]
+      },
+      {
+        "token": "100+",
+        "evidence": [
+          "100+ Airflow pipelines"
+        ]
+      },
+      {
+        "token": "~20",
+        "evidence": [
+          "from 4 to ~20 people"
+        ]
+      }
+    ]
+  },
+  "forbidden": {
+    "_comment": "Stale or private strings. scope: site | cv | all. Checked against rendered text (EN and PT) and raw HTML/JSON-LD. Exact private values (phone, birth date) live in the git-ignored _tools/fixtures/private-forbidden.json and are merged in by loadFacts().",
+    "patterns": [
+      {
+        "re": "\\(?\\b\\d{2}\\)?[\\s.-]?9\\d{4}[\\s.-]?\\d{4}\\b",
+        "scope": "all",
+        "why": "Brazilian mobile phone number must not be public (user decision)"
+      },
+      {
+        "re": "data de nascimento|date of birth|\\bborn on\\b|\\bnascid[oa] em\\b",
+        "scope": "all",
+        "why": "date of birth must not be public (user decision)"
+      },
+      {
+        "re": "S[ãa]o Paulo",
+        "scope": "all",
+        "why": "no city; location is 'Brazil · Remote/Global' (user decision)"
+      },
+      {
+        "re": "(?<!Oeste do )(?<!Oesto do )Rio de Janeiro",
+        "scope": "all",
+        "why": "old CV location; only allowed inside the UEZO institution name"
+      },
+      {
+        "re": "Data Group Lead",
+        "scope": "all",
+        "why": "LinkedIn title is 'Data Team Lead'"
+      },
+      {
+        "re": "kit\\.fontawesome",
+        "scope": "site",
+        "why": "placeholder FA kit script removed"
+      },
+      {
+        "re": "maximum-scale",
+        "scope": "site",
+        "why": "blocks pinch-zoom (a11y)"
+      },
+      {
+        "re": "Nikola Tesla",
+        "scope": "site",
+        "why": "quote replaced by own LinkedIn sentence (plan default)"
+      },
+      {
+        "re": "caf[ée]s|coffees|Ideias malucas|crazy ideas",
+        "scope": "site",
+        "why": "joke stats replaced by verified impact metrics"
+      },
+      {
+        "re": "Arquiteto de Dados\\s*[•·|-]\\s*Cientista de Dados|Cientista de dados de neg[óo]cios",
+        "scope": "all",
+        "why": "old CV headline / self-description (\"Arquiteto de Dados • Cientista de Dados\"); the course title \"Formação Cientista de Dados\" is legitimate"
+      },
+      {
+        "re": "\\bexpired\\b|\\bexpirado\\b",
+        "scope": "site",
+        "why": "the 'expired' flag on certifications was removed at the owner's request"
+      },
+      {
+        "re": "(?:US\\$|R\\$|€)\\s?\\d|\\$\\s?\\d[\\d.,]{2,}",
+        "scope": "all",
+        "why": "exact money amounts must not be public: the owner authorized only a six-figure annual range (USD) for the platform cost"
+      },
+      {
+        "re": "\\b\\d[\\d.,]*\\s?(?:usd|dólares|dolares|dollars|reais|brl)\\b",
+        "scope": "all",
+        "why": "exact money amounts must not be public: the owner authorized only a six-figure annual range (USD) for the platform cost"
+      },
+      {
+        "re": "(?:cheaper|faster|better|safer|simpler)\\s+than\\s+(?:the\\s+)?(?:redshift|snowflake|bigquery|aws|google)|(?:mais\\s+(?:barat[oa]|r[áa]pid[oa]|simples|seguro)|melhor)\\s+(?:do\\s+)?que\\s+(?:o\\s+|a\\s+)?(?:redshift|snowflake|bigquery|aws|google)|(?:m[áa]s\\s+(?:barat[oa]|r[áa]pid[oa]|simple|seguro)|mejor)\\s+que\\s+(?:el\\s+|la\\s+)?(?:redshift|snowflake|bigquery|aws|google)",
+        "scope": "all",
+        "why": "the owner named the platforms he considered but never said Databricks beat them on cost, speed or anything else: no 'cheaper/faster/better than Snowflake/BigQuery/Redshift' in any language"
+      },
+      {
+        "re": "\\bSOC\\s?2\\b|\\bISO\\s?/?\\s?(?:IEC\\s?)?27001\\b|\\bGDPR[\\s-]+(?:compliant|certified|certificad[oa])",
+        "scope": "all",
+        "why": "the owner confirmed only that the data protection processes follow GDPR (besides LGPD): no SOC 2, no ISO 27001, and no 'GDPR compliant/certified' (that would be a certification claim)"
+      },
+      {
+        "re": "\\b(?:DataHub|OpenMetadata|Amundsen)\\b",
+        "scope": "all",
+        "why": "the owner confirmed open-source data catalogs as a group without naming one: write 'open-source catalogs', never a product name"
+      }
+    ]
+  }
+}

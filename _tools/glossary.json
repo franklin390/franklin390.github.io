@@ -1,0 +1,295 @@
+{
+  "_readme": "Terms that must be rendered consistently across EN, PT and ES (gate G2). If an EN string contains `en` (case-insensitive), the PT (ES) string of the same key must contain at least one of `pt` (`es`).",
+  "terms": [
+    {
+      "en": "near-real-time",
+      "pt": [
+        "quase em tempo real"
+      ],
+      "es": [
+        "casi en tiempo real"
+      ]
+    },
+    {
+      "en": "data quality",
+      "pt": [
+        "qualidade de dados"
+      ],
+      "es": [
+        "calidad de datos"
+      ]
+    },
+    {
+      "en": "data governance",
+      "pt": [
+        "governança de dados"
+      ],
+      "es": [
+        "gobernanza de datos"
+      ]
+    },
+    {
+      "en": "hours to minutes",
+      "pt": [
+        "horas para minutos"
+      ],
+      "es": [
+        "de horas a minutos"
+      ]
+    },
+    {
+      "en": "generative AI",
+      "pt": [
+        "IA generativa"
+      ],
+      "es": [
+        "IA generativa"
+      ]
+    },
+    {
+      "en": "dimensional model",
+      "pt": [
+        "modelo dimensional",
+        "modelagem dimensional",
+        "modelos dimensionais"
+      ],
+      "es": [
+        "modelo dimensional",
+        "modelado dimensional",
+        "modelos dimensionales"
+      ]
+    },
+    {
+      "en": "dimensional modeling",
+      "pt": [
+        "modelagem dimensional"
+      ],
+      "es": [
+        "modelado dimensional"
+      ]
+    },
+    {
+      "en": "data modeling",
+      "pt": [
+        "modelagem de dados"
+      ],
+      "es": [
+        "modelado de datos"
+      ]
+    },
+    {
+      "en": "data protection",
+      "pt": [
+        "proteção de dados"
+      ],
+      "es": [
+        "protección de datos"
+      ]
+    },
+    {
+      "en": "Unity Catalog",
+      "pt": [
+        "Unity Catalog"
+      ],
+      "es": [
+        "Unity Catalog"
+      ]
+    },
+    {
+      "en": "FinOps",
+      "pt": [
+        "FinOps"
+      ],
+      "es": [
+        "FinOps"
+      ]
+    },
+    {
+      "en": "trunk-based development",
+      "pt": [
+        "trunk-based development"
+      ],
+      "es": [
+        "trunk-based development"
+      ]
+    },
+    {
+      "en": "Tech Lead",
+      "pt": [
+        "Tech Lead"
+      ],
+      "es": [
+        "Tech Lead"
+      ]
+    },
+    {
+      "en": "Staff Data Engineer",
+      "pt": [
+        "Staff Data Engineer"
+      ],
+      "es": [
+        "Staff Data Engineer"
+      ]
+    },
+    {
+      "en": "Databricks",
+      "pt": [
+        "Databricks"
+      ],
+      "es": [
+        "Databricks"
+      ]
+    },
+    {
+      "en": "lakehouse",
+      "pt": [
+        "lakehouse"
+      ],
+      "es": [
+        "lakehouse"
+      ]
+    },
+    {
+      "en": "data lake",
+      "pt": [
+        "data lake"
+      ],
+      "es": [
+        "data lake"
+      ]
+    },
+    {
+      "en": "Airflow",
+      "pt": [
+        "Airflow"
+      ],
+      "es": [
+        "Airflow"
+      ]
+    },
+    {
+      "en": "tens of TB",
+      "pt": [
+        "dezenas de TB"
+      ],
+      "es": [
+        "decenas de TB"
+      ]
+    },
+    {
+      "en": "hundreds of students",
+      "pt": [
+        "centenas de alunos"
+      ],
+      "es": [
+        "cientos de estudiantes"
+      ]
+    },
+    {
+      "en": "Romania",
+      "pt": [
+        "Romênia"
+      ],
+      "es": [
+        "Rumania"
+      ]
+    },
+    {
+      "en": "Remote/Global",
+      "pt": [
+        "Remoto/Global"
+      ],
+      "es": [
+        "Remoto/Global"
+      ]
+    },
+    {
+      "en": "Brazil",
+      "pt": [
+        "Brasil"
+      ],
+      "stripFromEn": [
+        "Flutter Brazil"
+      ],
+      "es": [
+        "Brasil"
+      ]
+    }
+  ],
+  "protectedTokens": [
+    "Databricks",
+    "Unity Catalog",
+    "dbt",
+    "SQL",
+    "Python",
+    "AWS",
+    "Redshift",
+    "Airflow",
+    "Streamlit",
+    "Metabase",
+    "Lovable",
+    "LGPD",
+    "LTV",
+    "CI/CD",
+    "Google Analytics 4",
+    "FinOps",
+    "Clicksign",
+    "Flutter Brazil",
+    "Tech Lead",
+    "Staff Data Engineer",
+    "Kaggle",
+    "REST",
+    "APIs",
+    "TB"
+  ],
+  "sameInBothLanguages": [
+    "meta.title",
+    "about.info.role.value",
+    "tag.cicd",
+    "train.c14",
+    "train.c15",
+    "train.c33",
+    "case.cicd.title",
+    "projects.cat.bd",
+    "a11y.menu",
+    "footer.copy",
+    "talks.podcast.label",
+    "about.info.location.value",
+    "contact.place"
+  ],
+  "englishTermsAllowedInPt": [
+    "train.astro.dag",
+    "train.astro.fund",
+    "train.c17",
+    "train.c21",
+    "projects.p09.desc",
+    "train.c11",
+    "train.c19",
+    "train.c20"
+  ],
+  "sameInLang": {
+    "es": []
+  },
+  "sameEsAndPt": [
+    "lang.label",
+    "carousel.prev",
+    "nav.impact",
+    "nav.expertise",
+    "hero.role3",
+    "about.photo.alt",
+    "about.profile.title",
+    "about.info.role",
+    "about.lang.title",
+    "skills.ai",
+    "tag.genai",
+    "impact.eyebrow",
+    "exp.label.topics",
+    "train.view",
+    "train.c10",
+    "work.filter.all",
+    "work.filter.platform",
+    "work.filter.analytics",
+    "services.eyebrow",
+    "contact.hire.title"
+  ]
+}

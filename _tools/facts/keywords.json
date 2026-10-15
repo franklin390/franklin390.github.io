@@ -1,0 +1,906 @@
+{
+  "_readme": "Config for gate G12. 'keywords' = terms recruiters and ATS filters look for in Staff Data Engineer roles (job postings and ATS guides reviewed 2026-10), each already backed by the LinkedIn export, so adding them never invents experience. A keyword only counts when it appears inside real sentences, so every term also has a stuffing cap. 'provenance' makes sure no tool, acronym or proper noun appears in the new copy unless it exists in the LinkedIn export (or the owner confirmed it).",
+  "keywords": [
+    {
+      "id": "staff-title",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "Staff Data Engineer"
+      ],
+      "pt": [
+        "Staff Data Engineer"
+      ],
+      "maxSite": 14,
+      "maxCv": 4,
+      "es": [
+        "Staff Data Engineer"
+      ]
+    },
+    {
+      "id": "data-engineering",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "data engineering",
+        "data engineers?"
+      ],
+      "pt": [
+        "engenharia de dados",
+        "engenheiros? de dados"
+      ],
+      "maxSite": 24,
+      "maxCv": 10,
+      "es": [
+        "ingenier[ií]a de datos",
+        "ingenieros? de datos"
+      ]
+    },
+    {
+      "id": "data-architecture",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "data architecture",
+        "data architect"
+      ],
+      "pt": [
+        "arquitetura de dados",
+        "arquiteto de dados",
+        "Data Architect"
+      ],
+      "maxSite": 20,
+      "maxCv": 8,
+      "es": [
+        "arquitectura de datos",
+        "arquitecto de datos",
+        "Data Architect"
+      ]
+    },
+    {
+      "id": "data-modeling",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "data modeling"
+      ],
+      "pt": [
+        "modelagem de dados"
+      ],
+      "maxSite": 14,
+      "maxCv": 5,
+      "es": [
+        "modelado de datos"
+      ]
+    },
+    {
+      "id": "dimensional",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "dimensional model(ing)?"
+      ],
+      "pt": [
+        "modelagem dimensional",
+        "modelo dimensional"
+      ],
+      "maxSite": 14,
+      "maxCv": 6,
+      "es": [
+        "modelado dimensional",
+        "modelo dimensional"
+      ]
+    },
+    {
+      "id": "lakehouse",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "lakehouse"
+      ],
+      "pt": [
+        "lakehouse"
+      ],
+      "maxSite": 22,
+      "maxCv": 8,
+      "es": [
+        "lakehouse"
+      ]
+    },
+    {
+      "id": "data-lake",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "data lakes?"
+      ],
+      "pt": [
+        "data lakes?"
+      ],
+      "maxSite": 14,
+      "maxCv": 6,
+      "es": [
+        "data lakes?"
+      ]
+    },
+    {
+      "id": "data-platform",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "data platform"
+      ],
+      "pt": [
+        "plataforma de dados"
+      ],
+      "maxSite": 16,
+      "maxCv": 6,
+      "es": [
+        "plataforma de datos"
+      ]
+    },
+    {
+      "id": "pipelines",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "pipelines?"
+      ],
+      "pt": [
+        "pipelines?"
+      ],
+      "maxSite": 20,
+      "maxCv": 8,
+      "es": [
+        "pipelines?"
+      ]
+    },
+    {
+      "id": "databricks",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "Databricks"
+      ],
+      "pt": [
+        "Databricks"
+      ],
+      "maxSite": 34,
+      "maxCv": 12,
+      "es": [
+        "Databricks"
+      ]
+    },
+    {
+      "id": "unity-catalog",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "Unity Catalog"
+      ],
+      "pt": [
+        "Unity Catalog"
+      ],
+      "maxSite": 20,
+      "maxCv": 8,
+      "es": [
+        "Unity Catalog"
+      ]
+    },
+    {
+      "id": "dbt",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "dbt"
+      ],
+      "pt": [
+        "dbt"
+      ],
+      "maxSite": 20,
+      "maxCv": 9,
+      "es": [
+        "dbt"
+      ]
+    },
+    {
+      "id": "airflow",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "Airflow"
+      ],
+      "pt": [
+        "Airflow"
+      ],
+      "maxSite": 20,
+      "maxCv": 12,
+      "es": [
+        "Airflow"
+      ]
+    },
+    {
+      "id": "aws",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "\\bAWS\\b"
+      ],
+      "pt": [
+        "\\bAWS\\b"
+      ],
+      "maxSite": 14,
+      "maxCv": 7,
+      "es": [
+        "\\bAWS\\b"
+      ]
+    },
+    {
+      "id": "redshift",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "Redshift"
+      ],
+      "pt": [
+        "Redshift"
+      ],
+      "maxSite": 14,
+      "maxCv": 7,
+      "es": [
+        "Redshift"
+      ]
+    },
+    {
+      "id": "sql",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "\\bSQL\\b"
+      ],
+      "pt": [
+        "\\bSQL\\b"
+      ],
+      "maxSite": 14,
+      "maxCv": 7,
+      "es": [
+        "\\bSQL\\b"
+      ]
+    },
+    {
+      "id": "python",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "Python"
+      ],
+      "pt": [
+        "Python"
+      ],
+      "maxSite": 18,
+      "maxCv": 12,
+      "es": [
+        "Python"
+      ]
+    },
+    {
+      "id": "governance",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "governance"
+      ],
+      "pt": [
+        "governan[çc]a"
+      ],
+      "maxSite": 24,
+      "maxCv": 8,
+      "es": [
+        "gobernanza"
+      ]
+    },
+    {
+      "id": "data-quality",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "data quality"
+      ],
+      "pt": [
+        "qualidade de dados"
+      ],
+      "maxSite": 14,
+      "maxCv": 6,
+      "es": [
+        "calidad de datos"
+      ]
+    },
+    {
+      "id": "observability",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "observability"
+      ],
+      "pt": [
+        "observabilidade"
+      ],
+      "maxSite": 14,
+      "maxCv": 6,
+      "es": [
+        "observabilidad"
+      ]
+    },
+    {
+      "id": "finops",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "FinOps"
+      ],
+      "pt": [
+        "FinOps"
+      ],
+      "maxSite": 20,
+      "maxCv": 8,
+      "es": [
+        "FinOps"
+      ]
+    },
+    {
+      "id": "lgpd",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "LGPD"
+      ],
+      "pt": [
+        "LGPD"
+      ],
+      "maxSite": 12,
+      "maxCv": 6,
+      "es": [
+        "LGPD"
+      ]
+    },
+    {
+      "id": "cicd",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "CI/CD"
+      ],
+      "pt": [
+        "CI/CD"
+      ],
+      "maxSite": 14,
+      "maxCv": 6,
+      "es": [
+        "CI/CD"
+      ]
+    },
+    {
+      "id": "trunk",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "trunk-based"
+      ],
+      "pt": [
+        "trunk-based"
+      ],
+      "maxSite": 14,
+      "maxCv": 6,
+      "es": [
+        "trunk-based"
+      ]
+    },
+    {
+      "id": "genai",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "generative AI"
+      ],
+      "pt": [
+        "IA generativa"
+      ],
+      "maxSite": 18,
+      "maxCv": 8,
+      "es": [
+        "IA generativa"
+      ]
+    },
+    {
+      "id": "ml",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "machine learning"
+      ],
+      "pt": [
+        "machine learning"
+      ],
+      "maxSite": 14,
+      "maxCv": 6,
+      "es": [
+        "machine learning"
+      ]
+    },
+    {
+      "id": "tech-leadership",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "technical (team )?leadership",
+        "technically lead",
+        "Tech Lead"
+      ],
+      "pt": [
+        "lideran[çc]a t[ée]cnica",
+        "lidero tecnicamente",
+        "Tech Lead"
+      ],
+      "maxSite": 20,
+      "maxCv": 8,
+      "es": [
+        "liderazgo t[ée]cnico",
+        "lidero t[ée]cnicamente",
+        "Tech Lead"
+      ]
+    },
+    {
+      "id": "near-real-time",
+      "level": "must",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "near-real-time"
+      ],
+      "pt": [
+        "quase em tempo real"
+      ],
+      "maxSite": 12,
+      "maxCv": 4,
+      "es": [
+        "casi en tiempo real"
+      ]
+    },
+    {
+      "id": "data-warehouse",
+      "level": "nice",
+      "where": [
+        "site"
+      ],
+      "en": [
+        "data warehouses?"
+      ],
+      "pt": [
+        "data warehouses?"
+      ],
+      "maxSite": 10,
+      "maxCv": 6,
+      "es": [
+        "data warehouses?"
+      ]
+    },
+    {
+      "id": "apis",
+      "level": "nice",
+      "where": [
+        "site",
+        "cv"
+      ],
+      "en": [
+        "\\bAPIs?\\b"
+      ],
+      "pt": [
+        "\\bAPIs?\\b"
+      ],
+      "maxSite": 12,
+      "maxCv": 6,
+      "es": [
+        "\\bAPIs?\\b"
+      ]
+    }
+  ],
+  "provenance": {
+    "_comment": "A term that is a known tool, an acronym, a camelCase brand or a capitalised proper noun in the NEW copy must exist in the LinkedIn export (or be in neutral / userConfirmed). 'trainingOnly' terms exist in the export only as course content: they may appear in certification/training text, never as work experience, until the owner confirms them (userConfirmed).",
+    "techVocabulary": [
+      "spark",
+      "pyspark",
+      "delta lake",
+      "delta",
+      "iceberg",
+      "hudi",
+      "kafka",
+      "flink",
+      "beam",
+      "hadoop",
+      "hive",
+      "hdfs",
+      "presto",
+      "trino",
+      "snowflake",
+      "bigquery",
+      "athena",
+      "aws glue",
+      "glue",
+      "emr",
+      "kinesis",
+      "s3",
+      "lambda",
+      "dynamodb",
+      "postgres",
+      "mysql",
+      "mongodb",
+      "cassandra",
+      "redis",
+      "elasticsearch",
+      "clickhouse",
+      "druid",
+      "synapse",
+      "azure",
+      "gcp",
+      "google cloud",
+      "terraform",
+      "pulumi",
+      "cloudformation",
+      "ansible",
+      "docker",
+      "kubernetes",
+      "helm",
+      "jenkins",
+      "github actions",
+      "gitlab",
+      "circleci",
+      "argo",
+      "dagster",
+      "prefect",
+      "luigi",
+      "nifi",
+      "airbyte",
+      "fivetran",
+      "talend",
+      "informatica",
+      "great expectations",
+      "soda",
+      "monte carlo",
+      "datadog",
+      "grafana",
+      "prometheus",
+      "looker",
+      "tableau",
+      "power bi",
+      "quicksight",
+      "superset",
+      "mlflow",
+      "kubeflow",
+      "sagemaker",
+      "vertex",
+      "openai",
+      "langchain",
+      "llm",
+      "gpt",
+      "chatgpt",
+      "copilot",
+      "cursor",
+      "pandas",
+      "numpy",
+      "scikit-learn",
+      "tensorflow",
+      "pytorch",
+      "keras",
+      "scala",
+      "java",
+      "javascript",
+      "typescript",
+      "rust",
+      "spss",
+      "data mesh",
+      "medallion",
+      "data contracts",
+      "data catalog",
+      "lineage",
+      "openlineage",
+      "collibra",
+      "atlan",
+      "datahub",
+      "purview",
+      "workflows",
+      "delta live tables",
+      "structured streaming",
+      "mlops",
+      "devops",
+      "iac",
+      "infrastructure as code",
+      "rbac",
+      "abac",
+      "etl",
+      "elt",
+      "slo",
+      "sla",
+      "kpi",
+      "okr",
+      "databricks",
+      "unity catalog",
+      "dbt",
+      "airflow",
+      "apache airflow",
+      "redshift",
+      "amazon redshift",
+      "aws",
+      "sql",
+      "python",
+      "postgresql",
+      "streamlit",
+      "metabase",
+      "lovable",
+      "google analytics 4",
+      "ga4",
+      "lgpd",
+      "finops",
+      "ci/cd",
+      "trunk-based development",
+      "rest apis",
+      "apis"
+    ],
+    "trainingOnly": [
+      "spark",
+      "pyspark",
+      "hadoop",
+      "kafka",
+      "aws glue",
+      "power bi",
+      "nosql",
+      "feature engineering",
+      "hive",
+      "opencv"
+    ],
+    "neutral": [
+      "brazil",
+      "brasil",
+      "romania",
+      "romenia",
+      "portuguese",
+      "portugues",
+      "english",
+      "ingles",
+      "spanish",
+      "espanhol",
+      "remote",
+      "remoto",
+      "global",
+      "linkedin",
+      "github",
+      "credly",
+      "kaggle",
+      "flutter",
+      "clicksign",
+      "ada",
+      "let's",
+      "code",
+      "staff",
+      "tech",
+      "lead",
+      "data",
+      "team",
+      "platform",
+      "catalog",
+      "unity",
+      "google",
+      "analytics",
+      "amazon",
+      "apache",
+      "tdc",
+      "dsa",
+      "ltv",
+      "payback",
+      "january",
+      "february",
+      "march",
+      "april",
+      "may",
+      "june",
+      "july",
+      "august",
+      "september",
+      "october",
+      "november",
+      "december",
+      "jan",
+      "feb",
+      "mar",
+      "apr",
+      "jun",
+      "jul",
+      "aug",
+      "sep",
+      "oct",
+      "nov",
+      "dec",
+      "janeiro",
+      "fevereiro",
+      "marco",
+      "abril",
+      "maio",
+      "junho",
+      "julho",
+      "agosto",
+      "setembro",
+      "outubro",
+      "novembro",
+      "dezembro",
+      "hi",
+      "olá",
+      "ola",
+      "eu",
+      "sou",
+      "i",
+      "i'm",
+      "id",
+      "ai",
+      "ia",
+      "tb",
+      "ci",
+      "cd",
+      "bi",
+      "ml",
+      "ceo",
+      "cto",
+      "api",
+      "ux",
+      "ui",
+      "qa",
+      "ok",
+      "pdf",
+      "cv",
+      "html",
+      "css",
+      "json",
+      "rest",
+      "i've",
+      "i'll",
+      "i'd",
+      "rumania",
+      "espanol",
+      "enero",
+      "febrero",
+      "marzo",
+      "mayo",
+      "junio",
+      "julio",
+      "septiembre",
+      "octubre",
+      "noviembre",
+      "diciembre",
+      "ene",
+      "abr",
+      "ago",
+      "dic",
+      "hola",
+      "soy"
+    ],
+    "userConfirmed": [
+      "usd",
+      "spark",
+      "apache spark",
+      "pyspark",
+      "delta lake",
+      "delta",
+      "databricks workflows",
+      "workflows",
+      "streaming",
+      "terraform",
+      "iac",
+      "docker",
+      "kubernetes",
+      "github actions",
+      "actions",
+      "lake",
+      "openai",
+      "anthropic",
+      "cursor",
+      "deepseek",
+      "glm",
+      "snowflake",
+      "bigquery",
+      "google cloud",
+      "gdpr",
+      "lineage",
+      "warehouse",
+      "warehouses",
+      "aws glue",
+      "glue data catalog",
+      "hive",
+      "hive metastore",
+      "metastore",
+      "catalogs",
+      "data catalog",
+      "data catalogs"
+    ]
+  }
+}

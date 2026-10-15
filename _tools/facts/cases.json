@@ -1,0 +1,225 @@
+{
+  "_readme": "Data behind the 'Selected work' cards (rendered into index.html by gen-regions.mjs). Texts live in js/i18n/*.js under case.<key>.*; numbers must exist in facts.json (metrics.allowed).",
+  "cases": [
+    {
+      "id": "migration",
+      "key": "migration",
+      "cat": "platform",
+      "icon": "icon-cloud",
+      "meta": "Flutter Brazil · Data Engineer",
+      "metric": {
+        "num": "~50",
+        "cap": "case.metric.sources"
+      },
+      "context": true,
+      "result": true,
+      "stack": [
+        "Databricks",
+        "dbt",
+        "Python",
+        "SQL",
+        "Google Analytics 4"
+      ]
+    },
+    {
+      "id": "finops",
+      "key": "finops",
+      "cat": "reliability",
+      "icon": "icon-dollar",
+      "meta": "Flutter Brazil · Tech Lead",
+      "metric": {
+        "num": ">50%",
+        "cap": "case.metric.cost"
+      },
+      "context": true,
+      "result": true,
+      "stack": [
+        "Databricks",
+        "FinOps"
+      ]
+    },
+    {
+      "id": "clicksign",
+      "key": "ck",
+      "cat": "platform",
+      "icon": "icon-network",
+      "meta": "Clicksign · Data Architect",
+      "metric": {
+        "num": "100+",
+        "cap": "case.metric.pipelines"
+      },
+      "context": false,
+      "result": true,
+      "stack": [
+        "Apache Airflow",
+        "dbt",
+        "Amazon Redshift",
+        "dimensional modeling"
+      ]
+    },
+    {
+      "id": "unity",
+      "key": "unity",
+      "cat": "governance",
+      "icon": "icon-grid",
+      "meta": "Flutter Brazil · Tech Lead",
+      "metric": {
+        "num": "10+",
+        "cap": "case.metric.domains"
+      },
+      "context": false,
+      "result": true,
+      "stack": [
+        "Databricks",
+        "Unity Catalog",
+        "dbt"
+      ]
+    },
+    {
+      "id": "obs",
+      "key": "obs",
+      "cat": "reliability",
+      "icon": "icon-speed-o-meter",
+      "meta": "Flutter Brazil · Tech Lead",
+      "metric": null,
+      "context": false,
+      "result": true,
+      "stack": [
+        "Streamlit",
+        "Metabase"
+      ]
+    },
+    {
+      "id": "cicd",
+      "key": "cicd",
+      "cat": "reliability",
+      "icon": "icon-share",
+      "meta": "Flutter Brazil · Tech Lead",
+      "metric": {
+        "num": "~3x",
+        "cap": "case.metric.incidents"
+      },
+      "context": false,
+      "result": true,
+      "stack": [
+        "dbt",
+        "CI/CD",
+        "trunk-based development"
+      ]
+    },
+    {
+      "id": "protection",
+      "key": "prot",
+      "cat": "governance",
+      "icon": "icon-shield",
+      "meta": "Clicksign · Data Architect",
+      "metric": {
+        "num": "10+",
+        "cap": "case.metric.apis"
+      },
+      "context": false,
+      "result": false,
+      "stack": [
+        "LGPD",
+        "GDPR",
+        "APIs",
+        "data governance"
+      ]
+    },
+    {
+      "id": "ltv",
+      "key": "ltv",
+      "cat": "analytics",
+      "icon": "icon-pie-chart",
+      "meta": "Flutter Brazil · Tech Lead",
+      "metric": null,
+      "context": true,
+      "result": true,
+      "stack": [
+        "dbt",
+        "SQL",
+        "Machine learning"
+      ]
+    },
+    {
+      "id": "genai",
+      "key": "genai",
+      "cat": "analytics",
+      "icon": "icon-wand",
+      "meta": "Flutter Brazil",
+      "metric": null,
+      "context": true,
+      "result": true,
+      "stack": [
+        "Cursor",
+        "OpenAI",
+        "Anthropic",
+        "DeepSeek",
+        "GLM",
+        "Lovable",
+        "Streamlit",
+        "Metabase"
+      ],
+      "contextLabel": "case.label.where"
+    },
+    {
+      "id": "why-databricks",
+      "key": "why",
+      "lead": true,
+      "cat": "platform",
+      "icon": "icon-scales",
+      "wide": true,
+      "meta": "Flutter Brazil",
+      "metric": null,
+      "blocks": [
+        { "label": "case.label.weighed", "text": "case.why.weighed" },
+        { "label": "case.label.alternatives", "text": "case.why.alternatives" },
+        { "label": "case.label.risks", "text": "case.why.risks" },
+        { "label": "case.label.differently", "text": "case.why.differently" }
+      ],
+      "stack": [
+        "Databricks",
+        "Unity Catalog",
+        "FinOps"
+      ]
+    },
+    {
+      "id": "finops-decision",
+      "key": "finopsdec",
+      "cat": "reliability",
+      "icon": "icon-sliders",
+      "wide": true,
+      "meta": "Flutter Brazil · Tech Lead",
+      "metric": null,
+      "blocks": [
+        { "label": "case.label.priorities", "text": "case.finopsdec.priorities" },
+        { "label": "case.label.tradeoffs", "text": "case.finopsdec.tradeoffs" },
+        { "label": "case.label.lasting", "text": "case.finopsdec.lasting" },
+        { "label": "case.label.differently", "text": "case.finopsdec.differently" }
+      ],
+      "stack": [
+        "Databricks",
+        "FinOps"
+      ]
+    },
+    {
+      "id": "uc-decision",
+      "key": "ucdec",
+      "cat": "governance",
+      "icon": "icon-layers",
+      "wide": true,
+      "meta": "Flutter Brazil · Tech Lead",
+      "metric": null,
+      "blocks": [
+        { "label": "case.label.reasons", "text": "case.ucdec.reasons" },
+        { "label": "case.label.tradeoffs", "text": "case.ucdec.tradeoffs" },
+        { "label": "case.label.worked", "text": "case.ucdec.worked" },
+        { "label": "case.label.differently", "text": "case.ucdec.differently" }
+      ],
+      "stack": [
+        "Databricks",
+        "Unity Catalog"
+      ]
+    }
+  ]
+}

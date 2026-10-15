@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html class="js" lang="es" data-lang="es" data-page-lang="es"><head>
+
+	<!-- Privacy signals: a visitor who sends Global Privacy Control / Do Not Track gets analytics consent "denied" before GTM loads, and js/analytics.js stays silent -->
+	<script>
+		(function () {
+			var n = navigator;
+			if (n.globalPrivacyControl === true || n.doNotTrack === '1' || window.doNotTrack === '1' || n.msDoNotTrack === '1') {
+				window.__trackingOptOut = true;
+				window.dataLayer = window.dataLayer || [];
+				(function gtag() { window.dataLayer.push(arguments); })('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' }); // GTM only reads consent commands pushed as an arguments object
+			}
+		})();
+	</script>
+
+	<!-- Google Tag Manager. It loads only on the real site: a copy of this page on another domain, or a saved copy opened from disk, never reports to my analytics. -->
+	<script>
+		(function () {
+			var HOSTS = ['franklin390.github.io'];
+			if (HOSTS.indexOf(location.hostname) === -1) return;
+			// third-party code starts once the page itself has loaded, so it cannot compete with the first screen
+			// (events pushed to the dataLayer before that are queued and GTM processes them in order)
+			function start() {
+				(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','dataLayer','GTM-PNSXVNR');
+			}
+			if (document.readyState === 'complete') { start(); } else { window.addEventListener('load', start); }
+		})();
+	</script>
+	<!-- End Google Tag Manager -->
+
+	<meta charset="utf-8">
+
+	<!-- Language: resolve ?lang= / page language / saved choice BEFORE first paint (default: English). js/i18n.js applies the texts. -->
+	<script>
+		(function () {
+			try {
+				var q = new URLSearchParams(location.search).get('lang'), s = null, l;
+				try { s = localStorage.getItem('lang'); } catch (e) {}
+				var H = { en: 'en', pt: 'pt-BR', es: 'es' }, ok = function (x) { return x === 'en' || x === 'pt' || x === 'es'; };
+				var P = document.documentElement.getAttribute('data-page-lang'); // static pages /pt/ and /es/: the address decides
+				l = ok(q) ? q : (ok(P) ? P : (ok(s) ? s : 'en'));
+				document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, 'js'); // replaces Modernizr: the only thing the stylesheets read from it
+				document.documentElement.setAttribute('lang', H[l]);
+				document.documentElement.setAttribute('data-lang', l);
+			} catch (e) {}
+		})();
+	</script>
+
+	<title data-i18n="meta.title">Franklin Ferreira — Staff Data Engineer</title>
+	<meta name="description" content="Staff Data Engineer y arquitecto de datos: de warehouses a lakehouses, batch y streaming, gobernanza, FinOps, ML e IA generativa. Brasil · Remoto/Global." data-i18n-attr="content:meta.description">
+	<meta name="author" content="Franklin Ferreira">
+	<meta name="robots" content="index, follow, max-image-preview:large">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="canonical" href="https://franklin390.github.io/es/">
+	<link rel="alternate" hreflang="en" href="https://franklin390.github.io/">
+	<link rel="alternate" hreflang="pt-BR" href="https://franklin390.github.io/pt/">
+	<link rel="alternate" hreflang="es" href="https://franklin390.github.io/es/">
+	<link rel="alternate" hreflang="x-default" href="https://franklin390.github.io/">
+
+	<!-- Social preview -->
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Franklin Ferreira">
+	<meta property="og:url" content="https://franklin390.github.io/es/">
+	<meta property="og:title" content="Franklin Ferreira — Staff Data Engineer" data-i18n-attr="content:meta.title">
+	<meta property="og:description" content="Staff Data Engineer y arquitecto de datos: de warehouses a lakehouses, batch y streaming, gobernanza, FinOps, ML e IA generativa. Brasil · Remoto/Global." data-i18n-attr="content:meta.description">
+	<meta property="og:locale" content="es_LA" data-i18n-attr="content:meta.locale">
+	<meta property="og:image" content="https://franklin390.github.io/images/og-card.png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Franklin Ferreira — Staff Data Engineer" data-i18n-attr="content:meta.title">
+	<meta name="twitter:description" content="Staff Data Engineer y arquitecto de datos: de warehouses a lakehouses, batch y streaming, gobernanza, FinOps, ML e IA generativa. Brasil · Remoto/Global." data-i18n-attr="content:meta.description">
+	<meta name="twitter:image" content="https://franklin390.github.io/images/og-card.png">
+
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Franklin Ferreira",
+		"jobTitle": "Staff Data Engineer",
+		"url": "https://franklin390.github.io/es/",
+		"image": "https://franklin390.github.io/images/profile-pic.jpg",
+		"worksFor": { "@type": "Organization", "name": "Flutter Brazil" },
+		"alumniOf": [
+			{ "@type": "CollegeOrUniversity", "name": "Pontifícia Universidade Católica do Rio Grande do Sul (PUCRS)" },
+			{ "@type": "CollegeOrUniversity", "name": "Universidade Estadual da Zona Oeste (UEZO)" },
+			{ "@type": "EducationalOrganization", "name": "XP Educação" }
+		],
+		"sameAs": ["https://www.linkedin.com/in/franklinfs390/", "https://github.com/franklin390"],
+		"knowsLanguage": ["pt", "en", "es"],
+		"knowsAbout": ["Data architecture", "Big Data", "Data warehouse", "Data lakes", "Lakehouse", "Data governance", "Data modeling", "Dimensional modeling", "Streaming", "FinOps", "Machine learning", "Generative AI", "Data lake", "Databricks", "Unity Catalog", "Data catalog", "AWS Glue Data Catalog", "Hive Metastore", "Delta Lake", "Apache Spark", "Terraform", "dbt", "Apache Airflow", "SQL", "Python", "AWS", "Amazon Redshift", "Data quality", "Observability", "CI/CD", "Technical leadership"],
+		"address": { "@type": "PostalAddress", "addressCountry": "BR" }
+	}
+	</script>
+
+	<link rel="icon" type="image/png" href="../favicon.png">
+
+	<!-- The hero picture is the biggest thing on the first screen: start its download before the stylesheets are read (measured: LCP 2.1 s -> 1.4 s on Slow 4G; preloading the fonts too only slowed the first paint) -->
+	<link rel="preload" href="../images/intro-bg.svg" as="image" type="image/svg+xml" fetchpriority="high">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/fonts.css">
+	<link rel="stylesheet" href="../css/micons/micons.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/vendor.css">
+	<link rel="stylesheet" href="../css/font-awesome-6/css/subset.css">
+	<link rel="stylesheet" href="../css/staff.css">
+
+</head>
+
+<body id="top">
+
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNSXVNR" title="Google Tag Manager"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<a class="skip-link" href="#main" data-i18n="a11y.skip">Saltar al contenido</a>
+
+	<!-- header
+	================================================== -->
+	<header class="site-header">
+		<div class="header-inner">
+
+			<a class="menu-toggle" href="#" role="button" aria-expanded="false" aria-controls="main-nav-wrap" aria-label="Menú" data-i18n-attr="aria-label:a11y.menu"><span data-i18n="a11y.menu">Menú</span></a>
+
+			<a class="brand" href="#top" aria-label="Franklin Ferreira — inicio" data-i18n-attr="aria-label:a11y.logo">
+				<span class="brand-name" translate="no">Franklin Ferreira</span>
+			</a>
+
+			<nav id="main-nav-wrap" aria-label="Navegación principal" data-i18n-attr="aria-label:a11y.nav">
+				<ul class="main-navigation">
+					<li class="current"><a class="smoothscroll" href="#intro" data-i18n="nav.home">Inicio</a></li>
+					<li><a class="smoothscroll" href="#about" data-i18n="nav.about">Sobre mí</a></li>
+					<li><a class="smoothscroll" href="#impact" data-i18n="nav.impact">Impacto</a></li>
+					<li><a class="smoothscroll" href="#resume" data-i18n="nav.experience">Experiencia</a></li>
+					<li><a class="smoothscroll" href="#portfolio" data-i18n="nav.work">Proyectos</a></li>
+					<li><a class="smoothscroll" href="#services" data-i18n="nav.expertise">Especialidades</a></li>
+					<li><a class="smoothscroll" href="#contact" data-i18n="nav.contact">Contacto</a></li>
+				</ul>
+			</nav>
+
+			<div class="header-actions">
+				<div class="lang-switch" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang.label">
+					<button type="button" class="lang-btn" data-lang="en" lang="en" translate="no" aria-pressed="false" aria-label="English" title="English">EN</button>
+					<button type="button" class="lang-btn" data-lang="pt" lang="pt-BR" translate="no" aria-pressed="false" aria-label="Português (Brasil)" title="Português (Brasil)">PT</button>
+					<button type="button" class="lang-btn" data-lang="es" lang="es" translate="no" aria-pressed="true" aria-label="Español" title="Español">ES</button>
+				</div>
+
+			</div>
+
+		</div> <!-- /header-inner -->
+		<div id="i18n-live" class="sr-only" role="status" aria-live="polite"></div>
+	</header> <!-- /header -->
+
+	<main id="main">
+
+	<!-- intro section
+	================================================== -->
+	<section id="intro">
+
+		<div class="intro-overlay"></div>
+
+		<div class="intro-content">
+			<div class="row">
+				<div class="col-twelve">
+
+					<p class="h05 eyebrow" data-i18n="hero.greeting">¡Hola, bienvenidos!</p>
+					<h1><span data-i18n="hero.iam">Soy</span> <br> <span translate="no">Franklin Ferreira</span></h1>
+
+					<p class="intro-position">
+						<span translate="no">Staff Data Engineer</span>
+						<span data-i18n="hero.role2">Arquitectura de Datos y Big Data</span>
+						<span data-i18n="hero.role3">Gobernanza, FinOps e IA</span>
+					</p>
+
+					<p class="intro-tagline" data-i18n="hero.tagline">Del data warehouse al lakehouse, del ML clásico a la IA generativa: diseño la arquitectura de datos en la que se apoya toda una empresa.</p>
+
+					<a class="button stroke smoothscroll" href="#about" data-i18n="hero.btn.about">Sobre mí</a>
+					<a class="button stroke hero-cta" href="../pdf/cv/Franklin_Ferreira_Staff_Data_Engineer_CV_ES.pdf" data-href-en="../pdf/cv/Franklin_Ferreira_Staff_Data_Engineer_CV_EN.pdf" data-href-pt="../pdf/cv/Franklin_Ferreira_Staff_Data_Engineer_CV_PT.pdf" data-href-es="../pdf/cv/Franklin_Ferreira_Staff_Data_Engineer_CV_ES.pdf" data-i18n="hero.btn.cv">Descargar CV</a>
+
+					<ul class="intro-proof">
+						<li><span class="intro-proof-num" translate="no">&gt;50%</span><span class="intro-proof-cap" data-i18n="case.metric.cost">menos costo en la plataforma de datos</span></li>
+						<li><span class="intro-proof-num" translate="no">~50</span><span class="intro-proof-cap" data-i18n="case.metric.sources">fuentes unificadas en una sola plataforma</span></li>
+						<li><span class="intro-proof-num" translate="no">15+</span><span class="intro-proof-cap" data-i18n="hero.proof.team">personas en el equipo que lidero</span></li>
+					</ul> <!-- /intro-proof -->
+
+				<ul class="intro-social">
+					<li><a href="mailto:franklinfs390@gmail.com" aria-label="Enviar un correo a Franklin Ferreira" data-i18n-attr="aria-label:social.email"><i class="fas fa-envelope" aria-hidden="true"></i></a></li>
+					<li><a href="https://github.com/franklin390" rel="noopener" aria-label="Franklin Ferreira en GitHub" data-i18n-attr="aria-label:social.github"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/franklinfs390/" rel="noopener" aria-label="Franklin Ferreira en LinkedIn" data-i18n-attr="aria-label:social.linkedin"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+				</ul> <!-- /intro-social -->
+
+				</div>
+			</div>
+		</div> <!-- /intro-content -->
+
+	</section> <!-- /intro -->
+
+
+	<!-- about section
+	================================================== -->
+	<section id="about">
+
+		<div class="row section-intro">
+			<div class="col-twelve">
+
+				<p class="h05 eyebrow" data-i18n="about.eyebrow">Sobre mí</p>
+				<h2 data-i18n="about.title">Quién soy</h2>
+
+				<div class="intro-info">
+
+					<img src="../images/profile-pic.jpg" alt="Foto de Franklin Ferreira" data-i18n-attr="alt:about.photo.alt" width="90" height="90">
+
+					<p class="lead" data-i18n="about.p1">En la práctica, soy arquitecto. Antes de que alguien escriba una línea de código, pienso y decido cómo deben estructurarse los datos, en un warehouse o en un lakehouse, en batch o en streaming. Hoy lidero técnicamente un equipo de 15+ personas (ingenieros de datos, analistas y científicos de datos) repartido entre Brasil y Rumania.</p>
+					<p class="lead" data-i18n="about.p2">Llegué a Flutter Brazil para construir la base. Creé desde cero el modelo dimensional y el data lake, con Python, dbt y mucho SQL. Después lideré la migración de toda la infraestructura de datos a Databricks: alrededor de 50 fuentes, desde Google Analytics 4 hasta sistemas internos y herramientas de terceros, con pipelines que pasaron de horas a minutos.</p>
+					<div class="fold-mobile is-folded" id="about-more">
+					<p class="lead" data-i18n="about.p3">Como Tech Lead, el trabajo se amplió. Definí las arquitecturas y las formas de trabajo de casi todo el equipo de datos, reestructuré Unity Catalog por dominio y lideré el trabajo de FinOps que redujo en más de 50% el costo de la plataforma. Como Staff, ese alcance sigue creciendo.</p>
+					<p class="lead" data-i18n="about.p4">Vengo del lado más clásico del machine learning, desde la universidad. Una vez hice backpropagation a mano, en papel, antes de que cualquier framework lo hiciera por mí. Seguí de cerca el giro hacia la IA generativa desde el momento en que apareció, y hoy me muevo con naturalidad entre los dos mundos. Ayudé a construir los modelos de LTV y de payback de la empresa y uso IA generativa para acelerar la construcción de las herramientas del día a día del equipo.</p>
+					<p class="lead" data-i18n="about.p5">Antes de Flutter Brazil, fui Data Architect en Clicksign. Construí la estructura de datos desde cero, con Redshift, dbt y Airflow, y ayudé a que el grupo creciera de 4 a unas 20 personas. También pasé algunos años como profesor de Big Data e Ingeniería de Datos, con cientos de estudiantes. Quizás por eso me gusta explicar las cosas de una forma que tenga sentido para quienes no viven de SQL todo el día.</p>
+					</div>
+					<p class="more-wrap"><button type="button" class="more-toggle" data-fold-toggle="about-more" data-fold-item="about_more" aria-expanded="false" aria-controls="about-more"><span class="when-closed" data-i18n="more.read">Leer más</span><span class="when-open" data-i18n="more.less">Leer menos</span></button></p>
+
+				</div>
+
+			</div>
+		</div> <!-- /section-intro -->
+
+		<div class="row about-content">
+
+			<div class="col-six tab-full">
+
+				<h3 data-i18n="about.profile.title">Perfil</h3>
+				<p data-i18n="about.profile.intro">Sigo hands-on todos los días, en arquitectura, modelado y decisiones de plataforma. Cuando el equipo lo necesita, intervengo para definir prioridades y destrabar decisiones de negocio.</p>
+
+				<ul class="info-list">
+					<li>
+						<strong data-i18n="about.info.role">Cargo</strong>
+						<span data-i18n="about.info.role.value">Staff Data Engineer</span>
+					</li>
+					<li>
+						<strong data-i18n="about.info.focus">Enfoque</strong>
+						<span data-i18n="about.info.focus.value">Arquitectura de datos, plataformas de Big Data, gobernanza, FinOps, ML e IA generativa</span>
+					</li>
+					<li>
+						<strong data-i18n="about.info.team">Equipo</strong>
+						<span data-i18n="about.info.team.value">15+ personas entre Brasil y Rumania</span>
+					</li>
+					<li>
+						<strong data-i18n="about.info.location">Ubicación</strong>
+						<span data-i18n="about.info.location.value">Brasil · Remoto/Global</span>
+					</li>
+				</ul> <!-- /info-list -->
+
+				<h3 data-i18n="about.lang.title">Idiomas</h3>
+				<ul class="lang-list">
+					<li><strong data-i18n="about.lang.pt">Portugués</strong><span data-i18n="about.lang.pt.level">Nativo o bilingüe</span></li>
+					<li><strong data-i18n="about.lang.en">Inglés</strong><span data-i18n="about.lang.en.level">Competencia profesional completa</span></li>
+					<li><strong data-i18n="about.lang.es">Español</strong><span data-i18n="about.lang.es.level">Competencia profesional</span></li>
+				</ul>
+
+			</div>
+
+			<div class="col-six tab-full">
+
+				<h3 data-i18n="about.skills.title">Skills y tecnologías</h3>
+				<p data-i18n="about.skills.intro">Las herramientas y prácticas con las que trabajo, agrupadas según su finalidad.</p>
+
+				<div class="skill-groups is-folded" id="skills-more">
+					<div class="skill-group">
+						<h4 data-i18n="skills.modeling">Arquitectura y modelado</h4>
+						<ul class="tags">
+							<li data-i18n="tag.dimensional">Modelado dimensional</li>
+							<li data-i18n="tag.datamodeling">Modelado de datos</li>
+							<li translate="no">Data warehouse</li>
+							<li translate="no">Data lake</li>
+							<li translate="no">Lakehouse</li>
+						</ul>
+					</div>
+					<div class="skill-group">
+						<h4 data-i18n="skills.platform">Plataformas y procesamiento</h4>
+						<ul class="tags">
+							<li translate="no">Databricks</li>
+							<li translate="no">Unity Catalog</li>
+							<li translate="no">AWS Glue Data Catalog</li>
+							<li translate="no">Hive Metastore</li>
+							<li translate="no">Delta Lake</li>
+							<li translate="no">Apache Spark</li>
+							<li translate="no">Databricks Workflows</li>
+							<li translate="no">Amazon Redshift</li>
+							<li translate="no">Streaming</li>
+						</ul>
+					</div>
+					<div class="skill-group">
+						<h4 data-i18n="skills.orchestration">Transformación, orquestación y cloud</h4>
+						<ul class="tags">
+							<li translate="no">dbt</li>
+							<li translate="no">Apache Airflow</li>
+							<li data-i18n="tag.pipelines">Pipelines de datos</li>
+							<li translate="no">REST APIs</li>
+							<li translate="no">AWS</li>
+							<li translate="no">Terraform</li>
+							<li translate="no">Docker</li>
+							<li translate="no">Kubernetes</li>
+						</ul>
+					</div>
+					<div class="skill-group">
+						<h4 data-i18n="skills.languages">Lenguajes</h4>
+						<ul class="tags">
+							<li translate="no">Python</li>
+							<li translate="no">SQL</li>
+							<li translate="no">PySpark</li>
+						</ul>
+					</div>
+					<div class="skill-group">
+						<h4 data-i18n="skills.apps">Apps de datos y analytics</h4>
+						<ul class="tags">
+							<li translate="no">Streamlit</li>
+							<li translate="no">Metabase</li>
+							<li translate="no">Google Analytics 4</li>
+							<li translate="no">Lovable</li>
+						</ul>
+					</div>
+					<div class="skill-group">
+						<h4 data-i18n="skills.practices">Prácticas</h4>
+						<ul class="tags">
+							<li translate="no">FinOps</li>
+							<li data-i18n="tag.quality">Calidad de datos</li>
+							<li data-i18n="tag.governance">Gobernanza de datos</li>
+							<li data-i18n="tag.cicd">CI/CD con trunk-based development</li>
+							<li translate="no">GitHub Actions</li>
+							<li data-i18n="tag.observability">Observabilidad</li>
+							<li data-i18n="tag.lgpd">Cumplimiento de la LGPD</li>
+						</ul>
+					</div>
+					<div class="skill-group">
+						<h4 data-i18n="skills.ai">IA</h4>
+						<ul class="tags">
+							<li translate="no">Machine learning</li>
+							<li class="tag-key" data-i18n="tag.genai">IA generativa</li>
+							<li translate="no">Cursor</li>
+							<li translate="no">OpenAI</li>
+							<li translate="no">Anthropic</li>
+							<li translate="no">DeepSeek</li>
+							<li translate="no">GLM</li>
+						</ul>
+					</div>
+					<div class="skill-group">
+						<h4 data-i18n="skills.leadership">Liderazgo</h4>
+						<ul class="tags">
+							<li data-i18n="tag.lead.team">Liderazgo técnico de equipos</li>
+							<li data-i18n="tag.lead.arch">Arquitectura y formas de trabajo</li>
+							<li data-i18n="tag.lead.priorities">Definición de prioridades</li>
+						</ul>
+					</div>
+				</div> <!-- /skill-groups -->
+				<p class="more-wrap"><button type="button" class="more-toggle" data-fold-toggle="skills-more" data-fold-item="skills_more" aria-expanded="false" aria-controls="skills-more"><span class="when-closed" data-i18n="skills.more">Mostrar todas las skills</span><span class="when-open" data-i18n="skills.less">Ver menos skills</span></button></p>
+
+			</div> <!-- \col-six tab-full -->
+
+		</div>
+
+		<div class="row button-section">
+			<div class="col-twelve">
+				<a href="#contact" class="button stroke smoothscroll" data-i18n="about.btn.contact">Contáctame</a>
+				<a href="../pdf/cv/Franklin_Ferreira_Staff_Data_Engineer_CV_ES.pdf" class="button button-primary" data-href-en="../pdf/cv/Franklin_Ferreira_Staff_Data_Engineer_CV_EN.pdf" data-href-pt="../pdf/cv/Franklin_Ferreira_Staff_Data_Engineer_CV_PT.pdf" data-href-es="../pdf/cv/Franklin_Ferreira_Staff_Data_Engineer_CV_ES.pdf" data-i18n="about.btn.cv">Descargar CV</a>
+			</div>
+		</div>
+
+	</section> <!-- /about -->
+
+
+	<!-- impact section
+	================================================== -->
+	<section id="impact" class="count-up">
+
+		<div class="row section-intro">
+			<div class="col-twelve">
+				<p class="h05 eyebrow" data-i18n="impact.eyebrow">Impacto</p>
+				<h2 data-i18n="impact.title">Qué cambió</h2>
+				<p class="lead" data-i18n="impact.lead">Números de mi paso por Flutter Brazil y Clicksign.</p>
+			</div>
+		</div> <!-- /section-intro -->
+
+		<div class="row">
+			<div class="col-twelve">
+
+				<div class="block-1-6 block-s-1-3 block-tab-1-2 block-mob-1-2 stats-list">
+
+					<div class="bgrid stat">
+						<a class="stat-link" href="#case-finops">
+							<div class="icon-part"><i class="icon-dollar" aria-hidden="true"></i></div>
+							<h3 class="stat-count" data-count="50" data-prefix="&gt;" data-suffix="%">&gt;50%</h3>
+							<p class="h05 stat-title" data-i18n="impact.cost">Menos costo en la plataforma de datos, con una iniciativa de FinOps</p>
+							<span class="stat-cta"><span data-i18n="impact.cta.case">Ver el caso de estudio</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+						</a>
+					</div>
+
+					<div class="bgrid stat">
+						<a class="stat-link" href="#case-cicd">
+							<div class="icon-part"><i class="icon-shield" aria-hidden="true"></i></div>
+							<h3 class="stat-count" data-count="3" data-prefix="~" data-suffix="x">~3x</h3>
+							<p class="h05 stat-title" data-i18n="impact.incidents">Menos incidentes y retrabajo con CI/CD y trunk-based development</p>
+							<span class="stat-cta"><span data-i18n="impact.cta.case">Ver el caso de estudio</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+						</a>
+					</div>
+
+					<div class="bgrid stat">
+						<a class="stat-link" href="#case-migration">
+							<div class="icon-part"><i class="icon-layers" aria-hidden="true"></i></div>
+							<h3 class="stat-count" data-count="50" data-prefix="~">~50</h3>
+							<p class="h05 stat-title" data-i18n="impact.sources">Fuentes reunidas en una sola plataforma y pipelines que pasaron de horas a minutos</p>
+							<span class="stat-cta"><span data-i18n="impact.cta.case">Ver el caso de estudio</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+						</a>
+					</div>
+
+					<div class="bgrid stat">
+						<a class="stat-link" href="#case-unity">
+							<div class="icon-part"><i class="icon-grid" aria-hidden="true"></i></div>
+							<h3 class="stat-count" data-count="10" data-suffix="+">10+</h3>
+							<p class="h05 stat-title" data-i18n="impact.domains">Dominios de Unity Catalog reestructurados</p>
+							<span class="stat-cta"><span data-i18n="impact.cta.case">Ver el caso de estudio</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+						</a>
+					</div>
+
+					<div class="bgrid stat">
+						<a class="stat-link" href="#case-clicksign">
+							<div class="icon-part"><i class="icon-network" aria-hidden="true"></i></div>
+							<h3 class="stat-count" data-count="100" data-suffix="+">100+</h3>
+							<p class="h05 stat-title" data-i18n="impact.pipelines">Pipelines de Airflow que diseñé en Clicksign</p>
+							<span class="stat-cta"><span data-i18n="impact.cta.case">Ver el caso de estudio</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+						</a>
+					</div>
+
+					<div class="bgrid stat">
+						<a class="stat-link" href="#role-fb-staff">
+							<div class="icon-part"><i class="icon-users" aria-hidden="true"></i></div>
+							<h3 class="stat-count" data-count="15" data-suffix="+">15+</h3>
+							<p class="h05 stat-title" data-i18n="impact.team">Personas en el equipo que lidero, entre ingeniería, analytics y ciencia de datos</p>
+							<span class="stat-cta"><span data-i18n="impact.cta.exp">Ver el cargo</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+						</a>
+					</div>
+
+				</div> <!-- /stats-list -->
+
+			</div> <!-- /twelve -->
+		</div> <!-- /row -->
+
+	</section> <!-- /impact -->
+
+
+	<!-- resume Section
+	================================================== -->
+	<section id="resume" class="grey-section">
+
+		<div class="row section-intro">
+			<div class="col-twelve">
+
+				<p class="h05 eyebrow" data-i18n="resume.eyebrow">Experiencia</p>
+				<h2 data-i18n="resume.title">Dónde he trabajado</h2>
+				<p class="lead" data-i18n="resume.lead">Desde 2020 pasé de científico de datos a Staff Data Engineer, construyendo plataformas, equipos y formas de trabajo en el camino.</p>
+
+			</div>
+		</div> <!-- /section-intro-->
+
+		<!-- Experience -->
+		<div class="row resume-timeline">
+
+			<div class="col-twelve resume-header">
+				<h2 data-i18n="exp.header">Experiencia</h2>
+			</div> <!-- /resume-header -->
+
+			<div class="col-twelve glance-wrap">
+				<p class="glance-caption" data-i18n="glance.caption">Trayectoria de un vistazo: elige un cargo para ver el detalle.</p>
+				<ol class="glance">
+					<li>
+						<a class="glance-link" href="#role-fb-staff">
+							<span class="glance-dates" data-date="2026-07" data-date-end="present">jul 2026 – Actualidad</span>
+							<span class="glance-role"><span class="glance-title" translate="no">Staff Data Engineer</span> <span class="glance-org" translate="no">Flutter Brazil</span></span>
+							<span class="glance-result" data-i18n="glance.fb.staff">Arquitectura y dirección técnica de la plataforma de datos de la empresa, con un equipo de 15+ personas.</span>
+							<i class="fa-solid fa-arrow-right glance-arrow" aria-hidden="true"></i>
+						</a>
+					</li>
+					<li>
+						<a class="glance-link" href="#role-fb-techlead">
+							<span class="glance-dates" data-date="2025-07" data-date-end="2026-06">jul 2025 – jun 2026</span>
+							<span class="glance-role"><span class="glance-title" translate="no">Data Engineer – Tech Lead</span> <span class="glance-org" translate="no">Flutter Brazil</span></span>
+							<span class="glance-result" data-i18n="glance.fb.tl">Costo de la plataforma reducido en más de 50% e incidentes en ~3x; Unity Catalog dividido en 10+ dominios.</span>
+							<i class="fa-solid fa-arrow-right glance-arrow" aria-hidden="true"></i>
+						</a>
+					</li>
+					<li>
+						<a class="glance-link" href="#role-fb-de">
+							<span class="glance-dates" data-date="2024-08" data-date-end="2025-07">ago 2024 – jul 2025</span>
+							<span class="glance-role"><span class="glance-title" translate="no">Data Engineer</span> <span class="glance-org" translate="no">Flutter Brazil</span></span>
+							<span class="glance-result" data-i18n="glance.fb.de">Modelo dimensional y data lake creados desde cero; ~50 fuentes llevadas a Databricks.</span>
+							<i class="fa-solid fa-arrow-right glance-arrow" aria-hidden="true"></i>
+						</a>
+					</li>
+					<li>
+						<a class="glance-link" href="#role-ck-lead">
+							<span class="glance-dates" data-date="2021-10" data-date-end="2024-08">oct 2021 – ago 2024</span>
+							<span class="glance-role"><span class="glance-title" translate="no">Data Team Lead</span> <span class="glance-org" translate="no">Clicksign</span></span>
+							<span class="glance-result" data-i18n="glance.ck.lead">Grupo de datos ampliado de 4 a ~20 personas.</span>
+							<i class="fa-solid fa-arrow-right glance-arrow" aria-hidden="true"></i>
+						</a>
+					</li>
+					<li>
+						<a class="glance-link" href="#role-ck-arch">
+							<span class="glance-dates" data-date="2021-06" data-date-end="2024-08">jun 2021 – ago 2024</span>
+							<span class="glance-role"><span class="glance-title" translate="no">Data Architect</span> <span class="glance-org" translate="no">Clicksign</span></span>
+							<span class="glance-result" data-i18n="glance.ck.arch">100+ pipelines en Airflow, dbt sobre Redshift, 10+ APIs para socios y protección de datos conforme a la LGPD.</span>
+							<i class="fa-solid fa-arrow-right glance-arrow" aria-hidden="true"></i>
+						</a>
+					</li>
+					<li>
+						<a class="glance-link" href="#role-ck-ds">
+							<span class="glance-dates" data-date="2020-10" data-date-end="2021-06">oct 2020 – jun 2021</span>
+							<span class="glance-role"><span class="glance-title" translate="no">Data Scientist (Python Developer)</span> <span class="glance-org" translate="no">Clicksign</span></span>
+							<span class="glance-result" data-i18n="glance.ck.ds">Integraciones en Python, PostgreSQL y Airflow para el equipo de BI.</span>
+							<i class="fa-solid fa-arrow-right glance-arrow" aria-hidden="true"></i>
+						</a>
+					</li>
+					<li>
+						<a class="glance-link" href="#role-lc">
+							<span class="glance-dates" data-date="2022-06" data-date-end="2024-07">jun 2022 – jul 2024</span>
+							<span class="glance-role"><span class="glance-title" data-i18n="exp.lc.title">Profesor docente</span> <span class="glance-org" translate="no">Let's Code from Ada</span></span>
+							<span class="glance-result" data-i18n="glance.lc">Big Data e Ingeniería de Datos enseñados a cientos de estudiantes.</span>
+							<i class="fa-solid fa-arrow-right glance-arrow" aria-hidden="true"></i>
+						</a>
+					</li>
+				</ol>
+			</div> <!-- /glance-wrap -->
+
+			<div class="col-twelve">
+				<p class="more-wrap"><button type="button" class="more-toggle" data-fold-toggle="exp-detail" data-fold-item="experience_detail" aria-expanded="false" aria-controls="exp-detail"><span class="when-closed" data-i18n="exp.more">Mostrar detalles de los cargos</span><span class="when-open" data-i18n="exp.less">Ocultar detalles de los cargos</span></button></p>
+			</div>
+
+			<div class="col-twelve fold-mobile is-folded" id="exp-detail">
+				<div class="timeline-wrap">
+
+					<div id="owl-slider-work" class="owl-carousel certificate-list">
+
+					<!-- fb-staff -->
+					<div class="timeline-block" id="role-fb-staff">
+						<div class="timeline-ico"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
+						<div class="timeline-header">
+							<h3 translate="no">Flutter Brazil</h3>
+							<p data-date="2026-07" data-date-end="present">jul 2026 – Actualidad</p>
+						</div>
+						<div class="timeline-content role">
+						<h4 translate="no">Staff Data Engineer</h4>
+						<p class="role-context" data-i18n="exp.fb.staff.context">Plataforma de datos Databricks usada por miles de personas en toda la empresa, con un equipo de 15+ personas (ingeniería, analytics y ciencia de datos) entre Brasil y Rumania.</p>
+						<ul>
+							<li data-i18n="exp.fb.staff.b1">Empecé como Staff Data Engineer, ampliando el alcance de arquitectura y liderazgo técnico que venía construyendo como Tech Lead.</li>
+							<li data-i18n="exp.fb.staff.b2">Defino la arquitectura y las formas de trabajo de un equipo de 15+ personas (10 como Tech Lead), con un alcance más amplio en toda la plataforma.</li>
+							<li data-i18n="exp.fb.staff.b3">Sigo hands-on en el día a día (arquitectura, modelado y decisiones de plataforma). Cuando el equipo lo necesita, defino prioridades y destrabo decisiones de negocio.</li>
+						</ul>
+						<p class="role-tech"><strong data-i18n="exp.label.tech">Tecnologías:</strong> <span translate="no">Databricks, Unity Catalog, Delta Lake, Apache Spark, PySpark, Databricks Workflows, dbt, SQL, Python, AWS, Terraform, Docker, Kubernetes, GitHub Actions</span></p>
+						</div>
+					</div> <!-- /timeline-block -->
+
+					<!-- fb-techlead -->
+					<div class="timeline-block" id="role-fb-techlead">
+						<div class="timeline-ico"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
+						<div class="timeline-header">
+							<h3 translate="no">Flutter Brazil</h3>
+							<p data-date="2025-07" data-date-end="2026-06">jul 2025 – jun 2026</p>
+						</div>
+						<div class="timeline-content role">
+						<h4 translate="no">Data Engineer – Tech Lead</h4>
+						<p class="role-context" data-i18n="exp.fb.tl.context">Lideré un equipo de 10 personas (ingeniería, analytics y ciencia de datos) entre Brasil y Rumania, con liderazgo directo y técnico, en una plataforma Databricks de decenas de TB.</p>
+						<p class="role-label" data-i18n="exp.label.achievements">Logros</p>
+						<ul>
+							<li data-i18n="exp.fb.tl.a1">Reduje en más de 50% el costo de la plataforma de datos con una iniciativa de FinOps. La factura anual era de seis cifras, en dólares.</li>
+							<li data-i18n="exp.fb.tl.a2">Reduje los incidentes y el retrabajo ~3x al implementar CI/CD con trunk-based development.</li>
+							<li data-i18n="exp.fb.tl.a3">Le di a la empresa visibilidad inmediata de los problemas, con observabilidad de toda la plataforma y monitoreo de métricas de negocio casi en tiempo real (latencia de pocos minutos).</li>
+							<li data-i18n="exp.fb.tl.a4">Reestructuré Unity Catalog por dominio (10+).</li>
+						</ul>
+						<p class="role-label" data-i18n="exp.label.activities">Actividades</p>
+						<ul>
+							<li data-i18n="exp.fb.tl.t1">Definí las arquitecturas y las formas de trabajo de casi todo el equipo de datos. Eso fue desde la reestructuración de Unity Catalog por dominio hasta la evolución continua del modelado analítico de la empresa con dbt, incluida la implementación de CI/CD con trunk-based development.</li>
+							<li data-i18n="exp.fb.tl.t2">Diseñé la iniciativa de FinOps de la plataforma de datos (clústeres, jobs, almacenamiento, políticas de gobernanza), incluidos modelos de previsión de costos para que el gasto bajara de forma predecible.</li>
+							<li data-i18n="exp.fb.tl.t3">Entregué dashboards de apoyo a la decisión, observabilidad de toda la plataforma y monitoreo de métricas de negocio casi en tiempo real. Lo que el equipo de datos construyó pasó por mi escritorio.</li>
+							<li data-i18n="exp.fb.tl.t4">Ayudé a crear los modelos de LTV y payback de la empresa.</li>
+						</ul>
+						<p class="role-tech"><strong data-i18n="exp.label.tech">Tecnologías:</strong> <span translate="no">Databricks, Unity Catalog, Delta Lake, Apache Spark, PySpark, Databricks Workflows, dbt, SQL, Python, AWS, Terraform, GitHub Actions, Streamlit, Metabase</span></p>
+						</div>
+					</div> <!-- /timeline-block -->
+
+					<!-- fb-de -->
+					<div class="timeline-block" id="role-fb-de">
+						<div class="timeline-ico"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
+						<div class="timeline-header">
+							<h3 translate="no">Flutter Brazil</h3>
+							<p data-date="2024-08" data-date-end="2025-07">ago 2024 – jul 2025</p>
+						</div>
+						<div class="timeline-content role">
+						<h4 translate="no">Data Engineer</h4>
+						<p class="role-label" data-i18n="exp.label.achievements">Logros</p>
+						<ul>
+							<li data-i18n="exp.fb.de.a1">Construí el modelo dimensional y el data lake de la empresa desde cero. Hasta hoy todas las áreas usan esa arquitectura.</li>
+							<li data-i18n="exp.fb.de.a2">Lideré la migración de toda la infraestructura de datos de la empresa a Databricks: ~50 fuentes (incluido Google Analytics 4) en una sola plataforma, con pipelines que pasaron de horas a minutos.</li>
+						</ul>
+						<p class="role-label" data-i18n="exp.label.activities">Actividades</p>
+						<ul>
+							<li data-i18n="exp.fb.de.t1">Modelado dimensional y data lake con Python, dbt y SQL.</li>
+							<li data-i18n="exp.fb.de.t2">Integré sistemas internos, herramientas de terceros y Google Analytics 4 en una sola plataforma de decenas de TB.</li>
+							<li data-i18n="exp.fb.de.t3">También contribuí al proceso regulatorio que permitió a la empresa operar legalmente en Brasil.</li>
+						</ul>
+						<p class="role-tech"><strong data-i18n="exp.label.tech">Tecnologías:</strong> <span translate="no">Python, dbt, SQL, Databricks, Google Analytics 4</span></p>
+						</div>
+					</div> <!-- /timeline-block -->
+
+					<!-- ck-lead -->
+					<div class="timeline-block" id="role-ck-lead">
+						<div class="timeline-ico"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
+						<div class="timeline-header">
+							<h3 translate="no">Clicksign</h3>
+							<p data-date="2021-10" data-date-end="2024-08">oct 2021 – ago 2024</p>
+							<a class="link-chip" href="https://www.clicksign.com/" target="_blank" rel="noopener"><span data-i18n="link.company">Sitio web de la empresa</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only" data-i18n="link.newtab">(se abre en una pestaña nueva)</span></a>
+						</div>
+						<div class="timeline-content role">
+						<h4 translate="no">Data Team Lead</h4>
+						<p class="role-label" data-i18n="exp.label.achievements">Logros</p>
+						<ul>
+							<li data-i18n="exp.ck.lead.a1">Hice crecer el grupo de datos de 4 a ~20 personas, entre ingeniería de datos, análisis de datos y aseguramiento de la calidad de datos.</li>
+							<li data-i18n="exp.ck.lead.a2">Fui directamente responsable de la confiabilidad de los datos usados en las decisiones de la empresa.</li>
+						</ul>
+						<p class="role-label" data-i18n="exp.label.activities">Actividades</p>
+						<ul>
+							<li data-i18n="exp.ck.lead.t1">Uno de los primeros ingenieros del equipo de datos de Clicksign, ayudando a construir el área desde cero.</li>
+							<li data-i18n="exp.ck.lead.t2">Lideré los equipos de ingeniería de datos, análisis de datos y aseguramiento de la calidad de datos.</li>
+							<li data-i18n="exp.ck.lead.t3">Construí los procesos y amplié el equipo que sostuvo el crecimiento del área.</li>
+						</ul>
+						<p class="role-tech"><strong data-i18n="exp.label.tech">Tecnologías:</strong> <span translate="no">Amazon Redshift, dbt, Apache Airflow, dimensional modeling</span></p>
+						</div>
+					</div> <!-- /timeline-block -->
+
+					<!-- ck-arch -->
+					<div class="timeline-block" id="role-ck-arch">
+						<div class="timeline-ico"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
+						<div class="timeline-header">
+							<h3 translate="no">Clicksign</h3>
+							<p data-date="2021-06" data-date-end="2024-08">jun 2021 – ago 2024</p>
+							<a class="link-chip" href="https://www.clicksign.com/" target="_blank" rel="noopener"><span data-i18n="link.company">Sitio web de la empresa</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only" data-i18n="link.newtab">(se abre en una pestaña nueva)</span></a>
+						</div>
+						<div class="timeline-content role">
+						<h4 translate="no">Data Architect</h4>
+						<p class="role-label" data-i18n="exp.label.achievements">Logros</p>
+						<ul>
+							<li data-i18n="exp.ck.arch.a1">Diseñé la arquitectura de prácticamente todas las estructuras de datos que la empresa tuvo en ese período, incluidos 100+ pipelines de Airflow (modelado e ingesta).</li>
+							<li data-i18n="exp.ck.arch.a2">Lideré la implementación de dbt en Redshift. Trajo control de calidad, gobernanza, modelado más fácil, observabilidad y una orquestación más simple.</li>
+							<li data-i18n="exp.ck.arch.a3">Construí 10+ APIs para enviar datos a partners y terceros.</li>
+							<li data-i18n="exp.ck.arch.a4">Diseñé los procesos de protección de datos (en cumplimiento de la LGPD, la ley brasileña de protección de datos, y alineados con el GDPR) y de continuidad de la entrega de datos.</li>
+						</ul>
+						<p class="role-tech"><strong data-i18n="exp.label.tech">Tecnologías:</strong> <span translate="no">Apache Airflow, dbt, Amazon Redshift, dimensional modeling, data governance</span></p>
+						</div>
+					</div> <!-- /timeline-block -->
+
+					<!-- ck-ds -->
+					<div class="timeline-block" id="role-ck-ds">
+						<div class="timeline-ico"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
+						<div class="timeline-header">
+							<h3 translate="no">Clicksign</h3>
+							<p data-date="2020-10" data-date-end="2021-06">oct 2020 – jun 2021</p>
+							<a class="link-chip" href="https://www.clicksign.com/" target="_blank" rel="noopener"><span data-i18n="link.company">Sitio web de la empresa</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only" data-i18n="link.newtab">(se abre en una pestaña nueva)</span></a>
+						</div>
+						<div class="timeline-content role">
+						<h4 translate="no">Data Scientist (Python Developer)</h4>
+						<ul>
+							<li data-i18n="exp.ck.ds.b1">Formé parte del equipo de Business Intelligence, transformando datos en bruto en información e insights mediante automatización e integración.</li>
+							<li data-i18n="exp.ck.ds.b2">Desarrollé scripts e integraciones entre bases de datos, APIs y web services REST con Python, PostgreSQL y Apache Airflow.</li>
+							<li data-i18n="exp.ck.ds.b3">Aporté análisis predictivos y modelado al equipo de BI.</li>
+						</ul>
+						<p class="role-tech"><strong data-i18n="exp.label.tech">Tecnologías:</strong> <span translate="no">Python, PostgreSQL, Apache Airflow, REST APIs, predictive modeling</span></p>
+						</div>
+					</div> <!-- /timeline-block -->
+
+					<!-- lc -->
+					<div class="timeline-block" id="role-lc">
+						<div class="timeline-ico"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i></div>
+						<div class="timeline-header">
+							<h3 translate="no">Let's Code from Ada</h3>
+							<p data-date="2022-06" data-date-end="2024-07">jun 2022 – jul 2024</p>
+							<a class="link-chip" href="https://ada.tech" target="_blank" rel="noopener"><span data-i18n="link.company">Sitio web de la empresa</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only" data-i18n="link.newtab">(se abre en una pestaña nueva)</span></a>
+						</div>
+						<div class="timeline-content role">
+						<h4 data-i18n="exp.lc.title">Profesor docente</h4>
+						<ul>
+							<li data-i18n="exp.lc.b1">Enseñé cursos de Big Data e Ingeniería de Datos a cientos de estudiantes: modelado de bases de datos, data warehouses, data lakes y lakehouses, lógica de programación y arquitectura de software, y desarrollo en cloud.</li>
+						</ul>
+						<p class="role-tech"><strong data-i18n="exp.label.topics">Temas:</strong> <span data-i18n="exp.lc.topics">Big Data, Ingeniería de Datos, modelado de datos, data warehouses, lakehouses, cloud</span></p>
+						</div>
+					</div> <!-- /timeline-block -->
+
+					</div> <!-- \owl-slider-work -->
+
+				</div> <!-- /timeline-wrap -->
+			</div> <!-- /col-twelve -->
+
+		</div> <!-- /resume-timeline -->
+
+		<!-- Education -->
+		<div class="row resume-timeline">
+
+			<div class="col-twelve resume-header">
+				<h2 data-i18n="edu.header">Formación académica</h2>
+			</div>
+
+			<div class="col-twelve">
+				<ol class="edu-list">
+					<li id="edu-xp">
+						<span class="edu-dates" data-date="2022-07" data-date-end="2023-07">jul 2022 – jul 2023</span>
+						<span class="edu-main"><strong data-i18n="edu.xp.degree">MBA en Ingeniería de Datos</strong><span class="edu-school" translate="no">XP Educação</span></span>
+					</li>
+					<li id="edu-pucrs">
+						<span class="edu-dates" data-date="2021-06" data-date-end="2022-07">jun 2021 – jul 2022</span>
+						<span class="edu-main"><strong data-i18n="edu.pucrs.degree">Especialización (Lato Sensu) en Ciencia de Datos e Inteligencia Artificial</strong><span class="edu-school" translate="no">PUCRS · Pontifícia Universidade Católica do Rio Grande do Sul</span></span>
+					</li>
+					<li id="edu-uezo">
+						<span class="edu-dates" data-date="2015" data-date-end="2019">2015 – 2019</span>
+						<span class="edu-main"><strong data-i18n="edu.uezo.degree">Licenciatura en Ciencias de la Computación</strong><span class="edu-school" translate="no">UEZO · Universidade Estadual da Zona Oeste do Rio de Janeiro</span></span>
+					</li>
+				</ol>
+			</div>
+
+		</div> <!-- /resume-timeline -->
+
+		<!-- Certifications & training -->
+		<div class="row resume-timeline" id="training">
+
+			<div class="col-twelve resume-header">
+				<h2 data-i18n="train.header">Certificaciones y cursos</h2>
+			</div>
+
+			<div class="col-twelve">
+
+				<p class="train-intro" data-i18n="train.lead">Programas, certificaciones y cursos, del más reciente al más antiguo. Cada ítem lleva al certificado original.</p>
+
+				<h3 class="train-sub" data-i18n="train.featured">Certificaciones y programas</h3>
+				<div id="owl-slider-cert" class="owl-carousel cert-carousel">
+<!--@region:train-featured-->
+					<article class="cert-card" id="cert-dacp">
+						<div class="cert-top"><span class="cert-ico"><i class="icon-badge" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Data Science Academy</p></div>
+						<h4 translate="no">Data Analyst Certified Professional (DACP)</h4>
+						<p class="cert-date"><span data-i18n="train.issued">Emitido</span> <span data-date="2023-01">ene 2023</span></p>
+						<p class="cert-link"><a href="../pdf/dsa/29_certificado_DACP.pdf" data-i18n="train.view">Ver certificado</a></p>
+					</article>
+					<article class="cert-card" id="cert-fada">
+						<div class="cert-top"><span class="cert-ico"><i class="icon-education" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Data Science Academy</p></div>
+						<h4 data-i18n="train.fada">Formación Analista de Datos</h4>
+						<p class="cert-date"><span data-i18n="train.completed">Completado</span> <span data-date="2023-01">ene 2023</span></p>
+						<p class="cert-link"><a href="../pdf/dsa/28_certificado_FADA.pdf" data-i18n="train.view">Ver certificado</a></p>
+					</article>
+					<article class="cert-card" id="cert-fad">
+						<div class="cert-top"><span class="cert-ico"><i class="icon-education" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Data Science Academy</p></div>
+						<h4 data-i18n="train.fad">Formación Arquitecto de Datos</h4>
+						<p class="cert-date"><span data-i18n="train.completed">Completado</span> <span data-date="2022-12">dic 2022</span></p>
+						<p class="cert-link"><a href="../pdf/dsa/25_certificado_FAD.pdf" data-i18n="train.view">Ver certificado</a></p>
+					</article>
+					<article class="cert-card" id="cert-astro-dag">
+						<div class="cert-top"><span class="cert-ico"><i class="icon-paper-plane" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Astronomer</p></div>
+						<h4 data-i18n="train.astro.dag">Certificación Astronomer: DAG Authoring for Apache Airflow</h4>
+						<p class="cert-date"><span data-i18n="train.issued">Emitido</span> <span data-date="2022-12">dic 2022</span></p>
+						<p class="cert-link"><a href="https://www.credly.com/badges/53ff420f-0790-420f-9e3e-3e0071287892/linked_in_profile" rel="noopener" data-i18n="train.verify">Verificar en Credly</a></p>
+					</article>
+					<article class="cert-card" id="cert-astro-fund">
+						<div class="cert-top"><span class="cert-ico"><i class="icon-paper-plane" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Astronomer</p></div>
+						<h4 data-i18n="train.astro.fund">Certificación Astronomer: Apache Airflow Fundamentals</h4>
+						<p class="cert-date"><span data-i18n="train.issued">Emitido</span> <span data-date="2022-11">nov 2022</span></p>
+						<p class="cert-link"><a href="https://www.credly.com/badges/936c78c9-4f87-430c-97da-a7964c130876/linked_in_profile" rel="noopener" data-i18n="train.verify">Verificar en Credly</a></p>
+					</article>
+					<article class="cert-card" id="cert-dscp">
+						<div class="cert-top"><span class="cert-ico"><i class="icon-badge" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Data Science Academy</p></div>
+						<h4 translate="no">Data Scientist Certified Professional (DSCP)</h4>
+						<p class="cert-date"><span data-i18n="train.issued">Emitido</span> <span data-date="2022-04">abr 2022</span></p>
+						<p class="cert-link"><a href="../pdf/dsa/20_certificado_dscp.pdf" data-i18n="train.view">Ver certificado</a></p>
+					</article>
+					<article class="cert-card" id="cert-fcd">
+						<div class="cert-top"><span class="cert-ico"><i class="icon-education" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Data Science Academy</p></div>
+						<h4 data-i18n="train.fcd">Formación Científico de Datos</h4>
+						<p class="cert-date"><span data-i18n="train.completed">Completado</span> <span data-date="2021-10">oct 2021</span></p>
+						<p class="cert-link"><a href="../pdf/dsa/12_Certificado_FCD.pdf" data-i18n="train.view">Ver certificado</a></p>
+					</article>
+					<article class="cert-card" id="cert-faim">
+						<div class="cert-top"><span class="cert-ico"><i class="icon-education" aria-hidden="true"></i></span><p class="cert-issuer" translate="no">Data Science Academy</p></div>
+						<h4 data-i18n="train.faim">Formación Analista de Inteligencia de Mercado</h4>
+						<p class="cert-date"><span data-i18n="train.completed">Completado</span> <span data-date="2020-06">jun 2020</span></p>
+						<p class="cert-link"><a href="../pdf/dsa/10_Certificado_FAIM.pdf" data-i18n="train.view">Ver certificado</a></p>
+					</article>
+					<!--@end:train-featured-->
+				</div>
+
+				<details class="train-details">
+				<summary data-i18n="train.courses.toggle">Mostrar los 33 cursos</summary>
+				<ul class="train-list">
+<!--@region:train-courses-->
+					<li><span class="train-date" data-date="2023-01">ene 2023</span><span class="train-main"><a href="../pdf/dsa/27_analise_de_dados_com_power_bi.pdf" data-i18n="train.c01">Análisis de datos con Microsoft Power BI y BI Clinic</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2023-01">ene 2023</span><span class="train-main"><a href="../pdf/others/10_xpe_engenheiro_de_dados_cloud.pdf" data-i18n="train.c02">Ingeniero de Datos en Cloud</a></span><span class="train-issuer" translate="no">XP Educação</span></li>
+					<li><span class="train-date" data-date="2022-12">dic 2022</span><span class="train-main"><a href="../pdf/dsa/26_analise_de_dados_com_linguagem_python.pdf" data-i18n="train.c03">Análisis de datos con Python</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2022-12">dic 2022</span><span class="train-main"><a href="../pdf/dsa/24_design_e_automacao_de_pipelines.pdf" data-i18n="train.c04">Diseño y automatización de pipelines de datos</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2022-12">dic 2022</span><span class="train-main"><a href="../pdf/dsa/23_arquitetura_e_integracao_processos_etl_elt.pdf" data-i18n="train.c05">Arquitectura e integración de procesos ETL y ELT</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2022-12">dic 2022</span><span class="train-main"><a href="../pdf/dsa/22_modelagem_de_bds_data_stores.pdf" data-i18n="train.c06">Modelado de bases de datos y data stores relacionales y no relacionales</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2022-12">dic 2022</span><span class="train-main"><a href="../pdf/dsa/21_lgpd_gov_de_dados_e_gest_metadados.pdf" data-i18n="train.c07">LGPD, gobernanza de datos y gestión de metadatos</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2022-10">oct 2022</span><span class="train-main"><a href="../pdf/others/9_xpe_engenheiro_de_dados.pdf" data-i18n="train.c08">Ingeniería de datos</a></span><span class="train-issuer" translate="no">XP Educação</span></li>
+					<li><span class="train-date" data-date="2022-07">jul 2022</span><span class="train-main"><a href="../pdf/others/8_how_engenheiro_de_dados.pdf" data-i18n="train.c09">Bootcamp de ingeniería de datos</a></span><span class="train-issuer" translate="no">HOW</span></li>
+					<li><span class="train-date" data-date="2022-03">mar 2022</span><span class="train-main"><a href="../pdf/dsa/18_sql_para_data_science.pdf" data-i18n="train.c10">SQL para Data Science</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2022-02">feb 2022</span><span class="train-main"><a href="../pdf/dsa/19_design_e_admin_cloud_computing_aws.pdf" data-i18n="train.c11">Diseño y administración de AWS Cloud Computing</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2022-01">ene 2022</span><span class="train-main"><a href="../pdf/dsa/17_mineracao_de_dados_com_spss.pdf" data-i18n="train.c12">Minería de datos con SPSS</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2021-10">oct 2021</span><span class="train-main"><a href="../pdf/dsa/16_Visualizacao_de_dados_e_design_de_Dashboards.pdf" data-i18n="train.c13">Visualización de datos y diseño de dashboards</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2021-09">sep 2021</span><span class="train-main"><a href="../pdf/dsa/15_Business_Analytics.pdf" data-i18n="train.c14">Business Analytics</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2021-08">ago 2021</span><span class="train-main"><a href="../pdf/dsa/14_Machine_Learning.pdf" data-i18n="train.c15">Machine Learning</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2020-12">dic 2020</span><span class="train-main"><a href="../pdf/dsa/13_Engenharia_de_Dados_com_Hadoop_e_Spark.pdf" data-i18n="train.c16">Ingeniería de datos con Hadoop y Spark</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2020-07">jul 2020</span><span class="train-main"><a href="../pdf/dsa/11_Big_data_real_time_analytics_python_spark.pdf" data-i18n="train.c17">Big Data Real-Time Analytics con Python y Spark</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2020-06">jun 2020</span><span class="train-main"><a href="../pdf/dsa/9_Analise_Econometrica_em_R.pdf" data-i18n="train.c18">Análisis econométrico en R</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2020-06">jun 2020</span><span class="train-main"><a href="../pdf/dsa/8_Analise_Estatistica_ST_Python.pdf" data-i18n="train.c19">Análisis estadístico y modelado predictivo de series temporales en Python</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2020-05">may 2020</span><span class="train-main"><a href="../pdf/dsa/7_Analise_Estatistica%20_de_Dados_MA_R.pdf" data-i18n="train.c20">Análisis estadístico de datos y Machine Learning en R</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2020-02">feb 2020</span><span class="train-main"><a href="../pdf/dsa/6_Big_Data_R_Azure_ML.pdf" data-i18n="train.c21">Big Data Analytics con R y Microsoft Azure Machine Learning</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2020-01">ene 2020</span><span class="train-main"><a href="../pdf/dsa/5_Python.pdf" data-i18n="train.c22">Fundamentos de Python para análisis de datos</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2019-12">dic 2019</span><span class="train-main"><a href="../pdf/dsa/4_R_Fundamentos.pdf" data-i18n="train.c23">Fundamentos de R para análisis de datos</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2019-10">oct 2019</span><span class="train-main"><a href="../pdf/dsa/3_Linux.pdf" data-i18n="train.c24">Fundamentos del sistema operativo Linux</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2019-09">sep 2019</span><span class="train-main"><a href="../pdf/dsa/2_%20Merc_Fin_Cap.pdf" data-i18n="train.c25">Mercado financiero y de capitales</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2019-07">jul 2019</span><span class="train-main"><a href="../pdf/dsa/1_Intro_Economia.pdf" data-i18n="train.c26">Introducción a la economía</a></span><span class="train-issuer" translate="no">Data Science Academy</span></li>
+					<li><span class="train-date" data-date="2018-10">oct 2018</span><span class="train-main"><a href="../pdf/others/7_Reconhecimento_Facial_Python_OpenCV.pdf" data-i18n="train.c27">Reconocimiento facial con Python y OpenCV</a></span><span class="train-issuer" translate="no">Udemy</span></li>
+					<li><span class="train-date" data-date="2018-10">oct 2018</span><span class="train-main"><a href="../pdf/others/6_Reconhecimento_de_Objetos_Python_Dlib.pdf" data-i18n="train.c28">Reconocimiento de rostros y objetos con Python y Dlib</a></span><span class="train-issuer" translate="no">Udemy</span></li>
+					<li><span class="train-date" data-date="2018-10">oct 2018</span><span class="train-main"><a href="../pdf/others/5_Detec%C3%A7%C3%A3o_de_Faces_OpenCV.pdf" data-i18n="train.c29">Detección de rostros con Python y OpenCV</a></span><span class="train-issuer" translate="no">Udemy</span></li>
+					<li><span class="train-date" data-date="2018-01">ene 2018</span><span class="train-main"><a href="../pdf/others/4_Desenvolvedor_Web.pdf" data-i18n="train.c30">Desarrollador web</a></span><span class="train-issuer" translate="no">Udemy</span></li>
+					<li><span class="train-date" data-date="2018-01">ene 2018</span><span class="train-main"><a href="../pdf/others/3_PagSeguro.pdf" data-i18n="train.c31">Integración de e-commerce con PHP 7 y PagSeguro</a></span><span class="train-issuer" translate="no">Udemy</span></li>
+					<li><span class="train-date" data-date="2018-01">ene 2018</span><span class="train-main"><a href="../pdf/others/2_MySQL.pdf" data-i18n="train.c32">Dominando bases de datos MySQL</a></span><span class="train-issuer" translate="no">Udemy</span></li>
+					<li><span class="train-date" data-date="2018-01">ene 2018</span><span class="train-main"><a href="../pdf/others/1_PHP_7.pdf" data-i18n="train.c33">PHP 7</a></span><span class="train-issuer" translate="no">Udemy</span></li>
+					<!--@end:train-courses-->
+				</ul>
+				</details>
+
+			</div>
+
+		</div> <!-- /training -->
+
+		<!-- Talks & research -->
+		<div class="row resume-timeline">
+
+			<div class="col-twelve resume-header">
+				<h2 data-i18n="talks.header">Charlas e investigación</h2>
+			</div>
+
+			<div class="col-twelve">
+				<div class="timeline-wrap">
+					<div id="owl-slider-extra" class="owl-carousel certificate-list">
+
+					<div class="timeline-block" id="talk-tdc">
+						<div class="timeline-ico"><i class="fa-solid fa-microphone" aria-hidden="true"></i></div>
+						<div class="timeline-header">
+							<h3 translate="no">TDC</h3>
+							<p data-date="2021-12">dic 2021</p>
+							<a class="link-chip" href="https://thedevconf.com/" target="_blank" rel="noopener"><span data-i18n="link.event">Sitio web del evento</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only" data-i18n="link.newtab">(se abre en una pestaña nueva)</span></a>
+						</div>
+						<div class="timeline-content">
+							<h4 data-i18n="talks.tdc.title">Charla: Airflow — ¿quién dijo que no se pueden procesar datos en él?</h4>
+							<p data-i18n="talks.tdc.desc">Airflow es una plataforma para crear, programar y monitorear flujos de trabajo de forma programática. Me pregunté si también podría usarse para procesar datos: cuáles serían los beneficios, cómo crear pipelines consistentes y simples para volúmenes de datos bajos y qué arquitecturas de pipeline son posibles.</p>
+						</div>
+					</div>
+
+					<div class="timeline-block" id="talk-podcast">
+						<div class="timeline-ico"><i class="fa-solid fa-podcast" aria-hidden="true"></i></div>
+						<div class="timeline-header">
+							<h3 data-i18n="talks.podcast.label">Podcast</h3>
+							<p data-date="2021-01">ene 2021</p>
+							<a class="link-chip" href="https://www.youtube.com/watch?v=KEap4SCQf-8" target="_blank" rel="noopener"><span data-i18n="link.watch">Ver el episodio</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span class="sr-only" data-i18n="link.newtab">(se abre en una pestaña nueva)</span></a>
+						</div>
+						<div class="timeline-content">
+							<h4 data-i18n="talks.podcast.title">Podcast de Data Science Academy</h4>
+							<p data-i18n="talks.podcast.desc">Hablé sobre mi trayectoria profesional, mi mentalidad, mis alegrías y frustraciones, cómo conseguí mi primer empleo como científico de datos y cómo era el día a día.</p>
+						</div>
+					</div>
+
+					<div class="timeline-block" id="talk-research">
+						<div class="timeline-ico"><i class="fa-solid fa-flask" aria-hidden="true"></i></div>
+						<div class="timeline-header">
+							<h3 translate="no">UEZO</h3>
+							<p data-date="2018-08" data-date-end="2019-08">ago 2018 – ago 2019</p>
+						</div>
+						<div class="timeline-content">
+							<h4 data-i18n="talks.research.title">Investigación de grado</h4>
+							<p data-i18n="talks.research.desc">Trabajé en comprender y refinar técnicas de reconocimiento y detección de objetos como líneas, rostros humanos y células. Como derivación de esa investigación, desarrollé un análisis de optimización de detección de bordes en células, con el objetivo de facilitar la construcción de modelos 3D en biología, farmacología y medicina.</p>
+						</div>
+					</div>
+
+				</div> <!-- \owl-slider-extra -->
+
+				</div> <!-- /timeline-wrap -->
+			</div>
+
+		</div> <!-- /talks -->
+
+	</section> <!-- /resume -->
+
+
+	<!-- Work Section ================================================== -->
+	<section id="portfolio">
+
+		<div class="row section-intro">
+			<div class="col-twelve">
+
+				<p class="h05 eyebrow" data-i18n="work.eyebrow">Proyectos</p>
+				<h2 data-i18n="work.title">Proyectos seleccionados</h2>
+				<p class="lead" data-i18n="work.lead">Casos de estudio de las plataformas y los equipos que lideré, seguidos de proyectos anteriores de machine learning.</p>
+
+			</div>
+		</div> <!-- /section-intro-->
+
+		<div class="row">
+			<div class="col-twelve">
+
+				<div class="case-filters" role="group" aria-label="Filtrar casos de estudio por tema" data-i18n-attr="aria-label:work.filter.label">
+					<button type="button" class="case-filter is-active" data-filter="all" aria-pressed="true" data-i18n="work.filter.all">Todos</button>
+					<button type="button" class="case-filter" data-filter="platform" aria-pressed="false" data-i18n="work.filter.platform">Plataforma</button>
+					<button type="button" class="case-filter" data-filter="reliability" aria-pressed="false" data-i18n="work.filter.reliability">Costo y confiabilidad</button>
+					<button type="button" class="case-filter" data-filter="governance" aria-pressed="false" data-i18n="work.filter.governance">Gobernanza</button>
+					<button type="button" class="case-filter" data-filter="analytics" aria-pressed="false" data-i18n="work.filter.analytics">Analytics e IA</button>
+				</div>
+				<p id="case-status" class="sr-only" role="status" aria-live="polite"></p>
+
+				<div class="case-grid is-folded" id="work-more">
+<!--@region:cases-->
+					<article class="case-card" id="case-migration" data-cat="platform" data-num="01">
+						<div class="case-head"><span class="case-ico"><i class="icon-cloud" aria-hidden="true"></i></span></div>
+						<p class="case-meta" translate="no">Flutter Brazil · Data Engineer</p>
+						<h3 data-i18n="case.migration.title">Migración a Databricks y base del lakehouse</h3>
+						<div class="case-metric"><span class="case-metric-num" translate="no">~50</span><span class="case-metric-cap" data-i18n="case.metric.sources">fuentes unificadas en una sola plataforma</span></div>
+						<p class="case-block"><span class="case-label" data-i18n="case.label.context">Punto de partida</span><span data-i18n="case.migration.context">~50 fuentes, desde Google Analytics 4 hasta sistemas internos y herramientas de terceros, en una plataforma de decenas de TB. Miles de tablas y miles de jobs por día.</span></p>
+						<p class="case-block"><span class="case-label" data-i18n="case.label.what">Qué hice</span><span data-i18n="case.migration.what">Migré toda la infraestructura de datos a Databricks y construí el data lake y el modelo dimensional de la empresa desde cero, con Python, dbt y mucho SQL.</span></p>
+						<p class="case-block case-result"><span class="case-label" data-i18n="case.label.result">Qué cambió</span><span data-i18n="case.migration.result">Los pipelines pasaron de horas a minutos, y el data lake y el modelo dimensional siguen siendo la base de todas las áreas hoy.</span></p>
+						<ul class="case-stack" translate="no"><li>Databricks</li><li>dbt</li><li>Python</li><li>SQL</li><li>Google Analytics 4</li></ul>
+					</article>
+					<article class="case-card" id="case-finops" data-cat="reliability" data-num="02">
+						<div class="case-head"><span class="case-ico"><i class="icon-dollar" aria-hidden="true"></i></span></div>
+						<p class="case-meta" translate="no">Flutter Brazil · Tech Lead</p>
+						<h3 data-i18n="case.finops.title">FinOps y previsión de costos</h3>
+						<div class="case-metric"><span class="case-metric-num" translate="no">&gt;50%</span><span class="case-metric-cap" data-i18n="case.metric.cost">menos costo en la plataforma de datos</span></div>
+						<p class="case-block"><span class="case-label" data-i18n="case.label.context">Punto de partida</span><span data-i18n="case.finops.context">Una factura anual de la plataforma de datos de seis cifras, en dólares.</span></p>
+						<p class="case-block"><span class="case-label" data-i18n="case.label.what">Qué hice</span><span data-i18n="case.finops.what">Diseñé la iniciativa de FinOps en clústeres, jobs, almacenamiento y políticas de gobernanza, con modelos de previsión de costos para que el gasto pudiera bajar de forma predecible.</span></p>
+						<p class="case-block case-result"><span class="case-label" data-i18n="case.label.result">Qué cambió</span><span data-i18n="case.finops.result">Más de 50% de reducción en el costo de la plataforma de datos.</span></p>
+						<ul class="case-stack" translate="no"><li>Databricks</li><li>FinOps</li></ul>
+					</article>
+					<article class="case-card" id="case-clicksign" data-cat="platform" data-num="03">
+						<div class="case-head"><span class="case-ico"><i class="icon-network" aria-hidden="true"></i></span></div>
+						<p class="case-meta" translate="no">Clicksign · Data Architect</p>
+						<h3 data-i18n="case.ck.title">Infraestructura de datos desde cero en Clicksign</h3>
+						<div class="case-metric"><span class="case-metric-num" translate="no">100+</span><span class="case-metric-cap" data-i18n="case.metric.pipelines">pipelines de Airflow</span></div>
+						<p class="case-block"><span class="case-label" data-i18n="case.label.what">Qué hice</span><span data-i18n="case.ck.what">Diseñé la arquitectura de casi todas las estructuras de datos que la empresa tuvo en ese período, con 100+ pipelines de Airflow de modelado e ingesta, y lideré la implementación de dbt en Redshift.</span></p>
+						<p class="case-block case-result"><span class="case-label" data-i18n="case.label.result">Qué cambió</span><span data-i18n="case.ck.result">Control de calidad, gobernanza, modelado más fácil, observabilidad y orquestación más simple.</span></p>
+						<ul class="case-stack" translate="no"><li>Apache Airflow</li><li>dbt</li><li>Amazon Redshift</li><li>dimensional modeling</li></ul>
+					</article>
+					<article class="case-card" id="case-unity" data-cat="governance" data-num="04">
+						<div class="case-head"><span class="case-ico"><i class="icon-grid" aria-hidden="true"></i></span></div>
+						<p class="case-meta" translate="no">Flutter Brazil · Tech Lead</p>
+						<h3 data-i18n="case.unity.title">Unity Catalog por dominio</h3>
+						<div class="case-metric"><span class="case-metric-num" translate="no">10+</span><span class="case-metric-cap" data-i18n="case.metric.domains">dominios de Unity Catalog</span></div>
+						<p class="case-block"><span class="case-label" data-i18n="case.label.what">Qué hice</span><span data-i18n="case.unity.what">Reestructuré Unity Catalog por dominio y me ocupé del modelado de datos y de la calidad, para que el aprovisionamiento siga siendo confiable y seguro.</span></p>
+						<p class="case-block case-result"><span class="case-label" data-i18n="case.label.result">Qué cambió</span><span data-i18n="case.unity.result">10+ dominios, con arquitecturas y formas de trabajo definidas para casi todo el equipo de datos.</span></p>
+						<ul class="case-stack" translate="no"><li>Databricks</li><li>Unity Catalog</li><li>dbt</li></ul>
+					</article>
+					<article class="case-card" id="case-obs" data-cat="reliability" data-num="05">
+						<div class="case-head"><span class="case-ico"><i class="icon-speed-o-meter" aria-hidden="true"></i></span></div>
+						<p class="case-meta" translate="no">Flutter Brazil · Tech Lead</p>
+						<h3 data-i18n="case.obs.title">Observabilidad y métricas casi en tiempo real</h3>
+						<p class="case-block"><span class="case-label" data-i18n="case.label.what">Qué hice</span><span data-i18n="case.obs.what">Construí apps de observabilidad de la plataforma y de monitoreo de métricas de negocio, todas casi en tiempo real, además de dashboards de apoyo a la decisión.</span></p>
+						<p class="case-block case-result"><span class="case-label" data-i18n="case.label.result">Qué cambió</span><span data-i18n="case.obs.result">Visibilidad inmediata de los problemas, con latencia de pocos minutos.</span></p>
+						<ul class="case-stack" translate="no"><li>Streamlit</li><li>Metabase</li></ul>
+					</article>
+					<article class="case-card" id="case-cicd" data-cat="reliability" data-num="06">
+						<div class="case-head"><span class="case-ico"><i class="icon-share" aria-hidden="true"></i></span></div>
+						<p class="case-meta" translate="no">Flutter Brazil · Tech Lead</p>
+						<h3 data-i18n="case.cicd.title">CI/CD con trunk-based development</h3>
+						<div class="case-metric"><span class="case-metric-num" translate="no">~3x</span><span class="case-metric-cap" data-i18n="case.metric.incidents">menos incidentes y retrabajo</span></div>
+						<p class="case-block"><span class="case-label" data-i18n="case.label.what">Qué hice</span><span data-i18n="case.cicd.what">Implementé CI/CD con trunk-based development y ayudé a conducir la evolución del modelado analítico de la empresa con dbt.</span></p>
+						<p class="case-block case-result"><span class="case-label" data-i18n="case.label.result">Qué cambió</span><span data-i18n="case.cicd.result">Los incidentes y el retrabajo bajaron ~3x.</span></p>
+						<ul class="case-stack" translate="no"><li>dbt</li><li>CI/CD</li><li>trunk-based development</li></ul>
+					</article>
+					<article class="case-card" id="case-protection" data-cat="governance" data-num="07">
+						<div class="case-head"><span class="case-ico"><i class="icon-shield" aria-hidden="true"></i></span></div>
+						<p class="case-meta" translate="no">Clicksign · Data Architect</p>
+						<h3 data-i18n="case.prot.title">Protección de datos y APIs para partners</h3>
+						<div class="case-metric"><span class="case-metric-num" translate="no">10+</span><span class="case-metric-cap" data-i18n="case.metric.apis">APIs para partners y terceros</span></div>
+						<p class="case-block"><span class="case-label" data-i18n="case.label.what">Qué hice</span><span data-i18n="case.prot.what">Diseñé los procesos de protección de datos (en cumplimiento de la LGPD y alineados con el GDPR) y de continuidad de la entrega de datos, y construí 10+ APIs para enviar datos a partners y terceros.</span></p>
+						<ul class="case-stack" translate="no"><li>LGPD</li><li>GDPR</li><li>APIs</li><li>data governance</li></ul>
+					</article>
+					<article class="case-card" id="case-ltv" data-cat="analytics" data-num="08">
+						<div class="case-head"><span class="case-ico"><i class="icon-pie-chart" aria-hidden="true"></i></span></div>
+						<p class="case-meta" translate="no">Flutter Brazil · Tech Lead</p>
+						<h3 data-i18n="case.ltv.title">Modelos de LTV y payback</h3>
+						<p class="case-block"><span class="case-label" data-i18n="case.label.context">Punto de partida</span><span data-i18n="case.ltv.context">Preguntas que responden los modelos: gasto de adquisición, retorno por cliente y plazo de payback, los segmentos más valiosos y si las campañas y promociones valieron la pena.</span></p>
+						<p class="case-block"><span class="case-label" data-i18n="case.label.what">Qué hice</span><span data-i18n="case.ltv.what">Ayudé a construir los modelos de LTV y payback (SQL y dbt, con modelado estadístico y de machine learning, actualizados por pipelines y expuestos en dashboards). Mi parte: datos de entrada y arquitectura, pipelines y plataforma, y validación de los resultados con ciencia de datos y negocio.</span></p>
+						<p class="case-block case-result"><span class="case-label" data-i18n="case.label.result">Qué cambió</span><span data-i18n="case.ltv.result">Marketing pasó a tener una base numérica para decidir dónde invertir.</span></p>
+						<ul class="case-stack" translate="no"><li>dbt</li><li>SQL</li><li>Machine learning</li></ul>
+					</article>
+					<article class="case-card" id="case-genai" data-cat="analytics" data-num="09">
+						<div class="case-head"><span class="case-ico"><i class="icon-wand" aria-hidden="true"></i></span></div>
+						<p class="case-meta" translate="no">Flutter Brazil</p>
+						<h3 data-i18n="case.genai.title">IA generativa para herramientas del día a día</h3>
+						<p class="case-block"><span class="case-label" data-i18n="case.label.where">Dónde la uso</span><span data-i18n="case.genai.context">Código en SQL, dbt y Python, documentación y pruebas de calidad de datos, asistentes y consultas en lenguaje natural, y análisis de datos.</span></p>
+						<p class="case-block"><span class="case-label" data-i18n="case.label.what">Qué hice</span><span data-i18n="case.genai.what">Uso IA generativa para acelerar la construcción de las herramientas del día a día, de prototipos en Lovable a dashboards en Streamlit y Metabase. Llevé la práctica al equipo, definí las directrices de uso y construí soluciones de IA para la empresa.</span></p>
+						<p class="case-block case-result"><span class="case-label" data-i18n="case.label.result">Qué cambió</span><span data-i18n="case.genai.result">Los prototipos salen más rápido, el equipo dedica menos tiempo al trabajo repetitivo y más gente construye herramientas.</span></p>
+						<ul class="case-stack" translate="no"><li>Cursor</li><li>OpenAI</li><li>Anthropic</li><li>DeepSeek</li><li>GLM</li><li>Lovable</li><li>Streamlit</li><li>Metabase</li></ul>
+					</article>
+					<div class="case-group"><p class="case-group-label" data-i18n="case.group.label">Decisiones y trade-offs</p><p class="case-group-text" data-i18n="case.group.text">El razonamiento detrás de tres decisiones de plataforma: qué pesó, los trade-offs que administré y qué cambiaría.</p></div>
+					<article class="case-card case-wide" id="case-why-databricks" data-cat="platform" data-num="10">
+						<div class="case-head"><span class="case-ico"><i class="icon-scales" aria-hidden="true"></i></span></div>
+						<p class="case-meta" translate="no">Flutter Brazil</p>
+						<h3 data-i18n="case.why.title">Por qué Databricks, y qué cambiaría</h3>
+						<div class="case-cols">
+							<p class="case-block"><span class="case-label" data-i18n="case.label.weighed">Lo que pesó en la elección</span><span data-i18n="case.why.weighed">Una plataforma única para procesamiento por lotes, ML y BI; gobernanza con Unity Catalog; costo y rendimiento; y las habilidades del equipo.</span></p>
+							<p class="case-block"><span class="case-label" data-i18n="case.label.alternatives">Qué más estaba sobre la mesa</span><span data-i18n="case.why.alternatives">Seguir en Redshift y en lo nativo de AWS, Snowflake y BigQuery en Google Cloud.</span></p>
+							<p class="case-block"><span class="case-label" data-i18n="case.label.risks">Mayores riesgos de la migración</span><span data-i18n="case.why.risks">Migrar sin detener el negocio, lograr la paridad de los datos y el costo durante la transición.</span></p>
+							<p class="case-block"><span class="case-label" data-i18n="case.label.differently">Qué haría distinto</span><span data-i18n="case.why.differently">Empezar el FinOps antes y definir dominios y dueños antes.</span></p>
+						</div>
+						<ul class="case-stack" translate="no"><li>Databricks</li><li>Unity Catalog</li><li>FinOps</li></ul>
+					</article>
+					<article class="case-card case-wide" id="case-finops-decision" data-cat="reliability" data-num="11">
+						<div class="case-head"><span class="case-ico"><i class="icon-sliders" aria-hidden="true"></i></span></div>
+						<p class="case-meta" translate="no">Flutter Brazil · Tech Lead</p>
+						<h3 data-i18n="case.finopsdec.title">FinOps: prioridades y trade-offs</h3>
+						<div class="case-cols">
+							<p class="case-block"><span class="case-label" data-i18n="case.label.priorities">Qué prioricé</span><span data-i18n="case.finopsdec.priorities">Visibilidad del gasto, los mayores generadores de costo, el dimensionamiento de los clusters y la programación de los jobs.</span></p>
+							<p class="case-block"><span class="case-label" data-i18n="case.label.tradeoffs">Trade-offs que administré</span><span data-i18n="case.finopsdec.tradeoffs">Costo frente a frescura de los datos, costo frente a rendimiento, autonomía frente a reglas y tiempo de ingeniería frente a ahorro.</span></p>
+							<p class="case-block"><span class="case-label" data-i18n="case.label.lasting">Qué sostuvo el ahorro</span><span data-i18n="case.finopsdec.lasting">Modelos de previsión de costo, costo atribuido por dominio o dueño, alertas y dashboards de gasto, y políticas y guardrails.</span></p>
+							<p class="case-block"><span class="case-label" data-i18n="case.label.differently">Qué haría distinto</span><span data-i18n="case.finopsdec.differently">Etiquetar y atribuir el costo por dominio y dueño desde el primer día, crear alertas automáticas de gasto antes e involucrar antes a los dominios.</span></p>
+						</div>
+						<ul class="case-stack" translate="no"><li>Databricks</li><li>FinOps</li></ul>
+					</article>
+					<article class="case-card case-wide" id="case-uc-decision" data-cat="governance" data-num="12">
+						<div class="case-head"><span class="case-ico"><i class="icon-layers" aria-hidden="true"></i></span></div>
+						<p class="case-meta" translate="no">Flutter Brazil · Tech Lead</p>
+						<h3 data-i18n="case.ucdec.title">Unity Catalog por dominio: motivos y trade-offs</h3>
+						<div class="case-cols">
+							<p class="case-block"><span class="case-label" data-i18n="case.label.reasons">Por qué por dominio</span><span data-i18n="case.ucdec.reasons">Responsabilidad clara por área, acceso y seguridad por dominio, costo atribuido por dominio, y descubrimiento y calidad de datos.</span></p>
+							<p class="case-block"><span class="case-label" data-i18n="case.label.tradeoffs">Trade-offs que administré</span><span data-i18n="case.ucdec.tradeoffs">Control central frente a autonomía, cuántos dominios (granularidad), retrabajo en tablas y permisos, y estándar frente a flexibilidad.</span></p>
+							<p class="case-block"><span class="case-label" data-i18n="case.label.worked">Qué funcionó en la práctica</span><span data-i18n="case.ucdec.worked">Dueños por dominio y estándares acordados, y aprovisionamiento como código.</span></p>
+							<p class="case-block"><span class="case-label" data-i18n="case.label.differently">Qué haría distinto</span><span data-i18n="case.ucdec.differently">Automatizar antes el aprovisionamiento y los permisos, y tener linaje y documentación de los dominios desde el inicio.</span></p>
+						</div>
+						<ul class="case-stack" translate="no"><li>Databricks</li><li>Unity Catalog</li></ul>
+					</article>
+					<!--@end:cases-->
+				</div> <!-- /case-grid -->
+				<p class="more-wrap"><button type="button" class="more-toggle" data-fold-toggle="work-more" data-fold-item="work_more" aria-expanded="false" aria-controls="work-more"><span class="when-closed" data-i18n="work.more">Mostrar los 12 casos de estudio</span><span class="when-open" data-i18n="work.less">Mostrar menos casos de estudio</span></button></p>
+
+			</div>
+		</div>
+
+		<div class="row portfolio-content">
+
+			<div class="col-twelve">
+
+				<h2 class="sub-heading" data-i18n="projects.title">Proyectos anteriores de machine learning</h2>
+				<p class="sub-lead" data-i18n="projects.lead">Análisis hechos durante mis estudios de ciencia de datos, que conservo aquí como referencia.</p>
+
+				<details class="early-projects">
+				<summary data-i18n="projects.toggle">Mostrar los 13 proyectos</summary>
+				<div id="owl-slider-port" class="owl-carousel portfolio-list">
+<!--@region:projects-slides-->
+					<!-- p13 -->
+					<div class="folio-wrapper block-1-1 block-mob-full stack">
+						<div class="bgrid folio-item">
+							<div class="item-wrap">
+								<p class="h05 tag-label" data-i18n="projects.tag">Proyecto de Data Science</p> <br>
+								<img src="../images/portfolio/diabetes.webp" alt="National Institute of Diabetes and Digestive and Kidney Diseases" translate="no" loading="lazy" decoding="async" width="800" height="801">
+								<a href="#modal-13" class="overlay">
+									<div class="folio-item-table">
+										<div class="folio-item-cell">
+											<h3 class="folio-title" translate="no">National Institute of Diabetes and Digestive and Kidney Diseases</h3>
+											<span class="folio-types" data-i18n="projects.cat.ml">Big Data Analytics y Machine Learning</span>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div id="modal-13" class="popup-modal slider mfp-hide">
+							<div class="media"><img src="../images/portfolio/modals/m-diabetes.webp" alt="" loading="lazy" decoding="async" width="1050" height="700"></div>
+							<div class="description-box">
+								<h4 translate="no">National Institute of Diabetes and Digestive and Kidney Diseases</h4>
+								<p data-i18n="projects.p13.desc">En este proyecto usamos Python para predecir, a partir de mediciones de diagnóstico, si un paciente tiene diabetes.</p>
+								<div class="categories" data-i18n="projects.cat.ml">Big Data Analytics y Machine Learning</div>
+							</div>
+							<div class="link-box">
+								<a href="https://franklin390.github.io/Project_06_National_Institute_of_Diabetes_and_Digestive_and_Kidney_Diseases/" rel="noopener" data-i18n="projects.view">Ver proyecto</a>
+								<a href="#" class="popup-modal-dismiss" data-i18n="projects.close">Cerrar</a>
+							</div>
+						</div>
+					</div>
+					<!-- p12 -->
+					<div class="folio-wrapper block-1-1 block-mob-full stack">
+						<div class="bgrid folio-item">
+							<div class="item-wrap">
+								<p class="h05 tag-label" data-i18n="projects.tag">Proyecto de Data Science</p> <br>
+								<img src="../images/portfolio/churn.webp" alt="Customer Churn in Telecom Operators" translate="no" loading="lazy" decoding="async" width="800" height="801">
+								<a href="#modal-12" class="overlay">
+									<div class="folio-item-table">
+										<div class="folio-item-cell">
+											<h3 class="folio-title" translate="no">Customer Churn in Telecom Operators</h3>
+											<span class="folio-types" data-i18n="projects.cat.ml">Big Data Analytics y Machine Learning</span>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div id="modal-12" class="popup-modal slider mfp-hide">
+							<div class="media"><img src="../images/portfolio/modals/m-churn.webp" alt="" loading="lazy" decoding="async" width="1050" height="700"></div>
+							<div class="description-box">
+								<h4 translate="no">Customer Churn in Telecom Operators</h4>
+								<p data-i18n="projects.p12.desc">En este proyecto usamos Python para construir un modelo de machine learning que predice si un cliente puede cancelar su plan y la probabilidad de que eso ocurra.</p>
+								<div class="categories" data-i18n="projects.cat.ml">Big Data Analytics y Machine Learning</div>
+							</div>
+							<div class="link-box">
+								<a href="https://franklin390.github.io/Project_05_Customer_Churn_in_Telecom_Operators/" rel="noopener" data-i18n="projects.view">Ver proyecto</a>
+								<a href="#" class="popup-modal-dismiss" data-i18n="projects.close">Cerrar</a>
+							</div>
+						</div>
+					</div>
+					<!-- p11 -->
+					<div class="folio-wrapper block-1-1 block-mob-full stack">
+						<div class="bgrid folio-item">
+							<div class="item-wrap">
+								<p class="h05 tag-label" data-i18n="projects.tag">Proyecto de Data Science</p> <br>
+								<img src="../images/portfolio/santander.webp" alt="Santander Customer Satisfaction" translate="no" loading="lazy" decoding="async" width="800" height="801">
+								<a href="#modal-11" class="overlay">
+									<div class="folio-item-table">
+										<div class="folio-item-cell">
+											<h3 class="folio-title" translate="no">Santander Customer Satisfaction</h3>
+											<span class="folio-types" data-i18n="projects.cat.ml">Big Data Analytics y Machine Learning</span>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div id="modal-11" class="popup-modal slider mfp-hide">
+							<div class="media"><img src="../images/portfolio/modals/m-santander.webp" alt="" loading="lazy" decoding="async" width="1050" height="700"></div>
+							<div class="description-box">
+								<h4 translate="no">Santander Customer Satisfaction</h4>
+								<p data-i18n="projects.p11.desc">En este proyecto usamos Python para construir un modelo de machine learning que predice si un cliente está satisfecho con su experiencia bancaria.</p>
+								<div class="categories" data-i18n="projects.cat.ml">Big Data Analytics y Machine Learning</div>
+							</div>
+							<div class="link-box">
+								<a href="https://franklin390.github.io/Project_04_Santander_Customer_Satisfaction/" rel="noopener" data-i18n="projects.view">Ver proyecto</a>
+								<a href="#" class="popup-modal-dismiss" data-i18n="projects.close">Cerrar</a>
+							</div>
+						</div>
+					</div>
+					<!-- p10 -->
+					<div class="folio-wrapper block-1-1 block-mob-full stack">
+						<div class="bgrid folio-item">
+							<div class="item-wrap">
+								<p class="h05 tag-label" data-i18n="projects.tag">Proyecto de Data Science</p> <br>
+								<img src="../images/portfolio/netflix.webp" alt="Netflix Investor: Quarterly Earnings" translate="no" loading="lazy" decoding="async" width="800" height="801">
+								<a href="#modal-10" class="overlay">
+									<div class="folio-item-table">
+										<div class="folio-item-cell">
+											<h3 class="folio-title" translate="no">Netflix Investor: Quarterly Earnings</h3>
+											<span class="folio-types" data-i18n="projects.cat.forecast">Big Data Analytics y Forecasting</span>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div id="modal-10" class="popup-modal slider mfp-hide">
+							<div class="media"><img src="../images/portfolio/modals/m-netflix.webp" alt="" loading="lazy" decoding="async" width="1050" height="700"></div>
+							<div class="description-box">
+								<h4 translate="no">Netflix Investor: Quarterly Earnings</h4>
+								<p data-i18n="projects.p10.desc">En este proyecto usamos R para preparar un resumen estadístico de los datos de Netflix, que muestra la salud financiera de la empresa y otra información relevante que puede ayudar a posibles inversionistas a decidir si invertir.</p>
+								<div class="categories" data-i18n="projects.cat.forecast">Big Data Analytics y Forecasting</div>
+							</div>
+							<div class="link-box">
+								<a href="https://franklin390.github.io/Project_03_Netflix_Investor_Quarterly_Earnings/" rel="noopener" data-i18n="projects.view">Ver proyecto</a>
+								<a href="#" class="popup-modal-dismiss" data-i18n="projects.close">Cerrar</a>
+							</div>
+						</div>
+					</div>
+					<!-- p09 -->
+					<div class="folio-wrapper block-1-1 block-mob-full stack">
+						<div class="bgrid folio-item">
+							<div class="item-wrap">
+								<p class="h05 tag-label" data-i18n="projects.tag">Proyecto de Data Science</p> <br>
+								<img src="../images/portfolio/blood_donations.webp" alt="Warm Up: Predict Blood Donations" translate="no" loading="lazy" decoding="async" width="800" height="801">
+								<a href="#modal-09" class="overlay">
+									<div class="folio-item-table">
+										<div class="folio-item-cell">
+											<h3 class="folio-title" translate="no">Warm Up: Predict Blood Donations</h3>
+											<span class="folio-types" data-i18n="projects.cat.ml">Big Data Analytics y Machine Learning</span>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div id="modal-09" class="popup-modal slider mfp-hide">
+							<div class="media"><img src="../images/portfolio/modals/m-blood_donations.webp" alt="" loading="lazy" decoding="async" width="1050" height="700"></div>
+							<div class="description-box">
+								<h4 translate="no">Warm Up: Predict Blood Donations</h4>
+								<p data-i18n="projects.p09.desc">En este proyecto de machine learning usamos R para predecir si un donante de sangre donará dentro de un período determinado. El objetivo es predecir los valores de la última columna (Made Donation in March 2007) para determinar si el donante donó sangre en marzo de 2007.</p>
+								<div class="categories" data-i18n="projects.cat.ml">Big Data Analytics y Machine Learning</div>
+							</div>
+							<div class="link-box">
+								<a href="https://franklin390.github.io/Challenge_Project_03_Warm_Up_Predict_Blood_Donations/" rel="noopener" data-i18n="projects.view">Ver proyecto</a>
+								<a href="#" class="popup-modal-dismiss" data-i18n="projects.close">Cerrar</a>
+							</div>
+						</div>
+					</div>
+					<!-- p08 -->
+					<div class="folio-wrapper block-1-1 block-mob-full stack">
+						<div class="bgrid folio-item">
+							<div class="item-wrap">
+								<p class="h05 tag-label" data-i18n="projects.tag">Proyecto de Data Science</p> <br>
+								<img src="../images/portfolio/talk.webp" alt="TalkingData AdTracking Fraud Detection Challenge" translate="no" loading="lazy" decoding="async" width="800" height="801">
+								<a href="#modal-08" class="overlay">
+									<div class="folio-item-table">
+										<div class="folio-item-cell">
+											<h3 class="folio-title" translate="no">TalkingData AdTracking Fraud Detection Challenge</h3>
+											<span class="folio-types" data-i18n="projects.cat.ml">Big Data Analytics y Machine Learning</span>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div id="modal-08" class="popup-modal slider mfp-hide">
+							<div class="media"><img src="../images/portfolio/modals/m-talk.webp" alt="" loading="lazy" decoding="async" width="1050" height="700"></div>
+							<div class="description-box">
+								<h4 translate="no">TalkingData AdTracking Fraud Detection Challenge</h4>
+								<p data-i18n="projects.p08.desc">En este proyecto construimos un modelo de machine learning para determinar si un clic en un anuncio en línea es fraudulento.</p>
+								<div class="categories" data-i18n="projects.cat.ml">Big Data Analytics y Machine Learning</div>
+							</div>
+							<div class="link-box">
+								<a href="https://franklin390.github.io/Project_01_Talking_Data_AdTracking_Fraud_Detection_Challenge/" rel="noopener" data-i18n="projects.view">Ver proyecto</a>
+								<a href="#" class="popup-modal-dismiss" data-i18n="projects.close">Cerrar</a>
+							</div>
+						</div>
+					</div>
+					<!-- p07 -->
+					<div class="folio-wrapper block-1-1 block-mob-full stack">
+						<div class="bgrid folio-item">
+							<div class="item-wrap">
+								<p class="h05 tag-label" data-i18n="projects.tag">Proyecto de Data Science</p> <br>
+								<img src="../images/portfolio/bimbo.webp" alt="Grupo Bimbo Inventory Demand" translate="no" loading="lazy" decoding="async" width="800" height="801">
+								<a href="#modal-07" class="overlay">
+									<div class="folio-item-table">
+										<div class="folio-item-cell">
+											<h3 class="folio-title" translate="no">Grupo Bimbo Inventory Demand</h3>
+											<span class="folio-types" data-i18n="projects.cat.ml">Big Data Analytics y Machine Learning</span>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div id="modal-07" class="popup-modal slider mfp-hide">
+							<div class="media"><img src="../images/portfolio/modals/m-bimbo.webp" alt="" loading="lazy" decoding="async" width="1050" height="700"></div>
+							<div class="description-box">
+								<h4 translate="no">Grupo Bimbo Inventory Demand</h4>
+								<p data-i18n="projects.p07.desc">En este proyecto de machine learning desarrollamos un modelo para predecir con precisión la demanda de inventario a partir del historial de ventas. Así los compradores no encuentran estantes vacíos en ninguno de los más de 100 productos de panadería y se reduce el gasto en reembolsos a los dueños de tienda por productos sobrantes no aptos para la venta.</p>
+								<div class="categories" data-i18n="projects.cat.ml">Big Data Analytics y Machine Learning</div>
+							</div>
+							<div class="link-box">
+								<a href="https://franklin390.github.io/Project_02_Group_Bimbo_Inventory_Demand/" rel="noopener" data-i18n="projects.view">Ver proyecto</a>
+								<a href="#" class="popup-modal-dismiss" data-i18n="projects.close">Cerrar</a>
+							</div>
+						</div>
+					</div>
+					<!-- p06 -->
+					<div class="folio-wrapper block-1-1 block-mob-full stack">
+						<div class="bgrid folio-item">
+							<div class="item-wrap">
+								<p class="h05 tag-label" data-i18n="projects.tag">Proyecto de Data Science</p> <br>
+								<img src="../images/portfolio/heart.webp" alt="Warm Up: Machine Learning with a Heart" translate="no" loading="lazy" decoding="async" width="800" height="801">
+								<a href="#modal-06" class="overlay">
+									<div class="folio-item-table">
+										<div class="folio-item-cell">
+											<h3 class="folio-title" translate="no">Warm Up: Machine Learning with a Heart</h3>
+											<span class="folio-types" data-i18n="projects.cat.ml">Big Data Analytics y Machine Learning</span>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div id="modal-06" class="popup-modal slider mfp-hide">
+							<div class="media"><img src="../images/portfolio/modals/m-heart.webp" alt="" loading="lazy" decoding="async" width="1050" height="700"></div>
+							<div class="description-box">
+								<h4 translate="no">Warm Up: Machine Learning with a Heart</h4>
+								<p data-i18n="projects.p06.desc">Las enfermedades cardíacas son la principal causa de muerte en el mundo. Para aprender a prevenirlas, primero debemos aprender a detectarlas de forma confiable. En este proyecto construimos modelos predictivos para clasificar si un paciente tiene una enfermedad cardíaca.</p>
+								<div class="categories" data-i18n="projects.cat.ml">Big Data Analytics y Machine Learning</div>
+							</div>
+							<div class="link-box">
+								<a href="https://franklin390.github.io/Challenge_Project_02_Warm_Up_Machine_Learning_with_a_Heart/" rel="noopener" data-i18n="projects.view">Ver proyecto</a>
+								<a href="#" class="popup-modal-dismiss" data-i18n="projects.close">Cerrar</a>
+							</div>
+						</div>
+					</div>
+					<!-- p05 -->
+					<div class="folio-wrapper block-1-1 block-mob-full stack">
+						<div class="bgrid folio-item">
+							<div class="item-wrap">
+								<p class="h05 tag-label" data-i18n="projects.tag">Proyecto de Data Science</p> <br>
+								<img src="../images/portfolio/boston.webp" alt="Boston Houses" translate="no" loading="lazy" decoding="async" width="800" height="801">
+								<a href="#modal-05" class="overlay">
+									<div class="folio-item-table">
+										<div class="folio-item-cell">
+											<h3 class="folio-title" translate="no">Boston Houses</h3>
+											<span class="folio-types" data-i18n="projects.cat.ml">Big Data Analytics y Machine Learning</span>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div id="modal-05" class="popup-modal slider mfp-hide">
+							<div class="media"><img src="../images/portfolio/modals/m-boston.webp" alt="" loading="lazy" decoding="async" width="1050" height="700"></div>
+							<div class="description-box">
+								<h4 translate="no">Boston Houses</h4>
+								<p data-i18n="projects.p05.desc">En este proyecto construimos modelos para predecir los precios de las viviendas en Boston.</p>
+								<div class="categories" data-i18n="projects.cat.ml">Big Data Analytics y Machine Learning</div>
+							</div>
+							<div class="link-box">
+								<a href="https://franklin390.github.io/Challenge_Project_01_Boston_Houses/" rel="noopener" data-i18n="projects.view">Ver proyecto</a>
+								<a href="#" class="popup-modal-dismiss" data-i18n="projects.close">Cerrar</a>
+							</div>
+						</div>
+					</div>
+					<!-- p04 -->
+					<div class="folio-wrapper block-1-1 block-mob-full stack">
+						<div class="bgrid folio-item">
+							<div class="item-wrap">
+								<p class="h05 tag-label" data-i18n="projects.tag">Proyecto de Data Science</p> <br>
+								<img src="../images/portfolio/twitter_1.webp" alt="Big Data Analytics on Twitter - Part I" translate="no" loading="lazy" decoding="async" width="800" height="801">
+								<a href="#modal-04" class="overlay">
+									<div class="folio-item-table">
+										<div class="folio-item-cell">
+											<h3 class="folio-title" translate="no">Big Data Analytics on Twitter - Part I</h3>
+											<span class="folio-types" data-i18n="projects.cat.bd">Big Data Analytics</span>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div id="modal-04" class="popup-modal slider mfp-hide">
+							<div class="media"><img src="../images/portfolio/modals/m-twitter_1.webp" alt="" loading="lazy" decoding="async" width="1050" height="700"></div>
+							<div class="description-box">
+								<h4 translate="no">Big Data Analytics on Twitter - Part I</h4>
+								<p data-i18n="projects.p04.desc">El objetivo de este análisis es explorar diferentes técnicas y herramientas para capturar, manipular y transformar datos de la red social Twitter. El análisis busca entender el sentimiento que transmite cada tuit, lo que permite extraer información, conocimiento y sabiduría. Esta técnica ayuda a quienes toman decisiones a analizar el sentimiento de su público objetivo hacia un tema determinado, por ejemplo, para saber si una campaña de marketing es recibida de forma positiva, negativa o neutra.</p>
+								<div class="categories" data-i18n="projects.cat.bd">Big Data Analytics</div>
+							</div>
+							<div class="link-box">
+								<a href="https://franklin390.github.io/Mini_Project_01_Sentiment_Analisys_I/" rel="noopener" data-i18n="projects.view">Ver proyecto</a>
+								<a href="#" class="popup-modal-dismiss" data-i18n="projects.close">Cerrar</a>
+							</div>
+						</div>
+					</div>
+					<!-- p03 -->
+					<div class="folio-wrapper block-1-1 block-mob-full stack">
+						<div class="bgrid folio-item">
+							<div class="item-wrap">
+								<p class="h05 tag-label" data-i18n="projects.tag">Proyecto de Data Science</p> <br>
+								<img src="../images/portfolio/twitter_2.webp" alt="Big Data Analytics on Twitter - Part II" translate="no" loading="lazy" decoding="async" width="800" height="801">
+								<a href="#modal-03" class="overlay">
+									<div class="folio-item-table">
+										<div class="folio-item-cell">
+											<h3 class="folio-title" translate="no">Big Data Analytics on Twitter - Part II</h3>
+											<span class="folio-types" data-i18n="projects.cat.bd">Big Data Analytics</span>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div id="modal-03" class="popup-modal slider mfp-hide">
+							<div class="media"><img src="../images/portfolio/modals/m-twitter_2.webp" alt="" loading="lazy" decoding="async" width="1050" height="700"></div>
+							<div class="description-box">
+								<h4 translate="no">Big Data Analytics on Twitter - Part II</h4>
+								<p data-i18n="projects.p03.desc">El objetivo de este análisis es explorar diferentes técnicas y herramientas para capturar, manipular y transformar datos de Twitter. Presentamos la comparación del sentimiento de los usuarios hacia dos temas (dos palabras clave). Esta técnica ayuda a quienes toman decisiones a entender el sentimiento de su público objetivo hacia varios temas, por ejemplo, para saber si una campaña de marketing fue recibida de forma más positiva o negativa que otra.</p>
+								<div class="categories" data-i18n="projects.cat.bd">Big Data Analytics</div>
+							</div>
+							<div class="link-box">
+								<a href="https://franklin390.github.io/Mini_Project_02_Sentiment_Analisys_II/" rel="noopener" data-i18n="projects.view">Ver proyecto</a>
+								<a href="#" class="popup-modal-dismiss" data-i18n="projects.close">Cerrar</a>
+							</div>
+						</div>
+					</div>
+					<!-- p02 -->
+					<div class="folio-wrapper block-1-1 block-mob-full stack">
+						<div class="bgrid folio-item">
+							<div class="item-wrap">
+								<p class="h05 tag-label" data-i18n="projects.tag">Proyecto de Data Science</p> <br>
+								<img src="../images/portfolio/twitter_3.webp" alt="Big Data Analytics on Twitter - Part III" translate="no" loading="lazy" decoding="async" width="800" height="801">
+								<a href="#modal-02" class="overlay">
+									<div class="folio-item-table">
+										<div class="folio-item-cell">
+											<h3 class="folio-title" translate="no">Big Data Analytics on Twitter - Part III</h3>
+											<span class="folio-types" data-i18n="projects.cat.bd">Big Data Analytics</span>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div id="modal-02" class="popup-modal slider mfp-hide">
+							<div class="media"><img src="../images/portfolio/modals/m-twitter_3.webp" alt="" loading="lazy" decoding="async" width="1050" height="700"></div>
+							<div class="description-box">
+								<h4 translate="no">Big Data Analytics on Twitter - Part III</h4>
+								<p data-i18n="projects.p02.desc">El objetivo de este análisis es explorar diferentes técnicas y herramientas para capturar, manipular y transformar datos de Twitter. Clasificamos el sentimiento que transmite cada tuit y determinamos su polaridad. Esta técnica ayuda a quienes toman decisiones a entender el sentimiento de su público objetivo hacia un tema determinado, por ejemplo, para saber si una campaña de marketing causó sorpresa, enojo, miedo, rechazo, alegría, etc.</p>
+								<div class="categories" data-i18n="projects.cat.bd">Big Data Analytics</div>
+							</div>
+							<div class="link-box">
+								<a href="https://franklin390.github.io/Mini_Project_03_Sentiment_Analisys_III/" rel="noopener" data-i18n="projects.view">Ver proyecto</a>
+								<a href="#" class="popup-modal-dismiss" data-i18n="projects.close">Cerrar</a>
+							</div>
+						</div>
+					</div>
+					<!-- p01 -->
+					<div class="folio-wrapper block-1-1 block-mob-full stack">
+						<div class="bgrid folio-item">
+							<div class="item-wrap">
+								<p class="h05 tag-label" data-i18n="projects.tag">Proyecto de Data Science</p> <br>
+								<img src="../images/portfolio/twitter_4.webp" alt="Big Data Analytics on Twitter - Part IV" translate="no" loading="lazy" decoding="async" width="800" height="801">
+								<a href="#modal-01" class="overlay">
+									<div class="folio-item-table">
+										<div class="folio-item-cell">
+											<h3 class="folio-title" translate="no">Big Data Analytics on Twitter - Part IV</h3>
+											<span class="folio-types" data-i18n="projects.cat.bd">Big Data Analytics</span>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div id="modal-01" class="popup-modal slider mfp-hide">
+							<div class="media"><img src="../images/portfolio/modals/m-twitter_4.webp" alt="" loading="lazy" decoding="async" width="1050" height="700"></div>
+							<div class="description-box">
+								<h4 translate="no">Big Data Analytics on Twitter - Part IV</h4>
+								<p data-i18n="projects.p01.desc">El objetivo de este análisis es explorar diferentes técnicas y herramientas para capturar, manipular y transformar datos de Twitter. Evaluamos con qué frecuencia se usa una palabra clave en una región geográfica. Esta técnica ayuda a quienes toman decisiones a entender el sentimiento de su público objetivo hacia un tema determinado, por ejemplo, para saber en qué ciudades se habló más de una campaña de marketing.</p>
+								<div class="categories" data-i18n="projects.cat.bd">Big Data Analytics</div>
+							</div>
+							<div class="link-box">
+								<a href="https://franklin390.github.io/Mini_Project_04_Sentiment_Analisys_IV/" rel="noopener" data-i18n="projects.view">Ver proyecto</a>
+								<a href="#" class="popup-modal-dismiss" data-i18n="projects.close">Cerrar</a>
+							</div>
+						</div>
+					</div>
+					<!--@end:projects-slides-->
+				</div> <!-- \owl-slider-port -->
+				</details> <!-- /early-projects -->
+
+			</div> <!-- /twelve -->
+
+		</div> <!-- /portfolio-content -->
+
+	</section> <!-- /portfolio -->
+
+	<!-- Phrase Section ================================================== -->
+
+	<section id="cta" class="grey-section">
+
+		<div class="row cta-content">
+
+			<div class="col-twelve section-ads">
+
+				<h2 class="h01" data-i18n="cta.title">Cómo lo veo</h2>
+
+				<div class="pull-quote">
+					<blockquote>
+						<p data-i18n="cta.quote">Al final, lo que importa es si los datos se convirtieron en una decisión.</p>
+					</blockquote>
+				</div> <!-- /pull-quote -->
+
+			</div> <!-- /section-ads -->
+
+		</div> <!-- /cta-content -->
+
+	</section> <!-- /cta -->
+
+	<!-- services Section
+	================================================== -->
+	<section id="services">
+
+		<div class="overlay"></div>
+
+		<div class="row section-intro">
+			<div class="col-twelve">
+
+				<p class="h05 eyebrow" data-i18n="services.eyebrow">Especialidades</p>
+				<h2 data-i18n="services.title">Dónde puedo ayudar</h2>
+				<p class="lead" data-i18n="services.lead">Si estás construyendo o arreglando una plataforma de datos, estas son las áreas en las que puedo ayudar.</p>
+
+			</div>
+		</div> <!-- /section-intro -->
+
+		<div class="row services-content">
+
+			<div id="owl-slider" class="owl-carousel services-list">
+
+				<div class="service">
+					<span class="icon"><i class="icon-cube" aria-hidden="true"></i></span>
+					<div class="service-content">
+						<h3 data-i18n="service.arch.title">Arquitectura y modelado de datos</h3>
+						<p class="desc" data-i18n="service.arch.desc">Pensar cómo deben estructurarse los datos antes de que exista cualquier código: modelos dimensionales, data warehouses, data lakes y bases de lakehouse.</p>
+					</div>
+				</div>
+
+				<div class="service">
+					<span class="icon"><i class="icon-cloud" aria-hidden="true"></i></span>
+					<div class="service-content">
+						<h3 data-i18n="service.migration.title">Plataformas de datos: diseño y migración</h3>
+						<p class="desc" data-i18n="service.migration.desc">Diseñar plataformas de datos y reunir muchas fuentes en una sola: warehouses con dbt y Airflow, lakehouses y una migración de ~50 fuentes que llevó los pipelines de horas a minutos.</p>
+					</div>
+				</div>
+
+				<div class="service">
+					<span class="icon"><i class="icon-dollar" aria-hidden="true"></i></span>
+					<div class="service-content">
+						<h3 data-i18n="service.finops.title">FinOps y previsión de costos</h3>
+						<p class="desc" data-i18n="service.finops.desc">Clústeres, jobs, almacenamiento y políticas de gobernanza, con modelos de previsión para que el ahorro sea predecible.</p>
+					</div>
+				</div>
+
+				<div class="service">
+					<span class="icon"><i class="icon-padlock" aria-hidden="true"></i></span>
+					<div class="service-content">
+						<h3 data-i18n="service.gov.title">Gobernanza, calidad y LGPD</h3>
+						<p class="desc" data-i18n="service.gov.desc">Gobernanza y catálogos de datos (AWS Glue Data Catalog, Unity Catalog, Hive Metastore y catálogos open source), calidad de datos y procesos de protección de datos que cumplen con la LGPD y siguen el GDPR.</p>
+					</div>
+				</div>
+
+				<div class="service">
+					<span class="icon"><i class="icon-signal" aria-hidden="true"></i></span>
+					<div class="service-content">
+						<h3 data-i18n="service.obs.title">Observabilidad y métricas</h3>
+						<p class="desc" data-i18n="service.obs.desc">Ver los problemas de la plataforma y las métricas de negocio casi en tiempo real, con latencia de pocos minutos.</p>
+					</div>
+				</div>
+
+				<div class="service">
+					<span class="icon"><i class="icon-settings" aria-hidden="true"></i></span>
+					<div class="service-content">
+						<h3 data-i18n="service.eng.title">Prácticas de ingeniería</h3>
+						<p class="desc" data-i18n="service.eng.desc">Pipelines y orquestación con Airflow y dbt, CI/CD con trunk-based development y aprovisionamiento confiable y seguro.</p>
+					</div>
+				</div>
+
+				<div class="service">
+					<span class="icon"><i class="icon-users" aria-hidden="true"></i></span>
+					<div class="service-content">
+						<h3 data-i18n="service.lead.title">Liderazgo técnico</h3>
+						<p class="desc" data-i18n="service.lead.desc">Liderar ingenieros de datos, analistas y científicos de datos: definir arquitecturas, formas de trabajo y prioridades.</p>
+					</div>
+				</div>
+
+				<div class="service">
+					<span class="icon"><i class="icon-wand" aria-hidden="true"></i></span>
+					<div class="service-content">
+						<h3 data-i18n="service.genai.title">IA generativa para equipos de datos</h3>
+						<p class="desc" data-i18n="service.genai.desc">Llevar la IA generativa al día a día de un equipo técnico, para que construir herramientas y prototipos sea más rápido.</p>
+					</div>
+				</div>
+
+			</div> <!-- /services-list -->
+
+		</div> <!-- /services-content -->
+
+	</section> <!-- /services -->
+
+
+	<!-- contact
+	================================================== -->
+	<section id="contact">
+
+		<div class="row section-intro">
+			<div class="col-twelve">
+
+				<p class="h05 eyebrow" data-i18n="contact.eyebrow">Contacto</p>
+				<h2 data-i18n="contact.title">Hablemos</h2>
+
+				<p class="lead" data-i18n="contact.lead">Siempre tengo ganas de conversar sobre arquitectura de datos, IA generativa aplicada al día a día de un equipo técnico o el mercado de datos en Brasil.</p>
+
+			</div>
+		</div> <!-- /section-intro -->
+
+		<div class="row contact-paths">
+			<div class="col-twelve">
+				<div class="path-grid">
+					<article class="contact-path">
+						<h3 data-i18n="contact.hire.title">Oportunidades</h3>
+						<p data-i18n="contact.hire.desc">Abierto a cualquier tipo de oportunidad: tiempo completo, contrato o alianza.</p>
+						<a class="button button-contact" href="mailto:franklinfs390@gmail.com?subject=Oportunidad" data-href-en="mailto:franklinfs390@gmail.com?subject=Opportunity" data-href-pt="mailto:franklinfs390@gmail.com?subject=Oportunidade" data-href-es="mailto:franklinfs390@gmail.com?subject=Oportunidad" data-contact="hiring" data-i18n="contact.hire.btn">Hablar de una oportunidad</a>
+					</article>
+					<article class="contact-path">
+						<h3 data-i18n="contact.project.title">Proyectos</h3>
+						<p data-i18n="contact.project.desc">Revisiones de arquitectura, migraciones de plataforma, FinOps, gobernanza de datos o cualquier otro desafío de datos.</p>
+						<a class="button button-contact" href="mailto:franklinfs390@gmail.com?subject=Proyecto" data-href-en="mailto:franklinfs390@gmail.com?subject=Project" data-href-pt="mailto:franklinfs390@gmail.com?subject=Projeto" data-href-es="mailto:franklinfs390@gmail.com?subject=Proyecto" data-contact="projects" data-i18n="contact.project.btn">Hablar de un proyecto</a>
+					</article>
+				</div>
+			</div>
+		</div> <!-- /contact-paths -->
+
+		<div class="row contact-actions">
+			<a class="button button-ghost" href="https://www.linkedin.com/in/franklinfs390/" rel="noopener" translate="no">LinkedIn</a>
+			<a class="button button-ghost" href="https://github.com/franklin390" rel="noopener" translate="no">GitHub</a>
+		</div> <!-- /contact-actions -->
+
+		<p class="contact-place" data-i18n="contact.place">Brasil · Remoto/Global</p>
+
+	</section> <!-- /contact -->
+
+
+	</main> <!-- /main -->
+
+	<!-- footer
+	================================================== -->
+
+	<footer>
+		<div class="row">
+
+			<div class="col-six tab-full pull-right social">
+
+				<ul class="footer-social">
+					<li><a href="https://github.com/franklin390" rel="noopener" aria-label="Franklin Ferreira en GitHub" data-i18n-attr="aria-label:social.github"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/franklinfs390/" rel="noopener" aria-label="Franklin Ferreira en LinkedIn" data-i18n-attr="aria-label:social.linkedin"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+				</ul> <!-- /footer-social -->
+
+			</div>
+
+			<div class="col-eight tab-full">
+
+				<div class="copyright">
+
+					<span><span data-i18n="footer.copy">© Copyright</span> <span translate="no">2019 – <span id="year-now">2026</span></span></span>
+
+					<span><span data-i18n="footer.design">Diseño de</span> <a href="#top" translate="no">Franklin Ferreira</a></span>
+
+				</div>
+			</div>
+
+			<div id="go-top">
+				<a class="smoothscroll" href="#top" title="Volver arriba" data-i18n-attr="title:a11y.top;aria-label:a11y.top" aria-label="Volver arriba"><i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+			</div>
+
+		</div> <!-- /row -->
+	</footer>
+
+	<div id="preloader">
+		<div id="loader"></div>
+	</div>
+
+	<!-- Java Script
+	================================================== -->
+	<script src="../js/jquery-3.5.1.min.js"></script>
+	<script src="../js/plugins.js"></script>
+	<script src="../js/i18n/en.js"></script>
+	<script src="../js/i18n/pt.js"></script>
+	<script src="../js/i18n/es.js"></script>
+	<script src="../js/i18n.js"></script>
+	<script src="../js/main.js"></script>
+	<script src="../js/analytics.js"></script>
+
+
+
+
+</body></html>
