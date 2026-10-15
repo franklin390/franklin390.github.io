@@ -1,4 +1,4 @@
-// G16 — Design budgets (PLANO-DESIGN.md, phase 1): text size floors, touch targets, focus indicators, contrast margin, page-height budgets.
+// G16 — Design budgets: text size floors, touch targets, focus indicators, contrast margin, page-height budgets.
 // Budgets come from the measured baseline (npm run measure:design) and only ever go down: a phase that shortens the page lowers them here.
 import { Gate } from './lib/report.mjs';
 import { getEnv } from './lib/browser.mjs';

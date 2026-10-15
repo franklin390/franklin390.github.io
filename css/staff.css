@@ -1,4 +1,4 @@
-/* 00. design tokens (_tools/PLANO-DESIGN.md, phase 4): the colors of the page, defined once. Use these, never the literal values (G16 checks the brand colors). */
+/* 00. design tokens: the colors of the page, defined once. Use these, never the literal values (G16 checks the brand colors). */
 :root {
 	--brand: #CC005F;          /* brand pink on light backgrounds (5.9:1 on white) and for fills */
 	--brand-bright: #FF0077;   /* brand pink on dark backgrounds */
@@ -571,7 +571,7 @@ a.glance-link:focus-visible { outline: 3px solid var(--brand); outline-offset: -
 	.contact-path .button { padding-left: 1.6rem; padding-right: 1.6rem; letter-spacing: .2rem; }
 }
 
-/* 17. design pass, phase 1 (_tools/PLANO-DESIGN.md): legibility floors, vertical rhythm on phones, touch targets, decision group.
+/* 17. design pass, phase 1: legibility floors, vertical rhythm on phones, touch targets, decision group.
    Each floor is max(<original rem value>, <px floor>): desktop looks the same, while on phones (where the theme shrinks the root font to 9.4px) nothing drops below the floor. */
 .case-block { font-size: max(1.45rem, 14.5px); }
 .glance-caption { font-size: max(1.45rem, 14.5px); }
@@ -648,7 +648,7 @@ footer .footer-social li a { width: max(4.4rem, 44px); height: max(4.4rem, 44px)
 #resume .section-intro .eyebrow, #portfolio .section-intro .eyebrow, .glance-org, .glance li:first-child .glance-dates, .train-details > summary, .early-projects > summary { color: var(--brand-text); }
 .train-details > summary:hover, .train-details > summary:focus-visible, .early-projects > summary:hover, .early-projects > summary:focus-visible { color: #FFFFFF; }
 
-/* 18. design pass, phase 2 (_tools/PLANO-DESIGN.md): hero. The SVG background is already quiet, so the 85% dark layer that hid the old photo is gone;
+/* 18. design pass, phase 2: hero. The SVG background is already quiet, so the 85% dark layer that hid the old photo is gone;
    the proof strip and the social icons now sit in the flow under the buttons, so nothing can overlap on short screens. */
 .intro-overlay, #services .overlay { opacity: 0; }
 .intro-content { padding: 10.5rem 0 5.6rem; } /* the table cell sits ~21px above the section top, hence more than the header height */

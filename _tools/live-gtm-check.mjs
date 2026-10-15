@@ -122,7 +122,7 @@ else if (C.hits.length) {
   problems++;
   const hosts = [...new Set(C.hits.map((h) => h.host))].join(', ');
   console.log(`PROBLEM: the published GTM container let the foreign host through. GA4 (${[...new Set(C.hits.map((h) => h.tid))].join(', ')}) would record these visits with hostname ${hosts}.`);
-  console.log('  Fix: import and publish _tools/gtm/portfolio-container.json (it limits both tags to Page Hostname ' + PROD + '). Steps: _tools/gtm/LEIA-ME.md, section "Cópias do site em outros domínios".');
+  console.log('  Fix: import and publish _tools/gtm/portfolio-container.json (it limits both tags to Page Hostname ' + PROD + '). Steps: _tools/gtm/README.md, section "Copies of the site on other domains".');
 }
 
 console.log(problems ? `\nRESULT: ${problems} problem(s)` : '\nRESULT: every action was counted exactly once, and a copy on another domain sends nothing');

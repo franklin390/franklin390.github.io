@@ -1,5 +1,5 @@
-// Generates, from facts/analytics.json, (1) a Google Tag Manager container to import and (2) its guide in Portuguese.
-// Usage: node build-gtm.mjs [GA4 measurement id]   -> _tools/gtm/portfolio-container.json + _tools/gtm/LEIA-ME.md
+// Generates, from facts/analytics.json, (1) a Google Tag Manager container to import and (2) its guide in English.
+// Usage: node build-gtm.mjs [GA4 measurement id]   -> _tools/gtm/portfolio-container.json + _tools/gtm/README.md
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -78,94 +78,94 @@ export function buildReadme(cat) {
   const dims = Object.entries(cat.params).filter(([, p]) => p.dimension);
   const mets = Object.entries(cat.params).filter(([, p]) => p.metric);
   const keyEv = ev.filter(([, e]) => e.keyEvent).map(([n]) => `\`${n}\``).join(', ');
-  return `# Medição do portfólio (Google Tag Manager + GA4)
+  return `# Measurement setup (Google Tag Manager + GA4)
 
-Este arquivo é **gerado** por \`node build-gtm.mjs\` a partir de \`facts/analytics.json\`. Não edite à mão: mude o catálogo e gere de novo. A gate **G13** confere, com um navegador real, que o site envia exatamente o que está descrito aqui.
+This file is **generated** by \`node build-gtm.mjs\` from \`facts/analytics.json\`. Do not edit it by hand: change the catalogue and generate again. Gate **G13** checks, with a real browser, that the site sends exactly what is described here.
 
-## O que o site envia
+## What the site sends
 
-O site empurra eventos para o \`dataLayer\` do contêiner **${cat.gtmContainer}** (arquivo \`js/analytics.js\`). Todo evento carrega \`site_language\` (en, pt ou es). **Nenhum dado pessoal** viaja: nada de e-mail, telefone, nome completo ou texto digitado.
+The site pushes events to the \`dataLayer\` of container **${cat.gtmContainer}** (file \`js/analytics.js\`). Every event carries \`site_language\` (en, pt or es). **No personal data** travels: no e-mail address, phone number, full name or typed text.
 
-| Evento | Quando dispara | Parâmetros |
+| Event | When it fires | Parameters |
 |---|---|---|
-${ev.map(([n, e]) => `| \`${n}\` | ${e.when} | ${e.params.length ? e.params.map((p) => `\`${p}\``).join(', ') : '—'} |`).join('\n')}
+${ev.map(([n, e]) => `| \`${n}\` | ${e.when} | ${e.params.length ? e.params.map((p) => `\`${p}\``).join(', ') : '-'} |`).join('\n')}
 
-Quem envia o sinal **Global Privacy Control** ou **Do Not Track** não gera nenhum evento, e recebe consentimento de analytics "negado" antes de o GTM carregar.
+A visitor who sends **Global Privacy Control** or **Do Not Track** generates no event at all, and gets analytics consent "denied" before GTM loads.
 
-## Como ligar no GTM (5 minutos)
+## Connecting it to GTM (5 minutes)
 
-1. No GTM, abra o contêiner **${cat.gtmContainer}** → **Administrador → Importar contêiner**.
-2. Escolha \`gtm/portfolio-container.json\`, selecione um espaço de trabalho **novo** e a opção **Mesclar** (renomear itens em conflito).
-3. Abra a variável **Const - GA4 Measurement ID** e troque \`${PLACEHOLDER_ID}\` pelo ID da sua propriedade GA4 (formato \`G-…\`, em *GA4 → Administrador → Fluxos de dados*). Esse ID é público (aparece no código de qualquer site); não é uma senha.
-4. Se o contêiner **já tinha** uma tag "Google tag" / GA4 com o mesmo ID, apague a **GA4 - Google tag** importada (para não contar a visita duas vezes). Mantenha a **GA4 - Event - portfolio**.
-5. **Visualizar** (Tag Assistant), navegue pelo site e confira os eventos. Depois **Enviar → Publicar**.
+1. In GTM, open container **${cat.gtmContainer}** → **Admin → Import Container**.
+2. Choose \`gtm/portfolio-container.json\`, select a **new** workspace and the **Merge** option (rename conflicting items).
+3. Open the variable **Const - GA4 Measurement ID** and replace \`${PLACEHOLDER_ID}\` with the ID of your GA4 property (format \`G-...\`, found under *GA4 → Admin → Data streams*). The ID is public (it appears in the code of any site that uses it); it is not a secret.
+4. If the container **already had** a "Google tag" / GA4 tag with the same ID, delete the imported **GA4 - Google tag** (otherwise every visit is counted twice). Keep **GA4 - Event - portfolio**.
+5. Use **Preview** (Tag Assistant), browse the site and check the events. Then **Submit → Publish**.
 
-O contêiner importado tem 1 tag Google, 1 tag de evento GA4 (que repassa todos os eventos acima), 2 acionadores (evento personalizado e inicialização, os dois só no seu domínio) e ${Object.keys(cat.params).length + 1} variáveis, mais a variável embutida **Page Hostname**. Se o GTM recusar o arquivo, crie à mão: um acionador "Evento personalizado" com regex \`^(${Object.keys(cat.events).join('|')})$\`, uma tag "Evento do Google Analytics: GA4" com nome de evento \`{{Event}}\` e, nos parâmetros, cada nome abaixo apontando para uma variável de camada de dados de mesmo nome.
+The imported container has 1 Google tag, 1 GA4 event tag (which forwards all the events above), 2 triggers (custom event and initialization, both limited to your domain) and ${Object.keys(cat.params).length + 1} variables, plus the built-in variable **Page Hostname**. If GTM rejects the file, build it by hand: a "Custom Event" trigger with the regex \`^(${Object.keys(cat.events).join('|')})$\`, a "Google Analytics: GA4 Event" tag with event name \`{{Event}}\`, and, under parameters, each name from the table above pointing to a data layer variable with the same name.
 
-## Cópias do site em outros domínios (dados que não são seus)
+## Copies of the site on other domains (data that is not yours)
 
-Quem copiar a página do jeito que está leva junto o código do GTM (\`${cat.gtmContainer}\`). Sem proteção, cada visita à cópia chegaria ao seu GA4 como se fosse sua, com o nome do host da cópia. Há três camadas:
+Anyone who copies the page as it is takes the GTM snippet (\`${cat.gtmContainer}\`) with it. Unprotected, every visit to the copy would reach your GA4 as if it were yours, tagged with the copy's hostname. There are three layers:
 
-1. **Na página** (\`index.html\`): o GTM só carrega se o endereço for ${cat.allowedHosts.map((h) => `\`${h}\``).join(', ')}. Uma cópia em outro domínio, ou um arquivo salvo aberto do disco, nem baixa o GTM. A gate G13 confere isso abrindo a página sob um domínio falso.
-2. **No contêiner** (este arquivo): as duas tags só disparam quando a variável **Page Hostname** casa com \`${hostRegex(cat)}\`. Vale mesmo que o copiador apague a camada 1, porque o contêiner mora no Google e ele não consegue editá-lo. Depois de publicar, \`npm run check:gtm-live\` prova isso com uma cópia sem a trava.
-3. **No GA4**, para o que já entrou antes e para o que nenhuma trava impede: em **Explorar**, use a dimensão **Nome do host** (Hostname) igual a ${cat.allowedHosts.join(', ')} como filtro ou comparação. Os dados já gravados não são apagados; só deixam de aparecer nos relatórios filtrados.
+1. **In the page** (\`index.html\`): GTM only loads when the address is ${cat.allowedHosts.map((h) => `\`${h}\``).join(', ')}. A copy on another domain, or a saved file opened from disk, never even downloads GTM. Gate G13 checks this by opening the page under a fake domain.
+2. **In the container** (this file): both tags only fire when the **Page Hostname** variable matches \`${hostRegex(cat)}\`. This holds even if the copier deletes layer 1, because the container lives at Google and cannot be edited by them. After publishing, \`npm run check:gtm-live\` proves it with a copy that has no guard.
+3. **In GA4**, for data that arrived before and for whatever no guard can stop: in **Explore**, use the **Hostname** dimension equal to ${cat.allowedHosts.join(', ')} as a filter or comparison. Data already stored is not deleted; it just stops showing in filtered reports.
 
-**Se você já tinha importado o contêiner antes**, importe de novo no mesmo espaço de trabalho: **Importar contêiner → Mesclar → Substituir** os itens com o mesmo nome. Confira que a tag **GA4 - Google tag** usa o acionador **Init - my site only** e que **CE - portfolio events** ganhou a condição *Page Hostname corresponde à regex*. Se o GTM recusar o arquivo, faça à mão: ative a variável embutida **Page Hostname** (Variáveis → Configurar), crie o acionador "Inicialização" com a condição *Page Hostname corresponde à regex* \`${hostRegex(cat)}\` e use-o na tag Google; no acionador de evento personalizado, adicione a mesma condição.
+**If you imported the container before**, import it again into the same workspace: **Import Container → Merge → Overwrite** items with the same name. Check that the tag **GA4 - Google tag** uses the trigger **Init - my site only** and that **CE - portfolio events** gained the condition *Page Hostname matches regex*. If GTM rejects the file, do it by hand: enable the built-in variable **Page Hostname** (Variables → Configure), create the "Initialization" trigger with the condition *Page Hostname matches regex* \`${hostRegex(cat)}\` and use it on the Google tag; on the custom event trigger, add the same condition.
 
-**Limites que nenhuma trava resolve:**
+**Limits that no guard can fix:**
 
-- O ID \`G-…\` é público. Quem quiser pode enviar visitas falsas direto ao Google, sem passar pelo seu site nem pelo GTM, e até forjar o nome do host. Os filtros de dados do GA4 existem só para tráfego interno e de desenvolvedor; não há lista de domínios permitidos. É raro, e o filtro por host nos relatórios é a defesa possível.
-- Um site que **embute** o seu num \`<iframe>\` carrega a página no seu domínio de verdade, então esses acessos contam (o referenciador mostra de onde vieram).
-- **O seu computador também fica de fora:** em \`localhost\` ou com o arquivo aberto do disco, nada é enviado, de propósito. Para testar o GTM, use a visualização (Tag Assistant) no site publicado.
+- The \`G-...\` ID is public. Anyone can send fake visits straight to Google, bypassing your site and GTM, and even forge the hostname. GA4 data filters only exist for internal and developer traffic; there is no allow-list of domains. It is rare, and filtering by hostname in reports is the available defence.
+- A site that **embeds** yours in an \`<iframe>\` loads the page on your real domain, so those visits count (the referrer shows where they came from).
+- **Your own computer is left out too:** on \`localhost\`, or with the file opened from disk, nothing is sent, on purpose. To test GTM, use Preview (Tag Assistant) on the published site.
 
-## Contagem duplicada: o que já está garantido e o que só você controla
+## Double counting: what is guaranteed and what only you control
 
-**Garantido no site** (a gate G13 confere isso em todo \`npm run verify\`):
+**Guaranteed by the site** (gate G13 checks this on every \`npm run verify\`):
 
-- O GTM é o **único** carregador de analytics da página: nada de \`gtag.js\` direto, nem ID de medição ou outro rastreador fixo no HTML.
-- **Cada ação gera exatamente os eventos planejados**, sem repetir: clique no CV, contato, link externo, menu, número de impacto, filtro, carrossel, projeto, troca de idioma. Um clique que também move um carrossel sozinho não conta como "navegação" no carrossel.
-- O site **nunca chama \`history.pushState/replaceState\` de um jeito que o GTM/gtag interceptem**. A troca de idioma atualiza \`?lang=\` pelo método nativo do navegador. Sem isso, o GA4 (com a opção de histórico ligada) contava uma página nova a cada troca de idioma; medido com o GTM de verdade, era 1 \`page_view\` a mais por troca.
-- Sair da página (aba oculta + fechamento) reporta **uma vez**: um \`engagement_summary\` e um \`section_dwell\` por seção.
-- No contêiner gerado, a tag de evento dispara **uma vez por evento** e a tag do Google **uma vez por página**.
+- GTM is the **only** analytics loader on the page: no direct \`gtag.js\`, no hard-coded measurement ID or other tracker in the HTML.
+- **Each action produces exactly the planned events**, without repeats: CV click, contact, external link, menu, impact number, filter, carousel, project, language switch. A click that also moves a carousel by itself does not count as carousel navigation.
+- The site **never calls \`history.pushState/replaceState\` in a way that GTM/gtag intercept**. The language switch updates \`?lang=\` with the browser's native method. Without that, GA4 (with the history option on) counted a new page on every language switch; measured with the real GTM, that was one extra \`page_view\` per switch.
+- Leaving the page (tab hidden + closing) reports **once**: one \`engagement_summary\` and one \`section_dwell\` per section.
+- In the generated container the event tag fires **once per event** and the Google tag **once per page**.
 
-**Só você controla** (cinco minutos, uma vez):
+**Only you control** (five minutes, once):
 
-1. **Só uma tag do Google com o seu ID** no contêiner. Se você restaurar a antiga "Google Analytics", cada visita passa a contar duas vezes.
-2. **GA4 → Administrador → Fluxos de dados → seu fluxo Web → Métrica otimizada:** desligue **Rolagens**, **Cliques de saída** e **Downloads de arquivos**. Os eventos do site fazem o mesmo com mais detalhe (\`scroll_depth\`, \`outbound_click\`, \`cv_download\`). Na engrenagem de "Visualizações de página", desligue **Mudanças de página com base em eventos do histórico do navegador**. Se preferir manter algum deles ligado, **nunca marque \`file_download\` ou \`click\` como evento-chave junto com \`cv_download\`**, ou a conversão conta duas vezes.
-3. **Eventos-chave:** apenas ${keyEv}.
-4. **Filtros de dados** (Administrador → Coleta e modificação de dados → Filtros de dados): ative **Tráfego de desenvolvedor** (e, se quiser, **Tráfego interno** com o seu IP). Assim os testes com o Tag Assistant não entram nos relatórios.
-5. **Depois de publicar o contêiner, rode \`npm run check:gtm-live\`** (precisa de internet). Ele carrega o seu contêiner publicado de verdade, faz cliques e conta quantos envios ao GA4 cada ação gera, sem mandar nada ao Google. Esperado: **1 \`page_view\` na visita inteira** e cada evento na quantidade certa.
+1. **Only one Google tag with your ID** in the container. If you restore the old "Google Analytics" tag, every visit counts twice.
+2. **GA4 → Admin → Data streams → your Web stream → Enhanced measurement:** turn off **Scrolls**, **Outbound clicks** and **File downloads**. The site's events do the same in more detail (\`scroll_depth\`, \`outbound_click\`, \`cv_download\`). In the gear icon of "Page views", turn off **Page changes based on browser history events**. If you prefer to keep any of them on, **never mark \`file_download\` or \`click\` as a key event together with \`cv_download\`**, or the conversion counts twice.
+3. **Key events:** only ${keyEv}.
+4. **Data filters** (Admin → Data collection and modification → Data filters): activate **Developer traffic** (and, if you like, **Internal traffic** with your IP). That keeps Tag Assistant tests out of the reports.
+5. **After publishing the container, run \`npm run check:gtm-live\`** (needs internet). It loads your really published container, performs clicks and counts how many sends to GA4 each action produces, without sending anything to Google. Expected: **1 \`page_view\` for the whole visit** and each event the right number of times.
 
-## Configurar no GA4 (uma vez)
+## Configuring GA4 (once)
 
-**Eventos-chave** (antes "conversões"): ${keyEv}.
+**Key events** (formerly "conversions"): ${keyEv}.
 
-**Definições personalizadas → dimensões (escopo: evento):** ${dims.map(([n]) => `\`${n}\``).join(', ')}.
+**Custom definitions → dimensions (scope: event):** ${dims.map(([n]) => `\`${n}\``).join(', ')}.
 
-**Definições personalizadas → métricas (escopo: evento):** ${mets.map(([n]) => `\`${n}\``).join(', ')}.
+**Custom definitions → metrics (scope: event):** ${mets.map(([n]) => `\`${n}\``).join(', ')}.
 
-(Sem registrar, os dados chegam, mas os parâmetros não aparecem nos relatórios. Leva até 24 h para começar a aparecer.)
+(Without registering them the data still arrives, but the parameters do not show in reports. It takes up to 24 h to start appearing.)
 
-## Perguntas que isso responde
+## Questions this answers
 
-| Pergunta | Onde olhar |
+| Question | Where to look |
 |---|---|
-| Em que idioma o site é mais lido? | Explorar → evento \`site_context\` por \`site_language\` (usuários). \`browser_language\` × \`site_language\` mostra quem teve de trocar de idioma |
-| As pessoas trocam de idioma? | Evento \`language_toggle\`, \`from_language\` → \`to_language\` |
-| Que CV é baixado? | \`cv_download\` por \`cv_language\` e \`site_language\` |
-| Em que botões clicam? | \`contact_click\` (\`method\`), \`nav_click\`, \`impact_stat_click\`, \`case_filter\`, \`project_open\`, \`outbound_click\` (\`link_type\`) |
-| Onde passam mais tempo lendo? | \`section_dwell\`: média de \`seconds\` por \`item\` (seção) |
-| Até onde rolam? | \`scroll_depth\` (\`percent\`) e \`engagement_summary\` (\`max_scroll_percent\`) |
-| Que cases chamam atenção? | \`case_view\`, \`impact_stat_click\` (o clique leva ao case) |
-| Que carrossel / cargo exploram? | \`carousel_navigate\` por \`item\` e \`slide\` (no de experiência, o id do cargo) |
-| Que tecnologias despertam interesse? | \`skill_hover\` por \`item\` |
-| Algo quebrou no site? | \`js_error\` |
+| Which language is the site read in most? | Explore → event \`site_context\` by \`site_language\` (users). \`browser_language\` vs \`site_language\` shows who had to switch language |
+| Do people switch language? | Event \`language_toggle\`, \`from_language\` → \`to_language\` |
+| Which CV gets downloaded? | \`cv_download\` by \`cv_language\` and \`site_language\` |
+| What do they click? | \`contact_click\` (\`method\`), \`nav_click\`, \`impact_stat_click\`, \`case_filter\`, \`project_open\`, \`outbound_click\` (\`link_type\`) |
+| Where do they spend the most reading time? | \`section_dwell\`: average \`seconds\` per \`item\` (section) |
+| How far do they scroll? | \`scroll_depth\` (\`percent\`) and \`engagement_summary\` (\`max_scroll_percent\`) |
+| Which case studies catch attention? | \`case_view\`, \`impact_stat_click\` (the click leads to the case) |
+| Which carousel / role do they explore? | \`carousel_navigate\` by \`item\` and \`slide\` (for experience, the role id) |
+| Which technologies draw interest? | \`skill_hover\` by \`item\` |
+| Did something break on the site? | \`js_error\` |
 
-**Funil sugerido** (Explorar → Exploração de funil): \`site_context\` → \`section_view\` (item = about) → \`section_view\` (resume) → \`section_view\` (portfolio) → \`cv_download\` ou \`contact_click\`.
+**Suggested funnel** (Explore → Funnel exploration): \`site_context\` → \`section_view\` (item = about) → \`section_view\` (resume) → \`section_view\` (portfolio) → \`cv_download\` or \`contact_click\`.
 
-## Privacidade (LGPD)
+## Privacy (LGPD / GDPR)
 
-O GA4 usa cookies e identificadores. Em geral isso exige **aviso e, para analytics não essencial, consentimento**. Hoje o site não mostra aviso nenhum. Decidir entre (a) um aviso discreto com botão de aceitar/recusar ligado ao Consent Mode do GTM, ou (b) manter como está, é uma decisão sua; veja a pergunta no fim da conversa que gerou este guia.
+GA4 uses cookies and identifiers. In general that requires **a notice and, for non-essential analytics, consent**. Today the site shows no notice (it does honour Global Privacy Control and Do Not Track). Choosing between (a) a discreet notice with accept/reject buttons wired to GTM Consent Mode, or (b) keeping it as it is, is the site owner's decision.
 `;
 }
 
@@ -175,6 +175,6 @@ if (process.argv[1] && import.meta.url === `file:///${process.argv[1].replace(/\
   const dir = path.join(TOOLS, 'gtm');
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, 'portfolio-container.json'), JSON.stringify(buildContainer(cat, id), null, 2) + '\n');
-  fs.writeFileSync(path.join(dir, 'LEIA-ME.md'), buildReadme(cat));
+  fs.writeFileSync(path.join(dir, 'README.md'), buildReadme(cat));
   console.log(`GTM container + guide written to _tools/gtm/ (${Object.keys(cat.events).length} events, ${allParams(cat).length} parameters, measurement id ${id})`);
 }

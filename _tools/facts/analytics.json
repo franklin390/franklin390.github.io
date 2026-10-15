@@ -145,7 +145,7 @@
       "keyEvent": false
     },
     "language_toggle": {
-      "when": "The visitor switches language with the EN | PT | ES buttons.",
+      "when": "The visitor switches language with the EN, PT or ES buttons.",
       "params": [
         "from_language",
         "to_language",

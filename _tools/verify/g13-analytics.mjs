@@ -79,13 +79,13 @@ export async function run(ctx) {
   // ---------------------------------------------------------------- generated GTM container + guide
   {
     const file = path.join(TOOLS, 'gtm/portfolio-container.json');
-    const readme = path.join(TOOLS, 'gtm/LEIA-ME.md');
+    const readme = path.join(TOOLS, 'gtm/README.md');
     if (!fs.existsSync(file) || !fs.existsSync(readme)) g.fail('GTM container or guide missing', 'run: node build-gtm.mjs');
     else {
       const have = JSON.parse(fs.readFileSync(file, 'utf8'));
       const mid = have.containerVersion.variable.find((v) => v.name === 'Const - GA4 Measurement ID').parameter[0].value;
       g.check(JSON.stringify(have) === JSON.stringify(buildContainer(cat, mid)), 'the GTM container file matches the measurement plan (same events, parameters, variables)', 'run: node build-gtm.mjs ' + mid);
-      g.check(fs.readFileSync(readme, 'utf8') === buildReadme(cat), 'the Portuguese GTM guide matches the measurement plan', 'run: node build-gtm.mjs');
+      g.check(fs.readFileSync(readme, 'utf8') === buildReadme(cat), 'the English GTM guide matches the measurement plan', 'run: node build-gtm.mjs');
       const cv = have.containerVersion;
       const varNames = new Set([...cv.variable.map((v) => v.name), ...cv.builtInVariable.map((v) => v.name), '_event']);
       const refs = [...JSON.stringify([cv.tag, cv.trigger]).matchAll(/\{\{([^}]+)\}\}/g)].map((m) => m[1]);

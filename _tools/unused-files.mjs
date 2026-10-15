@@ -64,7 +64,7 @@ const toolSrc = fs.readdirSync(TOOLS).filter((x) => /\.mjs$/.test(x)).map((x) =>
   + fs.readdirSync(path.join(TOOLS, 'verify')).filter((x) => /\.mjs$/.test(x)).map((x) => fs.readFileSync(path.join(TOOLS, 'verify', x), 'utf8')).join('\n');
 const isBuildInput = (f) => toolSrc.includes(f) || toolSrc.includes(path.posix.basename(f)) && /fonts\/|webfonts\/|\.ttf$|\.otf$/.test(f);
 
-const unused = all.filter((f) => !used.has(f));
+const unused = all.filter((f) => !used.has(f) && !/(^|\/)(README|LICENSE)(\.md)?$/i.test(f)); // documentation is not clutter
 const sizeOf = (f) => fs.statSync(path.join(ROOT, f)).size;
 const groups = {};
 for (const f of unused) {

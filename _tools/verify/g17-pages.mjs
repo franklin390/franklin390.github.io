@@ -114,8 +114,11 @@ export async function run() {
     }
   };
   walk(ROOT, '');
-  const markdown = published.filter((f) => /\.(md|markdown)$/i.test(f));
-  g.check(markdown.length === 0, 'no markdown file is published (Jekyll would turn it into a page)', markdown.slice(0, 5).join(', '));
+  const cfg = fs.existsSync(path.join(ROOT, '_config.yml')) ? fs.readFileSync(path.join(ROOT, '_config.yml'), 'utf8').replace(/\r\n/g, '\n') : '';
+  const exBlock = (cfg.match(/^exclude:\s*\n((?:[ \t]+-[^\n]*\n?)+)/m) || [])[1] || '';
+  const excluded = [...exBlock.matchAll(/-\s*["']?([^\s"'#]+)/g)].map((m) => m[1]);
+  const markdown = published.filter((f) => /\.(md|markdown)$/i.test(f) && !excluded.includes(f));
+  g.check(markdown.length === 0, `every markdown file in the published folders is listed under exclude in _config.yml (${excluded.length ? excluded.join(', ') : 'nothing excluded'}); otherwise Jekyll turns it into a page of the site`, markdown.slice(0, 5).join(', '));
   const startsFrontMatter = (f) => { const t = fs.readFileSync(path.join(ROOT, f), 'utf8').replace(/^\uFEFF/, ''); return /^---\r?\n/.test(t); };
   const frontMatter = published.filter((f) => /\.(html|css|js|xml|txt|json)$/i.test(f) && startsFrontMatter(f));
   g.check(frontMatter.length === 0, 'no published page, script or style starts with "---" (front matter makes Jekyll process the file as a Liquid template)', frontMatter.slice(0, 5).join(', '));
