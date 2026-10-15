@@ -40,6 +40,19 @@ function hostGuardProblems(cv, hosts) {
 
 const BLOCKED = /googletagmanager\.com|google-analytics\.com|kit\.fontawesome\.com/;
 const grab = (page) => page.evaluate(() => window.dataLayer.filter((x) => x && typeof x.event === 'string' && !x.event.startsWith('gtm.')).map((x) => JSON.parse(JSON.stringify(x))));
+// The raw data layer, with the pushes that clear a key (value undefined) kept as a marker. GTM data layer variables (version 2) keep the
+// last value of every key, so what an event really carries is what a replay of all the pushes leaves in the model, not the push itself.
+const rawLayer = (page) => page.evaluate(() => window.dataLayer.filter((x) => x && typeof x === 'object' && Object.prototype.toString.call(x) !== '[object Arguments]').map((x) => { const o = {}; for (const k of Object.keys(x)) o[k] = x[k] === undefined ? '__undefined__' : x[k]; return o; }));
+function replayLeaks(layer, cat) {
+  const model = {}, bad = [];
+  for (const x of layer) {
+    for (const [k, v] of Object.entries(x)) { if (k === 'event') continue; if (v === '__undefined__') delete model[k]; else model[k] = v; }
+    if (typeof x.event !== 'string' || x.event.startsWith('gtm.')) continue;
+    const planned = new Set(['site_language', ...((cat.events[x.event] || {}).params || [])]);
+    for (const k of Object.keys(cat.params)) if (k in model && !planned.has(k)) bad.push(`${x.event} would carry "${k}" left over from an earlier event`);
+  }
+  return bad;
+}
 const consentDenied = (page) => page.evaluate(() => window.dataLayer.some((x) => Object.prototype.toString.call(x) === '[object Arguments]' && x[0] === 'consent' && x[1] === 'default' && x[2] && x[2].analytics_storage === 'denied'));
 // the page keeps working but external links, PDFs and mailto do not navigate away during the test
 const keepOnPage = (page) => page.evaluate(() => document.addEventListener('click', (e) => { const a = e.target.closest && e.target.closest('a[href]'); if (a && /^(mailto:|https?:)|\.pdf($|[?#])/i.test(a.getAttribute('href'))) e.preventDefault(); }));
@@ -348,6 +361,11 @@ export async function run(ctx) {
     const dl = await grab(page);
     const adjacentSame = dl.filter((e, i) => i > 0 && JSON.stringify(e) === JSON.stringify(dl[i - 1]));
     g.check(adjacentSame.length === 0, 'no event was pushed twice in a row with identical content', JSON.stringify(adjacentSame.slice(0, 3)));
+    const leftovers = replayLeaks(await rawLayer(page), cat);
+    g.check(leftovers.length === 0, 'no event carries a parameter left over from an earlier one (GTM keeps the last value of each data layer key; analytics.js clears the others first)', [...new Set(leftovers)].slice(0, 8).join('\n'));
+    const paramsInSite = ((fs.readFileSync(path.join(ROOT, 'js/analytics.js'), 'utf8').match(/var PARAMS = \[([^\]]*)\]/) || [])[1] || '').split(',').map((s) => s.replace(/['"\s]/g, '')).filter(Boolean).sort();
+    const paramsInPlan = Object.keys(cat.params).filter((k) => !cat.commonParams.includes(k)).sort();
+    g.check(JSON.stringify(paramsInSite) === JSON.stringify(paramsInPlan), `analytics.js clears exactly the ${paramsInPlan.length} parameters of the plan that an event does not carry (its PARAMS list = facts/analytics.json minus the common ones)`, `site only: ${paramsInSite.filter((k) => !paramsInPlan.includes(k)).join(', ') || '-'} | plan only: ${paramsInPlan.filter((k) => !paramsInSite.includes(k)).join(', ') || '-'}`);
     await context.close();
   }
 
