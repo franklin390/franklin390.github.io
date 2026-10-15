@@ -25,6 +25,9 @@
 	var optOut = optedOut() || !!w.__trackingOptOut; /* track-optout */
 	var dl = w.dataLayer = w.dataLayer || [];
 	var counts = {};
+	/* Every parameter the plan allows (all but site_language, which every event sets). GTM data layer variables (version 2) keep the
+	   last value they saw, so each event first clears the ones it does not carry; otherwise a value from the previous event leaks into the next. */
+	var PARAMS = ['item', 'slide', 'location', 'method', 'state', 'link_type', 'link_domain', 'file_name', 'cv_language', 'from_language', 'to_language', 'language_source', 'browser_language', 'device_class', 'reduced_motion', 'seconds', 'percent', 'total_seconds', 'sections_seen', 'max_scroll_percent', 'message', 'file', 'via'];
 
 	function lang() {
 		return (w.PortfolioI18n && w.PortfolioI18n.get && w.PortfolioI18n.get()) || d.documentElement.getAttribute('data-lang') || 'en';
@@ -43,6 +46,9 @@
 				if (v === undefined || v === null || v === '') { continue; }
 				p[k] = typeof v === 'number' ? Math.round(v) : str(v);
 			}
+			var clear = {};
+			for (var i = 0; i < PARAMS.length; i++) { if (!Object.prototype.hasOwnProperty.call(p, PARAMS[i])) { clear[PARAMS[i]] = undefined; } }
+			dl.push(clear); /* no "event" key: updates the data model without firing any trigger */
 			dl.push(p);
 		} catch (e) { /* measurement must never break the page */ }
 	}

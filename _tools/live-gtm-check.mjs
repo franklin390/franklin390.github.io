@@ -30,7 +30,7 @@ async function visit(host, { stripGuard = false, actions }) {
     const events = [];
     if (q.en) events.push({ ...q });
     for (const line of body.split('\n').filter(Boolean)) { const e = Object.fromEntries(new URLSearchParams(line)); if (e.en) events.push({ tid: q.tid, dl: q.dl, ...e }); }
-    for (const e of events) { const dl = e.dl || q.dl || ''; hits.push({ t: Date.now(), tid: e.tid || q.tid, en: e.en, host: (dl.match(/^https?:\/\/([^/]+)/) || [])[1] || '', dl: dl.replace(/^https?:\/\/[^/]+/, '') }); }
+    for (const e of events) { const dl = e.dl || q.dl || ''; hits.push({ t: Date.now(), tid: e.tid || q.tid, en: e.en, params: Object.keys(e).filter((k) => /^epn?./.test(k)).map((k) => k.replace(/^epn?./, '')), host: (dl.match(/^https?:\/\/([^/]+)/) || [])[1] || '', dl: dl.replace(/^https?:\/\/[^/]+/, '') }); }
     await route.fulfill({ status: 204, body: '' });
   });
   const mapped = await mapHost(context, host, `http://127.0.0.1:${server.port}`, { stripGuard });
@@ -108,6 +108,12 @@ for (const en of ENHANCED_OFF) {
   if (total[en]) { problems++; console.log(`  ${en.padEnd(18)} ${String(total[en]).padStart(2)} / 0   DUPLICATE: GA4 enhanced measurement is still on for this (Admin > Data streams > Enhanced measurement); the site already sends its own equivalent`); }
   else console.log(`  ${en.padEnd(18)}  0 / 0   ok (enhanced measurement is off in GA4)`);
 }
+const cat = loadCatalog();
+const leaks = {};
+for (const h of hits) { const plan = cat.events[h.en]; if (!plan) continue; const ok = new Set([...plan.params, 'site_language']); for (const k of h.params || []) if (!ok.has(k)) (leaks[h.en] || (leaks[h.en] = new Set())).add(k); }
+const leaky = Object.entries(leaks);
+if (leaky.length) { problems++; for (const [en, set] of leaky) console.log(`  ${en.padEnd(18)} carries parameters of other events: ${[...set].join(', ')}   LEAK (GTM kept the last value of those keys)`); }
+else console.log('  parameters         every event carries only its own parameters   ok');
 const other = Object.keys(total).filter((k) => !(k in EXPECTED) && !ZERO.includes(k) && !ENHANCED_OFF.includes(k));
 if (other.length) console.log('  other events (not checked): ' + other.map((k) => `${k} x${total[k]}`).join(', '));
 if (tids.length > 1) { problems++; console.log(`WARNING: hits went to ${tids.length} different GA4 properties: ${tids.join(', ')}`); }
