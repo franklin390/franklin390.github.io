@@ -27,7 +27,7 @@
     "@axe-core/playwright": "^4.10.1",
     "@cspell/dict-es-es": "^3.0.9",
     "@cspell/dict-pt-br": "^2.4.4",
-    "@playwright/test": "^1.49.1",
+    "@playwright/test": "^1.64.1",
     "cspell": "^8.17.1",
     "html-validate": "^8.29.0",
     "pixelmatch": "^6.0.0",
